@@ -14,8 +14,8 @@ class AddUserAccountFields extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->text('affiliation')->after('password')->default('');
-            $table->text('introduction')->after('affiliation')->default('');
+            $table->text('affiliation')->after('password');
+            $table->text('introduction')->after('affiliation');
         });
     }
 
