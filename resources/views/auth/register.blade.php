@@ -25,7 +25,7 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+                            <label for="email" class="col-md-4 control-label">E-Mail</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
@@ -57,6 +57,34 @@
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                            <label for="affiliation" class="col-md-4 control-label">Affiliation</label>
+
+                            <div class="col-md-6">
+                                <input id="affiliation" type="text" class="form-control" name="email" value="{{ old('affiliation') }}" required>
+
+                                @if ($errors->has('affiliation'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('affiliation') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('introduction') ? ' has-error' : '' }}">
+                            <label for="introduction" class="col-md-4 control-label">Introduction</label>
+
+                            <div class="col-md-6">
+                                <textarea id="introduction" class="form-control" name="introduction" >{{ old('introduction') }}</textarea>
+
+                                @if ($errors->has('introduction'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('introduction') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                         </div>
 
