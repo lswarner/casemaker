@@ -78,6 +78,16 @@
 
         </div>
 
+
+        @if(Session::has('message'))
+           <div class="container-fluid">
+               <div class="row row-flash">
+                   <div class="col-md-12 {{ Session::get('alert-class', 'alert-ub-inverse') }}"><h3>{{ Session::get('message') }}</h3></div>
+               </div>
+           </div>
+       @endif
+
+       
         @yield('content')
     </div>
 
