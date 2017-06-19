@@ -43,16 +43,17 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
-                        @if (Auth::guest())
-                            <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
-                        @else
+                        @if (Auth::user())
+
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="{{ action('UserController@edit', Auth::user()) }}">Edit Account</a>
+                                    </li>
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
@@ -80,14 +81,14 @@
 
 
         @if(Session::has('message'))
-           <div class="container-fluid">
+           <div class="container">
                <div class="row row-flash">
                    <div class="col-md-12 {{ Session::get('alert-class', 'alert-ub-inverse') }}"><h3>{{ Session::get('message') }}</h3></div>
                </div>
            </div>
        @endif
 
-       
+
         @yield('content')
     </div>
 

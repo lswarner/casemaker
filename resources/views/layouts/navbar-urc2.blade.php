@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-static-top" id="navbar-urc2">
+<nav class="navbar navbar-default" id="navbar-urc2">
 
 
   <div class="collapse navbar-collapse" id="app-navbar-collapse">
