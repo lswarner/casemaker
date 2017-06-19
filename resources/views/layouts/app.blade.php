@@ -12,11 +12,12 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/urc-style.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
-            <div class="container">
+        <div class="container">
+            <nav class="navbar navbar-default navbar-static-top navbar-urc1">
                 <div class="navbar-header">
 
                     <!-- Collapsed Hamburger -->
@@ -68,8 +69,14 @@
                         @endif
                     </ul>
                 </div>
-            </div>
-        </nav>
+
+              </nav>
+
+
+              @include('layouts.navbar-urc2')
+
+
+        </div>
 
         @yield('content')
     </div>
