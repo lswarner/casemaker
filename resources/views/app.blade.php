@@ -29,8 +29,8 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                    <a class="navbar-left" href="{{ url('/') }}">
+                        <img src="{{ asset('img/isc-logo-web.jpg')}}" />
                     </a>
                 </div>
 
@@ -74,7 +74,11 @@
               </nav>
 
 
-              @include('layouts.navbar-urc2')
+              <?php if(Route::currentRouteName() != 'login'){ ?>
+                  @include('layouts.navbar-urc2')
+              <?php } ?>
+
+
 
 
         </div>

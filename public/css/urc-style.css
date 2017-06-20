@@ -4,6 +4,11 @@
 	border-radius: 0;
 }
 
+body, h1, h2, h3, h4, h5,
+.btn-urc, .btn-urc-alt, .btn-urc-gray{
+		font-family: 'Arial', sans-serif;
+}
+
 body{
   color: #000000;
 }
@@ -81,13 +86,17 @@ h2{
 
 
 
-
+.navbar{
+	margin-bottom:0;
+	padding: 5px 10px;
+	border-bottom: 30px solid #014078 /*navy*/;
+}
 
 	.navbar-urc1{
 	  padding-right: 30px;
 	}
 	#navbar-urc2{
-	  background: #e5e1d9;
+	  background: #e5e1d9 /* beige */;
 	  color: #000;
 	  border: none;
 	}

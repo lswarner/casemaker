@@ -1,4 +1,4 @@
-@extends('app')
+@extends('app', ['case-study-nav'=>'false'])
 
 @section('content')
 <div class="container">
