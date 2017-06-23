@@ -13,26 +13,26 @@
 .@media (min-width: 768px) {
   .container-wide {
     min-width: 750px;
-    max-width: 86%; /* desired width */
+    max-width: 80%; /* desired width */
   }
 }
 @media (min-width: 992px) {
   .container-wide {
     min-width: 970px;
-    max-width: 86%; /* desired width */
+    max-width: 80%; /* desired width */
   }
 }
 @media (min-width: 1200px) {
 	.container-wide {
 	    min-width: 1170px;
-	    max-width: 84%; /* desired width */
+	    max-width: 80%; /* desired width */
 	}
 }
 
 @media (min-width: 1400px) {
 	.container-wide {
 	    min-width: 1370px;
-	    max-width: 84%; /* desired width */
+	    max-width: 80%; /* desired width */
 	  }
 }
 
@@ -56,7 +56,7 @@ h2{
 ***/
   .main{
   	background: #ffffff;
-  	padding: 30px;
+  	padding: 60px;
   }
   /*===*/
 
@@ -98,11 +98,6 @@ h2{
 
 
 
-
-
-  h2.page-header{
-  	color: #6BC7FF; /* sky */
-  }
   /*===*/
 
 
@@ -137,16 +132,21 @@ h2{
    -webkit-box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.22), 0 25px 55px 0 rgba(0, 0, 0, 0.21);
   -moz-box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.22), 0 25px 55px 0 rgba(0, 0, 0, 0.21);
   box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.22), 0 25px 55px 0 rgba(0, 0, 0, 0.21);
-  } 
+  }
 
 
+.top-space{
+  margin-top: 60px;
+}
 
 /***
     Square Corners / border-radius
 ***/
 .btn,
 .form-control,
-.well {
+.well,
+.panel,
+.panel-heading {
   border-radius: 0;
 }
 
@@ -184,9 +184,9 @@ h2{
   .btn-urc:focus,
   .btn-urc:active
    {
-		background: #2699FF !important;
-    color: #ffffff !important;
-		border: 2px solid #2699FF !important;
+		background: #6BC7FF !important;       /* sky */
+		border: 2px solid #6BC7FF !important; /* sky */
+    color: #ffffff !important;            /* white */
 	}
 
 	.btn-urc:hover,

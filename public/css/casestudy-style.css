@@ -6,9 +6,21 @@
 	/***
       Case Study styles
   ***/
-	.casestudy-tooltip{
-		color: #FF6B26;
+	a.casestudy-tooltip{
+		color: #135693;
+		font-size: 22px; /* compare to #sidebar > > > label  */
 	}
+
+
+
+
+	h2.page-header{
+		color: #6BC7FF; /* sky */
+		font-size: 32px;
+		margin: 0px;
+	}
+
+
 
 	#sidebar{
 		padding-right: 50px;
@@ -38,4 +50,23 @@
 	#sidebar > div > div > label{
 		font-size: 20px;
 		color: #ffffff;
+	}
+
+
+
+
+	.note-editor.note-frame {
+	    /* border: 1px solid #a9a9a9; */
+	}
+
+	.note-toolbar{
+		/* background-color: #a9a9a9 !important; */
+	}
+
+	.note-btn{
+
+	}
+
+	.note-editable {
+		/* background-color: #ffffff !important; */
 	}

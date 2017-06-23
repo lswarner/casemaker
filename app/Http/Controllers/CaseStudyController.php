@@ -76,7 +76,7 @@ class CaseStudyController extends Controller
     {
         //we don't actually use the general edit route-
         //the introduction page is the front page.
-        return redirect()->route('introduction');
+        return redirect()->route('introduction', $caseStudy);
     }
 
     /**
@@ -101,7 +101,13 @@ class CaseStudyController extends Controller
      */
     public function update(Request $request, CaseStudy $caseStudy)
     {
-        //
+
+        $caseStudy->update( $request->except('destination') );
+        $caseStudy->save();
+
+        $destination= $request->input('destination', 'introduction');
+
+        return redirect()->route($destination, $caseStudy);
     }
 
     /**

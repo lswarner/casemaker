@@ -101,6 +101,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="https://use.fontawesome.com/3f8a2a5be1.js"></script>
 
     @yield('scripts')
 

@@ -4,13 +4,13 @@
     <script type="text/javascript">
         $(document).ready(function() {
           @foreach ($boxes as $box)
-            $('#{{ $box }}').summernote({
-              height:300,
+            $('#{{ $box["name"] }}').summernote({
+              height:"{{ $box['height'] }}",
               toolbar: [
                 // [groupName, [list of button]]
                 ['font', ['fontname']],
                 ['fontsize', ['fontsize']],
-                ['style', ['bold', 'italic', 'underline', 'superscript', 'subscript']],
+                ['style', ['bold', 'italic', 'underline']],
                 ['para', ['ul', 'ol']]
               ]
             });
