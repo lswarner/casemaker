@@ -1,0 +1,72 @@
+@charset "UTF-8";
+
+
+
+
+	/***
+      Case Study styles
+  ***/
+	a.casestudy-tooltip{
+		color: #135693;
+		font-size: 22px; /* compare to #sidebar > > > label  */
+	}
+
+
+
+
+	h2.page-header{
+		color: #6BC7FF; /* sky */
+		font-size: 32px;
+		margin: 0px;
+	}
+
+
+
+	#sidebar{
+		padding-right: 50px;
+	}
+
+	#narrative{
+		padding-left: 50px;
+	}
+
+	#sidebar > .well {
+		margin-top: 40px;
+		background-color: #6BC7FF;
+		border: #6BC7FF;
+	}
+
+	#sidebar > div > div > textarea{
+		background: #efefef;
+	}
+
+
+	#narrative > div >label{
+		font-size: 20px;
+		color: #135693;
+	}
+
+
+	#sidebar > div > div > label{
+		font-size: 20px;
+		color: #ffffff;
+	}
+
+
+
+
+	.note-editor.note-frame {
+	    /* border: 1px solid #a9a9a9; */
+	}
+
+	.note-toolbar{
+		/* background-color: #a9a9a9 !important; */
+	}
+
+	.note-btn{
+
+	}
+
+	.note-editable {
+		/* background-color: #ffffff !important; */
+	}

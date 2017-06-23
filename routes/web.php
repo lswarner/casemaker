@@ -23,3 +23,7 @@ Route::get('/users/{user}', 'UserController@show');
 Route::get('users/{user}/edit', 'UserController@edit');
 Route::patch('users/{user}', 'UserController@update');
 Route::patch('users/{user}/password', 'UserController@update_password');
+
+Route::model('casestudy', 'App\CaseStudy');
+Route::resource('casestudy', 'CaseStudyController');
+Route::get('casestudy/{casestudy}/introduction', 'CaseStudyController@edit_introduction')->name('introduction');
