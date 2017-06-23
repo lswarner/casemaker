@@ -1,20 +1,16 @@
-@extends('app')
-
-@section('css')
-  <!-- include summernote css/js-->
-  <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.4/summernote.css" rel="stylesheet">
-@endsection
+@extends('casestudy.template')
 
 @section('scripts')
-  <?php
-    $boxes = []
-  ?>
   @include('scripts.summernote', ['boxes' => [ 'intro_context', 'intro_nuances' ] ] )
+
+  <script>
+    $(document).ready(function(){
+        $('[data-toggle="popover"]').popover();
+    });
+  </script>
 @endsection
 
-@section('content')
-<div class="container-fluid container-wide">
-  <div class="main">
+@section('casestudy-page')
 
     {!! Form::model($casestudy, ['action'=>['CaseStudyController@update', $casestudy], 'method' => 'post', 'class'=>'form-horizontal']) !!}
 
@@ -46,7 +42,6 @@
       <div id="sidebar" class="col-md-4 col-md-pull-8">
         <h2 class="page-header">Introduction</h2>
 
-        <div class="well">
           @component('casestudy.partials.tooltip-textarea', ['name'=>'intro_tips'])
             @slot('tooltip')
               This tooltip gives you a little more information about this section.
@@ -54,19 +49,12 @@
 
             Tips
           @endcomponent
-        </div>
 
-        <div class="well">
           @include('casestudy.partials.textarea', ['name'=>'intro_acronyms', 'slot'=>'Key Acronymns'])
-        </div>
 
-        <div class="well">
           @include('casestudy.partials.textarea', ['name'=>'intro_objectives', 'slot'=>'Learning Objectives'])
-        </div>
 
-        <div class="well">
         @include('casestudy.partials.textarea', ['name'=>'intro_questions', 'slot'=>'Discussion Questions'])
-        </div>
 
     </div> <!-- end of sidebar -->
 
@@ -74,7 +62,5 @@
   </div>
 
   {!! Form::close() !!}
-
-</div>
 
 @endsection

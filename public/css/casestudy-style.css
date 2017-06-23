@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+
+
+
+	/***
+      Case Study styles
+  ***/
+	.casestudy-tooltip{
+		color: #FF6B26;
+	}
+
+	#sidebar{
+		padding-right: 50px;
+	}
+
+	#narrative{
+		padding-left: 50px;
+	}
+
+	#sidebar > .well {
+		margin-top: 40px;
+		background-color: #6BC7FF;
+		border: #6BC7FF;
+	}
+
+	#sidebar > div > div > textarea{
+		background: #efefef;
+	}
+
+
+	#narrative > div >label{
+		font-size: 20px;
+		color: #135693;
+	}
+
+
+	#sidebar > div > div > label{
+		font-size: 20px;
+		color: #ffffff;
+	}
