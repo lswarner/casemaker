@@ -46,13 +46,13 @@ class CaseStudyController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
         //create an empty casestudy
         $cs= new CaseStudy;
         $cs->save();
 
-        return redirect()->route('introduction');
+        return redirect()->route('introduction', $cs);
     }
 
     /**

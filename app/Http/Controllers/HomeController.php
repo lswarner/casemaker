@@ -24,9 +24,23 @@ class HomeController extends Controller
      */
     public function index()
     {
-        if(Auth::user()->is_admin){
-          return view('admin-home');
+        $casestudies= \App\CaseStudy::all();
+
+        return view('home', compact('casestudies'));
+    }
+
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function admin()
+    {
+        if( ! Auth::user()->is_admin){
+          //return redirect->route('home');
         }
-        return view('home');
+
+        return view('home', compact('casestudies'));
     }
 }
