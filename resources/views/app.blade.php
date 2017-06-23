@@ -13,10 +13,13 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/urc-style.css') }}" rel="stylesheet">
+
+    @yield('css')
+
 </head>
 <body>
     <div id="app">
-        <div class="container">
+        <div class="container-fluid container-wide">
             <nav class="navbar navbar-default navbar-static-top navbar-urc1">
                 <div class="navbar-header">
 
@@ -85,7 +88,7 @@
 
 
         @if(Session::has('message'))
-           <div class="container">
+           <div class="container-fluid container-wide">
                <div class="row row-flash">
                    <div class="col-md-12 {{ Session::get('alert-class', 'alert-ub-inverse') }}"><h3>{{ Session::get('message') }}</h3></div>
                </div>
@@ -98,5 +101,8 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+
+    @yield('scripts')
+
 </body>
 </html>
