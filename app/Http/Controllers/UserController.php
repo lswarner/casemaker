@@ -22,7 +22,7 @@ class UserController extends Controller
           $this->middleware('auth');
       }
 
-      
+
 
       /**
        * Display the specified resource.

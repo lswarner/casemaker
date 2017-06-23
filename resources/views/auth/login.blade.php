@@ -1,7 +1,7 @@
 @extends('app', ['case-study-nav'=>'false'])
 
 @section('content')
-<div class="container">
+<div class="container-fluid container-wide">
   <div class="register-bg">
     <div class="row">
         <div class="col-md-6" style="border-right:solid 2px white">
