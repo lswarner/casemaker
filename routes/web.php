@@ -18,11 +18,14 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/admin', 'HomeController@admin')->name('admin');
 
+Route::get('/users', 'UserController@index')->name('users');
 Route::get('/users/{user}', 'UserController@show');
-Route::get('users/{user}/edit', 'UserController@edit');
+Route::get('users/{user}/edit', 'UserController@edit')->name('user.edit');
 Route::patch('users/{user}', 'UserController@update');
 Route::patch('users/{user}/password', 'UserController@update_password');
+Route::patch('users/{user}/access', 'UserController@update_access');
 
 Route::model('casestudy', 'App\CaseStudy');
 Route::resource('casestudy', 'CaseStudyController');

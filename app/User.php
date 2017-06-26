@@ -26,4 +26,31 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+
+
+
+    /**
+  	 * Scope a query to only users that are approved
+  	 *
+  	 *
+  	 * @return \Illuminate\Database\Eloquent\Builder
+  	 */
+  	public function scopeApproved($query)
+  	{
+
+  		return $query->where('is_approved', '=', true);
+  	}
+
+    /**
+  	 * Scope a query to only users that are pending approval
+  	 *
+  	 *
+  	 * @return \Illuminate\Database\Eloquent\Builder
+  	 */
+  	public function scopePending($query)
+  	{
+
+  		return $query->where('is_approved', '=', false);
+  	}
 }

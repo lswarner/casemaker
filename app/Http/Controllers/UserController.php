@@ -51,8 +51,18 @@ class UserController extends Controller
             abort('404');
           }
 
+          //if the user is pending approval (and not already deleted/denied)
+          //AND the active user is an admin, display the view
+          //which allows admins to approve or deny
+          if( !$user->is_approved && Auth::user()->is_admin ){
+            $request_access= true;
+          }
+          else {
+            $request_access= false;
+          }
 
-          return view('user.edit', compact('user'));
+
+          return view('user.edit', compact('user', 'request_access'));
       }
 
       /**
@@ -87,6 +97,31 @@ class UserController extends Controller
 
     		return redirect('home');
     	}
+
+
+      public function update_access(Request $request, User $user)
+    	{
+
+
+        if($request->action == "approve"){
+          $user->is_approved= true;
+          $user->save();
+
+
+          Session::flash('message', 'You approved '.$user->name.'\'s access request.');
+      		Session::flash('alert-class', 'flash-urc');
+        }
+        else if($request->action == "deny"){
+
+          $user->delete();
+
+          Session::flash('message', 'You denied '.$user->name.'\'s access request.');
+          Session::flash('alert-class', 'flash-urc');
+    		}
+
+    		return redirect('admin');
+    	}
+
 
 
 
