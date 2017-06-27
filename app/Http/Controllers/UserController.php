@@ -9,6 +9,9 @@ use App\Http\Requests\UpdatePasswordRequest;
 use Illuminate\Support\Facades\Auth;
 use Session;
 
+use App\Events\AccountApproved;
+use App\Events\AccountDenied;
+
 class UserController extends Controller
 {
 
@@ -48,7 +51,7 @@ class UserController extends Controller
             Auth::user()->is_admin ||
             Auth::user() == $user)
           ) {
-            abort('404');
+            return redirect('home');
           }
 
           //if the user is pending approval (and not already deleted/denied)
@@ -107,13 +110,17 @@ class UserController extends Controller
           $user->is_approved= true;
           $user->save();
 
+          event(new AccountApproved($user));
 
           Session::flash('message', 'You approved '.$user->name.'\'s access request.');
       		Session::flash('alert-class', 'flash-urc');
         }
         else if($request->action == "deny"){
 
+          //now, delete the actual user from the database
           $user->delete();
+
+          event(new AccountDenied($user));
 
           Session::flash('message', 'You denied '.$user->name.'\'s access request.');
           Session::flash('alert-class', 'flash-urc');

@@ -13,9 +13,17 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'App\Events\Event' => [
-            'App\Listeners\EventListener',
+
+        'Illuminate\Auth\Events\Registered' => [
+            'App\Listeners\NotifyUserRegistration',
         ],
+        'App\Events\AccountApproved' => [
+            'App\Listeners\NotifyAccountApproved',
+        ],
+        'App\Events\AccountDenied' => [
+            'App\Listeners\NotifyAcountDenied',
+        ],
+
     ];
 
     /**
