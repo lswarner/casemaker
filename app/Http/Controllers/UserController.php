@@ -48,7 +48,7 @@ class UserController extends Controller
             Auth::user()->is_admin ||
             Auth::user() == $user)
           ) {
-            abort('404');
+            return redirect('home');
           }
 
           //if the user is pending approval (and not already deleted/denied)
