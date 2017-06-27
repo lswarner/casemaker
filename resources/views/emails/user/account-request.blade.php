@@ -1,7 +1,5 @@
 @component('mail::message')
-# Introduction
-
-Attention!
+# Attention!
 
 A new user has requested access to CaseMaker, and is waiting for a response.
 

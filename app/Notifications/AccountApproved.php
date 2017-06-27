@@ -7,7 +7,7 @@ use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
-class Registration extends Notification
+class AccountApproved extends Notification
 {
     use Queueable;
 
@@ -41,12 +41,12 @@ class Registration extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->subject('Your new CaseMaker account')
-                    ->markdown('emails.user.registration', ['user'=>$notifiable]);
+                    ->subject('Your CaseMaker account has been approved')
+                    ->markdown('emails.user.approved', [
+                        'user'=>$notifiable,
+                        'url'=> url('')
+                    ]);
     }
-
-
-
 
     /**
      * Get the array representation of the notification.
@@ -56,11 +56,13 @@ class Registration extends Notification
      */
     public function toArray($notifiable)
     {
+
         return [
-            'action' => 'registration',
+            'message' => 'account approved',
             'user_id' => $notifiable->id,
             'name' => $notifiable->name,
             'email' => $notifiable->email
         ];
+
     }
 }
