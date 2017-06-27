@@ -78,7 +78,7 @@
 
 
               <?php if(Route::currentRouteName() != 'login'){ ?>
-                  @include('layouts.navbar-urc2')
+                  @include('layouts.progress-bar')
               <?php } ?>
 
 
