@@ -280,6 +280,20 @@ h2,
 		border: 2px solid #a9a9a9;
 	}
 
+  .btn-urc-alt {
+		background: #FF3821;
+		border: 2px solid #FF3821;
+  }
+
+  .btn-urc-alt:hover,
+  .btn-urc-alt:focus,
+  .btn-urc-alt:active
+   {
+		background: #F79917 !important;
+    color: #ffffff !important;
+		border: 2px solid #F79917;
+	}
+
   .btn-urc-danger{
 		background: #FF3821;
 		border: 2px solid #FF3821;
@@ -332,6 +346,25 @@ h2,
 .btn-link:active,
 .btn-link:focus{
 	border-bottom: solid  2px #ffffff;
+}
+
+.btn-link.btn-back{
+  color: #135693;
+	text-decoration: none;
+  font-size: 18pt;
+
+  padding: 0; /* prevent hover underline from reaching into padding empty space */
+  margin-top: 10px;
+  margin-left: 0px;
+}
+
+.btn-link.btn-back:hover,
+.btn-link.btn-back:active,
+.btn-link.btn-back:focus{
+  text-decoration: none;
+  color: #6BC7FF;
+	border-bottom: solid  2px #6BC7FF;
+  transition: color 0.25s, border 0.25s;
 }
 
 

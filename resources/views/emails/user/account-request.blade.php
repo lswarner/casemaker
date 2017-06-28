@@ -1,7 +1,7 @@
 @component('mail::message')
 # Attention!
 
-A new user has requested access to CaseMaker, and is waiting for a response.
+A new user has requested access to {{ config('app.name') }}, and is waiting for a response.
 
 Name: {{$registered_user->name}}
 
@@ -16,7 +16,7 @@ Case Study brief: {{$registered_user->introduction}}
 Respond to this Request
 @endcomponent
 
-To approve or deny this request, or view other pending requests, click the button above or log in to CaseMaker and view the list of Accounts Waiting for Approval.
+To approve or deny this request, or view other pending requests, click the button above or log in to {{ config('app.name') }} and view the list of accounts waiting for approval.
 
 Thanks,<br>
 {{ config('app.name') }}
