@@ -39,10 +39,8 @@
             Explain any cultural nuances and/or complexities that were unique to your research.
           @endcomponent
 
-          <?php
-            //$back= ;
-          ?>
-          @component('casestudy.partials.continue-button', ['back'=>route('introduction', $casestudy)])
+          
+          @component('casestudy.partials.continue-buttons', ['back'=>route('introduction', $casestudy)])
             Continue to Methods
           @endcomponent
 
