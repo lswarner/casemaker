@@ -4,6 +4,35 @@
 <div class="container-fluid container-wide">
   <div class="main">
 
+  @if($request_access)
+
+    <div class="row">
+      <div class="panel panel-attention">
+        <div class="panel-body">
+          {!! Form:: model($user, ['action'=>['UserController@update_access', $user->id], 'method' => 'patch', 'class'=>'form-horizontal']) !!}
+            <div class="col-md-1">
+              <i class="fa fa-exclamation-circle fa-4x text-dawn" aria-hidden="true"></i>
+            </div>
+            <div class="col-md-5">
+              <h4 class="text-dawn">This person has requested access to the CaseMaker and is waiting for a response.</h4>
+            </div>
+            <div class="col-md-3">
+              <button type="submit" name="action" id="action" value="approve" class="btn btn-urc">
+                  Approve Access
+              </button>
+            </div>
+            <div class="col-md-3">
+              <button type="submit" name="action" id="action" value="deny" class="btn btn-urc-danger">
+                  Deny Access
+              </button>
+            </div>
+          {!! Form::close() !!}
+        </div>
+      </div>
+    </div>
+
+  @endif
+
     <div class="row">
       <div class="col-md-6">
           <div class="col-md-10">

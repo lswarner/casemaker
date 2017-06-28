@@ -48,7 +48,7 @@
 
       <!-- start of sidebar section -->
       <div id="sidebar" class="col-md-4 col-md-pull-8">
-        <h2 class="page-header">Introduction</h2>
+        <h1 class="page-header">Introduction</h1>
 
           @component('casestudy.partials.tooltip-textarea', ['name'=>'intro_tips'])
             @slot('tooltip')

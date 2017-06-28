@@ -2,7 +2,7 @@
   <div class=" form-group{{ $errors->has( $name ) ? ' has-error' : '' }}">
 
     <label for="{{ $name }}" class="col-md-12">
-      {{ $slot }}
+      <h2 class="callout-title">{{ $slot }}</h2>
       <a href="javascript://" class="casestudy-tooltip">
         <span class="fa fa-info-circle" data-toggle="popover" data-content="{{ $tooltip }}" data-placement="top"></span>
       </a>

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use \App\CaseStudy;
+use \App\User;
 
 class HomeController extends Controller
 {
@@ -24,9 +26,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $casestudies= \App\CaseStudy::all();
+      $user= Auth::user();
 
-        return view('home', compact('casestudies'));
+      if($user->is_approved == false){
+        return view('not-approved');
+      }
+
+      $casestudies= CaseStudy::all();
+
+      return view('home', compact('casestudies'));
     }
 
 
@@ -37,10 +45,15 @@ class HomeController extends Controller
      */
     public function admin()
     {
-        if( ! Auth::user()->is_admin){
-          //return redirect->route('home');
+/*
+        if(Auth::user()->is_admin == false ){
+          return redirect('home');
         }
+*/
 
-        return view('home', compact('casestudies'));
+        $pending_users= User::pending()->get();
+        $approved_users= User::approved()->get();
+
+        return view('admin', compact('pending_users', 'approved_users'));
     }
 }

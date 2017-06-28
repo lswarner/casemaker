@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:700|Roboto:300|Source+Sans+Pro:700');
 @charset "UTF-8";
 
 /* palate
@@ -9,6 +10,31 @@
  dawn:				#F79917
  */
 
+
+ /*
+ font-family: 'Source Sans Pro', sans-serif;
+ font-family: 'Open Sans', sans-serif;
+ font-family: 'Roboto', sans-serif;
+ */
+
+ .text-navy{
+   color: #135693 !important;
+ }
+ .text-blue{
+   color: #2699FF !important;
+ }
+ .text-sky{
+   color: #6BC7FF !important;
+ }
+ .text-sunset{
+   color: #FF3821 !important;
+ }
+ .text-sunset{
+   color: #FF6B26 !important;
+ }
+.text-dawn{
+  color: #F79917 !important;
+}
 
 .@media (min-width: 768px) {
   .container-wide {
@@ -36,18 +62,27 @@
 	  }
 }
 
-
-body, h1, h2, h3, h4, h5,
-.btn-urc, .btn-urc-alt, .btn-urc-gray{
-		font-family: 'Arial', sans-serif;
-}
-
 body{
   color: #000000;
 }
 
-h2{
-  font-weight: bold;
+body, h3, h4, h5,
+{
+		font-family: 'Roboto', sans-serif;
+}
+
+
+
+h1{
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 700;
+}
+
+h2,
+.btn{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 
@@ -61,30 +96,59 @@ h2{
   /*===*/
 
 
+  @media (min-width: 768px) {
+    .navbar-centered .navbar-nav {
+        float: none;
+        text-align: center;
+    }
+    .navbar-centered .navbar-nav > li {
+        float: none;
+    }
+    .navbar-centered .nav > li {
+        display: inline;
+    }
+    .navbar-centered .nav > li > a {
+        display: inline-block;
+    }
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{
+  background: none; /* clear styles */
+}
+
   .navbar{
-  	margin-bottom:0;
-  	padding: 5px 10px;
-  	border-bottom: 30px solid #014078 /*navy*/;
+
   }
 
 	.navbar-urc1{
-	  padding-right: 30px;
+    margin-bottom:0;
+  	padding: 5px 10px;
+    padding-right: 30px;
+  	border-bottom: 30px solid #014078 /*navy*/;
 	}
-	#navbar-urc2{
-	  background: #e5e1d9 /* beige */;
-	  color: #000;
+	#progress-bar{
+	  background: #2699FF; /* medium blue */
 	  border: none;
 	}
 
-	#navbar-urc2 > .navbar-collapse > ul > li > a {
+	#progress-bar > .navbar-collapse > ul > li > a {
 	  font-size: 20pt;
 	  padding: 30px;
+    color: #ffffff;
 	}
 
-	#navbar-urc2 > .navbar-collapse > ul > li > a.active,
-	#navbar-urc2 > .navbar-collapse > ul > li > a:hover {
-		background: #a9a9a9;
+	#progress-bar > .navbar-collapse > ul > li > a.active {
+    color: #ffffff;
+		background: #FF6B26 /* noon */;
 	}
+
+	#progress-bar > .navbar-collapse > ul > li > a:hover,
+	#progress-bar > .navbar-collapse > ul > li > a:focus {
+    border-bottom: 3px solid #FF6B26;
+
+	  padding-bottom: 27px;
+  }
+
   /*===*/
 
 
@@ -146,7 +210,8 @@ h2{
 .form-control,
 .well,
 .panel,
-.panel-heading {
+.panel-heading,
+.navbar {
   border-radius: 0;
 }
 
@@ -168,7 +233,9 @@ h2{
 ***/
   .btn-urc,
 	.btn-urc-alt,
-	.btn-urc-gray{
+  .btn-urc-danger,
+	.btn-urc-gray,
+  .btn-urc-account-pending{
     background: #135693;
     color: #ffffff;
   	margin-bottom: 8px;
@@ -190,24 +257,63 @@ h2{
 	}
 
 	.btn-urc:hover,
-	.btn-urc-gray:hover
+	.btn-urc-alt:hover,
+	.btn-urc-gray:hover,
+	.btn-urc-danger:hover,
+  .btn-urc-account-pending:hover
 	{
 		transition: background 0.25s, border 0.25s;
 	}
 
 
 	.btn-urc-gray{
-		background: #a9a9a9;
-		border: 2px solid #a9a9a9;
+		background: #8d8d8d;
+		border: 2px solid #8d8d8d;
 	}
 
 	.btn-urc-gray:hover,
   .btn-urc-gray:focus,
   .btn-urc-gray:active
    {
-		background: #8d8d8d !important;
+		background: #a9a9a9 !important;
     color: #ffffff !important;
-		border: 2px solid #8d8d8d;
+		border: 2px solid #a9a9a9;
+	}
+
+  .btn-urc-danger{
+		background: #FF3821;
+		border: 2px solid #FF3821;
+	}
+
+	.btn-urc-danger:hover,
+  .btn-urc-danger:focus,
+  .btn-urc-danger:active
+   {
+		background: #FF6B26 !important;
+    color: #ffffff !important;
+		border: 2px solid #FF6B26;
+	}
+
+
+  .btn-urc-account-pending{
+    background: #f79917;
+    border: 2px solid #f79917;
+    text-align: left;
+    line-height: 1;
+  }
+
+  .subtext{
+    font-size: 14px;
+    color: #5d5d5d;
+  }
+
+  .btn-urc-account-pending:hover,
+  .btn-urc-account-pending:focus,
+  .btn-urc-account-pending:active
+   {
+		background: #f7b355 !important;
+    color: #ffffff !important;
+		border: 2px solid #f7b355;
 	}
 
 
@@ -226,4 +332,37 @@ h2{
 .btn-link:active,
 .btn-link:focus{
 	border-bottom: solid  2px #ffffff;
+}
+
+
+
+/***
+   Account Management styles
+***/
+
+.panel-attention{
+  border: solid 4px #F79917;
+  padding: 8px;
+}
+
+.panel-account{
+  padding: 8px;
+  margin-bottom: 4px;
+  background: #afafaf;
+}
+
+a> .panel-account,
+a> .panel-account:hover
+a> .panel-account:active{
+  text-decoration: none;
+}
+
+.panel-account.pending{
+  background: #F79917;  /* dawn */
+  color: #ffffff;
+}
+
+.panel-account.pending:hover,
+.panel-account.pending:active{
+  background: #f7ad48; /* faded dawn */
 }
