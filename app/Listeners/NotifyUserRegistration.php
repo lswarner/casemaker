@@ -33,7 +33,9 @@ class NotifyUserRegistration
         $user = $event->user;
         $user->notify(new Registration);
 
-        $admin= \App\User::find(1);
-        $admin->notify(new RegistrationPending($user));
+        $admins= \App\User::admins()->get();
+        foreach($admins as $a){
+          $a->notify(new RegistrationPending($user));
+        }
     }
 }

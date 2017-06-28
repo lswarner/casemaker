@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'affiliation', 'introduction'
+        'name', 'email', 'password', 'affiliation', 'introduction', 'is_admin'
     ];
 
     /**
@@ -53,4 +53,18 @@ class User extends Authenticatable
 
   		return $query->where('is_approved', '=', false);
   	}
+
+
+    /**
+     * Scope a query to only users that are pending approval
+     *
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeAdmins($query)
+    {
+
+      return $query->where('is_admin', '=', true);
+    }
+
 }

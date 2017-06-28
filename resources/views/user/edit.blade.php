@@ -1,5 +1,14 @@
 @extends('app')
 
+@section('css')
+  <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+@endsection
+
+@section('scripts')
+  <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+@endsection
+
+
 @section('content')
 <div class="container-fluid container-wide">
   <div class="main">
@@ -93,6 +102,21 @@
                   @endif
                 </div>
               </div>
+
+
+              @if($admin_tools)
+
+              <div class="form-group">
+                <div class="col-md-10">
+                  <label>
+                    Is this user an administrator?&nbsp;&nbsp;&nbsp;
+          			  </label>
+                  <input name="is_admin" {{ $user->is_admin ? "checked" : "" }} data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger" type="checkbox">
+
+                </div>
+              </div>
+
+              @endif
 
               <div class="form-group">
                 <div class="col-md-10">
