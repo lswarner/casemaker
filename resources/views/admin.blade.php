@@ -36,6 +36,12 @@
         <a class="btn btn-urc-gray" href="{{ route('casestudy.index') }}">View Case Studies</a>
         <a class="btn btn-urc" href="{{ route('casestudy.store') }}">Create Case Study</a>
       </div>
+
+      <div class="col-md-4">
+          <h3>Manage Resources</h3>
+          <a class="btn btn-urc-alt" href="{{ route('keyword.index') }}">Keywords</a>
+          <a class="btn btn-urc-alt" href="{{ route('method.index') }}">Methods</a>
+      </div>
     </div>
 
   </div>
