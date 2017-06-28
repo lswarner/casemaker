@@ -90,6 +90,49 @@ class CaseStudyController extends Controller
         return view('casestudy.introduction', ['casestudy'=>$caseStudy] );
     }
 
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\CaseStudy  $caseStudy
+     * @return \Illuminate\Http\Response
+     */
+    public function edit_methods(CaseStudy $caseStudy)
+    {
+        return view('casestudy.introduction', ['casestudy'=>$caseStudy] );
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\CaseStudy  $caseStudy
+     * @return \Illuminate\Http\Response
+     */
+    public function edit_results(CaseStudy $caseStudy)
+    {
+        return view('casestudy.introduction', ['casestudy'=>$caseStudy] );
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\CaseStudy  $caseStudy
+     * @return \Illuminate\Http\Response
+     */
+    public function edit_implications(CaseStudy $caseStudy)
+    {
+        return view('casestudy.introduction', ['casestudy'=>$caseStudy] );
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\CaseStudy  $caseStudy
+     * @return \Illuminate\Http\Response
+     */
+    public function edit_review(CaseStudy $caseStudy)
+    {
+        return view('casestudy.introduction', ['casestudy'=>$caseStudy] );
+    }
 
 
     /**
