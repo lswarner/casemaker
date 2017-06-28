@@ -64,8 +64,16 @@ class UserController extends Controller
             $request_access= false;
           }
 
+          if( Auth::user()->is_admin ){
+            $admin_tools= true;
+          }
+          else {
+            $admin_tools= false;
+          }
 
-          return view('user.edit', compact('user', 'request_access'));
+
+
+          return view('user.edit', compact('user', 'request_access', 'admin_tools'));
       }
 
       /**
@@ -77,13 +85,15 @@ class UserController extends Controller
        */
       public function update(UpdateUserRequest $request, User $user)
       {
+
         $data= $request->all();
+        $data['is_admin'] = ($request->has('is_admin')) ? 1 : 0;
         $user->update($data);
 
         Session::flash('message', 'Your account was updated.');
-        Session::flash('alert-class', 'flash-urc');
+        Session::flash('alert-class', 'flash-success');
 
-        return redirect('home');
+        return redirect()->route('user.edit', $user);
       }
 
 
@@ -96,7 +106,7 @@ class UserController extends Controller
     		$user->save();
 
     		Session::flash('message', 'Your password was successfully changed.');
-    		Session::flash('alert-class', 'flash-urc');
+    		Session::flash('alert-class', 'flash-sucess');
 
     		return redirect('home');
     	}
@@ -123,7 +133,7 @@ class UserController extends Controller
           event(new AccountDenied($user));
 
           Session::flash('message', 'You denied '.$user->name.'\'s access request.');
-          Session::flash('alert-class', 'flash-urc');
+          Session::flash('alert-class', 'flash-danger');
     		}
 
     		return redirect('admin');

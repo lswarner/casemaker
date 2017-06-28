@@ -77,9 +77,13 @@
               </nav>
 
 
-              <?php if(Route::currentRouteName() != 'login'){ ?>
-                  @include('layouts.progress-bar')
-              <?php } ?>
+              <?php  /* only show Progress Bar when displaying a CaseStudy view */
+                $currentAction = \Route::currentRouteAction();
+                list($controller, $method) = explode('@', $currentAction);
+                if($controller === 'App\Http\Controllers\CaseStudyController'){ ?>
+                  @include('layouts.progress-bar') <?php
+                }
+              ?>
 
 
 
