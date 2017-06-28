@@ -41,7 +41,7 @@ class AccountApproved extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->subject('Your CaseMaker account has been approved')
+                    ->subject('Your '.config('app.name').' account has been approved')
                     ->markdown('emails.user.approved', [
                         'user'=>$notifiable,
                         'url'=> url('')

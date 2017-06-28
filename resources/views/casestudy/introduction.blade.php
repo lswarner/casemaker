@@ -39,9 +39,11 @@
             Explain any cultural nuances and/or complexities that were unique to your research.
           @endcomponent
 
-
-          @component('casestudy.partials.button')
-            Next Section
+          <?php
+            //$back= ;
+          ?>
+          @component('casestudy.partials.continue-button', ['back'=>route('introduction', $casestudy)])
+            Continue to Methods
           @endcomponent
 
       </div> <!-- end narative collumn -->

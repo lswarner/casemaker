@@ -41,7 +41,7 @@ class AccountDenied extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->subject('Your CaseMaker account has been denied')
+                    ->subject('Your '.config('app.name').' account has been denied')
                     ->markdown('emails.user.denied', ['user'=>$notifiable]);
     }
 
