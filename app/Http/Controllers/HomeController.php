@@ -45,14 +45,9 @@ class HomeController extends Controller
      */
     public function admin()
     {
-/*
-        if(Auth::user()->is_admin == false ){
-          return redirect('home');
-        }
-*/
-
         $pending_users= User::pending()->get();
         $approved_users= User::approved()->get();
+
 
         return view('admin', compact('pending_users', 'approved_users'));
     }

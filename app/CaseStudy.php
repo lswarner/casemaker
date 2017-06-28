@@ -15,4 +15,25 @@ class CaseStudy extends Model
                 'title', 'countries', 'keywords',
                 'intro_context', 'intro_nuances', 'intro_tips', 'intro_acronyms', 'intro_objectives', 'intro_questions'
                 ];
+
+
+/*******************************************************
+     Relationships
+ ******************************************************/
+
+/**
+ * get the methods this case study uses
+ */
+ public function methods(){
+   return $this->belongsToMany('App\Methods')->withTimestamps();
+ }
+
+ /**
+  * get the keywords this case study uses
+  */
+  public function keywords(){
+    return $this->belongsToMany('App\Keywords')->withTimestamps();
+  }
+
+
 }
