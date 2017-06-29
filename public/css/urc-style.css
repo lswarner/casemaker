@@ -127,6 +127,18 @@ h2,
     padding-right: 30px;
   	border-bottom: 30px solid #014078 /*navy*/;
 	}
+
+  .navbar-default .navbar-nav>li>a{
+    font-size: 20px;
+  }
+
+    .dropdown-menu>li>a {
+      font-size: 16px;
+    }
+
+
+
+
 	#progress-bar{
 	  background: #2699FF; /* medium blue */
 	  border: none;
@@ -136,6 +148,7 @@ h2,
 	  font-size: 20pt;
 	  padding: 30px;
     color: #ffffff;
+    text-transform: uppercase;
 	}
 
 	#progress-bar > .navbar-collapse > ul > li > a.active {

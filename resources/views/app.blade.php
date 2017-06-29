@@ -55,7 +55,17 @@
 
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
-                                        <a href="{{ action('UserController@edit', Auth::user()) }}">Edit Account</a>
+                                        <a href="{{ action('UserController@edit', Auth::user()) }}">Account</a>
+                                    </li>
+
+                                    @if (Auth::user()->is_admin)
+                                    <li>
+                                        <a href="{{ route('admin') }}">Dashboard</a>
+                                    </li>
+                                    @endif
+                                    
+                                    <li>
+                                        <a href="{{ route('home') }}">Case Studies</a>
                                     </li>
                                     <li>
                                         <a href="{{ route('logout') }}"
