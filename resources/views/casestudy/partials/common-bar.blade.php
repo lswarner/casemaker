@@ -35,7 +35,7 @@
 
 
         <div class="form-group{{ $errors->has('keywords') ? ' has-error' : '' }}">
-            <h4>Keywords</h4>
+
             <?php /*
             <input type="checkbox" id="{{ $k->id }}" value="{{ $k->keyword }}">
             <label class="checkbox-inline">
@@ -44,8 +44,23 @@
           */ ?>
 
           <div class="col-md-12">
-            {!! Form::select('keywords[]', $keywords, [], ['class' => 'form-control', 'id' => 'keywords', 'multiple' => 'multiple']) !!}
+            <h4>Keywords</h4>
+            {!! Form::select('keywords[]', $keywords, $casestudy->keywords->pluck('id')->all(), ['class' => 'form-control', 'id' => 'keywords', 'multiple' => 'multiple']) !!}
 
+            <?php /*
+            <select class="" multiple="multiple" name="keywords[]" id="keywords">
+                @foreach($keywords as $keyword)
+
+                    <option value="{{$keyword->id}}"
+                      @foreach($keywords as $k)
+                        @if($keyword->id == $k->id)
+                          selected="selected"
+                        @endif
+                      @endforeach
+                    >{{$keyword->keyword}}</option>
+                @endforeach
+            </select>
+            */ ?>
           </div>
 
 

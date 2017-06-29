@@ -17,7 +17,7 @@ class Keyword extends Model
      * get the case studies that use this method
      */
      public function casestudies(){
-       return $this->belongsToMany('App\CaseStudy')->withTimestamps();
+       return $this->belongsToMany('App\CaseStudy', 'case_study_keyword', 'keyword_id', 'case_study_id')->withTimestamps();
      }
 
 
