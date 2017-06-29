@@ -8,6 +8,7 @@ use App\Method;
 use App\User;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\CaseStudyRequest;
 
 class CaseStudyController extends Controller
 {
@@ -93,14 +94,7 @@ class CaseStudyController extends Controller
     {
         $keywords= Keyword::all_sorted()->pluck('keyword', 'id');
 
-        //this is the keywords seleced for this study -- need to access in the form
-        //$casestudy->keywords->pluck('id')->all();
-        $cs_keywords= collect([
-              ['id'=>'1', 'keyword'=>'chargers'],
-              ['id'=>'4', 'keyword'=>'seahawks'],
-            ])->pluck('id')->all();
-
-        return view('casestudy.introduction', ['casestudy'=>$caseStudy, 'keywords'=>$keywords, 'cs_keywords'=>$cs_keywords] );
+        return view('casestudy.introduction', ['casestudy'=>$caseStudy, 'keywords'=>$keywords] );
     }
 
     /**
@@ -155,12 +149,17 @@ class CaseStudyController extends Controller
      * @param  \App\CaseStudy  $caseStudy
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, CaseStudy $caseStudy)
+    public function update(CaseStudyRequest $request, CaseStudy $caseStudy)
     {
 
-        $caseStudy->update( $request->except('destination') );
+        $caseStudy->update( $request->except('destination', 'keywords') );
+
+        $caseStudy->keywords()->sync($request->keywords); // SYNC only the selected keywords to the casestudy
+
         $caseStudy->save();
 
+
+        //get the next destination, or intro if empty
         $destination= $request->input('destination', 'introduction');
 
         return redirect()->route($destination, $caseStudy);

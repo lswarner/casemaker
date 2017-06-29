@@ -13,9 +13,9 @@ class CreateCasestudyKeywordTable extends Migration
      */
     public function up()
     {
-        Schema::create('casestudy_keyword', function (Blueprint $table) {
-          $table->integer('casestudy_id')->unsigned()->nullable();
-          $table->foreign('casestudy_id')->references('id')
+        Schema::create('case_study_keyword', function (Blueprint $table) {
+          $table->integer('case_study_id')->unsigned()->nullable();
+          $table->foreign('case_study_id')->references('id')
                 ->on('case_studies')->onDelete('cascade');
 
           $table->integer('keyword_id')->unsigned()->nullable();
@@ -33,6 +33,6 @@ class CreateCasestudyKeywordTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('casestudy_keyword');
+        Schema::dropIfExists('case_study_keyword');
     }
 }
