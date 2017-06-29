@@ -1,11 +1,21 @@
 @charset "UTF-8";
 
 
-
-
 	/***
+	  Common Bar Styles
+	***/
+	.common-bar{
+		background: #c6cdd4;
+    padding: 10px 60px;
+		color: #45474a;
+	}
+
+
+
+	/******************
       Case Study styles
   ***/
+
 	a.casestudy-tooltip{
 		color: #135693;
 		font-size: 22px; /* compare to #sidebar > > > label  */

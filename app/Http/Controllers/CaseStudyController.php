@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\CaseStudy;
+use App\Keyword;
+use App\Method;
+use App\User;
+
 use Illuminate\Http\Request;
 
 class CaseStudyController extends Controller
@@ -87,7 +91,16 @@ class CaseStudyController extends Controller
      */
     public function edit_introduction(CaseStudy $caseStudy)
     {
-        return view('casestudy.introduction', ['casestudy'=>$caseStudy] );
+        $keywords= Keyword::all_sorted()->pluck('keyword', 'id');
+
+        //this is the keywords seleced for this study -- need to access in the form
+        //$casestudy->keywords->pluck('id')->all();
+        $cs_keywords= collect([
+              ['id'=>'1', 'keyword'=>'chargers'],
+              ['id'=>'4', 'keyword'=>'seahawks'],
+            ])->pluck('id')->all();
+
+        return view('casestudy.introduction', ['casestudy'=>$caseStudy, 'keywords'=>$keywords, 'cs_keywords'=>$cs_keywords] );
     }
 
     /**
