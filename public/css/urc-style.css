@@ -392,12 +392,22 @@ label{
 .btn-link.btn-back:active,
 .btn-link.btn-back:focus{
   text-decoration: none;
-  color: #6BC7FF;
+  color: #6BC7FF; /* sky */
 	border-bottom: solid  2px #6BC7FF;
   transition: color 0.25s, border 0.25s;
 }
 
 
+/*   toggle button styles */
+.btn-info {
+  background: #6BC7FF; /* sky */
+  border-color: #64baee; /* sky dark */
+}
+
+.btn-info:hover{
+  background: #5ba9d9; /* darker sky */
+  border-color: #5197c1; /* sky darker2 */
+}
 
 /***
    Account Management styles
