@@ -39,7 +39,7 @@
             Explain any cultural nuances and/or complexities that were unique to your research.
           @endcomponent
 
-          
+
           @component('casestudy.partials.continue-buttons', ['back'=>route('introduction', $casestudy)])
             Continue to Methods
           @endcomponent

@@ -9,6 +9,11 @@
 
 @section('content')
 <div class="container-fluid container-wide">
+
+  @include('casestudy.partials.common-bar')
+
+  @include('casestudy.partials.progress-bar')
+
   <div class="main">
 
     @yield('casestudy-page')
