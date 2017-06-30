@@ -72,11 +72,9 @@
       <div class="col-md-3 col-md-offset-1">
         <h2>Team Members</h2>
 
-        <p>Luke Warner</p>
-        <p>Christina Vernon</p>
-        <p>LaDainian Tomlinson</p>
-        <p>Phillip Rivers</p>
-        <p>Toby McKeehan</p>
+        @foreach($casestudy->team as $t)
+          <p>{{ $t->name }}</p>
+        @endforeach
         <p>Tobias Funke</p>
 
         <p><i class="fa fa-plus-circle fa-3x" aria-hidden="true"></i></p>

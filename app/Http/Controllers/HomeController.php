@@ -32,7 +32,7 @@ class HomeController extends Controller
         return view('not-approved');
       }
 
-      $casestudies= CaseStudy::all();
+      $casestudies= $user->casestudies;
 
       return view('home', compact('casestudies'));
     }
