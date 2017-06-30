@@ -29,15 +29,37 @@ class User extends Authenticatable
 
 
     /*******************************************************
+         Accessors
+     ******************************************************/
+
+    /**
+     * lastName
+     * @return the last name of the user -
+     *         or at least, the last string separated by
+     *         empty space
+     */
+    public function lastName(){
+      $last= explode(" ", $this->name);
+      return end($last);
+    }
+
+    /**
+     * lastInitial
+     * @return the CAPITALIZED first initial of the last name of the user -
+     *         or at least, the last string separated by
+     *         empty space
+     */
+    public function lastInitial(){
+      return strtoupper(substr( $this->lastName(), 0, 1));
+    }
+
+    /*******************************************************
          Relationships
      ******************************************************/
 
      public function casestudies(){
        return $this->belongsToMany('App\CaseStudy', 'case_study_user', 'user_id', 'case_study_id')->withTimestamps();
      }
-
-
-
 
 
 

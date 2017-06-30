@@ -22,32 +22,29 @@
 
 	a.casestudy-tooltip{
 		color: #135693;
-		font-size: 22px; /* compare to #sidebar > > > label  */
+		font-size: 18px; /* compare to #sidebar > > > label  */
 	}
-
-
-
 
 	h1.page-header{
 		color: #135693; /* navy */
-		font-size: 38px;
+		font-size: 32px;
 		margin: 0px;
 		border-bottom: 4px solid #FF6B26;
 		padding-bottom: 6px;
 	}
 
 	h2.callout-title{
-		font-size: 24px;
+		font-size: 18px;
 		display:inline;
 	}
 
 
 	#sidebar{
-		padding-right: 50px;
+		padding-right: 25px;
 	}
 
 	#narrative{
-		padding-left: 50px;
+		padding-left: 25px;
 	}
 
 	#sidebar > .well {
@@ -72,6 +69,28 @@
 		color: #ffffff;
 	}
 
+
+
+	  @media (min-width: 1400px) {
+			a.casestudy-tooltip{
+				font-size: 22px; /* compare to #sidebar > > > label  */
+			}
+
+			h1.page-header{
+				font-size: 38px;
+			}
+			h2.callout-title{
+				font-size: 24px;
+			}
+
+			#sidebar{
+				padding-right: 50px;
+			}
+
+			#narrative{
+				padding-left: 50px;
+			}
+		}
 
 
 

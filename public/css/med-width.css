@@ -1,0 +1,16 @@
+
+
+@media (max-width: 992px) {
+  .navbar-default .navbar-nav>li>a{
+    font-size: 18px;
+  }
+
+  .dropdown-menu>li>a {
+    font-size: 15px;
+  }
+
+
+  #progress-bar > .navbar-collapse > ul > li > a {
+	  font-size: 18pt;
+  }
+}

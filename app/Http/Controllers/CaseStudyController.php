@@ -32,7 +32,11 @@ class CaseStudyController extends Controller
      */
     public function index()
     {
-        //
+        $created= CaseStudy::all();
+        $submitted= CaseStudy::all();
+        $published= CaseStudy::all();
+
+        return view('casestudy.index', compact('created', 'submitted', 'published'));
     }
 
     /**

@@ -5,7 +5,7 @@
       {!! Form::model($casestudy, ['action'=>['CaseStudyController@update', $casestudy->id], 'method' => 'patch', 'class'=>'form-horizontal']) !!}
       {!! Form::hidden('destination', \Route::currentRouteName() ) !!}
 
-      <div class="col-md-4">
+      <div class="col-md-4 col-lg-4">
         <h2>Project Info</h2>
 
         <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
@@ -69,7 +69,7 @@
 
       </div>
 
-      <div class="col-md-3 col-md-offset-1">
+      <div class="col-md-4 col-lg-4 col-lg-offset-1">
         <h2>Team Members</h2>
 
         @foreach($casestudy->team as $t)
@@ -80,10 +80,10 @@
         <p><i class="fa fa-plus-circle fa-3x" aria-hidden="true"></i></p>
       </div>
 
-      <div class="col-md-3 col-md-offset-1">
+      <div class="col-md-4 col-lg-3">
           <h2>&nbsp;</h2>
           <button type="submit" class="btn btn-urc">
-              Save CaseStudy
+              Save Case Study
           </button>
 
       </div>
