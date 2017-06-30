@@ -14,16 +14,11 @@
 
     <div class="row">
       <div class="col-md-4">
-          <h3>Accounts</h3>
+          <h3>Accounts Waiting For Approval</h3>
 
-          <h4>Accounts Waiting for Approval</h4>
           @foreach($pending_users as $u)
-            <a class="btn btn-urc-account-pending" href="{{ route('user.edit', $u) }}">
-                <div class="account-name">{{ $u->name }}</div>
 
-                <span class="subtext">{{ $u->affiliation }}</span>
-
-            </a>
+            @component('user.partials.preview', ['u'=>$u]) @endcomponent
 
           @endforeach
 

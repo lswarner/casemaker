@@ -13,6 +13,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/urc-style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/med-width.css') }}" rel="stylesheet">
 
     @yield('css')
 
@@ -63,10 +64,18 @@
                                         <a href="{{ route('admin') }}">Dashboard</a>
                                     </li>
                                     @endif
-                                    
+
+                                    @if (Auth::user()->is_approved)
                                     <li>
                                         <a href="{{ route('home') }}">Case Studies</a>
                                     </li>
+                                    @endif
+
+
+                                    <li>
+                                        <a href="#">How It Works</a>
+                                    </li>
+
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
@@ -86,26 +95,13 @@
 
               </nav>
 
-
-              <?php  /* only show Progress Bar when displaying a CaseStudy view
-                $currentAction = \Route::currentRouteAction();
-                list($controller, $method) = explode('@', $currentAction);
-                if($controller === 'App\Http\Controllers\CaseStudyController'){ ?>
-                  @include('casestudy.partials.progress-bar') <?php
-                }
-                */
-              ?>
-
-
-
-
         </div>
 
 
         @if(Session::has('message'))
            <div class="container-fluid container-wide">
                <div class="row row-flash">
-                   <div class="col-md-12 {{ Session::get('alert-class', 'alert-ub-inverse') }}"><h3>{{ Session::get('message') }}</h3></div>
+                   <div class="col-md-12 {{ Session::get('alert-class', 'flash-success') }}"><h3>{{ Session::get('message') }}</h3></div>
                </div>
            </div>
        @endif
@@ -113,6 +109,16 @@
 
         @yield('content')
     </div>
+
+
+    <footer class="footer">
+      <div class="container-fluid container-wide">
+        <div class="footer-main">
+          <p class="text-muted text-center">&copy; {{ date('Y') }} CaseMaker</p>
+        </div>
+      </div>
+    </footer>
+
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>

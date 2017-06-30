@@ -29,7 +29,7 @@
  .text-sunset{
    color: #FF3821 !important;
  }
- .text-sunset{
+ .text-noon{
    color: #FF6B26 !important;
  }
 .text-dawn{
@@ -128,15 +128,24 @@ h2,
   	border-bottom: 30px solid #014078 /*navy*/;
 	}
 
+
   .navbar-default .navbar-nav>li>a{
-    font-size: 20px;
+    font-size: 18px;
   }
+
+  .dropdown-menu>li>a {
+    font-size: 15px;
+  }
+
+  @media (min-width: 1400px) {
+    .navbar-default .navbar-nav>li>a{
+      font-size: 20px;
+    }
 
     .dropdown-menu>li>a {
       font-size: 16px;
     }
-
-
+  }
 
 
 	#progress-bar{
@@ -144,12 +153,22 @@ h2,
 	  border: none;
 	}
 
+
+
 	#progress-bar > .navbar-collapse > ul > li > a {
-	  font-size: 20pt;
-	  padding: 30px;
+	  font-size: 16pt;
+	  padding: 24px;
     color: #ffffff;
     text-transform: uppercase;
 	}
+
+  @media (min-width: 1400px) {
+    #progress-bar > .navbar-collapse > ul > li > a {
+  	  font-size: 20pt;
+  	  padding: 30px;
+    }
+  }
+
 
 	#progress-bar > .navbar-collapse > ul > li > a.active {
     color: #ffffff;
@@ -203,7 +222,30 @@ h2,
   /*===*/
 
 
+/***
+    Sticky Footer Styles
+***/
+html{
+  position: relative;
+  min-height: 100%;
+}
 
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 100px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 100px;
+}
+
+.footer-main{
+  padding: 60px;    /* match .main */
+  background-color: #3d3d3d;
+}
 
 
 /***
@@ -278,7 +320,7 @@ label{
 	.btn-urc-alt,
   .btn-urc-danger,
 	.btn-urc-gray,
-  .btn-urc-account-pending{
+  .btn-urc-account{
     background: #135693;
     color: #ffffff;
   	margin-bottom: 8px;
@@ -287,8 +329,18 @@ label{
     display: block;
     width: 100%;
 
-		font-size: 18pt;
+		font-size: 16pt;
 	}
+
+  @media (min-width: 1400px) {
+    .btn-urc,
+  	.btn-urc-alt,
+    .btn-urc-danger,
+  	.btn-urc-gray,
+    .btn-urc-account{
+      font-size: 18pt;
+    }
+  }
 
 	.btn-urc:hover,
   .btn-urc:focus,
@@ -303,7 +355,8 @@ label{
 	.btn-urc-alt:hover,
 	.btn-urc-gray:hover,
 	.btn-urc-danger:hover,
-  .btn-urc-account-pending:hover
+  .btn-urc-account:hover,
+  .btn-casestudy:hover
 	{
 		transition: background 0.25s, border 0.25s;
 	}
@@ -356,7 +409,7 @@ label{
 
 
 	.btn-jumbo{
-	    font-size: 18pt;
+	    font-size: 16pt;
 	    padding: 20px;
 	}
 
@@ -440,16 +493,33 @@ a> .panel-account:active{
 	  View CaseStudies Styles
 	***/
 
-  .btn-urc-account-pending{
-    background: #f79917;
-    border: 2px solid #f79917;
+  .btn-urc-account{
     text-align: left;
     line-height: 1;
   }
 
-  .btn-urc-account-pending:hover,
-  .btn-urc-account-pending:focus,
-  .btn-urc-account-pending:active
+  .pending{
+      background: #f79917;
+      border: 2px solid #f79917;
+  }
+
+  .pending:hover,
+  .pending:focus,
+  .pending:active
+   {
+    background: #f7b355 !important;
+    color: #ffffff !important;
+    border: 2px solid #f7b355;
+  }
+
+  .admin{
+      background: #f79917;
+      border: 2px solid #f79917;
+  }
+
+  .admin:hover,
+  .admin:focus,
+  .admin:active
    {
     background: #f7b355 !important;
     color: #ffffff !important;
@@ -468,6 +538,8 @@ a> .panel-account:active{
   	margin-bottom: 8px;
     display: block;
     width: 100%;
+
+    padding-bottom: 28px; /* give extra pad to cover the dates
 
     background: #ffffff;  /* white */
     color: #ffffff !important;
@@ -504,9 +576,6 @@ a> .panel-account:active{
 
 
  .blue{
-   text-align: left;
-   line-height: 1;
-
    background: #2699FF;      /* medium blue */
    color: #ffffff !important;
    border: 2px solid #2699FF;
@@ -522,15 +591,30 @@ a> .panel-account:active{
  }
 
 
+.sunset{
+  background: #FF3821; /* sunset */
+  color: #ffffff !important;
+  border: 2px solid #FF3821; /* sunset */
+}
+
+
+.sunset:hover,
+.sunset:active,
+.sunset:focus {
+  background: #FF6B26  !important; /* noon */
+  color: #ffffff !important;
+  border: 2px solid #FF6B26 ;
+}
+
  .dawn{
    background: #f79917;      /* dawn */
    color: #ffffff !important;
    border: 2px solid #f79917;
  }
 
- .dawn:hover,
- .dawn:active,
- .dawn:focus {
+.dawn:hover,
+.dawn:active,
+.dawn:focus {
   background: #f7b355 !important; /* light dawn */
   color: #ffffff !important;
   border: 2px solid #f7b355;
@@ -558,3 +642,9 @@ a> .panel-account:active{
 		color: #ffffff;
     text-transform:none;
 	}
+
+  .casestudy-date{
+    width: 33%;
+    max-width: 33%;
+    float: left;
+  }

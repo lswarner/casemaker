@@ -25,6 +25,21 @@ class UserController extends Controller
           $this->middleware('auth');
       }
 
+      /**
+       * Display all users
+       *
+       * @return \Illuminate\Http\Response
+       */
+      public function index()
+      {
+        $users= User::all()->sortBy(function($a){
+          return strtoupper($a->lastName());
+        });
+
+
+        return view('user.index', compact('users'));
+      }
+
 
 
       /**
