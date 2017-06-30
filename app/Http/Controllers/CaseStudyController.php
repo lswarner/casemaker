@@ -156,7 +156,7 @@ class CaseStudyController extends Controller
      * @param  \App\CaseStudy  $caseStudy
      * @return \Illuminate\Http\Response
      */
-    public function update(CaseStudyRequest $request, CaseStudy $caseStudy)
+    public function update(Request $request, CaseStudy $caseStudy)
     {
 
         $caseStudy->update( $request->except('destination', 'keywords') );
