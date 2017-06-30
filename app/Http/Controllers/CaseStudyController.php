@@ -6,6 +6,7 @@ use App\CaseStudy;
 use App\Keyword;
 use App\Method;
 use App\User;
+use Auth;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\CaseStudyRequest;
@@ -56,6 +57,8 @@ class CaseStudyController extends Controller
         //create an empty casestudy
         $cs= new CaseStudy;
         $cs->save();
+
+        $cs->team()->attach( Auth::user() );
 
         return redirect()->route('introduction', $cs);
     }

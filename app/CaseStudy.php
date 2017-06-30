@@ -22,6 +22,11 @@ class CaseStudy extends Model
      Relationships
  ******************************************************/
 
+public function team(){
+  return $this->belongsToMany('App\User', 'case_study_user', 'case_study_id', 'user_id')->withTimestamps();
+}
+
+
 /**
  * get the methods this case study uses
  */
