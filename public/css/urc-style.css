@@ -116,7 +116,7 @@ h2,
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{
   background: none; /* clear styles */
 }
-
+#2699FF
   .navbar{
 
   }
@@ -127,6 +127,18 @@ h2,
     padding-right: 30px;
   	border-bottom: 30px solid #014078 /*navy*/;
 	}
+
+  .navbar-default .navbar-nav>li>a{
+    font-size: 20px;
+  }
+
+    .dropdown-menu>li>a {
+      font-size: 16px;
+    }
+
+
+
+
 	#progress-bar{
 	  background: #2699FF; /* medium blue */
 	  border: none;
@@ -136,6 +148,7 @@ h2,
 	  font-size: 20pt;
 	  padding: 30px;
     color: #ffffff;
+    text-transform: uppercase;
 	}
 
 	#progress-bar > .navbar-collapse > ul > li > a.active {
@@ -339,26 +352,7 @@ label{
 	}
 
 
-  .btn-urc-account-pending{
-    background: #f79917;
-    border: 2px solid #f79917;
-    text-align: left;
-    line-height: 1;
-  }
 
-  .subtext{
-    font-size: 14px;
-    color: #5d5d5d;
-  }
-
-  .btn-urc-account-pending:hover,
-  .btn-urc-account-pending:focus,
-  .btn-urc-account-pending:active
-   {
-		background: #f7b355 !important;
-    color: #ffffff !important;
-		border: 2px solid #f7b355;
-	}
 
 
 	.btn-jumbo{
@@ -392,19 +386,29 @@ label{
 .btn-link.btn-back:active,
 .btn-link.btn-back:focus{
   text-decoration: none;
-  color: #6BC7FF;
+  color: #6BC7FF; /* sky */
 	border-bottom: solid  2px #6BC7FF;
   transition: color 0.25s, border 0.25s;
 }
 
 
+/*   toggle button styles */
+.btn-info {
+  background: #6BC7FF; /* sky */
+  border-color: #64baee; /* sky dark */
+}
+
+.btn-info:hover{
+  background: #5ba9d9; /* darker sky */
+  border-color: #5197c1; /* sky darker2 */
+}
 
 /***
    Account Management styles
 ***/
 
 .panel-attention{
-  border: solid 4px #F79917;
+  border: solid 4px #F79917; /* dawn */
   padding: 8px;
 }
 
@@ -429,3 +433,128 @@ a> .panel-account:active{
 .panel-account.pending:active{
   background: #f7ad48; /* faded dawn */
 }
+
+
+
+	/***
+	  View CaseStudies Styles
+	***/
+
+  .btn-urc-account-pending{
+    background: #f79917;
+    border: 2px solid #f79917;
+    text-align: left;
+    line-height: 1;
+  }
+
+  .btn-urc-account-pending:hover,
+  .btn-urc-account-pending:focus,
+  .btn-urc-account-pending:active
+   {
+    background: #f7b355 !important;
+    color: #ffffff !important;
+    border: 2px solid #f7b355;
+  }
+
+
+
+
+
+/**** Case Study Buttons / Cards */
+  .btn-casestudy{
+    text-align: left;
+    line-height: 1;
+    font-size: 18pt;
+  	margin-bottom: 8px;
+    display: block;
+    width: 100%;
+
+    background: #ffffff;  /* white */
+    color: #ffffff !important;
+    border: 2px solid #135693; /* navy */
+  }
+
+  .btn-casestudy:hover,
+  .btn-casestudy:active,
+  .btn-casestudy:focus
+  {
+   background: #ccc !important; /* sky dark */
+   color: #ffffff !important;
+   border: 2px solid #135693; /* navy */
+ }
+
+
+ .sky{
+   text-align: left;
+   line-height: 1;
+
+   background: #6BC7FF;      /* sky */
+   color: #ffffff !important;
+   border: 2px solid #6BC7FF;
+ }
+
+ .sky:hover,
+ .sky:active,
+ .sky:focus
+ {
+  background: #64baee !important; /* sky dark */
+  color: #ffffff !important;
+  border: 2px solid #64baee; /* sky dark */
+ }
+
+
+ .blue{
+   text-align: left;
+   line-height: 1;
+
+   background: #2699FF;      /* medium blue */
+   color: #ffffff !important;
+   border: 2px solid #2699FF;
+ }
+
+ .blue:hover,
+ .blue:active,
+ .blue:focus
+ {
+  background: #51a4ff !important; /* blue dark */
+  color: #ffffff !important;
+  border: 2px solid #51a4ff; /* blue dark */
+ }
+
+
+ .dawn{
+   background: #f79917;      /* dawn */
+   color: #ffffff !important;
+   border: 2px solid #f79917;
+ }
+
+ .dawn:hover,
+ .dawn:active,
+ .dawn:focus {
+  background: #f7b355 !important; /* light dawn */
+  color: #ffffff !important;
+  border: 2px solid #f7b355;
+}
+
+
+
+  .casestudy-title{
+    margin-bottom: 6px;
+  }
+
+  .subtext{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: #333;
+    line-height: 20px;
+  }
+
+
+	.casestudy-details{
+		font-family: 'Roboto', sans-serif;
+		font-weight: 400;
+		font-size: 16px;
+		color: #ffffff;
+    text-transform:none;
+	}

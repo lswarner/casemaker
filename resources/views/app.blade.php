@@ -55,7 +55,17 @@
 
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
-                                        <a href="{{ action('UserController@edit', Auth::user()) }}">Edit Account</a>
+                                        <a href="{{ action('UserController@edit', Auth::user()) }}">Account</a>
+                                    </li>
+
+                                    @if (Auth::user()->is_admin)
+                                    <li>
+                                        <a href="{{ route('admin') }}">Dashboard</a>
+                                    </li>
+                                    @endif
+                                    
+                                    <li>
+                                        <a href="{{ route('home') }}">Case Studies</a>
                                     </li>
                                     <li>
                                         <a href="{{ route('logout') }}"
@@ -77,12 +87,13 @@
               </nav>
 
 
-              <?php  /* only show Progress Bar when displaying a CaseStudy view */
+              <?php  /* only show Progress Bar when displaying a CaseStudy view
                 $currentAction = \Route::currentRouteAction();
                 list($controller, $method) = explode('@', $currentAction);
                 if($controller === 'App\Http\Controllers\CaseStudyController'){ ?>
-                  @include('layouts.progress-bar') <?php
+                  @include('casestudy.partials.progress-bar') <?php
                 }
+                */
               ?>
 
 

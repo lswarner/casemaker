@@ -1,4 +1,12 @@
-@extends('app', ['case-study-nav'=>'false'])
+@extends('app')
+
+@section('css')
+  <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+@endsection
+
+@section('scripts')
+  <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+@endsection
 
 @section('content')
 <div class="container-fluid container-wide">
@@ -135,7 +143,9 @@
                 <div class="col-md-10 col-md-offset-2">
                       <div class="checkbox">
                           <label>
-                              <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
+                              <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}
+                                     data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="info" data-style="android">
+                             Remember Me
                           </label>
                       </div>
                   </div>

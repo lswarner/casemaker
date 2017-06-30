@@ -108,10 +108,12 @@
 
               <div class="form-group">
                 <div class="col-md-10">
-                  <label>
-                    Is this user an administrator?&nbsp;&nbsp;&nbsp;
-          			  </label>
-                  <input name="is_admin" {{ $user->is_admin ? "checked" : "" }} data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger" type="checkbox">
+
+                    <label>
+                      <input name="is_admin" {{ $user->is_admin ? "checked" : "" }} data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="info" data-style="android" type="checkbox">
+
+                      &nbsp;&nbsp;&nbsp;Is this user an administrator?
+            			  </label>
 
                 </div>
               </div>

@@ -3,7 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\CaseStudy;
+use App\Keyword;
+use App\Method;
+use App\User;
+use Auth;
+
 use Illuminate\Http\Request;
+use App\Http\Requests\CaseStudyRequest;
 
 class CaseStudyController extends Controller
 {
@@ -52,6 +58,8 @@ class CaseStudyController extends Controller
         $cs= new CaseStudy;
         $cs->save();
 
+        $cs->team()->attach( Auth::user() );
+
         return redirect()->route('introduction', $cs);
     }
 
@@ -87,7 +95,9 @@ class CaseStudyController extends Controller
      */
     public function edit_introduction(CaseStudy $caseStudy)
     {
-        return view('casestudy.introduction', ['casestudy'=>$caseStudy] );
+        $keywords= Keyword::all_sorted()->pluck('keyword', 'id');
+
+        return view('casestudy.introduction', ['casestudy'=>$caseStudy, 'keywords'=>$keywords] );
     }
 
     /**
@@ -142,12 +152,17 @@ class CaseStudyController extends Controller
      * @param  \App\CaseStudy  $caseStudy
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, CaseStudy $caseStudy)
+    public function update(CaseStudyRequest $request, CaseStudy $caseStudy)
     {
 
-        $caseStudy->update( $request->except('destination') );
+        $caseStudy->update( $request->except('destination', 'keywords') );
+
+        $caseStudy->keywords()->sync($request->keywords); // SYNC only the selected keywords to the casestudy
+
         $caseStudy->save();
 
+
+        //get the next destination, or intro if empty
         $destination= $request->input('destination', 'introduction');
 
         return redirect()->route($destination, $caseStudy);

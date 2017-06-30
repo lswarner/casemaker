@@ -28,6 +28,17 @@ class User extends Authenticatable
     ];
 
 
+    /*******************************************************
+         Relationships
+     ******************************************************/
+
+     public function casestudies(){
+       return $this->belongsToMany('App\CaseStudy', 'case_study_user', 'user_id', 'case_study_id')->withTimestamps();
+     }
+
+
+
+
 
 
     /**

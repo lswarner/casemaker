@@ -57,7 +57,7 @@ return [
 
     'from' => [
         'address' => env('MAIL_FROM_ADDRESS', 'info@casemaker.org'),
-        'name' => env('MAIL_FROM_NAME', 'URC CaseMaker'),
+        'name' => env('MAIL_FROM_NAME', 'CaseMaker'),
     ],
 
     /*

@@ -25,7 +25,7 @@ Route::get('/users/{user}', 'UserController@show');
 Route::get('users/{user}/edit', 'UserController@edit')->name('user.edit');
 Route::patch('users/{user}', 'UserController@update');
 Route::patch('users/{user}/password', 'UserController@update_password');
-Route::patch('users/{user}/access', 'UserController@update_access');
+Route::patch('users/{user}/access', 'UserController@update_access')->middleware('admin');
 
 Route::model('casestudy', 'App\CaseStudy');
 Route::resource('casestudy', 'CaseStudyController');
@@ -34,3 +34,11 @@ Route::get('casestudy/{casestudy}/methods', 'CaseStudyController@edit_methods')-
 Route::get('casestudy/{casestudy}/results', 'CaseStudyController@edit_results')->name('results');
 Route::get('casestudy/{casestudy}/implications', 'CaseStudyController@edit_implications')->name('implications');
 Route::get('casestudy/{casestudy}/review', 'CaseStudyController@edit_review')->name('review');
+
+Route::group(['middleware' => 'admin'], function() {
+  Route::model('method', '\App\Method');
+  Route::resource('method', 'MethodController');
+
+  Route::model('keyword', '\App\Keyword');
+  Route::resource('keyword', 'KeywordController');
+});
