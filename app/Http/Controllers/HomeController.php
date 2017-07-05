@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Auth;
 use \App\CaseStudy;
 use \App\User;
@@ -50,5 +51,40 @@ class HomeController extends Controller
 
 
         return view('admin', compact('pending_users', 'approved_users'));
+    }
+
+
+
+    public function autosave(){
+      Log:info('entering autosave!');
+
+      $casestudy= CaseStudy::find(2);
+      return view('sandbox.autosave', compact('casestudy'));
+    }
+
+
+    public function update(Request $request, $id){
+
+        $cs= CaseStudy::find($id);
+        //$user->name= $request->name;
+        $cs->update($request->except('is_admin'));
+        $cs->save();
+
+
+        Log::info('Autosaving:'.print_r( $request->all(), TRUE));
+
+        if ($request->isMethod('post')){
+            return response()->json(['response' => 'This is post method']);
+        }
+
+        return response()->json(['response' => 'This is get method']);
+
+
+      /*
+      return response()->json([
+          'name' => 'Luke',
+          'state' => 'CA'
+      ]);
+      */
     }
 }
