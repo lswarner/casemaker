@@ -3,7 +3,7 @@
     <div class="row">
 
       {!! Form::model($casestudy, ['action'=>['CaseStudyController@update', $casestudy->id], 'method' => 'patch', 'class'=>'form-horizontal']) !!}
-      {!! Form::hidden('destination', \Route::currentRouteName() ) !!}
+
 
       <div class="col-md-4 col-lg-4">
         <h2>Project Info</h2>
@@ -82,9 +82,7 @@
 
       <div class="col-md-4 col-lg-3">
           <h2>&nbsp;</h2>
-          <button type="submit" class="btn btn-urc">
-              Save Case Study
-          </button>
+          <h3 id="autosave-message"></h3>
 
       </div>
       {!! Form::close() !!}

@@ -13,14 +13,6 @@
 @section('scripts')
   <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
-  @include('scripts.summernote', ['boxes' => [
-                  ['name'=>'intro_context', 'height'=>'600px'],
-                  ['name'=>'intro_nuances', 'height'=>'600px'],
-                  ['name'=>'intro_tips', 'height'=>'200px'],
-                  ['name'=>'intro_acronyms', 'height'=>'200px'],
-                  ['name'=>'intro_objectives', 'height'=>'200px'],
-                  ['name'=>'intro_questions' , 'height'=>'200px']
-                 ] ] )
 
   <script>
     $(document).ready(function(){
@@ -81,7 +73,7 @@
 
                   var dt = new Date();
                   var currentTime = dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();
-                  $("#last-save").text('autosaved at '+currentTime);
+                  $("#message").text('autosaved at '+currentTime);
 
                   // Now that data is saved, remove editing class.
                   // editing class should stay if user typed since save,
@@ -99,7 +91,7 @@
         }
       });
 
-
+/*
       $("textarea").keyup(function () {
          // Prevent redundant saving of textareas by detecting typing.
          // If textarea text length changes, mark textarea as undergoing edit.
@@ -109,9 +101,18 @@
          }
          $(this).attr("count", $(this).val().length);
       });
+      */
     });
   </script>
 
+  @include('scripts.summernote', ['boxes' => [
+                  ['name'=>'intro_context', 'height'=>'600px'],
+                  ['name'=>'intro_nuances', 'height'=>'600px'],
+                  ['name'=>'intro_tips', 'height'=>'200px'],
+                  ['name'=>'intro_acronyms', 'height'=>'200px'],
+                  ['name'=>'intro_objectives', 'height'=>'200px'],
+                  ['name'=>'intro_questions' , 'height'=>'200px']
+                 ] ] )
 
 
 
@@ -176,6 +177,8 @@
                     Save Case Study
                 </button>
 
+                <div id="message"></div>
+
             </div>
           </div>
         </div>
@@ -190,6 +193,7 @@
               <p>
                 Tumblr in master cleanse consequat gluten-free veniam aesthetic. Snackwave ut tote bag trust fund put a bird on it organic commodo iPhone jean shorts authentic id. Affogato prism dolore artisan laborum mumblecore actually copper mug. Shaman kombucha celiac health goth umami try-hard dreamcatcher man braid neutra. Cold-pressed deserunt everyday carry whatever knausgaard unicorn bespoke hoodie mumblecore pour-over wolf intelligentsia umami waistcoat. Raw denim occaecat small batch lyft, tilde cardigan af VHS four dollar toast chia artisan plaid venmo 3 wolf moon vinyl. Adipisicing eiusmod brooklyn palo santo. Non palo santo pork belly ea incididunt, copper mug everyday carry bespoke consequat portland. Migas celiac sint, proident la croix flannel listicle live-edge edison bulb prism small batch labore.
               </p>
+
 
               @component('casestudy.partials.textarea', ['name'=>'intro_context'])
                 Provide any relevant contextual information.

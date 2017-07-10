@@ -1,6 +1,15 @@
 @extends('casestudy.template')
 
 @section('scripts')
+
+  <script>
+    $(document).ready(function(){
+        $('[data-toggle="popover"]').popover();
+    });
+  </script>
+
+  @include('scripts.autosave')
+
   @include('scripts.summernote', ['boxes' => [
                   ['name'=>'intro_context', 'height'=>'600px'],
                   ['name'=>'intro_nuances', 'height'=>'600px'],
@@ -9,18 +18,12 @@
                   ['name'=>'intro_objectives', 'height'=>'200px'],
                   ['name'=>'intro_questions' , 'height'=>'200px']
                  ] ] )
-
-  <script>
-    $(document).ready(function(){
-        $('[data-toggle="popover"]').popover();
-    });
-  </script>
 @endsection
 
 @section('casestudy-page')
 
-    {!! Form::model($casestudy, ['action'=>['CaseStudyController@update', $casestudy->id], 'method' => 'patch', 'class'=>'form-horizontal']) !!}
-    {!! Form::hidden('destination', 'introduction') !!}
+    {!! Form::model($casestudy, [ 'action'=>['CaseStudyController@update', $casestudy->id], 'method' => 'patch', 'class'=>'form-horizontal']) !!}
+
 
     <div class="row">
 
@@ -40,7 +43,7 @@
           @endcomponent
 
 
-          @component('casestudy.partials.continue-buttons', ['back'=>route('introduction', $casestudy)])
+          @component('casestudy.partials.continue-buttons', ['back'=>route('introduction', $casestudy), 'next'=>route('methods', $casestudy)])
             Continue to Methods
           @endcomponent
 

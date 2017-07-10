@@ -20,7 +20,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admin', 'HomeController@admin')->name('admin');
 Route::get('autosave', 'HomeController@autosave')->name('autosave');
-Route::post('autosave/{id}', 'HomeController@update');
+Route::patch('autosave/{id}', 'HomeController@update');
 
 Route::get('/users', 'UserController@index')->name('users');
 Route::get('/users/{user}', 'UserController@show');
