@@ -161,15 +161,22 @@ class CaseStudyController extends Controller
 
         $caseStudy->update( $request->except('destination', 'keywords') );
 
-        $caseStudy->keywords()->sync($request->keywords); // SYNC only the selected keywords to the casestudy
+        //$caseStudy->keywords()->sync($request->keywords); // SYNC only the selected keywords to the casestudy
 
         $caseStudy->save();
+
+        return response()->json(['response' => 'CaseStudy #'.$caseStudy->id.' update was successful.']);
+        /*
+         * don't use destination or redirection -
+         *    we are responding ONLY to AJAX posts, so send
+         *    a JSON response instead.
 
 
         //get the next destination, or intro if empty
         $destination= $request->input('destination', 'introduction');
 
         return redirect()->route($destination, $caseStudy);
+        */
     }
 
     /**
