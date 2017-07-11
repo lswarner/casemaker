@@ -12,8 +12,23 @@
                 ['fontsize', ['fontsize']],
                 ['style', ['bold', 'italic', 'underline']],
                 ['para', ['ul', 'ol']]
-              ]
+              ],
+
+              /* Add autosave callback using script in scripts/autosave */
+              callbacks: {
+                onChange: function(contents, $editable) {
+                  
+                  //first, update the underlying textarea the summernote replaces
+                  $('#{{ $box["name"] }}').text( contents );
+
+                  //then, notify our auto saver script
+                  autoSave();
+                }
+              }
+
             });
+
           @endforeach
         });
+
     </script>

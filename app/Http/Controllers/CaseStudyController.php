@@ -110,9 +110,11 @@ class CaseStudyController extends Controller
      * @param  \App\CaseStudy  $caseStudy
      * @return \Illuminate\Http\Response
      */
-    public function edit_methods(CaseStudy $caseStudy)
+    public function edit_methodology(CaseStudy $caseStudy)
     {
-        return view('casestudy.introduction', ['casestudy'=>$caseStudy] );
+        $keywords= Keyword::all_sorted()->pluck('keyword', 'id');
+
+        return view('casestudy.methodology', ['casestudy'=>$caseStudy, 'keywords'=>$keywords] );
     }
 
     /**
@@ -123,7 +125,9 @@ class CaseStudyController extends Controller
      */
     public function edit_results(CaseStudy $caseStudy)
     {
-        return view('casestudy.introduction', ['casestudy'=>$caseStudy] );
+        $keywords= Keyword::all_sorted()->pluck('keyword', 'id');
+
+        return view('casestudy.results', ['casestudy'=>$caseStudy, 'keywords'=>$keywords] );
     }
 
     /**
@@ -134,7 +138,9 @@ class CaseStudyController extends Controller
      */
     public function edit_implications(CaseStudy $caseStudy)
     {
-        return view('casestudy.introduction', ['casestudy'=>$caseStudy] );
+        $keywords= Keyword::all_sorted()->pluck('keyword', 'id');
+
+        return view('casestudy.implications', ['casestudy'=>$caseStudy, 'keywords'=>$keywords] );
     }
 
     /**
@@ -145,7 +151,9 @@ class CaseStudyController extends Controller
      */
     public function edit_review(CaseStudy $caseStudy)
     {
-        return view('casestudy.introduction', ['casestudy'=>$caseStudy] );
+        $keywords= Keyword::all_sorted()->pluck('keyword', 'id');
+
+        return view('casestudy.review', ['casestudy'=>$caseStudy, 'keywords'=>$keywords] );
     }
 
 
@@ -158,18 +166,31 @@ class CaseStudyController extends Controller
      */
     public function update(Request $request, CaseStudy $caseStudy)
     {
+        $data=  $request->except('destination', 'keywords') ;
 
-        $caseStudy->update( $request->except('destination', 'keywords') );
+        //make sure title is never null, cause that makes the db angry
+        if( empty($data['title'])){
+          $data['title']= "";
+        }
 
-        $caseStudy->keywords()->sync($request->keywords); // SYNC only the selected keywords to the casestudy
+        $caseStudy->update($data);
+
+        //$caseStudy->keywords()->sync($request->keywords); // SYNC only the selected keywords to the casestudy
 
         $caseStudy->save();
+
+        return response()->json(['response' => 'CaseStudy #'.$caseStudy->id.' update was successful.']);
+        /*
+         * don't use destination or redirection -
+         *    we are responding ONLY to AJAX posts, so send
+         *    a JSON response instead.
 
 
         //get the next destination, or intro if empty
         $destination= $request->input('destination', 'introduction');
 
         return redirect()->route($destination, $caseStudy);
+        */
     }
 
     /**

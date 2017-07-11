@@ -11,12 +11,11 @@
   @include('scripts.autosave')
 
   @include('scripts.summernote', ['boxes' => [
-                  ['name'=>'intro_context', 'height'=>'600px'],
-                  ['name'=>'intro_nuances', 'height'=>'600px'],
-                  ['name'=>'intro_tips', 'height'=>'200px'],
-                  ['name'=>'intro_acronyms', 'height'=>'200px'],
-                  ['name'=>'intro_objectives', 'height'=>'200px'],
-                  ['name'=>'intro_questions' , 'height'=>'200px']
+                  ['name'=>'method_used', 'height'=>'600px'],
+                  ['name'=>'method_challenges', 'height'=>'600px'],
+                  ['name'=>'method_tips', 'height'=>'200px'],
+                  ['name'=>'method_partners', 'height'=>'200px'],
+                  ['name'=>'method_questions' , 'height'=>'200px']
                  ] ] )
 @endsection
 
@@ -33,27 +32,28 @@
             Tumblr in master cleanse consequat gluten-free veniam aesthetic. Snackwave ut tote bag trust fund put a bird on it organic commodo iPhone jean shorts authentic id. Affogato prism dolore artisan laborum mumblecore actually copper mug. Shaman kombucha celiac health goth umami try-hard dreamcatcher man braid neutra. Cold-pressed deserunt everyday carry whatever knausgaard unicorn bespoke hoodie mumblecore pour-over wolf intelligentsia umami waistcoat. Raw denim occaecat small batch lyft, tilde cardigan af VHS four dollar toast chia artisan plaid venmo 3 wolf moon vinyl. Adipisicing eiusmod brooklyn palo santo. Non palo santo pork belly ea incididunt, copper mug everyday carry bespoke consequat portland. Migas celiac sint, proident la croix flannel listicle live-edge edison bulb prism small batch labore.
           </p>
 
-          @component('casestudy.partials.textarea', ['name'=>'intro_context'])
-            Provide any relevant contextual information.
+          @component('casestudy.partials.textarea', ['name'=>'method_used'])
+            Discuss the methods of this case study.
           @endcomponent
 
 
-          @component('casestudy.partials.textarea', ['name'=>'intro_nuances'])
-            Explain any cultural nuances and/or complexities that were unique to your research.
+          @component('casestudy.partials.textarea', ['name'=>'method_challenges'])
+            Discuss any challenges and how you overcame them.
           @endcomponent
 
 
-          @component('casestudy.partials.continue-buttons', [ 'next'=>route('methodology', $casestudy)])
-            Continue to Methodology
+          @component('casestudy.partials.continue-buttons', ['back'=>route('introduction', $casestudy), 'next'=>route('results', $casestudy)])
+            Continue to Results
           @endcomponent
 
       </div> <!-- end narative collumn -->
 
       <!-- start of sidebar section -->
       <div id="sidebar" class="col-md-5 col-md-pull-7  col-lg-4 col-lg-pull-8">
-        <h1 class="page-header">Introduction</h1>
 
-          @component('casestudy.partials.tooltip-textarea', ['name'=>'intro_tips'])
+        <h1 class="page-header">Methodology</h1>
+
+          @component('casestudy.partials.tooltip-textarea', ['name'=>'method_tips'])
             @slot('tooltip')
               This tooltip gives you a little more information about this section.
             @endslot
@@ -62,23 +62,16 @@
           @endcomponent
 
 
-          @component('casestudy.partials.tooltip-textarea', ['name'=>'intro_acronyms'])
+          @component('casestudy.partials.tooltip-textarea', ['name'=>'method_partners'])
             @slot('tooltip')
               This tooltip gives you a little more information about this section.
             @endslot
 
-            Key Acronyms
+            Key Partners and their Roles
           @endcomponent
+ 
 
-          @component('casestudy.partials.tooltip-textarea', ['name'=>'intro_objectives'])
-            @slot('tooltip')
-              This tooltip gives you a little more information about this section.
-            @endslot
-
-            Learning Objectives
-          @endcomponent
-
-          @component('casestudy.partials.tooltip-textarea', ['name'=>'intro_questions'])
+          @component('casestudy.partials.tooltip-textarea', ['name'=>'method_questions'])
             @slot('tooltip')
               This tooltip gives you a little more information about this section.
             @endslot
