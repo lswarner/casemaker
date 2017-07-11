@@ -84,7 +84,7 @@
           <h2>&nbsp;</h2>
           <a href="#" class="btn btn-urc-alt">Preview</a>
           <h4>&nbsp;</h4>
-          <h4 id="autosave-message">Updated on November 31, 2017</h4>
+          <h4 id="autosave-message">Updated on {{ $casestudy->updated_at->format('F d, Y') }}</h4>
 
       </div>
       {!! Form::close() !!}
