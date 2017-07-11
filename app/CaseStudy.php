@@ -14,8 +14,11 @@ class CaseStudy extends Model
    */
     protected $fillable=  [
                 'title', 'countries',
-                'intro_context', 'intro_nuances', 'intro_tips', 'intro_acronyms', 'intro_objectives', 'intro_questions'
-                ];
+                'intro_context', 'intro_nuances', 'intro_tips', 'intro_acronyms', 'intro_objectives', 'intro_questions',
+                'method_used', 'method_challenges', 'method_tips', 'method_partners', 'method_questions', 'method_files',
+                'results_discuss', 'results_challenges', 'results_tips', 'results_questions', 'results_files',
+                'implications_discuss', 'implications_challenges', 'implications_tips', 'implications_questions', 'implications_files',
+              ];
 
 
 /*******************************************************
