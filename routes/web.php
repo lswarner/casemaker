@@ -31,7 +31,7 @@ Route::patch('users/{user}/access', 'UserController@update_access')->middleware(
 Route::model('casestudy', 'App\CaseStudy');
 Route::resource('casestudy', 'CaseStudyController');
 Route::get('casestudy/{casestudy}/introduction', 'CaseStudyController@edit_introduction')->name('introduction');
-Route::get('casestudy/{casestudy}/methods', 'CaseStudyController@edit_methods')->name('methods');
+Route::get('casestudy/{casestudy}/methodology', 'CaseStudyController@edit_methodology')->name('methodology');
 Route::get('casestudy/{casestudy}/results', 'CaseStudyController@edit_results')->name('results');
 Route::get('casestudy/{casestudy}/implications', 'CaseStudyController@edit_implications')->name('implications');
 Route::get('casestudy/{casestudy}/review', 'CaseStudyController@edit_review')->name('review');

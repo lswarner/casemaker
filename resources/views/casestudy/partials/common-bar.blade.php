@@ -2,7 +2,7 @@
   <div class="common-bar">
     <div class="row">
 
-      {!! Form::model($casestudy, ['action'=>['CaseStudyController@update', $casestudy->id], 'method' => 'patch', 'class'=>'form-horizontal']) !!}
+      {!! Form::model($casestudy, [ 'method' => 'patch', 'class'=>'form-horizontal']) !!}
 
 
       <div class="col-md-4 col-lg-4">
@@ -82,7 +82,9 @@
 
       <div class="col-md-4 col-lg-3">
           <h2>&nbsp;</h2>
-          <h3 id="autosave-message"></h3>
+          <a href="#" class="btn btn-urc-alt">Preview</a>
+          <h4>&nbsp;</h4>
+          <h4 id="autosave-message">Updated on November 31, 2017</h4>
 
       </div>
       {!! Form::close() !!}
