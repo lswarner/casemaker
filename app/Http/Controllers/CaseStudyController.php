@@ -75,7 +75,10 @@ class CaseStudyController extends Controller
      */
     public function show(CaseStudy $caseStudy)
     {
-        //
+
+        $keywords= Keyword::all_sorted()->pluck('keyword', 'id');
+
+        return view('casestudy.show', ['casestudy'=>$caseStudy, 'keywords'=>$keywords] );
     }
 
     /**
@@ -179,7 +182,7 @@ class CaseStudyController extends Controller
 
         $caseStudy->save();
 
-        return response()->json(['response' => 'CaseStudy #'.$caseStudy->id.' update was successful.']);
+        return response()->json(['response' => 'CaseStudy #'.$caseStudy->id.' updated was successful.']);
         /*
          * don't use destination or redirection -
          *    we are responding ONLY to AJAX posts, so send
@@ -191,6 +194,14 @@ class CaseStudyController extends Controller
 
         return redirect()->route($destination, $caseStudy);
         */
+    }
+
+
+
+    public function submit(Request $request, CaseStudy $caseStudy){
+
+      dd($caseStudy);
+      //
     }
 
     /**
