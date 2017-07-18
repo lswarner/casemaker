@@ -95,7 +95,7 @@
       <div class="row">
 
         <div class="col-md-4">
-            <h2 class="section-header">Methodology</h2>
+            <a class="section-header" data-toggle="collapse" href="#methodology" aria-expanded="false" aria-controls="methodology"><h2 class="section-header">Methodology</h2></a>
         </div>
         <div class="col-md-8">
           <a class="pull-right" data-toggle="collapse" href="#methodology" aria-expanded="false" aria-controls="methodology"><i class="fa fa-caret-down fa-2x"></i></a>
@@ -160,7 +160,7 @@
     <div class="row">
 
       <div class="col-md-4">
-          <h2 class="section-header">Results</h2>
+          <a class="section-header" data-toggle="collapse" href="#results" aria-expanded="false" aria-controls="results"><h2 class="section-header">Results</h2></a>
       </div>
       <div class="col-md-8">
         <a class="pull-right" data-toggle="collapse" href="#results" aria-expanded="false" aria-controls="results"><i class="fa fa-caret-down fa-2x"></i></a>
@@ -216,7 +216,7 @@
     <div class="row">
 
       <div class="col-md-4">
-          <h2 class="section-header">Implications</h2>
+          <a class="section-header" data-toggle="collapse" href="#implications" aria-expanded="false" aria-controls="implications"><h2 class="section-header">Implications</h2></a>
       </div>
       <div class="col-md-8">
         <a class="pull-right" data-toggle="collapse" href="#implications" aria-expanded="false" aria-controls="implications"><i class="fa fa-caret-down fa-2x"></i></a>
