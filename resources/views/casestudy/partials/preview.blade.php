@@ -1,14 +1,5 @@
 
-  <?php
-    if( Auth::user()->is_admin == true){
-      $route= 'casestudy.show';
-    }
-    else {
-      $route= 'introduction';
-    }
-  ?>
-
-  <a class="btn btn-casestudy {{ $cs->status }}" href="{{ route($route, $cs) }}">
+  <a class="btn btn-casestudy {{ $cs->status }}" href="{{ route('introduction', $cs) }}">
 
       <div class="casestudy-title">{{ $cs->title ?: "My New Case Study" }}</div>
 
