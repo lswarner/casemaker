@@ -33,7 +33,7 @@ Route::model('casestudy', 'App\CaseStudy');
 Route::resource('casestudy', 'CaseStudyController');
 Route::patch('casestudy/{casestudy}/publish', 'CaseStudyController@publish')->name('publish')->middleware('admin');
 
-Route::group(['middleware' => ['team']], function () {
+//Route::group(['middleware' => ['team']], function () {
   Route::get('casestudy/{casestudy}/introduction', 'CaseStudyController@edit_introduction')->name('introduction');
   Route::get('casestudy/{casestudy}/methodology', 'CaseStudyController@edit_methodology')->name('methodology');
   Route::get('casestudy/{casestudy}/results', 'CaseStudyController@edit_results')->name('results');
@@ -41,7 +41,7 @@ Route::group(['middleware' => ['team']], function () {
   Route::get('casestudy/{casestudy}/review', 'CaseStudyController@review')->name('review');
   Route::patch('casestudy/{casestudy}', 'CaseStudyController@update');
   Route::patch('casestudy/{casestudy}/submit', 'CaseStudyController@submit')->name('submit');
-});
+//});
 
 
 Route::group(['middleware' => 'admin'], function() {
