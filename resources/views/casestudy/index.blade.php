@@ -33,7 +33,7 @@
       </div>
 
       <div class="col-md-4">
-        <h2 class="text-dawn">Published</h2>
+        <h2 class="text-dawn">Live</h2>
         @foreach($published as $cs)
 
           @component('casestudy.partials.preview', ['cs'=>$cs]) @endcomponent

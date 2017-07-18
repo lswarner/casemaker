@@ -84,7 +84,7 @@
           <h2>&nbsp;</h2>
 
           @if( "review" != \Route::currentRouteName() )
-            <a href="{{ route('casestudy.show', $casestudy) }}" class="btn btn-urc-alt">Preview</a>
+            <a href="{{ route('review', $casestudy) }}" class="btn btn-urc-alt">Preview</a>
           @endif
 
           <h4>&nbsp;</h4>

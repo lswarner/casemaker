@@ -121,7 +121,7 @@ class UserController extends Controller
     		$user->save();
 
     		Session::flash('message', 'Your password was successfully changed.');
-    		Session::flash('alert-class', 'flash-sucess');
+    		Session::flash('alert-class', 'flash-success');
 
     		return redirect('home');
     	}
