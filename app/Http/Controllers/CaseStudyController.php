@@ -7,6 +7,7 @@ use App\Keyword;
 use App\Method;
 use App\User;
 use Auth;
+use Session;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\CaseStudyRequest;
@@ -32,9 +33,9 @@ class CaseStudyController extends Controller
      */
     public function index()
     {
-        $created= CaseStudy::all();
-        $submitted= CaseStudy::all();
-        $published= CaseStudy::all();
+        $created= CaseStudy::in_progress()->get();
+        $submitted= CaseStudy::submitted()->get();
+        $published= CaseStudy::published()->get();
 
         return view('casestudy.index', compact('created', 'submitted', 'published'));
     }
@@ -152,7 +153,7 @@ class CaseStudyController extends Controller
      * @param  \App\CaseStudy  $caseStudy
      * @return \Illuminate\Http\Response
      */
-    public function edit_review(CaseStudy $caseStudy)
+    public function review(CaseStudy $caseStudy)
     {
         $keywords= Keyword::all_sorted()->pluck('keyword', 'id');
 
@@ -197,12 +198,46 @@ class CaseStudyController extends Controller
     }
 
 
-
+    /**
+     * Submit the specified resource
+     *
+     * @param  \App\CaseStudy  $caseStudy
+     * @return \Illuminate\Http\Response
+     */
     public function submit(Request $request, CaseStudy $caseStudy){
 
-      dd($caseStudy);
-      //
+      $caseStudy->status= "submitted";
+      $caseStudy->submitted_at= \Carbon\Carbon::now();
+      $caseStudy->save();
+
+
+  		Session::flash('message', 'Your case study has been submitted.');
+  		Session::flash('alert-class', 'flash-success');
+
+      return redirect()->route('home');
     }
+
+
+
+    /**
+     * Publish the specified resource
+     *
+     * @param  \App\CaseStudy  $caseStudy
+     * @return \Illuminate\Http\Response
+     */
+    public function publish(Request $request, CaseStudy $caseStudy){
+
+      $caseStudy->status= "published";
+      $caseStudy->published_at= \Carbon\Carbon::now();
+      $caseStudy->save();
+
+      Session::flash('message', "This case study is Live.");
+      Session::flash('alert-class', 'flash-success');
+
+      return redirect()->route('admin');
+    }
+
+
 
     /**
      * Remove the specified resource from storage.

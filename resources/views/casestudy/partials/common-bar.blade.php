@@ -82,10 +82,35 @@
 
       <div class="col-md-4 col-lg-3">
           <h2>&nbsp;</h2>
+
           @if( "review" != \Route::currentRouteName() )
-          <a href="#" class="btn btn-urc-alt">Preview</a>
+            <a href="{{ route('review', $casestudy) }}" class="btn btn-urc-alt">Preview</a>
           @endif
+
           <h4>&nbsp;</h4>
+
+          <?php /*
+          <div class="btn status-{{$casestudy->status}}">{{ $casestudy->status }}</div>
+          */ ?>
+
+
+          @if($casestudy->status == "created")
+            <h4>Created on {{ $casestudy->created_at->format('F d, Y')  }}</h4>
+          @endif
+
+
+          @if($casestudy->status == "submitted")
+            <h4>Created on {{ $casestudy->created_at->format('F d, Y')  }}</h4>
+            <h4>Submitted on {{ $casestudy->submitted_at->format('F d, Y')  }}</h4>
+          @endif
+
+
+          @if($casestudy->status == "published")
+            <h4>Created on {{ $casestudy->created_at->format('F d, Y')  }}</h4>
+            <h4>Submitted on {{ $casestudy->submitted_at->format('F d, Y')  }}</h4>
+            <h4>Live on {{ $casestudy->published_at->format('F d, Y')  }}</h4>
+          @endif
+
           <h4 id="autosave-message">Updated on {{ $casestudy->updated_at->format('F d, Y') }}</h4>
 
       </div>
