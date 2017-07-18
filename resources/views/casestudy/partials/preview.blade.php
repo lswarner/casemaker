@@ -1,10 +1,4 @@
-<?php
-  $i= rand(1,99) % 3;
-  $colors= [0=>'sky', 1=>'blue', 2=>'dawn'];
-  $class= $colors[$i];
-?>
-
-  <a class="btn btn-casestudy {{ $class }}" href="{{ route('introduction', $cs) }}">
+  <a class="btn btn-casestudy {{ $cs->status }}" href="{{ route('introduction', $cs) }}">
 
       <div class="casestudy-title">{{ $cs->title ?: "My New Case Study" }}</div>
 
@@ -25,7 +19,13 @@
 
 
           <span class="casestudy-date">
-            <span class="subtext">CREATED: </span> {{ $cs->created_at->format('F d, Y')  }}
+            @if($cs->status == "submitted")
+              <span class="subtext">SUBMITTED: </span> {{ $cs->submitted_at->format('F d, Y')  }}
+            @elseif($cs->status == "published")
+              <span class="subtext">LIVE: </span> {{ $cs->published_at->format('F d, Y')  }}
+            @else
+                <span class="subtext">CREATED: </span> {{ $cs->created_at->format('F d, Y')  }}
+            @endif
           </span>
 
       </div>

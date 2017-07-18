@@ -6,16 +6,23 @@
 
 
     <div class="row">
-        <div class="col-md-7 col-lg-8">
+        <div class="col-md-4">
           <h2>My Case Studies</h2>
         </div>
-        <div class="col-md-5 col-lg-4">
-          {!! Form::open( ['action'=>['CaseStudyController@store'], 'method' => 'post', 'class'=>'form-horizontal']) !!}
-            <button type="submit" class="btn btn-urc">Create Case Study</button>
-          {!! Form::close() !!}
-        </div>
+
+        @include('casestudy.partials.color-key')
+
+
+
     </div>
 
+    <div class="row">
+      <div class="col-md-5 col-md-offset-7 col-lg-4 col-lg-offset-8">
+        {!! Form::open( ['action'=>['CaseStudyController@store'], 'method' => 'post', 'class'=>'form-horizontal']) !!}
+          <button type="submit" class="btn btn-urc">Create Case Study</button>
+        {!! Form::close() !!}
+      </div>
+    </div>
 
     <div class="row">
       @foreach($casestudies as $cs)

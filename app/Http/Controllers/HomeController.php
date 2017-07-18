@@ -49,8 +49,10 @@ class HomeController extends Controller
         $pending_users= User::pending()->get();
         $approved_users= User::approved()->get();
 
+        $casestudies= CaseStudy::submitted()->get();
 
-        return view('admin', compact('pending_users', 'approved_users'));
+
+        return view('admin', compact('pending_users', 'approved_users', 'casestudies'));
     }
 
 
