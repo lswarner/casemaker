@@ -86,6 +86,11 @@ h2,
   text-transform: uppercase;
 }
 
+.lighten{
+  font-weight: 300;
+  color: #6d6d6d;
+}
+
 
 /***
     Layout Styles

@@ -153,7 +153,7 @@ class CaseStudyController extends Controller
      * @param  \App\CaseStudy  $caseStudy
      * @return \Illuminate\Http\Response
      */
-    public function edit_review(CaseStudy $caseStudy)
+    public function review(CaseStudy $caseStudy)
     {
         $keywords= Keyword::all_sorted()->pluck('keyword', 'id');
 
@@ -198,7 +198,12 @@ class CaseStudyController extends Controller
     }
 
 
-
+    /**
+     * Submit the specified resource
+     *
+     * @param  \App\CaseStudy  $caseStudy
+     * @return \Illuminate\Http\Response
+     */
     public function submit(Request $request, CaseStudy $caseStudy){
 
       $caseStudy->status= "submitted";
@@ -207,10 +212,32 @@ class CaseStudyController extends Controller
 
 
   		Session::flash('message', 'Your case study has been submitted.');
-  		Session::flash('alert-class', 'flash-sucess');
+  		Session::flash('alert-class', 'flash-success');
 
       return redirect()->route('home');
     }
+
+
+
+    /**
+     * Publish the specified resource
+     *
+     * @param  \App\CaseStudy  $caseStudy
+     * @return \Illuminate\Http\Response
+     */
+    public function publish(Request $request, CaseStudy $caseStudy){
+
+      $caseStudy->status= "published";
+      $caseStudy->published_at= \Carbon\Carbon::now();
+      $caseStudy->save();
+
+      Session::flash('message', "This case study is Live.");
+      Session::flash('alert-class', 'flash-success');
+
+      return redirect()->route('admin');
+    }
+
+
 
     /**
      * Remove the specified resource from storage.
