@@ -11,6 +11,11 @@
 	}
 
 
+	.status-created,
+	.status-submitted,
+	.status-published {
+		cursor: default;
+	}
 
 
 

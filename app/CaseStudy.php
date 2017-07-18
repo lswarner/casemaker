@@ -20,6 +20,28 @@ class CaseStudy extends Model
                 'implications_discuss', 'implications_challenges', 'implications_tips', 'implications_questions', 'implications_files',
               ];
 
+/*******************************************************
+     Set Dates for Carbon Mutators
+ ******************************************************/
+public function getDates(){
+  return array('created_at', 'updated_at', 'submitted_at', 'published_at');
+}
+
+
+public function setStatusAttribute($new_status){
+
+  switch($new_status){
+    case "created":
+    case "submitted":
+    case "published":
+      $this->attributes['status']= strtolower($new_status);
+      break;
+
+    default:
+      return false;
+  }
+
+}
 
 /*******************************************************
      Relationships
@@ -28,7 +50,6 @@ class CaseStudy extends Model
 public function team(){
   return $this->belongsToMany('App\User', 'case_study_user', 'case_study_id', 'user_id')->withTimestamps();
 }
-
 
 /**
  * get the methods this case study uses
@@ -43,6 +64,49 @@ public function team(){
   public function keywords(){
     return $this->belongsToMany('App\Keyword', 'case_study_keyword', 'case_study_id', 'keyword_id')->withTimestamps();
   }
+
+
+
+  /*****************************************************
+       scopes
+   ****************************************************/
+
+   /**
+   * Scope a query to only created case studies
+   *
+   *
+   * @return \Illuminate\Database\Eloquent\Builder
+   */
+  public function scopeIn_Progress($query)
+  {
+    return $query->where('status', '=', 'created');
+  }
+
+
+
+  /**
+  * Scope a query to only created case studies
+  *
+  *
+  * @return \Illuminate\Database\Eloquent\Builder
+  */
+ public function scopeSubmitted($query)
+ {
+   return $query->where('status', '=', 'submitted');
+ }
+
+
+
+ /**
+ * Scope a query to only created case studies
+ *
+ *
+ * @return \Illuminate\Database\Eloquent\Builder
+ */
+public function scopePublished($query)
+{
+  return $query->where('status', '=', 'published');
+}
 
 
 }

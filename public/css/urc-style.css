@@ -320,7 +320,10 @@ label{
 	.btn-urc-alt,
   .btn-urc-danger,
 	.btn-urc-gray,
-  .btn-urc-account{
+  .btn-urc-account,
+  .status-created,
+  .status-submitted,
+  .status-published {
     background: #135693;
     color: #ffffff;
   	margin-bottom: 8px;
@@ -337,7 +340,10 @@ label{
   	.btn-urc-alt,
     .btn-urc-danger,
   	.btn-urc-gray,
-    .btn-urc-account{
+    .btn-urc-account,
+    .status-created,
+    .status-submitted,
+    .status-published{
       font-size: 18pt;
     }
   }
@@ -555,16 +561,17 @@ a> .panel-account:active{
    border: 2px solid #135693; /* navy */
  }
 
-
+ .created,
+ .status-created,
  .sky{
-   text-align: left;
-   line-height: 1;
-
    background: #6BC7FF;      /* sky */
    color: #ffffff !important;
    border: 2px solid #6BC7FF;
  }
 
+ .created:hover,
+ .created:active,
+ .created:focus,
  .sky:hover,
  .sky:active,
  .sky:focus
@@ -575,12 +582,17 @@ a> .panel-account:active{
  }
 
 
+ .submitted,
+ .status-submitted,
  .blue{
    background: #2699FF;      /* medium blue */
    color: #ffffff !important;
    border: 2px solid #2699FF;
  }
 
+ .submitted:hover,
+ .submitted:active,
+ .submitted:focus,
  .blue:hover,
  .blue:active,
  .blue:focus
@@ -606,12 +618,17 @@ a> .panel-account:active{
   border: 2px solid #FF6B26 ;
 }
 
+ .published,
+ .status-published,
  .dawn{
    background: #f79917;      /* dawn */
    color: #ffffff !important;
    border: 2px solid #f79917;
  }
 
+.published:hover,
+.published:active,
+.published:focus,
 .dawn:hover,
 .dawn:active,
 .dawn:focus {

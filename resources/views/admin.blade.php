@@ -27,8 +27,16 @@
 
 
       <div class="col-md-4">
-        <h3>Case Studies</h3>
+        <h3>Submitted Case Studies</h3>
+
+        @foreach($casestudies as $cs)
+
+          @component('casestudy.partials.preview', ['cs'=>$cs]) @endcomponent
+
+        @endforeach
+
         <a class="btn btn-urc-gray" href="{{ route('casestudy.index') }}">View Case Studies</a>
+
         {!! Form::open( ['action'=>['CaseStudyController@store'], 'method' => 'post', 'class'=>'form-horizontal']) !!}
           <button type="submit" class="btn btn-urc">Create Case Study</button>
         {!! Form::close() !!}
