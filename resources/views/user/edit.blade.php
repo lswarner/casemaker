@@ -141,7 +141,7 @@
           {!! Form::model( $user, ['action'=>['UserController@update_password', $user], 'method' => 'patch', 'class'=>'form-horizontal']) !!}
               <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                 <div class="col-md-10 col-md-offset-2">
-                    <input id="password" type="password" class="form-control" name="password" placeholder="Password" required>
+                    <input id="password" type="password" class="form-control" name="password" placeholder="Your New Password" required>
 
                     @if ($errors->has('password'))
                         <span class="help-block">
@@ -154,7 +154,7 @@
 
               <div class="form-group">
                 <div class="col-md-10 col-md-offset-2">
-                  <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Confirm Password" required>
+                  <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Confirm New Password" required>
                 </div>
               </div>
 
