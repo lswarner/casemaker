@@ -23,7 +23,7 @@
 
         <div class="form-group{{ $errors->has('countries') ? ' has-error' : '' }}">
           <div class="col-md-12">
-            {!! Form::text('countries', null, ['class'=>'form-control', 'placeholder'=>'Countries']) !!}
+            {!! Form::textarea('countries', null, ['class'=>'form-control', 'rows'=>3, 'id' => 'countries', 'placeholder'=>'List multiple countries, separated by a comma']) !!}
 
             @if ($errors->has('countries'))
               <span class="help-block">
