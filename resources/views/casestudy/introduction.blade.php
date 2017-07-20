@@ -1,5 +1,9 @@
 @extends('casestudy.template')
 
+<?php
+//print_r($country_suggestions);
+//die;
+?>
 @section('scripts')
 
   <script>
@@ -18,6 +22,13 @@
                   ['name'=>'intro_objectives', 'height'=>'200px'],
                   ['name'=>'intro_questions' , 'height'=>'200px']
                  ] ] )
+
+  @include('scripts.autocomplete', ['boxes' => [
+                  ['id' => 'countries', 'suggestions' => $country_suggestions, 'width'=> '100%', 'height'=> '60px', 'placeholder'=>'List multiple countries, separated by a comma' ],
+                ] ] )
+
+  @include('scripts.ac')
+
 @endsection
 
 @section('casestudy-page')
