@@ -53,6 +53,18 @@ class User extends Authenticatable
       return strtoupper(substr( $this->lastName(), 0, 1));
     }
 
+    /**
+    * Return a list of all users sorted alphabetically
+    *
+    */
+    public static function all_sorted() {
+       $users= User::all()->sortBy(function($user) {
+         return strtoupper($user->lastName());
+       });
+       $users->values()->all();
+       return $users;
+     }
+
     /*******************************************************
          Relationships
      ******************************************************/

@@ -13,11 +13,14 @@
                 ['style', ['bold', 'italic', 'underline']],
                 ['para', ['ul', 'ol']]
               ],
+              fontNames: ['Arial', 'Roboto', 'Source Sans Pro'],
+              fontNamesIgnoreCheck: ['Roboto', 'Source Sans Pro'],
 
+              disableDragAndDrop: true,
               /* Add autosave callback using script in scripts/autosave */
               callbacks: {
                 onChange: function(contents, $editable) {
-                  
+
                   //first, update the underlying textarea the summernote replaces
                   $('#{{ $box["name"] }}').text( contents );
 

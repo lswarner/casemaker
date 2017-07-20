@@ -1,4 +1,3 @@
-
   <div class="common-bar">
     <div class="row">
 
@@ -23,7 +22,7 @@
 
         <div class="form-group{{ $errors->has('countries') ? ' has-error' : '' }}">
           <div class="col-md-12">
-            {!! Form::textarea('countries', null, ['class'=>'form-control', 'rows'=>3, 'id' => 'countries', 'placeholder'=>'List multiple countries, separated by a comma']) !!}
+            {!! Form::textarea('countries', null, ['class'=>'form-control', 'rows'=>3, 'id' => 'countries']) !!}
 
             @if ($errors->has('countries'))
               <span class="help-block">
@@ -76,6 +75,10 @@
           <p>{{ $t->name }}</p>
         @endforeach
         <p>Tobias Funke</p>
+
+
+        {!! Form::text('add_member', null, ['class'=>'form-control', 'id'=>'add_member']) !!}
+
 
         <p><i class="fa fa-plus-circle fa-3x" aria-hidden="true"></i></p>
       </div>
