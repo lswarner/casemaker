@@ -27,13 +27,13 @@
                   ['id' => 'countries', 'suggestions' => $country_suggestions, 'width'=> '100%', 'height'=> '60px', 'placeholder'=>'List multiple countries, separated by a comma' ],
                 ] ] )
 
-  @include('scripts.ac')
+  @include('scripts.filter-list')
 
 @endsection
 
 @section('casestudy-page')
 
-    {!! Form::model($casestudy, [ 'method' => 'patch', 'class'=>'form-horizontal']) !!}
+    {!! Form::model($casestudy, [ 'method' => 'patch', 'class'=>'form-horizontal autosave']) !!}
 
 
     <div class="row">

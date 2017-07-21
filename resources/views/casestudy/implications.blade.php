@@ -20,7 +20,7 @@
 
 @section('casestudy-page')
 
-    {!! Form::model($casestudy, [ 'method' => 'patch', 'class'=>'form-horizontal']) !!}
+    {!! Form::model($casestudy, [ 'method' => 'patch', 'class'=>'form-horizontal autosave']) !!}
 
 
     <div class="row">

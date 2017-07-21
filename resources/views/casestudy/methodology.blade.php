@@ -21,7 +21,7 @@
 
 @section('casestudy-page')
 
-    {!! Form::model($casestudy, [ 'method' => 'patch', 'class'=>'form-horizontal']) !!}
+    {!! Form::model($casestudy, [ 'method' => 'patch', 'class'=>'form-horizontal autosave']) !!}
 
 
     <div class="row">
@@ -69,7 +69,7 @@
 
             Key Partners and their Roles
           @endcomponent
- 
+
 
           @component('casestudy.partials.tooltip-textarea', ['name'=>'method_questions'])
             @slot('tooltip')

@@ -1,7 +1,7 @@
   <div class="common-bar">
     <div class="row">
 
-      {!! Form::model($casestudy, [ 'method' => 'patch', 'class'=>'form-horizontal']) !!}
+      {!! Form::model($casestudy, [ 'method' => 'patch', 'class'=>'form-horizontal autosave']) !!}
 
 
       <div class="col-md-4 col-lg-4">
@@ -75,12 +75,7 @@
           <p>{{ $t->name }}</p>
         @endforeach
         <p>Tobias Funke</p>
-
-
-        {!! Form::text('add_member', null, ['class'=>'form-control', 'id'=>'add_member']) !!}
-
-
-        <p><i class="fa fa-plus-circle fa-3x" aria-hidden="true"></i></p>
+        <button class=" btn-icon" type="button" data-toggle="modal" data-target="#team-member-modal"><i class="fa fa-plus-circle fa-3x" aria-hidden="true"></i></button>
       </div>
 
       <div class="col-md-4 col-lg-3">
@@ -120,3 +115,5 @@
       {!! Form::close() !!}
     </div>
   </div>
+
+  @include('casestudy.modals.team-member')
