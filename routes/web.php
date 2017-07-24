@@ -41,6 +41,8 @@ Route::patch('casestudy/{casestudy}/publish', 'CaseStudyController@publish')->na
   Route::get('casestudy/{casestudy}/review', 'CaseStudyController@review')->name('review');
   Route::patch('casestudy/{casestudy}', 'CaseStudyController@update');
   Route::patch('casestudy/{casestudy}/submit', 'CaseStudyController@submit')->name('submit');
+  Route::patch('casestudy/{casestudy}/team/add', 'CaseStudyController@team_add')->name('team_add');
+  Route::patch('casestudy/{casestudy}/team/remove', 'CaseStudyController@team_remove')->name('team_remove');
 //});
 
 

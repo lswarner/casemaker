@@ -71,10 +71,13 @@
       <div class="col-md-4 col-lg-4 col-lg-offset-1">
         <h2>Team Members</h2>
 
+        <ul class="team-member-list">
         @foreach($casestudy->team as $t)
-          <p>{{ $t->name }}</p>
+          <li>{{ $t->name }}
+            @if($t->id != Auth::user()->id)&nbsp;&nbsp;&nbsp;<i data-id="{{$t->id}}" data-name="{{$t->name}}" data-email="{{$t->email}}" class="remove-user fa fa-close text-danger" aria-hidden="true"></i>@endif
+          </li>
         @endforeach
-        <p>Tobias Funke</p>
+        </ul>
         <button class=" btn-icon" type="button" data-toggle="modal" data-target="#team-member-modal"><i class="fa fa-plus-circle fa-3x" aria-hidden="true"></i></button>
       </div>
 

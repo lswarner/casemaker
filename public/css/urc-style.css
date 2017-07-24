@@ -321,6 +321,21 @@ label{
 /***
     Buttons
 ***/
+  .btn-icon{
+    background: transparent;
+    border: none;
+  }
+
+  .btn-icon:hover,
+  .btn-icon:active,
+  .btn-icon:focus{
+    color: #2699FF;
+    border: none;
+    background: transparent;
+  	transition: color 0.25s;
+  }
+
+
   .btn-urc,
 	.btn-urc-alt,
   .btn-urc-danger,
