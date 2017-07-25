@@ -74,6 +74,11 @@ class User extends Authenticatable
      }
 
 
+     public function invitations(){
+       return $this->hasMany('App\Invitation');
+     }
+
+
 
     /**
   	 * Scope a query to only users that are approved

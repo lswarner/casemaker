@@ -55,7 +55,7 @@
       data: { "{{$add_action}}_id":obj_id, 'user_id':"{{ Auth::user()->id }}" },
       success: function(data) {
         var jqObj = jQuery(data); // You can get data returned from your ajax call here. ex. jqObj.find('.returned-data').html()
-        console.log(jqObj);
+        //console.log(jqObj);
 
         // Now show them we saved and when we did
         $('#{{$add_action}}-message').html('team member added');
@@ -85,7 +85,7 @@
     var obj_name= $(this).attr('data-name');
     var obj_email= $(this).attr('data-email');
 
-    console.log(obj_name);
+    //console.log(obj_name);
 
     //hide the user to show that they are being removed from the team
     $(this).parent('li').slideUp();
@@ -97,7 +97,7 @@
       data: { "{{$remove_action}}_id":obj_id, 'user_id':"{{ Auth::user()->id }}" },
       success: function(data) {
         var jqObj = jQuery(data); // You can get data returned from your ajax call here. ex. jqObj.find('.returned-data').html()
-        console.log(jqObj);
+        //console.log(jqObj);
 
         // Now show them we saved and when we did
         $('#{{$remove_action}}-message').html('team member removed');
@@ -119,7 +119,7 @@
 
 
   $(".team-member-list").on("mouseenter","li", function(event){ //hover in
-      console.log(this);
+      //console.log(this);
       $(this).children("i").css('visibility', 'visible');
     });
 
@@ -136,7 +136,7 @@
 
   function addMemberToList(id, name, email){
 
-    var newli= $("<li>").html('<a id="'+id+'" class="btn btn-urc-account sky add-user" data-name="'+name+'" data-email="'+email+'">'+
+    var newli= $("<li>").html('<a id="'+id+'" class="btn btn-urc-account blue add-user" data-name="'+name+'" data-email="'+email+'">'+
             '<div class="col-sm-11 account-name">'+name+'</div>'+
             '<div class="col-sm-1"><i class="fa fa-plus-circle pull-right" aria-hidden="true"></i></div>'+
           '</a>');
