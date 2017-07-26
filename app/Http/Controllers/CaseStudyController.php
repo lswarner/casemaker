@@ -6,6 +6,7 @@ use App\CaseStudy;
 use App\Keyword;
 use App\Method;
 use App\User;
+use App\Invitation;
 use Auth;
 use Session;
 
@@ -108,12 +109,12 @@ class CaseStudyController extends Controller
     public function edit_introduction(CaseStudy $caseStudy)
     {
         $keywords= Keyword::all_sorted()->pluck('keyword', 'id');
-        $team_suggestions= User::all_sorted()->pluck('name');
+        $team_suggestions= User::all_sorted()->diff($caseStudy->team);
 
         return view('casestudy.introduction', [ 'casestudy'=>$caseStudy,
                                                 'keywords'=>$keywords,
                                                 'country_suggestions' => json_encode($this->country_suggestions),
-                                                'team_suggestions' => json_encode($team_suggestions)
+                                                'team_suggestions' => $team_suggestions
                                             ] );
     }
 
@@ -149,7 +150,7 @@ class CaseStudyController extends Controller
         return view('casestudy.results', [ 'casestudy'=>$caseStudy,
                                                 'keywords'=>$keywords,
                                                 'country_suggestions' => json_encode($this->country_suggestions),
-                                                'team_suggestions' => json_encode($team_suggestions) 
+                                                'team_suggestions' => json_encode($team_suggestions)
                                             ] );
     }
 
@@ -259,6 +260,96 @@ class CaseStudyController extends Controller
       Session::flash('alert-class', 'flash-success');
 
       return redirect()->route('admin');
+    }
+
+
+    /**
+     * Add a member to this casestudy's team
+     *
+     * @param  \App\CaseStudy  $caseStudy
+     * @return \Illuminate\Http\Response
+     */
+    public function team_add(Request $request, CaseStudy $caseStudy){
+
+      $new_member= $request->input('add-user_id');
+      $user= $request->input('user_id');
+
+      if($caseStudy->team->contains($user) == TRUE){
+        $caseStudy->team()->attach($new_member);
+
+        return response()->json(['response' => 'Team Member #'.$new_member.' was added to the team.']);
+      }
+      else {
+        $status= '401'; //unauthorized
+        return response()->json(['error' => 'Invalid permission to add member to team'], $status);
+      }
+
+    }
+
+
+
+    /**
+     * Remove a member from this casestudy's team
+     *
+     * @param  \App\CaseStudy  $caseStudy
+     * @return \Illuminate\Http\Response
+     */
+    public function team_remove(Request $request, CaseStudy $caseStudy){
+
+      $remove_member= $request->input('remove-user_id');
+      $user= $request->input('user_id');
+
+      if($caseStudy->team->contains($user) == TRUE){
+        $caseStudy->team()->detach($remove_member);
+
+        return response()->json(['response' => 'Team Member #'.$remove_member.' was removed from the team.']);
+      }
+      else {
+        $status= '401'; //unauthorized
+        return response()->json(['error' => 'Invalid permission to remove member from team'], $status);
+      }
+
+    }
+
+
+
+
+    /**
+     * Invite a member to join casestudy's team
+     *
+     * @param  \App\CaseStudy  $caseStudy
+     * @return \Illuminate\Http\Response
+     */
+    public function invite(Request $request, CaseStudy $caseStudy){
+
+      //dd($request);
+
+
+      $this->validate($request, [
+          'email' => 'required|email'
+      ]);
+
+      $email= $request->input('email');
+      $user= $request->input('user_id');
+
+      if($caseStudy->team->contains($user) == TRUE){
+
+        $u= User::find($user);
+
+        $i= new Invitation;
+        $i->email= $email;
+        $i->save();
+        $u->invitations()->save($i);
+        $caseStudy->invitations()->save($i);
+
+        $i->notify(new \App\Notifications\TeamInvitation);
+
+        return response()->json(['response' => $email.' was invited to join your team.']);
+      }
+      else {
+        $status= '401'; //unauthorized
+        return response()->json(['error' => 'Invalid permission to invite a new person.'], $status);
+      }
     }
 
 

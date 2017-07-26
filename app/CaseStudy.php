@@ -43,12 +43,17 @@ public function setStatusAttribute($new_status){
 
 }
 
+
 /*******************************************************
      Relationships
  ******************************************************/
 
 public function team(){
   return $this->belongsToMany('App\User', 'case_study_user', 'case_study_id', 'user_id')->withTimestamps();
+}
+
+public function invitations(){
+  return $this->hasMany('App\Invitation');
 }
 
 /**
