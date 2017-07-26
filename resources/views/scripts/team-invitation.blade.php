@@ -24,11 +24,18 @@
         error: function(data) {
           var jqObj= jQuery(data);
           //console.log(jqObj[0].responseJSON);
-          if(jqObj[0].status == 422){
-            message= "A valid email address is required to send an invitation.";
+
+          if(jqObj[0].status == 400){
+            message= "This email has already been invited to this case study.";
           }
           else if(jqObj[0].status == 401){
             message= "You don't have permission to invite anyone to join this case study.";
+          }
+          else if(jqObj[0].status == 409){
+            message= "This email belongs to a registered user.";
+          }
+          else if(jqObj[0].status == 422){
+            message= "A valid email address is required to send an invitation.";
           }
           else {
             message= jqObj[0].responseJSON;

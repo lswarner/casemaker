@@ -29,11 +29,15 @@ Route::patch('users/{user}/password', 'UserController@update_password');
 Route::patch('users/{user}/access', 'UserController@update_access')->middleware('admin');
 
 
+
 Route::model('casestudy', 'App\CaseStudy');
-Route::resource('casestudy', 'CaseStudyController');
+Route::group(['middleware' => ['auth']], function () {
+  Route::resource('casestudy', 'CaseStudyController');
+});
+
 Route::patch('casestudy/{casestudy}/publish', 'CaseStudyController@publish')->name('publish')->middleware('admin');
 
-//Route::group(['middleware' => ['team']], function () {
+Route::group(['middleware' => ['team']], function () {
   Route::get('casestudy/{casestudy}/introduction', 'CaseStudyController@edit_introduction')->name('introduction');
   Route::get('casestudy/{casestudy}/methodology', 'CaseStudyController@edit_methodology')->name('methodology');
   Route::get('casestudy/{casestudy}/results', 'CaseStudyController@edit_results')->name('results');
@@ -44,7 +48,7 @@ Route::patch('casestudy/{casestudy}/publish', 'CaseStudyController@publish')->na
   Route::patch('casestudy/{casestudy}/team/add', 'CaseStudyController@team_add')->name('team_add');
   Route::patch('casestudy/{casestudy}/team/remove', 'CaseStudyController@team_remove')->name('team_remove');
   Route::post('casestudy/{casestudy}/invite', 'CaseStudyController@invite')->name('invite');
-//});
+});
 
 
 Route::group(['middleware' => 'admin'], function() {
