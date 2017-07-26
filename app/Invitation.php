@@ -22,4 +22,10 @@ class Invitation extends Model
     public function invitedBy(){
       return $this->belongsTo('App\User','user_id');
     }
+
+
+
+    public function scopeWithEmail($query, $email){
+      return $query->where('email', $email);
+    }
 }
