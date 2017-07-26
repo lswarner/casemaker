@@ -16,6 +16,15 @@
                   ['name'=>'implications_tips', 'height'=>'200px'],
                   ['name'=>'implications_questions' , 'height'=>'200px']
                  ] ] )
+
+  @include('scripts.autocomplete', ['boxes' => [
+                  ['id' => 'countries', 'suggestions' => $country_suggestions, 'width'=> '100%', 'height'=> '60px', 'placeholder'=>'List multiple countries, separated by a comma' ],
+                ] ] )
+
+  @include('scripts.filter-list', ['add_action'=>'add-user', 'add_url'=> route('team_add', $casestudy), 'remove_action'=>'remove-user', 'remove_url'=> route('team_remove', $casestudy) ])
+
+  @include('scripts.team-invitation', ['url'=> route('invite', $casestudy)])
+
 @endsection
 
 @section('casestudy-page')
