@@ -1,9 +1,5 @@
 @extends('casestudy.template')
 
-<?php
-//print_r($country_suggestions);
-//die;
-?>
 @section('scripts')
 
   <script>
