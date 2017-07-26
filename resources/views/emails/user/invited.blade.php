@@ -2,7 +2,7 @@
 
 Hello,
 
-{{ $invitedBy->name }} ({{ $invitedBy->email }}) is working on a case study{{$title}} and has invited you to join their team at {{ config('app.name') }}.
+{{ $invitedBy->name }} ({{ $invitedBy->email }}) is working on a case study{!! $title !!} and has invited you to join their team at {{ config('app.name') }}.
 
 To get started, click the button below to create an account or visit http://casemaker.org to learn more.
 After your account is created, you'll be able to collaborate on your team's case study, invite colleagues
