@@ -64,6 +64,7 @@
 
 body{
   color: #000000;
+  font-size: 16px;
 }
 
 html, body, h3, h4, h5, p, label
@@ -84,6 +85,10 @@ h2,
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
   text-transform: uppercase;
+}
+
+h4{
+  font-size: 20px;
 }
 
 .lighten{
@@ -321,6 +326,38 @@ label{
 /***
     Buttons
 ***/
+  .btn-icon{
+    background: transparent;
+    border: 0px transparent;
+  }
+
+  .btn-icon:hover,
+  .btn-icon:active,
+  .btn-icon:focus{
+    color: #2699FF !important;
+    border: 0px transparent !important;
+    background: transparent !important;
+  	transition: color 0.25s;
+    outline: none;
+  }
+
+
+
+  .btn-email{
+    background: #135693;
+    color: #ffffff;
+  	border: 2px solid #135693;
+  }
+
+  .btn-email:active,
+  .btn-email:hover,
+  .btn-email:focus
+   {
+		background: #6BC7FF !important;       /* sky */
+		border: 2px solid #6BC7FF !important; /* sky */
+    color: #ffffff !important;            /* white */
+	}
+
   .btn-urc,
 	.btn-urc-alt,
   .btn-urc-danger,
@@ -550,7 +587,7 @@ a> .panel-account:active{
     display: block;
     width: 100%;
 
-    padding-bottom: 28px; /* give extra pad to cover the dates
+    padding-bottom: 8px; /* overflow: hidden resolves the padding issue (this was 28px to cover dates) */
 
     background: #ffffff;  /* white */
     color: #ffffff !important;
@@ -646,6 +683,8 @@ a> .panel-account:active{
 
   .casestudy-title{
     margin-bottom: 6px;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .subtext{
@@ -663,6 +702,8 @@ a> .panel-account:active{
 		font-size: 16px;
 		color: #ffffff;
     text-transform:none;
+    overflow: hidden;
+    text-overflow: ellipsis;
 	}
 
   .casestudy-date{

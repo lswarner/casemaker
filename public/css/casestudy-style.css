@@ -17,6 +17,19 @@
 		cursor: default;
 	}
 
+	.team-member-list{
+		list-style: none;
+		padding-left: 0px;
+	}
+
+	.team-member-list > li{
+		font-size: 18px;
+	}
+
+	.team-member-list > li{
+		cursor: pointer;
+	}
+
 
 
 
@@ -111,6 +124,26 @@
 		*/
 		margin-top: 10px;
  }
+
+
+
+
+/****************************
+ Add Team Member Modal
+****************************/
+.add-user{
+	overflow: auto;
+}
+
+#team-list{
+	/* Remove default list styling */
+	list-style-type: none;
+	padding: 0;
+	margin: 30px 0 0 0;
+}
+
+
+
 
 
 	  @media (min-width: 1400px) {

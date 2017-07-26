@@ -1,7 +1,7 @@
 <script>
   var timeoutId;
 
-  $('form input, form textarea, #intro-context').on('input propertychange change', autoSave);
+  $('.autosave, #intro-context').on('input propertychange change', autoSave);
 
   function autoSave(){
     console.log('Text Change');
