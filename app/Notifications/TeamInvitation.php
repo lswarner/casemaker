@@ -45,7 +45,7 @@ class TeamInvitation extends Notification
 
         $title= "";
         if( $casestudy->title != ""){
-          $title= " titled ".$casestudy->title;
+          $title= ' titled <b>"'.$casestudy->title.'"</b>';
         }
 
         return (new MailMessage)
