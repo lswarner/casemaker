@@ -128,11 +128,13 @@ class CaseStudyController extends Controller
     {
         $keywords= Keyword::all_sorted()->pluck('keyword', 'id');
         $team_suggestions= User::all_sorted()->diff($caseStudy->team);
+        $method_suggestions= Method::all_sorted()->diff($caseStudy->methods);
 
         return view('casestudy.methodology', [ 'casestudy'=>$caseStudy,
                                                 'keywords'=>$keywords,
                                                 'country_suggestions' => json_encode($this->country_suggestions),
-                                                'team_suggestions' => $team_suggestions
+                                                'team_suggestions' => $team_suggestions,
+                                                'method_suggestions' => $method_suggestions
                                             ] );
     }
 
@@ -146,11 +148,13 @@ class CaseStudyController extends Controller
     {
         $keywords= Keyword::all_sorted()->pluck('keyword', 'id');
         $team_suggestions= User::all_sorted()->diff($caseStudy->team);
+        $method_suggestions= Method::all_sorted()->diff($caseStudy->methods);
 
         return view('casestudy.results', [ 'casestudy'=>$caseStudy,
                                                 'keywords'=>$keywords,
                                                 'country_suggestions' => json_encode($this->country_suggestions),
-                                                'team_suggestions' => $team_suggestions
+                                                'team_suggestions' => $team_suggestions,
+                                                'method_suggestions' => $method_suggestions
                                             ] );
     }
 
@@ -164,11 +168,13 @@ class CaseStudyController extends Controller
     {
         $keywords= Keyword::all_sorted()->pluck('keyword', 'id');
         $team_suggestions= User::all_sorted()->diff($caseStudy->team);
+        $method_suggestions= Method::all_sorted()->diff($caseStudy->methods);
 
         return view('casestudy.implications', [ 'casestudy'=>$caseStudy,
                                                 'keywords'=>$keywords,
                                                 'country_suggestions' => json_encode($this->country_suggestions),
-                                                'team_suggestions' => $team_suggestions
+                                                'team_suggestions' => $team_suggestions,
+                                                'method_suggestions' => $method_suggestions
                                             ] );
     }
 
@@ -182,11 +188,13 @@ class CaseStudyController extends Controller
     {
         $keywords= Keyword::all_sorted()->pluck('keyword', 'id');
         $team_suggestions= User::all_sorted()->diff($caseStudy->team);
+        $method_suggestions= Method::all_sorted()->diff($caseStudy->methods);
 
         return view('casestudy.review', [ 'casestudy'=>$caseStudy,
                                           'keywords'=>$keywords,
                                           'country_suggestions' => json_encode($this->country_suggestions),
-                                          'team_suggestions' => $team_suggestions
+                                          'team_suggestions' => $team_suggestions,
+                                          'method_suggestions' => $method_suggestions
                                        ] );
     }
 
