@@ -108,11 +108,13 @@ class CaseStudyController extends Controller
     {
         $keywords= Keyword::all_sorted()->pluck('keyword', 'id');
         $team_suggestions= User::all_sorted()->diff($caseStudy->team);
+        $method_suggestions= Method::all_sorted()->diff($caseStudy->methods);
 
         return view('casestudy.introduction', [ 'casestudy'=>$caseStudy,
                                                 'keywords'=>$keywords,
                                                 'country_suggestions' => json_encode($this->country_suggestions),
-                                                'team_suggestions' => $team_suggestions
+                                                'team_suggestions' => $team_suggestions,
+                                                'method_suggestions' => $method_suggestions
                                             ] );
     }
 
@@ -367,6 +369,28 @@ class CaseStudyController extends Controller
       }
     }
 
+
+    /**
+     * Add a method to this casestudy
+     *
+     * @param  \App\CaseStudy  $caseStudy
+     * @return \Illuminate\Http\Response
+     */
+    public function add_remove(Request $request, CaseStudy $caseStudy){
+
+      return;
+    }
+
+    /**
+     * Remove a method from this casestudy
+     *
+     * @param  \App\CaseStudy  $caseStudy
+     * @return \Illuminate\Http\Response
+     */
+    public function method_remove(Request $request, CaseStudy $caseStudy){
+
+      return;
+    }
 
 
     /**
