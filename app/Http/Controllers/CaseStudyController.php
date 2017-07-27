@@ -108,11 +108,13 @@ class CaseStudyController extends Controller
     {
         $keywords= Keyword::all_sorted()->pluck('keyword', 'id');
         $team_suggestions= User::all_sorted()->diff($caseStudy->team);
+        $method_suggestions= Method::all_sorted()->diff($caseStudy->methods);
 
         return view('casestudy.introduction', [ 'casestudy'=>$caseStudy,
                                                 'keywords'=>$keywords,
                                                 'country_suggestions' => json_encode($this->country_suggestions),
-                                                'team_suggestions' => $team_suggestions
+                                                'team_suggestions' => $team_suggestions,
+                                                'method_suggestions' => $method_suggestions
                                             ] );
     }
 
@@ -367,6 +369,50 @@ class CaseStudyController extends Controller
       }
     }
 
+
+    /**
+     * Add a method to this casestudy
+     *
+     * @param  \App\CaseStudy  $caseStudy
+     * @return \Illuminate\Http\Response
+     */
+    public function method_add(Request $request, CaseStudy $caseStudy){
+
+        $method= $request->input('method_id');
+        $user= $request->input('user_id');
+
+        if($caseStudy->team->contains($user) == TRUE){
+          $caseStudy->methods()->attach($method);
+
+          return response()->json(['response' => 'Method #'.$method.' was add from the case study.']);
+        }
+        else {
+          $status= '401'; //unauthorized
+          return response()->json(['error' => 'Invalid permission to add method from case study'], $status);
+        }
+    }
+
+    /**
+     * Remove a method from this casestudy
+     *
+     * @param  \App\CaseStudy  $caseStudy
+     * @return \Illuminate\Http\Response
+     */
+    public function method_remove(Request $request, CaseStudy $caseStudy){
+
+      $method= $request->input('method_id');
+      $user= $request->input('user_id');
+
+      if($caseStudy->team->contains($user) == TRUE){
+        $caseStudy->methods()->detach($method);
+
+        return response()->json(['response' => 'Method #'.$method.' was removed from the case study.']);
+      }
+      else {
+        $status= '401'; //unauthorized
+        return response()->json(['error' => 'Invalid permission to remove method from case study'], $status);
+      }
+    }
 
 
     /**

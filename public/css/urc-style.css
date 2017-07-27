@@ -341,6 +341,18 @@ label{
     outline: none;
   }
 
+  .hover-noon:hover,
+  .hover-noon:active,
+  .hover-noon:focus {
+    color: #FF6B26 !important;
+  }
+
+  .hover-sunset:hover,
+  .hover-sunset:active,
+  .hover-sunset:focus {
+    color: #FF3821 !important;
+  }
+
 
 
   .btn-email{

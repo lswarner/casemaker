@@ -65,6 +65,15 @@
 
         </div>
 
+        <h4>Methods</h4>
+        <ul id="method-bar">
+        @foreach($casestudy->methods as $m)
+          <li>{{ $m->name }}
+            &nbsp;&nbsp;&nbsp;<i data-id="{{$m->id}}" data-name="{{$m->name}}" class="remove-method fa fa-close text-danger" aria-hidden="true"></i>
+          </li>
+        @endforeach
+        </ul>
+        <button class="btn-icon hover-sunset" type="button" data-toggle="modal" data-target="#methods-modal"><i class="fa fa-plus-circle fa-3x" aria-hidden="true"></i></button>
 
       </div>
 
@@ -82,7 +91,7 @@
           <li class="text-muted">{{ $i->email }} (invited)</li>
         @endforeach
         </ul>
-        <button class=" btn-icon" type="button" data-toggle="modal" data-target="#team-member-modal"><i class="fa fa-plus-circle fa-3x" aria-hidden="true"></i></button>
+        <button class="btn-icon" type="button" data-toggle="modal" data-target="#team-member-modal"><i class="fa fa-plus-circle fa-3x" aria-hidden="true"></i></button>
       </div>
 
       <div class="col-md-4 col-lg-3">
@@ -116,7 +125,7 @@
             <h4>Live on {{ $casestudy->published_at->format('F d, Y')  }}</h4>
           @endif
 
-          <h4 id="autosave-message">Updated on {{ $casestudy->updated_at->format('F d, Y') }}</h4>
+          <h4 id="autosave-message">@isset($casestudy->updated_at) Updated on {{ $casestudy->updated_at->format('F d, Y') }}@endisset</h4>
 
       </div>
       {!! Form::close() !!}
@@ -124,3 +133,4 @@
   </div>
 
   @include('casestudy.modals.team-member')
+  @include('casestudy.modals.methods')
