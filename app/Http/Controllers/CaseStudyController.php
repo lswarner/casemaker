@@ -109,12 +109,14 @@ class CaseStudyController extends Controller
         $keywords= Keyword::all_sorted()->pluck('keyword', 'id');
         $team_suggestions= User::all_sorted()->diff($caseStudy->team);
         $method_suggestions= Method::all_sorted()->diff($caseStudy->methods);
+        $keyword_suggestions= Keyword::all_sorted()->diff($caseStudy->keywords);
 
         return view('casestudy.introduction', [ 'casestudy'=>$caseStudy,
                                                 'keywords'=>$keywords,
                                                 'country_suggestions' => json_encode($this->country_suggestions),
                                                 'team_suggestions' => $team_suggestions,
-                                                'method_suggestions' => $method_suggestions
+                                                'method_suggestions' => $method_suggestions,
+                                                'keyword_suggestions' => $keyword_suggestions
                                             ] );
     }
 
@@ -129,12 +131,14 @@ class CaseStudyController extends Controller
         $keywords= Keyword::all_sorted()->pluck('keyword', 'id');
         $team_suggestions= User::all_sorted()->diff($caseStudy->team);
         $method_suggestions= Method::all_sorted()->diff($caseStudy->methods);
+        $keyword_suggestions= Keyword::all_sorted()->diff($caseStudy->keywords);
 
         return view('casestudy.methodology', [ 'casestudy'=>$caseStudy,
                                                 'keywords'=>$keywords,
                                                 'country_suggestions' => json_encode($this->country_suggestions),
                                                 'team_suggestions' => $team_suggestions,
-                                                'method_suggestions' => $method_suggestions
+                                                'method_suggestions' => $method_suggestions,
+                                                'keyword_suggestions' => $keyword_suggestions
                                             ] );
     }
 
@@ -149,12 +153,14 @@ class CaseStudyController extends Controller
         $keywords= Keyword::all_sorted()->pluck('keyword', 'id');
         $team_suggestions= User::all_sorted()->diff($caseStudy->team);
         $method_suggestions= Method::all_sorted()->diff($caseStudy->methods);
+        $keyword_suggestions= Keyword::all_sorted()->diff($caseStudy->keywords);
 
         return view('casestudy.results', [ 'casestudy'=>$caseStudy,
                                                 'keywords'=>$keywords,
                                                 'country_suggestions' => json_encode($this->country_suggestions),
                                                 'team_suggestions' => $team_suggestions,
-                                                'method_suggestions' => $method_suggestions
+                                                'method_suggestions' => $method_suggestions,
+                                                'keyword_suggestions' => $keyword_suggestions
                                             ] );
     }
 
@@ -169,12 +175,14 @@ class CaseStudyController extends Controller
         $keywords= Keyword::all_sorted()->pluck('keyword', 'id');
         $team_suggestions= User::all_sorted()->diff($caseStudy->team);
         $method_suggestions= Method::all_sorted()->diff($caseStudy->methods);
+        $keyword_suggestions= Keyword::all_sorted()->diff($caseStudy->keywords);
 
         return view('casestudy.implications', [ 'casestudy'=>$caseStudy,
                                                 'keywords'=>$keywords,
                                                 'country_suggestions' => json_encode($this->country_suggestions),
                                                 'team_suggestions' => $team_suggestions,
-                                                'method_suggestions' => $method_suggestions
+                                                'method_suggestions' => $method_suggestions,
+                                                'keyword_suggestions' => $keyword_suggestions
                                             ] );
     }
 
@@ -189,12 +197,14 @@ class CaseStudyController extends Controller
         $keywords= Keyword::all_sorted()->pluck('keyword', 'id');
         $team_suggestions= User::all_sorted()->diff($caseStudy->team);
         $method_suggestions= Method::all_sorted()->diff($caseStudy->methods);
+        $keyword_suggestions= Keyword::all_sorted()->diff($caseStudy->keywords);
 
         return view('casestudy.review', [ 'casestudy'=>$caseStudy,
                                           'keywords'=>$keywords,
                                           'country_suggestions' => json_encode($this->country_suggestions),
                                           'team_suggestions' => $team_suggestions,
-                                          'method_suggestions' => $method_suggestions
+                                          'method_suggestions' => $method_suggestions,
+                                          'keyword_suggestions' => $keyword_suggestions
                                        ] );
     }
 
@@ -419,6 +429,51 @@ class CaseStudyController extends Controller
       else {
         $status= '401'; //unauthorized
         return response()->json(['error' => 'Invalid permission to remove method from case study'], $status);
+      }
+    }
+
+
+    /**
+     * Add a keyword to this casestudy
+     *
+     * @param  \App\CaseStudy  $caseStudy
+     * @return \Illuminate\Http\Response
+     */
+    public function keyword_add(Request $request, CaseStudy $caseStudy){
+
+        $keyword= $request->input('keyword_id');
+        $user= $request->input('user_id');
+
+        if($caseStudy->team->contains($user) == TRUE){
+          $caseStudy->keywords()->attach($keyword);
+
+          return response()->json(['response' => 'keyword #'.$keyword.' was add from the case study.']);
+        }
+        else {
+          $status= '401'; //unauthorized
+          return response()->json(['error' => 'Invalid permission to add keyword from case study'], $status);
+        }
+    }
+
+    /**
+     * Remove a keyword from this casestudy
+     *
+     * @param  \App\CaseStudy  $caseStudy
+     * @return \Illuminate\Http\Response
+     */
+    public function keyword_remove(Request $request, CaseStudy $caseStudy){
+
+      $keyword= $request->input('keyword_id');
+      $user= $request->input('user_id');
+
+      if($caseStudy->team->contains($user) == TRUE){
+        $caseStudy->keywords()->detach($keyword);
+
+        return response()->json(['response' => 'keyword #'.$keyword.' was removed from the case study.']);
+      }
+      else {
+        $status= '401'; //unauthorized
+        return response()->json(['error' => 'Invalid permission to remove keyword from case study'], $status);
       }
     }
 
