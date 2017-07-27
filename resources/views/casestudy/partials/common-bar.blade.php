@@ -66,10 +66,10 @@
         </div>
 
         <h4>Methods</h4>
-        <ul class="method-list">
+        <ul id="method-bar">
         @foreach($casestudy->methods as $m)
           <li>{{ $m->name }}
-            &nbsp;&nbsp;&nbsp;<i data-id="{{$m->id}}" data-name="{{$m->name}}" class="remove-me fa fa-close text-danger" aria-hidden="true"></i>
+            &nbsp;&nbsp;&nbsp;<i data-id="{{$m->id}}" data-name="{{$m->name}}" class="remove-method fa fa-close text-danger" aria-hidden="true"></i>
           </li>
         @endforeach
         </ul>
@@ -125,7 +125,7 @@
             <h4>Live on {{ $casestudy->published_at->format('F d, Y')  }}</h4>
           @endif
 
-          <h4 id="autosave-message">@isset($casestudy->updated_at) Updated on {{ $casestudy->updated_at }}@endisset</h4>
+          <h4 id="autosave-message">@isset($casestudy->updated_at) Updated on {{ $casestudy->updated_at->format('F d, Y') }}@endisset</h4>
 
       </div>
       {!! Form::close() !!}

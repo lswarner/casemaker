@@ -376,9 +376,20 @@ class CaseStudyController extends Controller
      * @param  \App\CaseStudy  $caseStudy
      * @return \Illuminate\Http\Response
      */
-    public function add_remove(Request $request, CaseStudy $caseStudy){
+    public function method_add(Request $request, CaseStudy $caseStudy){
 
-      return;
+        $method= $request->input('method_id');
+        $user= $request->input('user_id');
+
+        if($caseStudy->team->contains($user) == TRUE){
+          $caseStudy->methods()->attach($method);
+
+          return response()->json(['response' => 'Method #'.$method.' was add from the case study.']);
+        }
+        else {
+          $status= '401'; //unauthorized
+          return response()->json(['error' => 'Invalid permission to add method from case study'], $status);
+        }
     }
 
     /**
@@ -389,7 +400,18 @@ class CaseStudyController extends Controller
      */
     public function method_remove(Request $request, CaseStudy $caseStudy){
 
-      return;
+      $method= $request->input('method_id');
+      $user= $request->input('user_id');
+
+      if($caseStudy->team->contains($user) == TRUE){
+        $caseStudy->methods()->detach($method);
+
+        return response()->json(['response' => 'Method #'.$method.' was removed from the case study.']);
+      }
+      else {
+        $status= '401'; //unauthorized
+        return response()->json(['error' => 'Invalid permission to remove method from case study'], $status);
+      }
     }
 
 
