@@ -17,16 +17,24 @@
 		cursor: default;
 	}
 
-	.team-member-list{
+	.team-member-list,
+	.method-list
+	{
 		list-style: none;
 		padding-left: 0px;
 	}
 
-	.team-member-list > li{
+	.team-member-list > li,
+	#method-bar > li,
+	#keyword-bar > li{
 		font-size: 18px;
+		cursor:default;
+		line-height: 1.3;
 	}
 
-	.team-member-list > li{
+	.team-member-list > li > i,
+	#method-bar > li > i,
+	#keyword-bar > li > i{
 		cursor: pointer;
 	}
 
@@ -131,11 +139,15 @@
 /****************************
  Add Team Member Modal
 ****************************/
-.add-user{
+.add-user,
+.add-method,
+.add-keyword{
 	overflow: auto;
 }
 
-#team-list{
+#team-list,
+#method-list,
+#keyword-list{
 	/* Remove default list styling */
 	list-style-type: none;
 	padding: 0;

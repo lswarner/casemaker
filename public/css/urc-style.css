@@ -341,6 +341,18 @@ label{
     outline: none;
   }
 
+  .hover-noon:hover,
+  .hover-noon:active,
+  .hover-noon:focus {
+    color: #FF6B26 !important;
+  }
+
+  .hover-sunset:hover,
+  .hover-sunset:active,
+  .hover-sunset:focus {
+    color: #FF3821 !important;
+  }
+
 
 
   .btn-email{
@@ -644,14 +656,33 @@ a> .panel-account:active{
   border: 2px solid #51a4ff; /* blue dark */
  }
 
+.add-keyword,
+.noon{
+  background: #FF6B26; /* noon */
+  color: #ffffff !important;
+  border: 2px solid #FF6B26; /* noon */
+}
+.add-keyword:hover,
+.add-keyword:active,
+.add-keyword:focus,
+.noon:hover,
+.noon:active,
+.noon:focus {
+  background: #f79917  !important; /* dawn */
+  color: #ffffff !important;
+  border: 2px solid #f79917 ;
+}
 
+.add-method,
 .sunset{
   background: #FF3821; /* sunset */
   color: #ffffff !important;
   border: 2px solid #FF3821; /* sunset */
 }
 
-
+.add-method:hover,,
+.add-method:active,
+.add-method:focus,
 .sunset:hover,
 .sunset:active,
 .sunset:focus {
