@@ -51,6 +51,8 @@ Route::group(['middleware' => ['team']], function () {
 
   Route::patch('casestudy/{casestudy}/method/add', 'CaseStudyController@method_add')->name('method_add');
   Route::patch('casestudy/{casestudy}/method/remove', 'CaseStudyController@method_remove')->name('method_remove');
+  Route::patch('casestudy/{casestudy}/keyword/add', 'CaseStudyController@keyword_add')->name('keyword_add');
+  Route::patch('casestudy/{casestudy}/keyword/remove', 'CaseStudyController@keyword_remove')->name('keyword_remove');
 });
 
 

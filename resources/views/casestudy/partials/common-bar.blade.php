@@ -33,39 +33,21 @@
         </div>
 
 
-        <div class="form-group{{ $errors->has('keywords') ? ' has-error' : '' }}">
-
-            <?php /*
-            <input type="checkbox" id="{{ $k->id }}" value="{{ $k->keyword }}">
-            <label class="checkbox-inline">
-              {{ $k->keyword }}
-            </label>
-          */ ?>
-
-          <div class="col-md-12">
-            <h4>Keywords</h4>
-            {!! Form::select('keywords[]', $keywords, $casestudy->keywords->pluck('id')->all(), ['class' => 'form-control', 'id' => 'keywords', 'multiple' => 'multiple']) !!}
-
-            <?php /*
-            <select class="" multiple="multiple" name="keywords[]" id="keywords">
-                @foreach($keywords as $keyword)
-
-                    <option value="{{$keyword->id}}"
-                      @foreach($keywords as $k)
-                        @if($keyword->id == $k->id)
-                          selected="selected"
-                        @endif
-                      @endforeach
-                    >{{$keyword->keyword}}</option>
-                @endforeach
-            </select>
-            */ ?>
-          </div>
+        <h4>Keywords <button class="btn-icon hover-noon" type="button" data-toggle="modal" data-target="#keywords-modal"><i class="fa fa-plus-circle fa-1x" aria-hidden="true"></i></button></h4>
+        <ul id="keyword-bar">
+        @foreach($casestudy->keywords as $k)
+          <li>{{ $k->keyword }}
+            &nbsp;&nbsp;&nbsp;<i data-id="{{$k->id}}" data-name="{{$k->keyword}}" class="remove-keyword fa fa-close text-danger" aria-hidden="true"></i>
+          </li>
+        @endforeach
+        </ul>
 
 
-        </div>
 
-        <h4>Methods</h4>
+
+
+        <h4>Methods
+        <button class="btn-icon hover-sunset" type="button" data-toggle="modal" data-target="#methods-modal"><i class="fa fa-plus-circle" aria-hidden="true"></i></button></h4>
         <ul id="method-bar">
         @foreach($casestudy->methods as $m)
           <li>{{ $m->name }}
@@ -73,12 +55,11 @@
           </li>
         @endforeach
         </ul>
-        <button class="btn-icon hover-sunset" type="button" data-toggle="modal" data-target="#methods-modal"><i class="fa fa-plus-circle fa-3x" aria-hidden="true"></i></button>
 
       </div>
 
       <div class="col-md-4 col-lg-4 col-lg-offset-1">
-        <h2>Team Members</h2>
+        <h2>Team Members <button class="btn-icon" type="button" data-toggle="modal" data-target="#team-member-modal"><i class="fa fa-plus-circle" aria-hidden="true"></i></button></h2>
 
         <ul class="team-member-list">
         @foreach($casestudy->team as $t)
@@ -91,7 +72,7 @@
           <li class="text-muted">{{ $i->email }} (invited)</li>
         @endforeach
         </ul>
-        <button class="btn-icon" type="button" data-toggle="modal" data-target="#team-member-modal"><i class="fa fa-plus-circle fa-3x" aria-hidden="true"></i></button>
+
       </div>
 
       <div class="col-md-4 col-lg-3">
@@ -134,3 +115,4 @@
 
   @include('casestudy.modals.team-member')
   @include('casestudy.modals.methods')
+  @include('casestudy.modals.keywords')
