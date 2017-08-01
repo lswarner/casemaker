@@ -89,36 +89,39 @@
           @endforeach
 
 
-          function updateWordCount(box, wc_div, max_words){
 
-            if( $(box).summernote('isEmpty') ) {
-              var t= "";
-              var t_length= 0;
-              //console.log('its empty');
+          @if( isset($boxes) && count( $boxes ) > 0 )
+            function updateWordCount(box, wc_div, max_words){
+
+              if( $(box).summernote('isEmpty') ) {
+                var t= "";
+                var t_length= 0;
+                //console.log('its empty');
+              }
+              else {
+                //var t= $('#{{ $box["name"] }}').text().substring(3).slice(0, -4);
+                var t= $(box).text();
+                var t_length= t.split(/[\s]+/).length;
+              }
+
+              //console.log(t_length);
+
+              var remaining= max_words - t_length;
+              if( remaining < 0) { remaining= 0; }
+
+              $(wc_div).text(remaining+' words remaining');
+              //console.log(remaining+' words remaining');
+
+              if(remaining == 0){
+                $(wc_div).addClass('text-sunset');
+              }
+              else {
+                $(wc_div).removeClass('text-sunset');
+              }
+
+              return t_length;
             }
-            else {
-              //var t= $('#{{ $box["name"] }}').text().substring(3).slice(0, -4);
-              var t= $(box).text();
-              var t_length= t.split(/[\s]+/).length;
-            }
-
-            //console.log(t_length);
-
-            var remaining= max_words - t_length;
-            if( remaining < 0) { remaining= 0; }
-
-            $(wc_div).text(remaining+' words remaining');
-            //console.log(remaining+' words remaining');
-
-            if(remaining == 0){
-              $(wc_div).addClass('text-sunset');
-            }
-            else {
-              $(wc_div).removeClass('text-sunset');
-            }
-
-            return t_length;
-          }
+          @endisset
 
 
         });
