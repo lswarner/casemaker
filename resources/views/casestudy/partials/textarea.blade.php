@@ -6,7 +6,7 @@
     {!! Form::textarea( $name , null, ['class'=>'form-control', 'id'=>$name]) !!}
 
     @isset( $word_count )
-    <div id="{{ $name }}_length" class="pull-right">{!! $word_count - str_word_count($content) !!} words remaining</div>
+    <div id="{{ $name }}_length" class="pull-right">words remaining</div>
     @endisset
 
     @if ($errors->has('{{ $name }}'))
