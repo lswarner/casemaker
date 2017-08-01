@@ -11,8 +11,8 @@
   @include('scripts.autosave')
 
   @include('scripts.summernote', ['boxes' => [
-                  ['name'=>'method_used', 'height'=>'600px'],
-                  ['name'=>'method_challenges', 'height'=>'600px'],
+                  ['name'=>'method_used', 'height'=>'600px', 'word_count'=>1000],
+                  ['name'=>'method_challenges', 'height'=>'600px', 'word_count'=>1000],
                   ['name'=>'method_tips', 'height'=>'200px'],
                   ['name'=>'method_partners', 'height'=>'200px'],
                   ['name'=>'method_questions' , 'height'=>'200px']
@@ -43,12 +43,12 @@
             Tumblr in master cleanse consequat gluten-free veniam aesthetic. Snackwave ut tote bag trust fund put a bird on it organic commodo iPhone jean shorts authentic id. Affogato prism dolore artisan laborum mumblecore actually copper mug. Shaman kombucha celiac health goth umami try-hard dreamcatcher man braid neutra. Cold-pressed deserunt everyday carry whatever knausgaard unicorn bespoke hoodie mumblecore pour-over wolf intelligentsia umami waistcoat. Raw denim occaecat small batch lyft, tilde cardigan af VHS four dollar toast chia artisan plaid venmo 3 wolf moon vinyl. Adipisicing eiusmod brooklyn palo santo. Non palo santo pork belly ea incididunt, copper mug everyday carry bespoke consequat portland. Migas celiac sint, proident la croix flannel listicle live-edge edison bulb prism small batch labore.
           </p>
 
-          @component('casestudy.partials.textarea', ['name'=>'method_used'])
+          @component('casestudy.partials.textarea', ['name'=>'method_used', 'content'=>$casestudy->method_used, 'word_count'=>1000])
             Discuss the methods of this case study.
           @endcomponent
 
 
-          @component('casestudy.partials.textarea', ['name'=>'method_challenges'])
+          @component('casestudy.partials.textarea', ['name'=>'method_challenges', 'content'=>$casestudy->method_challenges, 'word_count'=>1000])
             Discuss any challenges and how you overcame them.
           @endcomponent
 

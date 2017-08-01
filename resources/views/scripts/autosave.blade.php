@@ -4,7 +4,7 @@
   $('.autosave, #intro-context').on('input propertychange change', autoSave);
 
   function autoSave(){
-    console.log('Text Change');
+    //console.log('Text Change');
 
     clearTimeout(timeoutId);
     timeoutId = setTimeout(function() {
@@ -15,7 +15,7 @@
 
   function postToDB()
   {
-      console.log('Saving to the db');
+      //console.log('Saving to the db');
       form = $('form');
 
 
