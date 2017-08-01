@@ -11,8 +11,8 @@
   @include('scripts.autosave')
 
   @include('scripts.summernote', ['boxes' => [
-                  ['name'=>'intro_context', 'height'=>'600px'],
-                  ['name'=>'intro_nuances', 'height'=>'600px'],
+                  ['name'=>'intro_context', 'height'=>'600px', 'word_count'=>1000],
+                  ['name'=>'intro_nuances', 'height'=>'600px', 'word_count'=>1000],
                   ['name'=>'intro_tips', 'height'=>'200px'],
                   ['name'=>'intro_acronyms', 'height'=>'200px'],
                   ['name'=>'intro_objectives', 'height'=>'200px'],
@@ -44,12 +44,12 @@
             Tumblr in master cleanse consequat gluten-free veniam aesthetic. Snackwave ut tote bag trust fund put a bird on it organic commodo iPhone jean shorts authentic id. Affogato prism dolore artisan laborum mumblecore actually copper mug. Shaman kombucha celiac health goth umami try-hard dreamcatcher man braid neutra. Cold-pressed deserunt everyday carry whatever knausgaard unicorn bespoke hoodie mumblecore pour-over wolf intelligentsia umami waistcoat. Raw denim occaecat small batch lyft, tilde cardigan af VHS four dollar toast chia artisan plaid venmo 3 wolf moon vinyl. Adipisicing eiusmod brooklyn palo santo. Non palo santo pork belly ea incididunt, copper mug everyday carry bespoke consequat portland. Migas celiac sint, proident la croix flannel listicle live-edge edison bulb prism small batch labore.
           </p>
 
-          @component('casestudy.partials.textarea', ['name'=>'intro_context'])
+          @component('casestudy.partials.textarea', ['name'=>'intro_context', 'content'=>$casestudy->intro_context, 'word_count'=>1000])
             Provide any relevant contextual information.
           @endcomponent
 
 
-          @component('casestudy.partials.textarea', ['name'=>'intro_nuances'])
+          @component('casestudy.partials.textarea', ['name'=>'intro_nuances', 'content'=>$casestudy->intro_nuances, 'word_count'=>1000])
             Explain any cultural nuances and/or complexities that were unique to your research.
           @endcomponent
 
