@@ -10,6 +10,9 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('img/favicon.ico') }}" type="image/x-icon">
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/urc-style.css') }}" rel="stylesheet">
@@ -34,7 +37,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-left" href="{{ url('/') }}">
-                        <img src="{{ asset('img/isc-logo-web.jpg')}}" />
+                        <img src="{{ asset('img/isc-logo-web344.jpg')}}" />
                     </a>
                 </div>
 

@@ -15,12 +15,12 @@
           <div id="narrative" class="col-md-7 col-md-push-5   col-lg-8 col-lg-push-4">
 
               @component('casestudy.partials.review-text', ['content'=>$casestudy->intro_context])
-                Provide any relevant contextual information.
+                Relevant contextual information.
               @endcomponent
 
 
               @component('casestudy.partials.review-text', ['content'=>$casestudy->intro_nuances])
-                Explain any cultural nuances and/or complexities that were unique to your research.
+                Cultural nuances and complexities
               @endcomponent
 
 
@@ -89,12 +89,12 @@
           <div id="narrative" class="col-md-7 col-md-push-5   col-lg-8 col-lg-push-4">
 
               @component('casestudy.partials.review-text', ['content'=>$casestudy->method_used])
-                Discuss the methods of this case study.
+                Discussion
               @endcomponent
 
 
               @component('casestudy.partials.review-text', ['content'=>$casestudy->method_challenges])
-                Discuss any challenges and how you overcame them.
+                Challenges
               @endcomponent
 
 
@@ -154,12 +154,12 @@
           <div id="narrative" class="col-md-7 col-md-push-5   col-lg-8 col-lg-push-4">
 
             @component('casestudy.partials.review-text', ['content'=>$casestudy->results_discuss])
-              Discuss the results of this case study.
+              Discussion
             @endcomponent
 
 
             @component('casestudy.partials.review-text', ['content'=>$casestudy->results_challenges])
-              Discuss any challenges and how you overcame them.
+              Challenges
             @endcomponent
 
 
@@ -210,12 +210,12 @@
           <div id="narrative" class="col-md-7 col-md-push-5   col-lg-8 col-lg-push-4">
 
               @component('casestudy.partials.review-text', ['content'=>$casestudy->implications_discuss])
-                Discuss the implications of this case study.
+                Discussion
               @endcomponent
 
 
               @component('casestudy.partials.review-text', ['content'=>$casestudy->implications_challenges])
-                Discuss any challenges and how you overcame them.
+                Challenges
               @endcomponent
 
 

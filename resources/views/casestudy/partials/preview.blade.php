@@ -16,7 +16,7 @@
           <br />
 
 
-          <span class="subtext">COUNTRIES:</span> {{ $cs->countries }}<br />
+          <span class="subtext">COUNTRIES:</span> {{ strip_tags($cs->countries) }}<br />
 
 
           <span class="casestudy-date">

@@ -76,7 +76,21 @@
       </div>
 
       <div class="col-md-4 col-lg-3">
-          <h2>&nbsp;</h2>
+
+
+          <?php
+            if($casestudy->status == "created"):
+              $status_text= "In Progress";
+            elseif($casestudy->status == "submitted"):
+              $status_text= "Submitted";
+            elseif($casestudy->status == "published"):
+              $status_text= "Live";
+            endif;
+          ?>
+
+          <div style="margin-top:20px;" class="btn status-{{$casestudy->status}}">{{ $status_text }}</div>
+
+
 
           @if( "review" != \Route::currentRouteName() )
             <a href="{{ route('review', $casestudy) }}" class="btn btn-urc-alt">Preview</a>

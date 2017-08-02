@@ -9,10 +9,10 @@
               height:"{{ $box['height'] }}",
               toolbar: [
                 // [groupName, [list of button]]
-                ['font', ['fontname']],
-                ['fontsize', ['fontsize']],
-                ['style', ['bold', 'italic', 'underline']],
-                ['para', ['ul', 'ol']]
+                ['font', ['fontname', 'fontsize']],
+                ['style', ['bold', 'italic', 'underline', 'superscript','link']],
+                ['para', ['ul', 'ol']],
+                ['ctrl', ['undo', 'redo']]
               ],
               fontNames: ['Arial', 'Roboto', 'Source Sans Pro'],
               fontNamesIgnoreCheck: ['Roboto', 'Source Sans Pro'],
