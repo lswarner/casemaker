@@ -33,8 +33,21 @@
 
         <h3>{{ $casestudy->title }}</h3>
 
-        <p>{{ $casestudy->countries }}</p>
+        <p>{{ strip_tags($casestudy->countries) }}</p>
 
+        <h4>Keywords</h4>
+        <ul id="keyword-bar">
+        @foreach($casestudy->keywords as $k)
+          <li>{{ $k->keyword }}</li>
+        @endforeach
+        </ul>
+
+        <h4>Methods</h4>
+        <ul id="method-bar">
+        @foreach($casestudy->methods as $m)
+          <li>{{ $m->name }}</li>
+        @endforeach
+        </ul>
 
       </div>
 
@@ -43,10 +56,15 @@
       <div class="col-md-4 col-lg-4 col-lg-offset-1">
         <h2>Team Members</h2>
 
+        <ul class="team-member-list">
         @foreach($casestudy->team as $t)
-          <p>{{ $t->name }}</p>
+          <li>{{ $t->name }}</li>
         @endforeach
-        <p>Tobias Funke</p>
+
+        @foreach($casestudy->invitations as $i)
+          <li class="text-muted">{{ $i->email }} (invited)</li>
+        @endforeach
+      </ul>
 
       </div>
 
