@@ -486,6 +486,21 @@ class CaseStudyController extends Controller
      */
     public function destroy(CaseStudy $caseStudy)
     {
-        //
+        $user= Auth::user();
+        if($user->is_admin == true || $caseStudy->team->contains('id', $user->id) ){
+
+          $caseStudy->delete();
+
+          Session::flash('message', 'Your case study has been deleted.');
+      		Session::flash('alert-class', 'flash-success');
+
+          return redirect()->route('home');
+        }
+        else {
+          Session::flash('message', 'You don\'t have permission to delete this case study.');
+      		Session::flash('alert-class', 'flash-danger');
+
+          return response()->redirect('introduction', $caseStudy);
+        }
     }
 }
