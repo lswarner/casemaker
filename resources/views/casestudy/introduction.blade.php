@@ -50,7 +50,7 @@
 
 
           @component('casestudy.partials.textarea', ['name'=>'intro_nuances', 'content'=>$casestudy->intro_nuances, 'word_count'=>1000])
-            Explain any cultural nuances and/or complexities that were unique to your research.
+            References
           @endcomponent
 
 
