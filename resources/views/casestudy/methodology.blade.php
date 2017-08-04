@@ -49,7 +49,7 @@
 
 
           @component('casestudy.partials.textarea', ['name'=>'method_challenges', 'content'=>$casestudy->method_challenges, 'word_count'=>1000])
-            Discuss any challenges and how you overcame them.
+            References
           @endcomponent
 
 

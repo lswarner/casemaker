@@ -20,7 +20,7 @@
 
 
               @component('casestudy.partials.review-text', ['content'=>$casestudy->intro_nuances])
-                Cultural nuances and complexities
+                References
               @endcomponent
 
 
@@ -94,7 +94,7 @@
 
 
               @component('casestudy.partials.review-text', ['content'=>$casestudy->method_challenges])
-                Challenges
+                References
               @endcomponent
 
 
@@ -159,7 +159,7 @@
 
 
             @component('casestudy.partials.review-text', ['content'=>$casestudy->results_challenges])
-              Challenges
+              References
             @endcomponent
 
 
@@ -215,7 +215,7 @@
 
 
               @component('casestudy.partials.review-text', ['content'=>$casestudy->implications_challenges])
-                Challenges
+                References
               @endcomponent
 
 
