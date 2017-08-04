@@ -93,8 +93,11 @@
 
 
           @if( "review" != \Route::currentRouteName() )
-            <a href="{{ route('review', $casestudy) }}" class="btn btn-urc-alt">Preview</a>
+            <a href="{{ route('review', $casestudy) }}" class="btn btn-urc dawn">Preview</a>
           @endif
+
+          <button type="button" class="btn btn-urc-danger" data-toggle="modal" data-target="#delete-modal">Delete</button>
+
 
           <h4>&nbsp;</h4>
 
@@ -130,3 +133,4 @@
   @include('casestudy.modals.team-member')
   @include('casestudy.modals.methods')
   @include('casestudy.modals.keywords')
+  @include('casestudy.modals.delete1')
