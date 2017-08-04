@@ -1,5 +1,8 @@
 @extends('app')
 
+
+@include('casestudy.modals.delete')
+
 @section('content')
 <div class="container-fluid container-wide">
   <div class="main">

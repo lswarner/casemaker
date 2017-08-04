@@ -459,9 +459,9 @@ label{
   .btn-urc-danger:focus,
   .btn-urc-danger:active
    {
-		background: #FF6B26 !important;
+		background: #db362b !important; /* deep red */
     color: #ffffff !important;
-		border: 2px solid #FF6B26;
+		border: 2px solid #db362b; /* deep red */
 	}
 
 
@@ -707,7 +707,7 @@ a> .panel-account:active{
 .dawn:focus {
   background: #f7b355 !important; /* light dawn */
   color: #ffffff !important;
-  border: 2px solid #f7b355;
+  border: 2px solid #f7b355 !important;
 }
 
 
@@ -716,7 +716,23 @@ a> .panel-account:active{
     margin-bottom: 6px;
     overflow: hidden;
     text-overflow: ellipsis;
+
+    width: 90%; /* leave space for trash icon */
+    float:left;
   }
+
+  .casestudy-delete{
+    float:right;
+
+    padding: 5px;
+    z-index: 1000;
+  }
+
+    .btn-top-right{
+      position: relative;
+      right: -16px;
+      top: -9px;
+    }
 
   .subtext{
     font-family: 'Open Sans', sans-serif;
@@ -735,6 +751,8 @@ a> .panel-account:active{
     text-transform:none;
     overflow: hidden;
     text-overflow: ellipsis;
+
+    clear:both;
 	}
 
   .casestudy-date{

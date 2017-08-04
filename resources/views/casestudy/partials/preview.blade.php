@@ -2,6 +2,7 @@
   <a class="btn btn-casestudy {{ $cs->status }}" href="{{ route('introduction', $cs) }}">
 
       <div class="casestudy-title">{{ $cs->title ?: "My New Case Study" }}</div>
+      <button type="button" class="btn-icon hover-sunset btn-top-right" data-toggle="modal" data-title="{{ $cs->title }}" data-action="{{ route('casestudy.destroy', $cs)}}"><i class="casestudy-delete fa fa-trash-o" aria-hidden="true"></i></button>
 
       <div class="casestudy-details">
 
@@ -16,7 +17,7 @@
           <br />
 
 
-          <span class="subtext">COUNTRIES:</span> {{ $cs->countries }}<br />
+          <span class="subtext">COUNTRIES:</span> {{ strip_tags($cs->countries) }}<br />
 
 
           <span class="casestudy-date">
