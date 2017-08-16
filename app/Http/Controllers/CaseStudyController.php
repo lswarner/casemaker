@@ -247,6 +247,36 @@ class CaseStudyController extends Controller
 
 
     /**
+     * Upload a file to the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\CaseStudy  $caseStudy
+     * @return \Illuminate\Http\Response
+     */
+    public function upload(Request $request, CaseStudy $caseStudy)
+    {
+
+        if( $request->hasFile('attachment') && $request->file('attachment')->isValid() ) {
+          $file=  $request->file('attachment') ;
+          $section = $request->input('section', 'introduction');
+
+          $path= $file->store('uploads', 'local');
+
+          $attachment= new \App\Attachment;
+          $attachment->path = $path;
+          $attachment->section= $section;
+
+          $caseStudy->attachments()->save($attachment);
+        }
+
+
+        return redirect()->route($section, $caseStudy);
+
+    }
+
+
+
+    /**
      * Submit the specified resource
      *
      * @param  \App\CaseStudy  $caseStudy

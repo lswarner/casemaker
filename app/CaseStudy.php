@@ -70,6 +70,10 @@ public function invitations(){
     return $this->belongsToMany('App\Keyword', 'case_study_keyword', 'case_study_id', 'keyword_id')->withTimestamps();
   }
 
+  public function attachments(){
+    return $this->hasMany('App\Attachment');
+  }
+
 
 
   /*****************************************************
