@@ -5,8 +5,9 @@
   <div class="col-md-12">
      <h3>Want to attach an additional file, image, or tool?</h3>
      <ul>
-       <li>TPS Report</li>
-       <li>Image of Something</li>
+       @foreach($attachments as $a)
+       <li><a href="{{ $a->url() }}">{{ $a->original_name }}</a></li>
+       @endforeach
      </ul>
   </div>
 

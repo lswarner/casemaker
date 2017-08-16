@@ -15,13 +15,14 @@ class CreateAttachmentsTable extends Migration
     {
         Schema::create('attachments', function (Blueprint $table) {
             $table->increments('id');
+            $table->text('original_name');
             $table->text('path');
             $table->text('section');
 
             $table->integer('case_study_id')->unsigned()->nullable();
             $table->foreign('case_study_id')->references('id')
                   ->on('case_studies')->onDelete('cascade');
-                  
+
             $table->timestamps();
         });
     }

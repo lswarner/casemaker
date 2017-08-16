@@ -46,6 +46,7 @@ Route::group(['middleware' => ['team']], function () {
   Route::patch('casestudy/{casestudy}', 'CaseStudyController@update');
   Route::patch('casestudy/{casestudy}/submit', 'CaseStudyController@submit')->name('submit');
   Route::patch('casestudy/{casestudy}/upload', 'CaseStudyController@upload')->name('upload');
+  Route::get('casestudy/{casestudy}/attachment/{attachment}', 'CaseStudyController@attachment');
   Route::patch('casestudy/{casestudy}/team/add', 'CaseStudyController@team_add')->name('team_add');
   Route::patch('casestudy/{casestudy}/team/remove', 'CaseStudyController@team_remove')->name('team_remove');
   Route::post('casestudy/{casestudy}/invite', 'CaseStudyController@invite')->name('invite');

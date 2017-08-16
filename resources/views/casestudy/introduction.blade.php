@@ -56,7 +56,7 @@
           @endcomponent
 
 
-          @component('casestudy.partials.upload')
+          @component('casestudy.partials.upload', ['attachments'=>$attachments])
             introduction
           @endcomponent
 
