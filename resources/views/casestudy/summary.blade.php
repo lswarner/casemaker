@@ -23,6 +23,8 @@
                 References
               @endcomponent
 
+              @component('casestudy.partials.uploaded-files', ['attachments'=>$attachments["introduction"]])
+              @endcomponent
 
           </div> <!-- end narative collumn -->
 
@@ -97,6 +99,8 @@
                 References
               @endcomponent
 
+              @component('casestudy.partials.uploaded-files', ['attachments'=>$attachments["methodology"]])
+              @endcomponent
 
           </div> <!-- end narative collumn -->
 
@@ -163,6 +167,9 @@
             @endcomponent
 
 
+            @component('casestudy.partials.uploaded-files', ['attachments'=>$attachments["results"]])
+            @endcomponent
+
           </div> <!-- end narative collumn -->
 
           <!-- start of sidebar section -->
@@ -218,6 +225,9 @@
                 References
               @endcomponent
 
+
+              @component('casestudy.partials.uploaded-files', ['attachments'=>$attachments["implications"]])
+              @endcomponent
 
           </div> <!-- end narative collumn -->
 

@@ -28,11 +28,13 @@
 
    @include('scripts.team-invitation', ['url'=> route('invite', $casestudy)])
 
+   @include('scripts.file-upload')
+
 @endsection
 
 @section('casestudy-page')
 
-    {!! Form::model($casestudy, [ 'method' => 'patch', 'class'=>'form-horizontal autosave']) !!}
+    {!! Form::model($casestudy, [ 'method' => 'patch', 'class'=>'form-horizontal autosave', 'action'=>['CaseStudyController@upload', $casestudy->id], 'enctype'=>'multipart/form-data']) !!}
 
 
     <div class="row">
@@ -50,6 +52,11 @@
 
           @component('casestudy.partials.textarea', ['name'=>'method_challenges', 'content'=>$casestudy->method_challenges, 'word_count'=>1000])
             References
+          @endcomponent
+
+
+          @component('casestudy.partials.upload', ['attachments'=>$attachments])
+            methodology
           @endcomponent
 
 

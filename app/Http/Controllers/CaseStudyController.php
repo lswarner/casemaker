@@ -7,6 +7,7 @@ use App\Keyword;
 use App\Method;
 use App\User;
 use App\Invitation;
+use App\Attachment;
 use Auth;
 use Session;
 
@@ -82,7 +83,13 @@ class CaseStudyController extends Controller
 
         $keywords= Keyword::all_sorted()->pluck('keyword', 'id');
 
-        return view('casestudy.show', ['casestudy'=>$caseStudy, 'keywords'=>$keywords] );
+
+        $attachments["introduction"]= $caseStudy->attachments()->section('introduction')->get();
+        $attachments["methodology"]= $caseStudy->attachments()->section('methodology')->get();
+        $attachments["results"]= $caseStudy->attachments()->section('results')->get();
+        $attachments["implications"]= $caseStudy->attachments()->section('implications')->get();
+
+        return view('casestudy.show', ['casestudy'=>$caseStudy, 'keywords'=>$keywords, 'attachments'=>$attachments] );
     }
 
     /**
@@ -110,13 +117,15 @@ class CaseStudyController extends Controller
         $team_suggestions= User::all_sorted()->diff($caseStudy->team);
         $method_suggestions= Method::all_sorted()->diff($caseStudy->methods);
         $keyword_suggestions= Keyword::all_sorted()->diff($caseStudy->keywords);
+        $attachments= $caseStudy->attachments()->section('introduction')->get();
 
         return view('casestudy.introduction', [ 'casestudy'=>$caseStudy,
                                                 'keywords'=>$keywords,
                                                 'country_suggestions' => json_encode($this->country_suggestions),
                                                 'team_suggestions' => $team_suggestions,
                                                 'method_suggestions' => $method_suggestions,
-                                                'keyword_suggestions' => $keyword_suggestions
+                                                'keyword_suggestions' => $keyword_suggestions,
+                                                'attachments' => $attachments
                                             ] );
     }
 
@@ -132,13 +141,15 @@ class CaseStudyController extends Controller
         $team_suggestions= User::all_sorted()->diff($caseStudy->team);
         $method_suggestions= Method::all_sorted()->diff($caseStudy->methods);
         $keyword_suggestions= Keyword::all_sorted()->diff($caseStudy->keywords);
+        $attachments= $caseStudy->attachments()->section('methodology')->get();
 
         return view('casestudy.methodology', [ 'casestudy'=>$caseStudy,
                                                 'keywords'=>$keywords,
                                                 'country_suggestions' => json_encode($this->country_suggestions),
                                                 'team_suggestions' => $team_suggestions,
                                                 'method_suggestions' => $method_suggestions,
-                                                'keyword_suggestions' => $keyword_suggestions
+                                                'keyword_suggestions' => $keyword_suggestions,
+                                                'attachments' => $attachments
                                             ] );
     }
 
@@ -154,13 +165,15 @@ class CaseStudyController extends Controller
         $team_suggestions= User::all_sorted()->diff($caseStudy->team);
         $method_suggestions= Method::all_sorted()->diff($caseStudy->methods);
         $keyword_suggestions= Keyword::all_sorted()->diff($caseStudy->keywords);
+        $attachments= $caseStudy->attachments()->section('results')->get();
 
         return view('casestudy.results', [ 'casestudy'=>$caseStudy,
                                                 'keywords'=>$keywords,
                                                 'country_suggestions' => json_encode($this->country_suggestions),
                                                 'team_suggestions' => $team_suggestions,
                                                 'method_suggestions' => $method_suggestions,
-                                                'keyword_suggestions' => $keyword_suggestions
+                                                'keyword_suggestions' => $keyword_suggestions,
+                                                'attachments' => $attachments
                                             ] );
     }
 
@@ -176,13 +189,15 @@ class CaseStudyController extends Controller
         $team_suggestions= User::all_sorted()->diff($caseStudy->team);
         $method_suggestions= Method::all_sorted()->diff($caseStudy->methods);
         $keyword_suggestions= Keyword::all_sorted()->diff($caseStudy->keywords);
+        $attachments= $caseStudy->attachments()->section('implications')->get();
 
         return view('casestudy.implications', [ 'casestudy'=>$caseStudy,
                                                 'keywords'=>$keywords,
                                                 'country_suggestions' => json_encode($this->country_suggestions),
                                                 'team_suggestions' => $team_suggestions,
                                                 'method_suggestions' => $method_suggestions,
-                                                'keyword_suggestions' => $keyword_suggestions
+                                                'keyword_suggestions' => $keyword_suggestions,
+                                                'attachments' => $attachments
                                             ] );
     }
 
@@ -199,12 +214,18 @@ class CaseStudyController extends Controller
         $method_suggestions= Method::all_sorted()->diff($caseStudy->methods);
         $keyword_suggestions= Keyword::all_sorted()->diff($caseStudy->keywords);
 
+        $attachments["introduction"]= $caseStudy->attachments()->section('introduction')->get();
+        $attachments["methodology"]= $caseStudy->attachments()->section('methodology')->get();
+        $attachments["results"]= $caseStudy->attachments()->section('results')->get();
+        $attachments["implications"]= $caseStudy->attachments()->section('implications')->get();
+
         return view('casestudy.review', [ 'casestudy'=>$caseStudy,
                                           'keywords'=>$keywords,
                                           'country_suggestions' => json_encode($this->country_suggestions),
                                           'team_suggestions' => $team_suggestions,
                                           'method_suggestions' => $method_suggestions,
-                                          'keyword_suggestions' => $keyword_suggestions
+                                          'keyword_suggestions' => $keyword_suggestions,
+                                          'attachments' => $attachments
                                        ] );
     }
 
@@ -244,6 +265,37 @@ class CaseStudyController extends Controller
         return redirect()->route($destination, $caseStudy);
         */
     }
+
+
+    /**
+     * Upload a file to the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\CaseStudy  $caseStudy
+     * @return \Illuminate\Http\Response
+     */
+    public function upload(Request $request, CaseStudy $caseStudy)
+    {
+
+        if( $request->hasFile('attachment') && $request->file('attachment')->isValid() ) {
+          $file=  $request->file('attachment') ;
+          $section = $request->input('section', 'introduction');
+
+          $path= $file->store('uploads', 'local');
+
+          $attachment= new \App\Attachment;
+          $attachment->path = $path;
+          $attachment->original_name = $file->getClientOriginalName();
+          $attachment->section= $section;
+
+          $caseStudy->attachments()->save($attachment);
+        }
+
+
+        return redirect()->route($section, $caseStudy);
+
+    }
+
 
 
     /**
@@ -502,5 +554,13 @@ class CaseStudyController extends Controller
 
           return response()->redirect('introduction', $caseStudy);
         }
+    }
+
+
+
+
+    public function attachment(CaseStudy $caseStudy, Attachment $attachment){
+      $attachment->path;
+      return response()->file(storage_path( 'app/'. $attachment->path) );
     }
 }
