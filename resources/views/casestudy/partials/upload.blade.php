@@ -15,7 +15,7 @@
      <div class="input-group input-group-ub">
         <span class="input-group-btn">
             <span class="btn btn-ub btn-file">
-                Chose another file to attach&hellip; <input type="file" name="attachment"></input>
+                Choose another file to attach&hellip; <input type="file" name="attachment"></input>
             </span>
         </span>
         <input type="text" class="form-control" readonly />
