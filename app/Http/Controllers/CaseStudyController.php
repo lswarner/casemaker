@@ -83,7 +83,13 @@ class CaseStudyController extends Controller
 
         $keywords= Keyword::all_sorted()->pluck('keyword', 'id');
 
-        return view('casestudy.show', ['casestudy'=>$caseStudy, 'keywords'=>$keywords] );
+
+        $attachments["introduction"]= $caseStudy->attachments()->section('introduction')->get();
+        $attachments["methodology"]= $caseStudy->attachments()->section('methodology')->get();
+        $attachments["results"]= $caseStudy->attachments()->section('results')->get();
+        $attachments["implications"]= $caseStudy->attachments()->section('implications')->get();
+
+        return view('casestudy.show', ['casestudy'=>$caseStudy, 'keywords'=>$keywords, 'attachments'=>$attachments] );
     }
 
     /**
@@ -207,7 +213,11 @@ class CaseStudyController extends Controller
         $team_suggestions= User::all_sorted()->diff($caseStudy->team);
         $method_suggestions= Method::all_sorted()->diff($caseStudy->methods);
         $keyword_suggestions= Keyword::all_sorted()->diff($caseStudy->keywords);
-        $attachments= $caseStudy->attachments()->section('introduction')->get();
+
+        $attachments["introduction"]= $caseStudy->attachments()->section('introduction')->get();
+        $attachments["methodology"]= $caseStudy->attachments()->section('methodology')->get();
+        $attachments["results"]= $caseStudy->attachments()->section('results')->get();
+        $attachments["implications"]= $caseStudy->attachments()->section('implications')->get();
 
         return view('casestudy.review', [ 'casestudy'=>$caseStudy,
                                           'keywords'=>$keywords,
