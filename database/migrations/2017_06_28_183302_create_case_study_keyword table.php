@@ -33,6 +33,6 @@ class CreateCasestudyKeywordTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('case_study_keyword');
+        //Schema::dropIfExists('case_study_keyword');
     }
 }
