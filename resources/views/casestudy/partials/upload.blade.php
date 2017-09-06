@@ -3,7 +3,7 @@
 <div class="row file-upload">
 
   <div class="col-md-12">
-     <h3>Want to attach an additional file, image, or tool?</h3>
+     <h3>Attach a file, image or tool</h3>
      <ul>
        @foreach($attachments as $a)
        <li><a href="{{ $a->url() }}">{{ $a->original_name }}</a></li>
@@ -15,7 +15,7 @@
      <div class="input-group input-group-ub">
         <span class="input-group-btn">
             <span class="btn btn-ub btn-file">
-                Choose another file to attach&hellip; <input type="file" name="attachment"></input>
+                Click here to attach&hellip; <input type="file" name="attachment"></input>
             </span>
         </span>
         <input type="text" class="form-control" readonly />
