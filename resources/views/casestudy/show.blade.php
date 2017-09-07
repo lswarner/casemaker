@@ -123,8 +123,9 @@
     @include('casestudy.summary')
 
 
-    @if( ($casestudy->status == "submitted") && (Auth::user()->is_admin == true) )
-      <div class="row">
+    <div class="row">
+    @if( $casestudy->status == "submitted"  )
+      @if(Auth::user()->is_admin == true)
 
         {!! Form::model( $casestudy, ['action'=>['CaseStudyController@publish', $casestudy->id], 'method' => 'patch', 'class'=>'form-horizontal']) !!}
 
@@ -135,9 +136,12 @@
         </div>
 
         {!! Form::close() !!}
-      </div>
+      @else
+      <h3 class="text-center">This case study has been submitted and is awaiting review.</h3>
+      @endif
     @endif
 
+    </div>
   </div>
 </div>
 
