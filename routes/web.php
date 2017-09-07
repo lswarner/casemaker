@@ -27,6 +27,7 @@ Route::get('users/{user}/edit', 'UserController@edit')->name('user.edit');
 Route::patch('users/{user}', 'UserController@update');
 Route::patch('users/{user}/password', 'UserController@update_password');
 Route::patch('users/{user}/access', 'UserController@update_access')->middleware('admin');
+Route::delete('users/{user}/destroy', 'UserController@destroy')->name('user.destroy');
 
 
 
