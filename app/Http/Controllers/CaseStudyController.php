@@ -397,6 +397,25 @@ class CaseStudyController extends Controller
 
 
     /**
+     * Publish the specified resource
+     *
+     * @param  \App\CaseStudy  $caseStudy
+     * @return \Illuminate\Http\Response
+     */
+    public function reopen(Request $request, CaseStudy $caseStudy){
+
+      $caseStudy->status= "created";
+      $caseStudy->submitted_at= null;
+      $caseStudy->save();
+
+      Session::flash('message', "This case study has been re-opened for further updates.");
+      Session::flash('alert-class', 'flash-success');
+
+      return redirect()->route('introduction', $caseStudy);
+    }
+
+
+    /**
      * Add a member to this casestudy's team
      *
      * @param  \App\CaseStudy  $caseStudy
