@@ -31,18 +31,38 @@
     @include('casestudy.summary')
 
 
+
     <div class="row">
+    @if( $casestudy->status == "submitted")
+      @if (Auth::user()->is_admin == true)
 
-          {!! Form::model( $casestudy, ['action'=>['CaseStudyController@submit', $casestudy->id], 'method' => 'patch', 'class'=>'form-horizontal']) !!}
+        {!! Form::model( $casestudy, ['action'=>['CaseStudyController@publish', $casestudy->id], 'method' => 'patch', 'class'=>'form-horizontal']) !!}
 
-          <div class="form-group">
-            <div class="col-md-8 col-md-offset-4 col-lg-6 col-lg-offset-6">
-              <input type="submit" class="btn btn-urc-alt" value="Submit Case Study" />
-            </div>
+        <div class="form-group">
+          <div class="col-md-8 col-md-offset-4 col-lg-6 col-lg-offset-6">
+            <input type="submit" class="btn btn-urc-alt" value="Publish Case Study" />
           </div>
+        </div>
 
-          {!! Form::close() !!}
-    </div>
+        {!! Form::close() !!}
+      @else
+        <h3 class="text-center">This case study has been submitted and is awaiting review.</h3>
+      @endif
+    @elseif( ($casestudy->status == "in_progress") && (Auth::user()->is_admin == false) )
+
+
+        {!! Form::model( $casestudy, ['action'=>['CaseStudyController@submit', $casestudy->id], 'method' => 'patch', 'class'=>'form-horizontal']) !!}
+
+        <div class="form-group">
+          <div class="col-md-8 col-md-offset-4 col-lg-6 col-lg-offset-6">
+            <input type="submit" class="btn btn-urc-alt" value="Submit Case Study" />
+          </div>
+        </div>
+
+        {!! Form::close() !!}
+
+
+    @endif
 
 
 @endsection
