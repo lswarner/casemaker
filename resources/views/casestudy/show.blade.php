@@ -137,7 +137,20 @@
 
         {!! Form::close() !!}
       @else
-      <h3 class="text-center">This case study has been submitted and is awaiting review.</h3>
+
+        {!! Form::model( $casestudy, ['action'=>['CaseStudyController@reopen', $casestudy->id], 'method' => 'patch', 'class'=>'form-horizontal']) !!}
+
+        <div class="form-group">
+          <div class="col-md-8 col-lg-6">
+            <h3 class="text-left">This case study has been submitted.<br /> To make additional edits, you must re-open the casestudy.</h3>
+          </div>
+          <div class="col-md-4 col-lg-6">
+            <input type="submit" class="btn btn-urc-alt" value="Re-Open Case Study" />
+          </div>
+        </div>
+
+        {!! Form::close() !!}
+
       @endif
     @endif
 
