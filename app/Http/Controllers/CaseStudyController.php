@@ -80,7 +80,6 @@ class CaseStudyController extends Controller
      */
     public function show(CaseStudy $caseStudy)
     {
-
         $keywords= Keyword::all_sorted()->pluck('keyword', 'id');
 
 
@@ -113,6 +112,19 @@ class CaseStudyController extends Controller
      */
     public function edit_introduction(CaseStudy $caseStudy)
     {
+        //if the case study has been submitted or published, send to the show page
+        if( $caseStudy->status == "submitted" || $caseStudy->status == "published"){
+          return redirect()->route('casestudy.show', $caseStudy);
+        }
+
+        //send admins to the show page
+        if( (Auth::user()->is_admin == TRUE) && ($caseStudy->team->contains(Auth::user()) == FALSE) ){
+          return redirect()->route('casestudy.show', $caseStudy);
+        }
+
+
+
+
         $keywords= Keyword::all_sorted()->pluck('keyword', 'id');
         $team_suggestions= User::all_sorted()->diff($caseStudy->team);
         $method_suggestions= Method::all_sorted()->diff($caseStudy->methods);
@@ -137,6 +149,18 @@ class CaseStudyController extends Controller
      */
     public function edit_methodology(CaseStudy $caseStudy)
     {
+
+      //if the case study has been submitted or published, send to the show page
+      if( $caseStudy->status == "submitted" || $caseStudy->status == "published"){
+        return redirect()->route('casestudy.show', $caseStudy);
+      }
+
+      //send admins to the show page
+      if( (Auth::user()->is_admin == TRUE) && ($caseStudy->team->contains(Auth::user()) == FALSE) ){
+        return redirect()->route('casestudy.show', $caseStudy);
+      }
+
+
         $keywords= Keyword::all_sorted()->pluck('keyword', 'id');
         $team_suggestions= User::all_sorted()->diff($caseStudy->team);
         $method_suggestions= Method::all_sorted()->diff($caseStudy->methods);
@@ -161,6 +185,18 @@ class CaseStudyController extends Controller
      */
     public function edit_results(CaseStudy $caseStudy)
     {
+
+      //if the case study has been submitted or published, send to the show page
+      if( $caseStudy->status == "submitted" || $caseStudy->status == "published"){
+        return redirect()->route('casestudy.show', $caseStudy);
+      }
+
+      //send admins to the show page
+      if( (Auth::user()->is_admin == TRUE) && ($caseStudy->team->contains(Auth::user()) == FALSE) ){
+        return redirect()->route('casestudy.show', $caseStudy);
+      }
+
+
         $keywords= Keyword::all_sorted()->pluck('keyword', 'id');
         $team_suggestions= User::all_sorted()->diff($caseStudy->team);
         $method_suggestions= Method::all_sorted()->diff($caseStudy->methods);
@@ -185,6 +221,17 @@ class CaseStudyController extends Controller
      */
     public function edit_implications(CaseStudy $caseStudy)
     {
+
+      //if the case study has been submitted or published, send to the show page
+      if( $caseStudy->status == "submitted" || $caseStudy->status == "published"){
+        return redirect()->route('casestudy.show', $caseStudy);
+      }
+
+      //send admins to the show page
+      if( (Auth::user()->is_admin == TRUE) && ($caseStudy->team->contains(Auth::user()) == FALSE) ){
+        return redirect()->route('casestudy.show', $caseStudy);
+      }
+
         $keywords= Keyword::all_sorted()->pluck('keyword', 'id');
         $team_suggestions= User::all_sorted()->diff($caseStudy->team);
         $method_suggestions= Method::all_sorted()->diff($caseStudy->methods);
@@ -209,6 +256,17 @@ class CaseStudyController extends Controller
      */
     public function review(CaseStudy $caseStudy)
     {
+
+      //if the case study has been submitted or published, send to the show page
+      if( $caseStudy->status == "submitted" || $caseStudy->status == "published"){
+        return redirect()->route('casestudy.show', $caseStudy);
+      }
+
+      //send admins to the show page
+      if( (Auth::user()->is_admin == TRUE) && ($caseStudy->team->contains(Auth::user()) == FALSE) ){
+        return redirect()->route('casestudy.show', $caseStudy);
+      }
+
         $keywords= Keyword::all_sorted()->pluck('keyword', 'id');
         $team_suggestions= User::all_sorted()->diff($caseStudy->team);
         $method_suggestions= Method::all_sorted()->diff($caseStudy->methods);
@@ -335,6 +393,25 @@ class CaseStudyController extends Controller
       Session::flash('alert-class', 'flash-success');
 
       return redirect()->route('admin');
+    }
+
+
+    /**
+     * Publish the specified resource
+     *
+     * @param  \App\CaseStudy  $caseStudy
+     * @return \Illuminate\Http\Response
+     */
+    public function reopen(Request $request, CaseStudy $caseStudy){
+
+      $caseStudy->status= "created";
+      $caseStudy->submitted_at= null;
+      $caseStudy->save();
+
+      Session::flash('message', "This case study has been re-opened for further updates.");
+      Session::flash('alert-class', 'flash-success');
+
+      return redirect()->route('introduction', $caseStudy);
     }
 
 

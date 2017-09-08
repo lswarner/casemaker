@@ -165,6 +165,20 @@ class UserController extends Controller
        */
       public function destroy(User $user)
       {
-          //
-    }
+        if(Auth::user()->is_admin == true ){
+
+          $user->delete();
+
+          Session::flash('message', 'The user account has been deleted.');
+          Session::flash('alert-class', 'flash-success');
+
+          return redirect()->route('home');
+        }
+        else {
+          Session::flash('message', 'You don\'t have permission to delete this user account.');
+          Session::flash('alert-class', 'flash-danger');
+
+          return response()->redirect('home');
+        }
+      }
 }

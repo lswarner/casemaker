@@ -31,18 +31,27 @@
     @include('casestudy.summary')
 
 
+
     <div class="row">
+    @if( $casestudy->status == "submitted")
 
-          {!! Form::model( $casestudy, ['action'=>['CaseStudyController@submit', $casestudy->id], 'method' => 'patch', 'class'=>'form-horizontal']) !!}
+      <?php /* this case is no longer reached. If casestudy->status is submitted, the controller routes to show view */ ?>
 
-          <div class="form-group">
-            <div class="col-md-8 col-md-offset-4 col-lg-6 col-lg-offset-6">
-              <input type="submit" class="btn btn-urc-alt" value="Submit Case Study" />
-            </div>
+    @elseif( ($casestudy->status == "created")  )
+
+
+        {!! Form::model( $casestudy, ['action'=>['CaseStudyController@submit', $casestudy->id], 'method' => 'patch', 'class'=>'form-horizontal']) !!}
+
+        <div class="form-group">
+          <div class="col-md-8 col-md-offset-4 col-lg-6 col-lg-offset-6">
+            <input type="submit" class="btn btn-urc-alt" value="Submit Case Study" />
           </div>
+        </div>
 
-          {!! Form::close() !!}
-    </div>
+        {!! Form::close() !!}
+
+
+    @endif
 
 
 @endsection

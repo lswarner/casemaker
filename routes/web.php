@@ -27,6 +27,7 @@ Route::get('users/{user}/edit', 'UserController@edit')->name('user.edit');
 Route::patch('users/{user}', 'UserController@update');
 Route::patch('users/{user}/password', 'UserController@update_password');
 Route::patch('users/{user}/access', 'UserController@update_access')->middleware('admin');
+Route::delete('users/{user}/destroy', 'UserController@destroy')->name('user.destroy');
 
 
 
@@ -45,6 +46,7 @@ Route::group(['middleware' => ['team']], function () {
   Route::get('casestudy/{casestudy}/review', 'CaseStudyController@review')->name('review');
   Route::patch('casestudy/{casestudy}', 'CaseStudyController@update');
   Route::patch('casestudy/{casestudy}/submit', 'CaseStudyController@submit')->name('submit');
+  Route::patch('casestudy/{casestudy}/reopen', 'CaseStudyController@reopen')->name('reopen');
   Route::patch('casestudy/{casestudy}/upload', 'CaseStudyController@upload')->name('upload');
   Route::get('casestudy/{casestudy}/attachment/{attachment}', 'CaseStudyController@attachment');
   Route::patch('casestudy/{casestudy}/team/add', 'CaseStudyController@team_add')->name('team_add');

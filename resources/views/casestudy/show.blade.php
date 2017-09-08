@@ -123,8 +123,9 @@
     @include('casestudy.summary')
 
 
-    @if( ($casestudy->status == "submitted") && (Auth::user()->is_admin == true) )
-      <div class="row">
+    <div class="row">
+    @if( $casestudy->status == "submitted"  )
+      @if(Auth::user()->is_admin == true)
 
         {!! Form::model( $casestudy, ['action'=>['CaseStudyController@publish', $casestudy->id], 'method' => 'patch', 'class'=>'form-horizontal']) !!}
 
@@ -135,9 +136,25 @@
         </div>
 
         {!! Form::close() !!}
-      </div>
+      @else
+
+        {!! Form::model( $casestudy, ['action'=>['CaseStudyController@reopen', $casestudy->id], 'method' => 'patch', 'class'=>'form-horizontal']) !!}
+
+        <div class="form-group">
+          <div class="col-md-8 col-lg-6">
+            <h3 class="text-left">This case study has been submitted.<br /> To make additional edits, you must re-open the casestudy.</h3>
+          </div>
+          <div class="col-md-4 col-lg-6">
+            <input type="submit" class="btn btn-urc-alt" value="Re-Open Case Study" />
+          </div>
+        </div>
+
+        {!! Form::close() !!}
+
+      @endif
     @endif
 
+    </div>
   </div>
 </div>
 

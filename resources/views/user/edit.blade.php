@@ -168,8 +168,31 @@
 
           {!! Form::close() !!}
 
+
+
+          @if($admin_tools)
+
+            <div class="col-md-10 col-md-offset-2">
+                <h2>Delete User Account</h2>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-10 col-md-offset-2">
+
+                <button type="button" class="btn btn-urc-danger" data-toggle="modal" data-target="#delete-modal">Delete User Account</button>
+
+              </div>
+            </div>
+
+
+          @endif
+
         </div>
       </div>
    </div>
 </div>
+
+
+@include('user.modals.delete')
+
 @endsection
