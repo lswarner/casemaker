@@ -1,3 +1,7 @@
+  <?php
+    $current_name= \Route::currentRouteName();
+  ?>
+
   <div class="common-bar">
     <div class="row">
 
@@ -7,6 +11,10 @@
       <div class="col-md-4 col-lg-4">
         <h2>Project Info</h2>
 
+
+
+    @if($current_name != "review")
+    
         <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
           <div class="col-md-12">
             {!! Form::text('title', null, ['class'=>'form-control', 'placeholder'=>'CaseStudy Title']) !!}
@@ -31,6 +39,12 @@
             @endif
           </div>
         </div>
+
+      @else
+          <h3>{{ $casestudy->title }}</h3>
+
+          <p>{{ strip_tags($casestudy->countries) }}</p>
+      @endif
 
 
         <h4>Keywords <button class="btn-icon hover-noon" type="button" data-toggle="modal" data-target="#keywords-modal"><i class="fa fa-plus-circle fa-1x" aria-hidden="true"></i></button></h4>
