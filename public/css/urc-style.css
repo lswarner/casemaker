@@ -632,7 +632,7 @@ a> .panel-account:active{
  {
   background: #64baee !important; /* sky dark */
   color: #ffffff !important;
-  border: 2px solid #64baee; /* sky dark */
+  border: 2px solid #64baee !important; /* sky dark */
  }
 
 
@@ -641,7 +641,7 @@ a> .panel-account:active{
  .blue{
    background: #2699FF;      /* medium blue */
    color: #ffffff !important;
-   border: 2px solid #2699FF;
+   border: 2px solid #2699FF !important;
  }
 
  .submitted:hover,
@@ -653,14 +653,14 @@ a> .panel-account:active{
  {
   background: #51a4ff !important; /* blue dark */
   color: #ffffff !important;
-  border: 2px solid #51a4ff; /* blue dark */
+  border: 2px solid #51a4ff !important; /* blue dark */
  }
 
 .add-keyword,
 .noon{
   background: #FF6B26; /* noon */
   color: #ffffff !important;
-  border: 2px solid #FF6B26; /* noon */
+  border: 2px solid #FF6B26 !important; /* noon */
 }
 .add-keyword:hover,
 .add-keyword:active,
@@ -670,14 +670,14 @@ a> .panel-account:active{
 .noon:focus {
   background: #f79917  !important; /* dawn */
   color: #ffffff !important;
-  border: 2px solid #f79917 ;
+  border: 2px solid #f79917 !important;
 }
 
 .add-method,
 .sunset{
   background: #FF3821; /* sunset */
   color: #ffffff !important;
-  border: 2px solid #FF3821; /* sunset */
+  border: 2px solid #FF3821 !important; /* sunset */
 }
 
 .add-method:hover,,
@@ -723,10 +723,20 @@ a> .panel-account:active{
 
   .casestudy-delete{
     float:right;
-
     padding: 5px;
     z-index: 1000;
+
+    position: relative;
+    right: 8px;
   }
+
+  @media (min-width: 1400px) {
+    .casestudy-delete{
+      right: 3px;
+    }
+  }
+
+
 
     .btn-top-right{
       position: relative;
