@@ -222,8 +222,22 @@
 	/******************  Style File Upload Button *************************/
 
 	.file-upload{
-		background: #ccc;
+		background: #FF6B26;
+		color: #ffffff;
 	}
+
+		.file-upload > div > ul > li,
+		.file-upload > div > ul > li > a {
+			color: #333;
+		}
+
+		.file-upload > div > ul > li > a:hover,
+		.file-upload > div > ul > li > a:active,
+		.file-upload > div > ul > li > a:focus {
+			color: #5d5d5d;
+		}
+
+
 
 	 .input-group-upload{
 		margin-left: -15px;
@@ -233,6 +247,13 @@
 	.btn-file {
 	  position: relative;
 	  overflow: hidden;
+		color: #ffffff;
+	}
+
+	.btn-file:hover,
+	.btn-file:active,
+	.btn-file:focus{
+		color: #ddd;
 	}
 	.btn-file input[type=file] {
 	  position: absolute;
