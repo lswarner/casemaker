@@ -11,7 +11,7 @@
   @include('scripts.autosave')
 
   @include('scripts.summernote', ['boxes' => [
-                  ['name'=>'implications_discuss', 'height'=>'600px', 'word_count'=>1000],
+                  ['name'=>'implications_discuss', 'height'=>'600px', 'word_count'=>750],
                   ['name'=>'implications_challenges', 'height'=>'600px', 'word_count'=>1000],
                   ['name'=>'implications_tips', 'height'=>'200px'],
                   ['name'=>'implications_questions' , 'height'=>'200px']
@@ -40,9 +40,12 @@
 
       <!-- start of narrative section -->
       <div id="narrative" class="col-md-7 col-md-push-5   col-lg-8 col-lg-push-4">
-          <p>
-            Tumblr in master cleanse consequat gluten-free veniam aesthetic. Snackwave ut tote bag trust fund put a bird on it organic commodo iPhone jean shorts authentic id. Affogato prism dolore artisan laborum mumblecore actually copper mug. Shaman kombucha celiac health goth umami try-hard dreamcatcher man braid neutra. Cold-pressed deserunt everyday carry whatever knausgaard unicorn bespoke hoodie mumblecore pour-over wolf intelligentsia umami waistcoat. Raw denim occaecat small batch lyft, tilde cardigan af VHS four dollar toast chia artisan plaid venmo 3 wolf moon vinyl. Adipisicing eiusmod brooklyn palo santo. Non palo santo pork belly ea incididunt, copper mug everyday carry bespoke consequat portland. Migas celiac sint, proident la croix flannel listicle live-edge edison bulb prism small batch labore.
-          </p>
+        <h3>Instructions for ‘Call-out’ Boxes (Left)</h3>
+        <p>‘Call-out’ Box – Program and Policy Implications: For the ‘Program and Policy Implications’ Box to the left in this section, please list the 1-3 key implications of your case study that ought to inform decisions related to implementation for implementing partners and policy makers. These should be the implications that you most wish the reader to understand after reading this case study.</p>
+        <p>‘Call-out’ Box – Discussion Questions: For the ‘Discussion Questions’ Box to the left in this section, please list 1-3 discussion questions specific to this ‘Implications’ section. These questions should help the reader achieve the learning objectives you have identified.</p>
+
+        <h3>Instructions for Main Content Box (Below)</h3>
+        <p>Describe the main policy and/or program implications of the results. Use this section to explain your results more fully for the reader. What do your results tell us both about the health issue you address in this case study and the implementation challenge you discuss? How can these results be used to improve the effectiveness of programs and policies that seek to address the health challenges you have identified?  Please use this section to also include any next steps called for by your work. End with a paragraph that wraps up your case study and can serve as a conclusion. Please remember to fill out the call-out boxes to the left, and to add any graphics, charts, or tables using the upload bar at the bottom of this page. (~500-750 words)</p>
 
           @component('casestudy.partials.textarea', ['name'=>'implications_discuss', 'content'=>$casestudy->implications_discuss, 'word_count'=>1000])
             Discuss the implications of this case study.
@@ -73,15 +76,15 @@
 
           @component('casestudy.partials.tooltip-textarea', ['name'=>'implications_tips'])
             @slot('tooltip')
-              This tooltip gives you a little more information about this section.
+              Create a list of the 1-3 key implications of your case study that ought to inform decisions related to implementation for implementing partners and policy makers.
             @endslot
 
-            Tips
+            Program and Policy Implications
           @endcomponent
 
           @component('casestudy.partials.tooltip-textarea', ['name'=>'implications_questions'])
             @slot('tooltip')
-              This tooltip gives you a little more information about this section.
+              Create a list of 1-3 discussion questions relevant to this section. These questions should help the reader achieve the learning objectives you have identified.
             @endslot
 
             Discussion Questions
