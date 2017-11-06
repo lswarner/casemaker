@@ -11,7 +11,7 @@
   @include('scripts.autosave')
 
   @include('scripts.summernote', ['boxes' => [
-                  ['name'=>'results_discuss', 'height'=>'600px', 'word_count'=>1000],
+                  ['name'=>'results_discuss', 'height'=>'600px', 'word_count'=>750],
                   ['name'=>'results_challenges', 'height'=>'600px', 'word_count'=>1000],
                   ['name'=>'results_tips', 'height'=>'200px'],
                   ['name'=>'results_questions' , 'height'=>'200px']
@@ -40,9 +40,12 @@
 
       <!-- start of narrative section -->
       <div id="narrative" class="col-md-7 col-md-push-5   col-lg-8 col-lg-push-4">
-          <p>
-            Tumblr in master cleanse consequat gluten-free veniam aesthetic. Snackwave ut tote bag trust fund put a bird on it organic commodo iPhone jean shorts authentic id. Affogato prism dolore artisan laborum mumblecore actually copper mug. Shaman kombucha celiac health goth umami try-hard dreamcatcher man braid neutra. Cold-pressed deserunt everyday carry whatever knausgaard unicorn bespoke hoodie mumblecore pour-over wolf intelligentsia umami waistcoat. Raw denim occaecat small batch lyft, tilde cardigan af VHS four dollar toast chia artisan plaid venmo 3 wolf moon vinyl. Adipisicing eiusmod brooklyn palo santo. Non palo santo pork belly ea incididunt, copper mug everyday carry bespoke consequat portland. Migas celiac sint, proident la croix flannel listicle live-edge edison bulb prism small batch labore.
-          </p>
+        <h3>Instructions for ‘Call-out’ Boxes (Left)</h3>
+        <p>‘Call-out’ Box – Key Results: For the ‘Key Results’ Box to the left in this section, please list 1-3 key results the reader should take away from this case study.</p>
+        <p>‘Call-out’ Box – Discussion Questions: For the ‘Discussion Questions’ Box to the left in this section, please list 1-3 discussion questions specific to this ‘Results’ section. These questions should help the reader achieve the learning objectives you have identified.</p>
+
+        <h3>Instructions for Main Content Boxes (Below)</h3>
+        <p>Describe the main results or impacts of the intervention, study, or program featured in this case study.  Remember to describe your result in easy to understand terms. For example, if your results are statistically significant, you may wish to describe their significance without referencing p-values. Keep in mind that you will have a chance in the next section to discuss the implications of these results. Please remember to fill out the call-out boxes to the left, and to add any graphics, charts, or tables using the upload bar at the bottom of this page. (~500-750 words)</p>
 
           @component('casestudy.partials.textarea', ['name'=>'results_discuss', 'content'=>$casestudy->results_discuss, 'word_count'=>1000])
             Discuss the results of this case study.
@@ -73,16 +76,16 @@
 
           @component('casestudy.partials.tooltip-textarea', ['name'=>'results_tips'])
             @slot('tooltip')
-              This tooltip gives you a little more information about this section.
+              Create a list of 1-3 key results the reader should take away from this case study.
             @endslot
 
-            Tips
+            Key Results
           @endcomponent
 
 
           @component('casestudy.partials.tooltip-textarea', ['name'=>'results_questions'])
             @slot('tooltip')
-              This tooltip gives you a little more information about this section.
+              Create a list of 1-3 discussion questions relevant to this section. These questions should help the reader achieve the learning objectives you have identified.
             @endslot
 
             Discussion Questions
