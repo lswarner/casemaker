@@ -12,7 +12,6 @@
 
   @include('scripts.summernote', ['boxes' => [
                   ['name'=>'results_discuss', 'height'=>'600px', 'word_count'=>750],
-                  ['name'=>'results_challenges', 'height'=>'600px', 'word_count'=>1000],
                   ['name'=>'results_tips', 'height'=>'200px'],
                   ['name'=>'results_questions' , 'height'=>'200px']
                  ] ] )
@@ -44,16 +43,11 @@
         <p>‘Call-out’ Box – Key Results: For the ‘Key Results’ Box to the left in this section, please list 1-3 key results the reader should take away from this case study.</p>
         <p>‘Call-out’ Box – Discussion Questions: For the ‘Discussion Questions’ Box to the left in this section, please list 1-3 discussion questions specific to this ‘Results’ section. These questions should help the reader achieve the learning objectives you have identified.</p>
 
-        <h3>Instructions for Main Content Boxes (Below)</h3>
+        <h3>Instructions for Main Content Boxs (Below)</h3>
         <p>Describe the main results or impacts of the intervention, study, or program featured in this case study.  Remember to describe your result in easy to understand terms. For example, if your results are statistically significant, you may wish to describe their significance without referencing p-values. Keep in mind that you will have a chance in the next section to discuss the implications of these results. Please remember to fill out the call-out boxes to the left, and to add any graphics, charts, or tables using the upload bar at the bottom of this page. (~500-750 words)</p>
 
           @component('casestudy.partials.textarea', ['name'=>'results_discuss', 'content'=>$casestudy->results_discuss, 'word_count'=>1000])
             Discuss the results of this case study.
-          @endcomponent
-
-
-          @component('casestudy.partials.textarea', ['name'=>'results_challenges', 'content'=>$casestudy->results_challenges, 'word_count'=>1000])
-            References
           @endcomponent
 
 

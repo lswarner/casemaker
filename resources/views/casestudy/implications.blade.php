@@ -51,7 +51,7 @@
             Discuss the implications of this case study.
           @endcomponent
 
-
+        <p>Use this box to list any references cited in the text of your case study. Please follow the <a href="https://owl.english.purdue.edu/owl/resource/1017/01/" target="_blank">AMA Citation style</a>.</p>
           @component('casestudy.partials.textarea', ['name'=>'implications_challenges', 'content'=>$casestudy->implications_challenges, 'word_count'=>1000])
             References
           @endcomponent
