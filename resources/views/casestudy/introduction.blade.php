@@ -11,8 +11,8 @@
   @include('scripts.autosave')
 
   @include('scripts.summernote', ['boxes' => [
-                  ['name'=>'intro_context', 'height'=>'600px', 'word_count'=>400],
-                  ['name'=>'intro_nuances', 'height'=>'600px', 'word_count'=>400],
+                  ['name'=>'intro_context', 'height'=>'600px', 'word_count'=>1000],
+                  ['name'=>'intro_nuances', 'height'=>'600px', 'word_count'=>1000],
                   ['name'=>'intro_tips', 'height'=>'200px'],
                   ['name'=>'intro_acronyms', 'height'=>'200px'],
                   ['name'=>'intro_objectives', 'height'=>'200px'],
