@@ -11,8 +11,8 @@
   @include('scripts.autosave')
 
   @include('scripts.summernote', ['boxes' => [
-                  ['name'=>'method_used', 'height'=>'600px', 'word_count'=>300],
-                  ['name'=>'method_challenges', 'height'=>'600px', 'word_count'=>500],
+                  ['name'=>'method_used', 'height'=>'600px', 'word_count'=>1000],
+                  ['name'=>'method_challenges', 'height'=>'600px', 'word_count'=>1000],
                   ['name'=>'method_tips', 'height'=>'200px'],
                   ['name'=>'method_partners', 'height'=>'200px'],
                   ['name'=>'method_questions' , 'height'=>'200px']

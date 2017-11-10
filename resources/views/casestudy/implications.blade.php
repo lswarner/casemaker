@@ -11,7 +11,7 @@
   @include('scripts.autosave')
 
   @include('scripts.summernote', ['boxes' => [
-                  ['name'=>'implications_discuss', 'height'=>'600px', 'word_count'=>750],
+                  ['name'=>'implications_discuss', 'height'=>'600px', 'word_count'=>1000],
                   ['name'=>'implications_challenges', 'height'=>'600px', 'word_count'=>1000],
                   ['name'=>'implications_tips', 'height'=>'200px'],
                   ['name'=>'implications_questions' , 'height'=>'200px']
