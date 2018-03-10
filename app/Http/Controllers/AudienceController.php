@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Method;
 use Illuminate\Http\Request;
+use App\Audience;
 
 use Validator;
 use Session;
 
-class MethodController extends Controller
+class AudienceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,9 +17,8 @@ class MethodController extends Controller
      */
     public function index()
     {
-      $methods= Method::all_sorted();
-
-      return view('method.create', compact('methods'));
+        $audiences= Audience::all_sorted();
+        return view('audience.create', compact('audiences'));
     }
 
     /**
@@ -29,7 +28,7 @@ class MethodController extends Controller
      */
     public function create()
     {
-        return redirect()->route('method.index');
+        return redirect()->route('audience.index');
     }
 
     /**
@@ -41,91 +40,91 @@ class MethodController extends Controller
     public function store(Request $request)
     {
       $validator = Validator::make($request->all(), [
-          'name' => 'required|unique:methods,name|max:255',
+          'name' => 'required|unique:audiences,name|max:255',
           'description' => 'required'
       ]);
 
       if ($validator->fails()) {
-          return redirect('method/create')
+          return redirect('audience/create')
                       ->withErrors($validator)
                       ->withInput();
       }
 
 
-      $method= new Method;
-      $method->name= $request->name;
-      $method->description= $request->description;
-      $method->save();
+      $audience= new Audience;
+      $audience->name= $request->name;
+      $audience->description= $request->description;
+      $audience->save();
 
-      Session::flash('message', 'The new method \''.$method->name.'\' was added.');
+      Session::flash('message', 'The new intended audience \''.$audience->name.'\' was added.');
       Session::flash('alert-class', 'flash-urc');
 
 
-      return redirect()->route('method.index');
+      return redirect()->route('audience.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Method  $method
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Method $method)
+    public function show(Audience $audience)
     {
-        return redirect()->route('method.edit', $method);
+        return redirect()->route('audience.edit', compact('audience'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Method  $method
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Method $method)
+    public function edit(Audience $audience)
     {
-      $casestudies= collect([]);
-
-      return view('method.edit', compact('casestudies', 'method'));
+        $casestudies= collect([]);
+        return view('audience.edit', compact('casestudies', "audience"));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Method  $method
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Method $method)
+    public function update(Request $request, Audience $audience)
     {
       $validator = Validator::make($request->all(), [
-          'name' => 'required|unique:methods,name|max:255',
+          'name' => 'required|unique:audiences,name|max:255',
           'description' => 'required'
       ]);
 
       if ($validator->fails()) {
-          return redirect('method/edit')
+          return redirect('audience/edi')
                       ->withErrors($validator)
                       ->withInput();
       }
 
-      $method->name= $request->name;
-      $method->description= $request->description;
-      $method->save();
+      $audience= new Audience;
+      $audience->name= $request->name;
+      $audience->description= $request->description;
+      $audience->save();
 
-      Session::flash('message', 'The method \''.$method->name.'\' was changed.');
+      Session::flash('message', 'The intended audience \''.$audience->name.'\' was changed.');
       Session::flash('alert-class', 'flash-urc');
 
 
-      return redirect()->route('method.index');
+      return redirect()->route('audience.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Method  $method
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Method $method)
+    public function destroy($id)
     {
         //
     }
