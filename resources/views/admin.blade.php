@@ -49,6 +49,7 @@
           <a class="btn btn-urc noon" href="{{ route('keyword.index') }}">Keywords</a>
           <a class="btn btn-urc noon" href="{{ route('method.index') }}">Methods</a>
           <a class="btn btn-urc noon" href="{{ route('audience.index') }}">Intended Audiences</a>
+          <a class="btn btn-urc noon" href="{{ route('thematic.index') }}">Thematic Area</a>
       </div>
     </div>
 

@@ -101,7 +101,7 @@ class AudienceController extends Controller
       ]);
 
       if ($validator->fails()) {
-          return redirect('audience/edi')
+          return redirect('audience/edit')
                       ->withErrors($validator)
                       ->withInput();
       }
