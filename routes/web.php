@@ -67,7 +67,9 @@ Route::group(['middleware' => 'admin'], function() {
   Route::model('keyword', '\App\Keyword');
   Route::resource('keyword', 'KeywordController');
 
-
   Route::model('audience', '\App\Audience');
   Route::resource('audience', 'AudienceController');
+
+  Route::model('thematic', '\App\Thematic');
+  Route::resource('thematic', 'ThematicController');
 });
