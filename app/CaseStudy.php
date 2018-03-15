@@ -76,6 +76,11 @@ public function invitations(){
 
 
 
+  public function instructions(){
+    return \App\Instructions::first();
+  }
+
+
   /*****************************************************
        scopes
    ****************************************************/

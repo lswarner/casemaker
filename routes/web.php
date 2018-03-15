@@ -29,7 +29,8 @@ Route::patch('users/{user}/password', 'UserController@update_password');
 Route::patch('users/{user}/access', 'UserController@update_access')->middleware('admin');
 Route::delete('users/{user}/destroy', 'UserController@destroy')->name('user.destroy');
 
-
+Route::get('instructions', 'InstructionsController@edit')->name('instructions');
+Route::patch('instructions', 'InstructionsController@update');
 
 Route::model('casestudy', 'App\CaseStudy');
 Route::group(['middleware' => ['auth']], function () {
