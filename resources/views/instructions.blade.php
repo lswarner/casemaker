@@ -81,7 +81,7 @@
                 <a class="pull-right" data-toggle="collapse" href="#method" aria-expanded="false" aria-controls="method"><i class="fa fa-caret-down fa-2x"></i></a>
               </div>
 
-              <div class="col-xs-12 collapse" id="method">
+              <div class="col-md-10 col-md-offset-1 collapse" id="method">
 
                 <div class="form-group">
 
@@ -108,7 +108,7 @@
                 <a class="pull-right" data-toggle="collapse" href="#results" aria-expanded="false" aria-controls="results"><i class="fa fa-caret-down fa-2x"></i></a>
               </div>
 
-              <div class="col-xs-12 collapse" id="results">
+              <div class="col-md-10 col-md-offset-1 collapse" id="results">
 
                 <div class="form-group">
 
@@ -132,7 +132,7 @@
                 <a class="pull-right" data-toggle="collapse" href="#implications" aria-expanded="false" aria-controls="implications"><i class="fa fa-caret-down fa-2x"></i></a>
               </div>
 
-              <div class="col-xs-12 collapse" id="implications">
+              <div class="col-md-10 col-md-offset-1 collapse" id="implications">
 
                 <div class="form-group">
 
