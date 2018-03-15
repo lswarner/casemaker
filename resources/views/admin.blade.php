@@ -50,6 +50,7 @@
           <a class="btn btn-urc noon" href="{{ route('method.index') }}">Methods</a>
           <a class="btn btn-urc noon" href="{{ route('audience.index') }}">Intended Audiences</a>
           <a class="btn btn-urc noon" href="{{ route('thematic.index') }}">Thematic Area</a>
+          <a class="btn btn-urc sunset" href="{{ route('instructions') }}">CaseMaker Instructions</a>
       </div>
     </div>
 
