@@ -98,11 +98,11 @@ class KeywordController extends Controller
     public function update(Request $request, Keyword $keyword)
     {
         $validator = Validator::make($request->all(), [
-            'keyword' => 'required|unique:keywords,keyword|max:255'
+            'keyword' => 'required|unique:keywords,keyword,'.$keyword->id.'|max:255'
         ]);
 
         if ($validator->fails()) {
-            return redirect('keyword/create')
+            return redirect('keyword/'.$keyword->id.'/edit')
                         ->withErrors($validator)
                         ->withInput();
         }

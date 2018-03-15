@@ -41,10 +41,6 @@
       <div class="col-md-12">
         <h2>Update CaseMaker Instructions</h2>
 
-
-{{ print_r( $instructions) }}
-
-
         {!! Form::model($instructions, ['action'=>['InstructionsController@update'], 'method' => 'patch', 'class'=>'form-horizontal']) !!}
         <!-- start Introduction section -->
           <div class="review-section well shadow-depth-3">

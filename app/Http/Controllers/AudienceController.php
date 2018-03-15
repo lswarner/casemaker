@@ -96,17 +96,16 @@ class AudienceController extends Controller
     public function update(Request $request, Audience $audience)
     {
       $validator = Validator::make($request->all(), [
-          'name' => 'required|unique:audiences,name|max:255',
+          'name' => 'required|unique:audiences,name,'.$audience->id.'|max:255',
           'description' => 'required'
       ]);
 
       if ($validator->fails()) {
-          return redirect('audience/edit')
+          return redirect('audience/'.$audience->id.'/edit')
                       ->withErrors($validator)
                       ->withInput();
       }
 
-      $audience= new Audience;
       $audience->name= $request->name;
       $audience->description= $request->description;
       $audience->save();
