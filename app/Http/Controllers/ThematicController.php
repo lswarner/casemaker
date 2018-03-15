@@ -96,17 +96,16 @@ class ThematicController extends Controller
   public function update(Request $request, Thematic $thematic)
   {
     $validator = Validator::make($request->all(), [
-        'name' => 'required|unique:thematics,name|max:255',
+        'name' => 'required|unique:thematics,name,'.$thematic->id.'|max:255',
         'description' => 'required'
     ]);
 
     if ($validator->fails()) {
-        return redirect('thematic/edit')
+        return redirect('thematic/'.$thematic->id.'/edit')
                     ->withErrors($validator)
                     ->withInput();
     }
 
-    $thematic= new Thematic;
     $thematic->name= $request->name;
     $thematic->description= $request->description;
     $thematic->save();
