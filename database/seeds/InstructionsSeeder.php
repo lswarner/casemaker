@@ -11,15 +11,33 @@ class InstructionsSeeder extends Seeder
      */
     public function run()
     {
-      
+
       // call with artisan db:seeder --class="InstructionsSeeder"
 
       DB::table('instructions')->insert([
-          'intro0' => "Getting Started.<br />As you input your case study on this CaseMaker platform, you will find five sections to fill in: introduction, methodology, results, implications, and references. Each of the four narrative sections (i.e. the first four sections) should be approximately 500-750 words. At the beginning of each section, you will find guidance to indicate the type of content you should include in each. For more information on any section or CaseMaker in general, please download the CaseMaker user guide, coming soon under \"How It Works\" in the dropdown menu. <br />Don’t forget to fill out the ‘call-out’ boxes to the left in each section as you go through. You will find instructions on what to put in each box a",
+          'intro0' => "",
+          'intro1' => "",
           'introh1' => "Challenge and Intervention Background",
-          'intro1' => "<i>Introduction Content Box 1 (Challenge and Intervention Background)>/i> <br />In this section, identify the problem or challenge featured in your case study for the reader. For example, your case study may feature the findings of a study focused on how or how well a particular intervention was implemented in a particular context, and/or how those findings were used to try to improve the implementation of that intervention. In this case, you might want to detail the problem the intervention seeks to address, why the intervention was chosen, and the basic background of that intervention in this particular setting. (~200-400 words)",
+          'intro2' => "",
           'introh2' => "Additional Contextual Background",
-          'intro2' => "Provide the reader with any background or contextual information important for understanding this case study. This may be information on the relevant context",
+
+          'method0' => "",
+          'method1' => "",
+          'methodh1' => "Case Study Methods",
+          'method2' => "",
+          'methodh2' => "Featured Implementation Research Study Methods",
+
+
+          'results0' => "",
+          'results1' => "",
+          'resultsh1' => "Discuss the results of this case study.",
+
+
+          'implications0' => "",
+          'implications1' => "",
+          'implicationsh1' => "Discuss the implications of this case study.",
+          'implications2' => "",
+          'implicationsh2' => "Use this box to list any references cited in the text of your case study. Please follow the <a href='https://owl.english.purdue.edu/owl/resource/1017/01/'>AMA Citation style</a>.",
       ]);
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Instructions;
+use Session;
 
 class InstructionsController extends Controller
 {
@@ -18,7 +19,12 @@ class InstructionsController extends Controller
 
       $instructions = Instructions::first();
 
-      $instructions->update($request->all());
+      $data= $request->all();
+      foreach($data as $k=>$v){
+        if( empty($v) ) $data[$k]= " ";
+      }
+
+      $instructions->update($data);
       $instructions->save();
 
       Session::flash('message', 'The instructions were updated.');
