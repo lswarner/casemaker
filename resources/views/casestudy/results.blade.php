@@ -39,15 +39,13 @@
 
       <!-- start of narrative section -->
       <div id="narrative" class="col-md-7 col-md-push-5   col-lg-8 col-lg-push-4">
-        <h3>Instructions for ‘Call-out’ Boxes (Left)</h3>
-        <p>‘Call-out’ Box – Key Results: For the ‘Key Results’ Box to the left in this section, please list 1-3 key results the reader should take away from this case study.</p>
-        <p>‘Call-out’ Box – Discussion Questions: For the ‘Discussion Questions’ Box to the left in this section, please list 1-3 discussion questions specific to this ‘Results’ section. These questions should help the reader achieve the learning objectives you have identified.</p>
+        <?php $instructions= $casestudy->instructions(); ?>
+        <?= $instructions->results0; ?>
 
-        <h3>Instructions for Main Content Boxs (Below)</h3>
-        <p>Describe the main results or impacts of the intervention, study, or program featured in this case study.  Remember to describe your result in easy to understand terms. For example, if your results are statistically significant, you may wish to describe their significance without referencing p-values. Keep in mind that you will have a chance in the next section to discuss the implications of these results. Please remember to fill out the call-out boxes to the left, and to add any graphics, charts, or tables using the upload bar at the bottom of this page. (~500-750 words)</p>
+        <?= $instructions->results1; ?>
 
           @component('casestudy.partials.textarea', ['name'=>'results_discuss', 'content'=>$casestudy->results_discuss, 'word_count'=>1000])
-            Discuss the results of this case study.
+            <?= $instructions->resultsh1; ?>
           @endcomponent
 
 

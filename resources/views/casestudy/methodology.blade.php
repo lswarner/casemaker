@@ -41,28 +41,19 @@
 
       <!-- start of narrative section -->
       <div id="narrative" class="col-md-7 col-md-push-5   col-lg-8 col-lg-push-4">
-        <h3>Instructions for ‘Call-out’ Boxes (Left)</h3>
-        <p>‘Call-out’ Box – Methods Summary:  For the ‘Methods Summary’ box to the left in this section, please list the main research methods used in either the development of this case study, or in the study that is featured in this case study (e.g. survey, focus group discussions, etc.). </p>
-        <p>‘Call-out’ Box – Key Partners and their Roles: For the ‘Key Partners and their Roles’ Box to the left in this section, please list the 3-5 key actors/groups of actors in your case study along with a brief description of their roles.</p>
-        <p>‘Call-out’ Box – Discussion Questions: For the ‘Discussion Questions’ Box to the left in this section, please list 1-3 discussion questions specific to this ‘Methodology’ section. These questions should help the reader achieve the learning objectives you have identified.</p>
+        <?php $instructions= $casestudy->instructions(); ?>
+        <?= $instructions->method0; ?>
 
-        <h3>Instructions for Main Content Boxes (Below)</h3>
-
-        <p>Please use the first box below to describe the methods you used in creating this case study. If your case study covers an implementation research study, please use the second box to describe the methods used in that study. More details may be found prior to each box below, as well as in our CaseMaker user guide. Please remember to fill in the ’call-out’ boxes to the left, and to add any graphics, charts, or tables using the upload bar at the bottom of this page.</p>
-        <p>Please keep in mind that not all readers of this case study will be researchers, so be sure to use clear language that assumes a familiarity with the health sector in general, but does not assume formal research methods training. For example, if your research methods involved inferential statistics, you may wish to name your methods, but not spend too detail on your specific models. For examples of how other authors have written this section, as well as more tips for making your case study accessible to different audiences, please see our user guide.</p>
-        <p><i>Methodology Content Box 1: Case Study Methods</i></p>
-        <p>Clearly describe how you gathered the information included in this case study. For example, if your case study is based on data from key informant interviews and secondary data analysis, describe which methods you used and how they contributed to your case study. For some case studies, it may be that case study development involves identifying and summarizing key program documentation, performing secondary data analysis, and/or conducting primary qualitative data collection among the implementers, researchers, beneficiaries, and policy makers whose perspectives are key to documenting the case. For others case studies, it may be that the case study authors have intimate knowledge about the case, and may have developed the case study based on their first-hand experience and understanding, and based on documentation they have access to already. Either scenario is acceptable, and this space should be used to explain how your case study was developed. (~150-300 words)</p>
-
+        <?= $instructions->method1; ?>
           @component('casestudy.partials.textarea', ['name'=>'method_used', 'content'=>$casestudy->method_used, 'word_count'=>1000])
-            Case Study Methods
+            <?= $instructions->methodh1; ?>
           @endcomponent
 
 
-          <p><i>Methodology Content Box 2: Featured Implementation Research Study Methods</i></p>
-          <p>If your case study features an implementation research study, clearly describe the research methods used in that study. If applicable, include the hypotheses tested as well as the methods used to test them. (~300-500 words)</p>
+          <?= $instructions->method2; ?>
 
           @component('casestudy.partials.textarea', ['name'=>'method_challenges', 'content'=>$casestudy->method_challenges, 'word_count'=>1000])
-            Featured Implementation Research Study Methods
+            <?= $instructions->methodh2; ?>
           @endcomponent
 
 
