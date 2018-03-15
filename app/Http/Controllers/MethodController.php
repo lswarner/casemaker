@@ -98,12 +98,12 @@ class MethodController extends Controller
     public function update(Request $request, Method $method)
     {
       $validator = Validator::make($request->all(), [
-          'name' => 'required|unique:methods,name|max:255',
+          'name' => 'required|unique:methods,name,'.$method->id.'|max:255',
           'description' => 'required'
       ]);
 
       if ($validator->fails()) {
-          return redirect('method/edit')
+          return redirect('method/'.$method->id.'/edit')
                       ->withErrors($validator)
                       ->withInput();
       }
