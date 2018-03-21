@@ -13,3 +13,8 @@ const { mix } = require('laravel-mix');
 
 mix.js('resources/assets/js/app.js', 'public/js')
    .sass('resources/assets/sass/app.scss', 'public/css');
+mix.combine([
+    'public/css/app.css',
+    'public/css/urc-style.css',
+    'public/css/med-width.css'
+], 'public/css/app.css');

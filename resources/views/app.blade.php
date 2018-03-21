@@ -14,9 +14,7 @@
     <link rel="icon" href="{{ asset('img/favicon.ico') }}" type="image/x-icon">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/urc-style.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/med-width.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
     @yield('css')
 
