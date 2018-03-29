@@ -73,4 +73,7 @@ Route::group(['middleware' => 'admin'], function() {
 
   Route::model('thematic', '\App\Thematic');
   Route::resource('thematic', 'ThematicController');
+
+  Route::get('cms/style', 'CMSController@style')->name('style');
+  Route::patch('cms/style', 'CMSController@style_update')->name('style_update');
 });

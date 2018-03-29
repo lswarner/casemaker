@@ -139,8 +139,10 @@ a> .panel-account:active{
 /*****
   define buttons
 *****/
-.btn-primary,
+.btn-urc-primary,
 .btn-urc,
+.btn-urc-secondary,
+.btn-urc-info,
 .btn-urc-danger,
 .btn-urc-gray,
 .btn-urc-account, /* text-align, line-height are over-ridden in urc-styles */
@@ -155,9 +157,15 @@ a> .panel-account:active{
 }
 
 
+.btn-demo{
+  margin-top: 12px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
 
 /* === Primary === */
-.btn-primary,
+.btn-urc-primary,
 .btn-urc,
 .btn-urc-account,
 .btn-casestudy,
@@ -167,7 +175,7 @@ a> .panel-account:active{
   color: $primary-text;
 }
 
-.btn-primary,
+.btn-urc-primary,
 .btn-urc,
 .btn-urc-account,
 .btn-casestudy {
@@ -213,15 +221,29 @@ a> .panel-account:active{
 
 
 /* === Info === */
-                              /*   toggle button styles */
-.btn-info {
+
+/*   toggle button styles */
+.btn-info{
   background: $info-bg; /* sky */
-  border-color: darken($info_bg, 5%); /* sky dark */
+  border-color: darken($info-bg, 5%); /* sky dark */
+  color: $info-text;
 }
 
 .btn-info:hover{
-  background: lighten($info_bg, 10%); /* darker sky */
-  border-color: $info_bg; /* sky darker2 */
+  background: $info-hover-bg; /* lighten sky */
+  border-color: darken($info-hover-bg, 5); /* sky darker2 */
+  color: $info-hover-text;
+}
+
+.btn-urc-info{
+  background: $info-bg;
+  border-color: $info-bg;
+  color: $info-text;
+  @include hover-state{
+    background: $info-hover-bg !important;
+    border-color: $info-hover-bg !important;
+    color: $info-hover-text !important;
+  }
 }
 
 
