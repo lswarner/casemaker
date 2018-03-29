@@ -44,7 +44,7 @@
 
         <div class="form-group">
           <div class="col-md-8 col-md-offset-4 col-lg-6 col-lg-offset-6">
-            <input type="submit" class="btn btn-urc-alt" value="Submit Case Study" />
+            <input type="submit" class="btn btn-urc-accent1" value="Submit Case Study" />
           </div>
         </div>
 

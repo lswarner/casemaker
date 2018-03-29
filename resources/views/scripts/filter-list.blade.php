@@ -136,7 +136,7 @@
 
   function addMemberToList(id, name, email){
 
-    var newli= $("<li>").html('<a id="'+id+'" class="btn btn-urc-account blue add-user" data-name="'+name+'" data-email="'+email+'">'+
+    var newli= $("<li>").html('<a id="'+id+'" class="btn btn-urc-account secondary add-user" data-name="'+name+'" data-email="'+email+'">'+
             '<div class="col-sm-11 account-name">'+name+'</div>'+
             '<div class="col-sm-1"><i class="fa fa-plus-circle pull-right" aria-hidden="true"></i></div>'+
           '</a>');

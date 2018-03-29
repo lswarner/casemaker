@@ -5,6 +5,6 @@
     @endif
   </div>
   <div class="col-md-8 col-lg-7">
-    <a class="btn btn-urc-alt" href="{{ $next }}">{{ $slot }}</a>
+    <a class="btn btn-urc-accent1" href="{{ $next }}">{{ $slot }}</a>
   </div>
 </div>

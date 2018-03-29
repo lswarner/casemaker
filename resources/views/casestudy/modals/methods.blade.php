@@ -18,13 +18,13 @@
 
               @foreach($method_suggestions as $m)
                 <li>
-                    <a class="btn btn-urc-account sunset add-method" data-id="{{$m->id}}" data-name="{{$m->name}}">
+                    <a class="btn btn-urc-account add-method" data-id="{{$m->id}}" data-name="{{$m->name}}">
                       <div class="col-sm-11 method-name">{{ $m->name }}</div>
                       <div class="col-sm-1"><i class="fa fa-plus-circle pull-right" aria-hidden="true"></i></div>
                     </a>
                 </li>
               @endforeach
-              
+
             </ul>
           </div>
 
