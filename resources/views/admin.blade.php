@@ -46,11 +46,11 @@
 
       <div class="col-md-4">
           <h3>Manage Resources</h3>
-          <a class="btn btn-urc noon" href="{{ route('keyword.index') }}">Keywords</a>
-          <a class="btn btn-urc noon" href="{{ route('method.index') }}">Methods</a>
-          <a class="btn btn-urc noon" href="{{ route('audience.index') }}">Intended Audiences</a>
-          <a class="btn btn-urc noon" href="{{ route('thematic.index') }}">Thematic Area</a>
-          <a class="btn btn-urc sunset" href="{{ route('instructions') }}">CaseMaker Instructions</a>
+          <a class="btn btn-urc-accent2" href="{{ route('keyword.index') }}">Keywords</a>
+          <a class="btn btn-urc-accent2" href="{{ route('method.index') }}">Methods</a>
+          <a class="btn btn-urc-accent2" href="{{ route('audience.index') }}">Intended Audiences</a>
+          <a class="btn btn-urc-accent2" href="{{ route('thematic.index') }}">Thematic Area</a>
+          <a class="btn btn-urc-accent1" href="{{ route('instructions') }}">CaseMaker Instructions</a>
       </div>
     </div>
 

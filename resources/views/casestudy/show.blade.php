@@ -131,7 +131,7 @@
 
         <div class="form-group">
           <div class="col-md-8 col-md-offset-4 col-lg-6 col-lg-offset-6">
-            <input type="submit" class="btn btn-urc-alt" value="Publish Case Study" />
+            <input type="submit" class="btn btn-urc-accent1" value="Publish Case Study" />
           </div>
         </div>
 
@@ -145,7 +145,7 @@
             <h3 class="text-left">This case study has been submitted.<br /> To make additional edits, you must re-open the casestudy.</h3>
           </div>
           <div class="col-md-4 col-lg-6">
-            <input type="submit" class="btn btn-urc-alt" value="Re-Open Case Study" />
+            <input type="submit" class="btn btn-urc-accent1" value="Re-Open Case Study" />
           </div>
         </div>
 

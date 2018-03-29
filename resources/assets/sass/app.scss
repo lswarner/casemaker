@@ -1,9 +1,63 @@
 
 // Fonts
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+//@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:700|Roboto:300|Source+Sans+Pro:700');
 
 // Variables
 @import "variables";
 
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+// Mixins
+@import "mixins";
+
+//overwrites (like navbar, buttons, alerts, etc)
+@import "overwrites";
+
+@import "casestudy-style";
+
+//style
+
+// see https://laracasts.com/discuss/channels/elixir/how-to-modify-things-inside-bootstrap-sass
+
+.primary-text{
+  color: $primary-bg;
+}
+.secondary-text{
+  color: $secondary-bg;
+}
+.info-text{
+  color: $info-bg;
+}
+.accent1-text{
+  color: $accent1-bg;
+}
+.accent2-text{
+  color: $accent2-bg;
+}
+.accent3-text{
+  color: $accent3-bg;
+}
+
+
+.subtext{
+  font-family: $font-family-casestudy;
+  font-weight: 700;
+  font-size: 14px;
+  color: $gray-dark;
+  line-height: 20px;
+}
+
+
+.casestudy-details{
+  font-family: $font-family-sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: inherit;
+  text-transform:none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  clear:both;
+}

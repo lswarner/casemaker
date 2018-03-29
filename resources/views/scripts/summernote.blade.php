@@ -68,7 +68,7 @@
                         var bufferTextAllowed = bufferText.trim().substring(0, max_words - t_length);
                         setTimeout(function() { // wrap in a timer to prevent issues in Firefox
                             //document.execCommand('insertText', false, bufferTextAllowed);
-                            $('#{{ $box["name"] }}_length').addClass('text-sunset');
+                            $('#{{ $box["name"] }}_length').addClass('accent1-text');
                             $('#{{ $box["name"] }}_length').text('The text you want to paste exceeds the maximum word count: '+remaining+' words remaining');
 
                         }, 10)
@@ -113,10 +113,10 @@
               //console.log(remaining+' words remaining');
 
               if(remaining == 0){
-                $(wc_div).addClass('text-sunset');
+                $(wc_div).addClass('accent1-text');
               }
               else {
-                $(wc_div).removeClass('text-sunset');
+                $(wc_div).removeClass('accent1-text');
               }
 
               return t_length;

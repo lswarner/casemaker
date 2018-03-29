@@ -14,7 +14,7 @@
 
 
     @if($current_name != "review")
-    
+
         <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
           <div class="col-md-12">
             {!! Form::text('title', null, ['class'=>'form-control', 'placeholder'=>'CaseStudy Title']) !!}
@@ -47,7 +47,7 @@
       @endif
 
 
-        <h4>Keywords <button class="btn-icon hover-noon" type="button" data-toggle="modal" data-target="#keywords-modal"><i class="fa fa-plus-circle fa-1x" aria-hidden="true"></i></button></h4>
+        <h4>Keywords <button class="btn-icon hover-accent3" type="button" data-toggle="modal" data-target="#keywords-modal"><i class="fa fa-plus-circle fa-1x" aria-hidden="true"></i></button></h4>
         <ul id="keyword-bar">
         @foreach($casestudy->keywords as $k)
           <li>{{ $k->keyword }}
@@ -61,7 +61,7 @@
 
 
         <h4>Methods
-        <button class="btn-icon hover-sunset" type="button" data-toggle="modal" data-target="#methods-modal"><i class="fa fa-plus-circle" aria-hidden="true"></i></button></h4>
+        <button class="btn-icon hover-accent1" type="button" data-toggle="modal" data-target="#methods-modal"><i class="fa fa-plus-circle" aria-hidden="true"></i></button></h4>
         <ul id="method-bar">
         @foreach($casestudy->methods as $m)
           <li>{{ $m->name }}
@@ -73,7 +73,7 @@
       </div>
 
       <div class="col-md-4 col-lg-4 col-lg-offset-1">
-        <h2>Team Members <button class="btn-icon" type="button" data-toggle="modal" data-target="#team-member-modal"><i class="fa fa-plus-circle" aria-hidden="true"></i></button></h2>
+        <h2>Team Members <button class="btn-icon hover-secondary" type="button" data-toggle="modal" data-target="#team-member-modal"><i class="fa fa-plus-circle" aria-hidden="true"></i></button></h2>
 
         <ul class="team-member-list">
         @foreach($casestudy->team as $t)

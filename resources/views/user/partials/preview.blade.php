@@ -1,13 +1,13 @@
 
 <?php
   if($u->is_admin){
-    $class= "btn-urc-account sunset";
+    $class= "btn-urc-account btn-urc-accent1";
   }
   else if($u->is_approved){
-    $class= "btn-urc-account blue";
+    $class= "btn-urc-account btn-urc-secondary";
   }
   else {
-    $class= "btn-urc-account dawn";
+    $class= "btn-urc-account btn-urc-accent3";
   }
 
  ?>

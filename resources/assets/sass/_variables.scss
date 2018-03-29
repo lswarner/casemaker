@@ -1,3 +1,101 @@
+$navy: #135693;
+$navy-urc: #014078;
+$blue: #2699FF;
+$blue-dark: #51a4ff;
+
+$sky: #6BC7FF;
+$sky-dark1: #64baee;
+$sky-dark2: #5ba9d9;
+$sky-dark3: #5197c1;
+
+$dawn: #F79917;
+$dawn-light: #f7b355;
+
+$noon: #FF6B26;
+
+$sunset: #FF3821;
+$red: #db362b; //hover-sunset
+
+$green: #5cb85c;
+
+$white: #ffffff;
+$black: #000000;
+  $gray-dark: #3d3d3d; //footer
+  $gray-dark1: #45474a; //case study common-bar & summernote text
+//$gray-dark3: #555555;
+  $gray-dark4: #5d5d5d;  //file-upload hover
+  $gray: #8d8d8d;     //btn-urc-gray
+  $gray-hover: #a9a9a9;    //btn-urc-gray: hover
+//$gray2: #808080;    //case study .form-control
+  $gray-light: #c6cdd4;
+//$gray-light1: #dddddd;  // .btn-file:hover
+  $gray-light2: #efefef;  // #sidebar > .well text
+
+
+
+/* styles to allow user to change */
+$navbar-default-bg: $white;  // navbar background - currently white
+$navbar-border: $navy-urc; // border between header and content - currently navy
+
+$commonbar-bg: $gray-light;
+$commonbar-text: $gray-dark1;
+
+$footer-bg: $gray-dark;
+
+
+$primary-bg: $navy;
+$primary-text: $white;
+$primary-hover-bg: $sky;
+$primary-hover-text: $white;
+
+$secondary-bg: $blue;
+$secondary-text: $white;
+$secondary-hover-bg: $blue-dark;
+$secondary-hover-text: $white;
+
+$info-bg: $sky;
+$info-text: $white;
+$info-hover-bg: $sky-dark1;
+$info-hover-text: $white;
+
+$danger-bg: $sunset;
+$danger-text: $white;
+$danger-hover-bg: $red;
+$danger-hover-text: $white;
+
+$accent1-bg: $sunset;
+$accent1-text: $white;
+$accent1-hover-bg: $dawn;
+$accent1-hover-text: $white;
+
+$accent2-bg: $noon;
+$accent2-text: $white;
+$accent2-hover-bg: $dawn;
+$accent2-hover-text: $white;
+
+$accent3-bg: $dawn;
+$accent3-text: $white;
+$accent3-hover-bg: $dawn-light;
+$accent3-hover-text: $white;
+
+$created-bg: $sky;
+$created-text:$white;
+$created-hover-bg: $sky-dark1;
+$created-hover-text: $white;
+
+$submitted-bg: $blue;
+$submitted-text: $white;
+$submitted-hover-bg: $blue-dark;
+$submitted-hover-text: $white;
+
+$published-bg: $dawn;
+$published-text: $white;
+$published-hover-bg: $dawn-light;
+$published-hover-text: $white;
+
+/* end of user-changeable styles */
+
+
 
 // Body
 $body-bg: #f5f8fa;
@@ -10,29 +108,37 @@ $panel-default-border: $laravel-border-color;
 $panel-inner-border: $laravel-border-color;
 
 // Brands
-$brand-primary: #3097D1;
+$laravel-brand-primary: #3097D1; /* keep for form-control's blue tint on hover */
+/*
 $brand-info: #8eb4cb;
 $brand-success: #2ab27b;
 $brand-warning: #cbb956;
 $brand-danger: #bf5329;
+*/
+$brand-primary: $primary-bg;
+$brand-info: $info-bg;
+$brand-success: $green;
+$brand-warning: $accent3-bg;
+$brand-danger: $accent1-bg;
+
 
 // Typography
 $icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
-$font-family-sans-serif: "Raleway", sans-serif;
+$font-family-sans-serif: "Roboto", sans-serif;
+$font-family-header: 'Source Sans Pro', sans-serif;
+$font-family-casestudy: 'Open Sans', sans-serif;
 $font-size-base: 14px;
 $line-height-base: 1.6;
 $text-color: #636b6f;
 
-// Navbar
-$navbar-default-bg: #fff;
 
 // Buttons
 $btn-default-color: $text-color;
 
 // Inputs
 $input-border: lighten($text-color, 40%);
-$input-border-focus: lighten($brand-primary, 25%);
-$input-color-placeholder: lighten($text-color, 30%);
+$input-border-focus: lighten($laravel-brand-primary, 25%);
+$input-color-placeholder: lighten($text-color, 10%);
 
 // Panels
 $panel-default-heading-bg: #fff;
