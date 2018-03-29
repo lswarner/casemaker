@@ -5,7 +5,7 @@
   <div class="main">
 
     <div class="row">
-      {!! Form::model($cms, ['action'=>['CMSController@style_update', $cms], 'method' => 'patch', 'class'=>'form-horizontal']) !!}
+      {!! Form::model($cms, ['action'=>['CMSController@style_update'], 'method' => 'patch', 'class'=>'form-horizontal']) !!}
       <div class="col-md-12">
         <h2>Customize Design</h2>
 
