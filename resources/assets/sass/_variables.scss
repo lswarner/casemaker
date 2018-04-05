@@ -35,7 +35,8 @@ $black: #000000;
 
 /* styles to allow user to change */
 $navbar-default-bg: $white;  // navbar background - currently white
-$navbar-border: $navy-urc; // border between header and content - currently navy
+$navbar-default-text: #777777;
+$navbar-border: $navy-urc; // border between header and content - currently $navy-urc
 
 $commonbar-bg: $gray-light;
 $commonbar-text: $gray-dark1;
@@ -55,7 +56,7 @@ $secondary-hover-text: $white;
 
 $info-bg: $sky;
 $info-text: $white;
-$info-hover-bg: $sky-dark1;
+$info-hover-bg: $sky-dark2;
 $info-hover-text: $white;
 
 $danger-bg: $sunset;
@@ -78,20 +79,7 @@ $accent3-text: $white;
 $accent3-hover-bg: $dawn-light;
 $accent3-hover-text: $white;
 
-$created-bg: $sky;
-$created-text:$white;
-$created-hover-bg: $sky-dark1;
-$created-hover-text: $white;
 
-$submitted-bg: $blue;
-$submitted-text: $white;
-$submitted-hover-bg: $blue-dark;
-$submitted-hover-text: $white;
-
-$published-bg: $dawn;
-$published-text: $white;
-$published-hover-bg: $dawn-light;
-$published-hover-text: $white;
 
 /* end of user-changeable styles */
 

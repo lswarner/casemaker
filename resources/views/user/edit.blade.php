@@ -122,7 +122,7 @@
 
               <div class="form-group">
                 <div class="col-md-10">
-                  <button type="submit" class="btn btn-primary">
+                  <button type="submit" class="btn btn-urc-primary">
                       Update
                   </button>
                 </div>
