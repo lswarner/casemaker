@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\CMS;
+use Artisan;
 
 class CMSController extends Controller
 {
@@ -32,8 +33,15 @@ class CMSController extends Controller
 
       }
 
+      exec('npm run dev');
+      /*
       //run sass through npm
+      $output= Artisan::call('compile:sass', ['env' => 'dev']);
 
+      $output= Artisan::call('route:list');
+      dd($output);
+
+*/
       return redirect()->route('style');
     }
 

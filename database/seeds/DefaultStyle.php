@@ -45,6 +45,17 @@ class DefaultStyle extends Seeder
           'accent3-hover-text' => '#ffffff',
 
 
+          'navbar-default-bg' =>'#ffffff',
+          'navbar-default-text' =>'#777777',
+          'navbar-border' =>'#014078',
+
+          'commonbar-bg' =>'#c6cdd4',
+          'commonbar-text' =>'#45474a',
+
+          'footer-bg' =>'#3d3d3d',
+          'footer-text' =>'#c6cdd4',
+
+
         ]);
 
         $style->save();

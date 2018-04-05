@@ -13,6 +13,7 @@ class CreateCasestudyKeywordTable extends Migration
      */
     public function up()
     {
+      
         Schema::create('case_study_keyword', function (Blueprint $table) {
           $table->integer('case_study_id')->unsigned()->nullable();
           $table->foreign('case_study_id')->references('id')
@@ -24,6 +25,7 @@ class CreateCasestudyKeywordTable extends Migration
 
           $table->timestamps();
         });
+
     }
 
     /**
@@ -33,6 +35,6 @@ class CreateCasestudyKeywordTable extends Migration
      */
     public function down()
     {
-        //Schema::dropIfExists('case_study_keyword');
+        Schema::dropIfExists('case_study_keyword');
     }
 }

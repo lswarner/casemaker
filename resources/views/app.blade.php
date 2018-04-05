@@ -115,7 +115,7 @@
     <footer class="footer">
       <div class="container-fluid container-wide">
         <div class="footer-main">
-          <p class="text-muted text-center">&copy; {{ date('Y') }} CaseMaker</p>
+          <p class="footer-text text-center">&copy; {{ date('Y') }} CaseMaker</p>
         </div>
       </div>
     </footer>

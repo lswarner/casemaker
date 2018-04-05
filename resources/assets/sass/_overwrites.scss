@@ -33,6 +33,26 @@ h4{
 }
 
 
+/*** nav bar colors */
+.navbar-default .navbar-nav > li > a {
+  color: $navbar-default-text;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: darken($navbar-default-text, 25%);
+  background-color: transparent;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: darken($navbar-default-text, 10%);
+  background-color: darken($navbar-default-bg, 7%);
+}
+
+
+
 
 #progress-bar{
   background: $secondary-bg;
@@ -73,6 +93,10 @@ h4{
   background-color: $footer-bg;
 }
 
+.footer-text{
+  color: $footer-text;
+}
+
 
 
 /****  Flash Styles ****/
@@ -101,6 +125,23 @@ h4{
 .flash-success {
   background: $green;
 }
+
+
+/* overwrite status colors */
+$created-bg: $info-bg;
+$created-text:$info-text;
+$created-hover-bg: $info-hover-bg;
+$created-hover-text: $info-hover-text;
+
+$submitted-bg: $secondary-bg;
+$submitted-text: $secondary-text;
+$submitted-hover-bg: $secondary-hover-bg;
+$submitted-hover-text: $secondary-hover-text;
+
+$published-bg: $accent3-bg;
+$published-text: $accent3-text;
+$published-hover-bg: $accent3-hover-bg;
+$published-hover-text: $accent3-hover-text;
 
 
 /***
@@ -158,9 +199,7 @@ a> .panel-account:active{
 
 
 .btn-demo{
-  margin-top: 12px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  margin-top: 25px;
 }
 
 
@@ -309,9 +348,9 @@ a> .panel-account:active{
 .btn-urc-accent3,
 .add-keyword {
   @include hover-state{
-    background: $dawn-light !important;
-    border-color: $dawn-light !important;
-    color: $accent3-text !important;
+    background: $accent3-hover-bg !important;
+    border-color: $accent3-hover-bg !important;
+    color: $accent3-hover-text !important;
   }
 }
 

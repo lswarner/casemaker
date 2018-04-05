@@ -41,6 +41,25 @@
   color: $accent3-bg;
 }
 
+.navbar-demo{
+  background-color: $navbar-default-bg;
+  color: $navbar-default-text;
+  border-bottom: 10px solid $navbar-border;
+  padding: 6px 20px;
+}
+
+.commonbar-demo{
+  background-color: $commonbar-bg;
+  color: $commonbar-text;
+  padding: 6px 20px;
+}
+
+.footer-demo{
+  background-color: $footer-bg;
+  color: $footer-text;
+  padding: 6px 20px;
+}
+
 
 .subtext{
   font-family: $font-family-casestudy;

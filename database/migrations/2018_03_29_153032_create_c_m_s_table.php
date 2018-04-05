@@ -48,6 +48,17 @@ class CreateCMSTable extends Migration
             $table->char('accent3-hover-bg', 7)->default('#f7b355');
             $table->char('accent3-hover-text', 7)->default('#ffffff');
 
+            $table->char('navbar-default-bg')->default('#ffffff');
+            $table->char('navbar-default-text')->default('#7777777');
+
+            $table->char('navbar-border')->default('#014078'); //navy-urc
+
+            $table->char('commonbar-bg')->default('#c6cdd4');
+            $table->char('commonbar-text')->default('#45474a');
+
+            $table->char('footer-bg')->default('#3d3d3d');
+            $table->char('footer-text')->default('#c6cdd4;');
+
             $table->timestamps();
         });
     }

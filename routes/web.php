@@ -76,4 +76,8 @@ Route::group(['middleware' => 'admin'], function() {
 
   Route::get('cms/style', 'CMSController@style')->name('style');
   Route::patch('cms/style', 'CMSController@style_update')->name('style_update');
+
+
+    Route::get('cms/logo', 'CMSController@logo')->name('logo');
+    Route::patch('cms/logo', 'CMSController@logo_update')->name('logo_update');
 });
