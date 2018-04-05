@@ -15,7 +15,7 @@
     </div>
 
     <div class="row">
-      <div class="col-lg-3 col-md-4 col-sm-6">
+      <div class="col-lg-4 col-md-4 col-sm-6">
           <h3>Accounts Pending</h3>
 
           @foreach($pending_users as $u)
@@ -28,7 +28,7 @@
       </div>
 
 
-      <div class="col-lg-3 col-md-4 col-sm-6">
+      <div class="col-lg-4 col-md-4 col-sm-6">
         <h3>Submitted Case Studies</h3>
 
         @foreach($casestudies as $cs)
@@ -44,7 +44,7 @@
         {!! Form::close() !!}
       </div>
 
-      <div class="col-lg-3 col-md-4 col-sm-6">
+      <div class="col-lg-4 col-md-4 col-sm-6">
           <h3>CaseMaker Resources</h3>
           <a class="btn btn-urc-info" href="{{ route('keyword.index') }}">Keywords</a>
           <a class="btn btn-urc-info" href="{{ route('method.index') }}">Methods</a>
@@ -52,7 +52,7 @@
           <a class="btn btn-urc-info" href="{{ route('thematic.index') }}">Thematic Area</a>
       </div>
 
-      <div class="col-lg-3 col-md-4 col-sm-6">
+      <div class="col-lg-4 col-md-4 col-sm-6">
           <h3>Content Management</h3>
           <a class="btn btn-urc-accent1" href="{{ route('instructions') }}">Instructions</a>
           <a class="btn btn-urc-accent2" href="{{ route('style') }}">Colors & Style</a>
