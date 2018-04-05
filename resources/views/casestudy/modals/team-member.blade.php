@@ -36,7 +36,7 @@
 
               @foreach($team_suggestions as $u)
                 <li>
-                    <a id="{{$u->id}}" class="btn btn-urc-account blue add-user" data-name="{{$u->name}}" data-email="{{$u->email}}">
+                    <a id="{{$u->id}}" class="btn btn-urc-account secondary add-user" data-name="{{$u->name}}" data-email="{{$u->email}}">
                       <div class="col-sm-11 account-name">{{ $u->name }}</div>
                       <div class="col-sm-1"><i class="fa fa-plus-circle pull-right" aria-hidden="true"></i></div>
                     </a>

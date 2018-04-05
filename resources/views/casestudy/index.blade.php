@@ -18,7 +18,7 @@
 
     <div class="row">
       <div class="col-md-4">
-        <h2 class="text-sky">In-Progress</h2>
+        <h2 class="info-text">In-Progress</h2>
         @foreach($created as $cs)
 
           @component('casestudy.partials.preview', ['cs'=>$cs]) @endcomponent
@@ -27,7 +27,7 @@
       </div>
 
       <div class="col-md-4">
-        <h2 class="text-blue">Submitted</h2>
+        <h2 class="secondary-text">Submitted</h2>
         @foreach($submitted as $cs)
 
           @component('casestudy.partials.preview', ['cs'=>$cs]) @endcomponent
@@ -36,7 +36,7 @@
       </div>
 
       <div class="col-md-4">
-        <h2 class="text-dawn">Live</h2>
+        <h2 class="accent3-text">Live</h2>
         @foreach($published as $cs)
 
           @component('casestudy.partials.preview', ['cs'=>$cs]) @endcomponent

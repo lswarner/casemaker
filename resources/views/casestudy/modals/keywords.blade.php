@@ -18,7 +18,7 @@
 
               @foreach($keyword_suggestions as $k)
                 <li>
-                    <a class="btn btn-urc-account noon add-keyword" data-id="{{$k->id}}" data-name="{{$k->keyword}}">
+                    <a class="btn btn-urc-account add-keyword" data-id="{{$k->id}}" data-name="{{$k->keyword}}">
                       <div class="col-sm-11 keyword-name">{{ $k->keyword }}</div>
                       <div class="col-sm-1"><i class="fa fa-plus-circle pull-right" aria-hidden="true"></i></div>
                     </a>

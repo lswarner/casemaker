@@ -1,0 +1,14 @@
+%button {
+  margin-bottom: 8px;
+  border: 2px solid;
+  display: block;
+  width: 100%;
+  font-size: 16pt;
+}
+
+@mixin hover-state {
+    &:hover, &:active, &:focus {
+        @content;
+        transition: background 0.25s, border 0.25s;
+    }
+}

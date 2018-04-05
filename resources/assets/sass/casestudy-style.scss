@@ -5,14 +5,14 @@
 	  Common Bar Styles
 	***/
 	.common-bar{
-		background: #c6cdd4;
-    padding: 10px 60px;
-		color: #45474a;
+		background: $commonbar-bg;
+	  color: $commonbar-text;
+	  padding: 10px 60px;
 	}
 
 	.note-editor.note-frame .note-editing-area .note-editable,
 	.form-control {
-		color: #45474a;
+		color: $commonbar-text;
 		font-size: 16px;
 	}
 
@@ -66,15 +66,16 @@
   ***/
 
 	a.casestudy-tooltip{
-		color: #135693;
+		color: $primary-bg;
 		font-size: 18px; /* compare to #sidebar > > > label  */
 	}
 
 	h1.page-header{
-		color: #135693; /* navy */
+		color: $primary-bg;
 		font-size: 32px;
 		margin: 0px;
-		border-bottom: 4px solid #FF6B26;
+		border-bottom: 4px solid;
+		border-color: $accent2-bg;
 		padding-bottom: 6px;
 	}
 
@@ -94,24 +95,24 @@
 
 	#sidebar > .well {
 		margin-top: 40px;
-		background-color: #6BC7FF;
-		border: #6BC7FF;
+		background-color: $info-bg;
+		border: $info-bg;
 	}
 
 	#sidebar > div > div > textarea{
-		background: #efefef;
+		background: $gray-light2;
 	}
 
 
 	#narrative > div >label{
 		font-size: 20px;
-		color: #135693;
+		color: $primary-bg;
 	}
 
 
 	#sidebar > div > div > label{
 		font-size: 20px;
-		color: #ffffff;
+		color: $info-text;
 	}
 
 
@@ -127,11 +128,11 @@
 	}
 
 	h2.section-header{
-		color: #135693; /* navy */
+		color: $primary-bg;
 		font-size: 28px;
 		margin: 0px;
 		margin-left: 14px; /* align it with the tool tips */
-		border-bottom: 4px solid #FF6B26;
+		border-bottom: 4px solid $accent2-bg;
 		padding-bottom: 6px;
 	}
 
@@ -222,19 +223,19 @@
 	/******************  Style File Upload Button *************************/
 
 	.file-upload{
-		background: #FF6B26;
-		color: #ffffff;
+		background: $accent2-bg;
+		color: $accent2-text;
 	}
 
 		.file-upload > div > ul > li,
 		.file-upload > div > ul > li > a {
-			color: #333;
+			color: $gray-dark;
 		}
 
 		.file-upload > div > ul > li > a:hover,
 		.file-upload > div > ul > li > a:active,
 		.file-upload > div > ul > li > a:focus {
-			color: #5d5d5d;
+			color: $gray-dark4;
 		}
 
 
@@ -247,13 +248,13 @@
 	.btn-file {
 	  position: relative;
 	  overflow: hidden;
-		color: #ffffff;
+		color: $accent2-text;
 	}
 
 	.btn-file:hover,
 	.btn-file:active,
 	.btn-file:focus{
-		color: #ddd;
+		color: darken($accent2-text, 15%);
 	}
 	.btn-file input[type=file] {
 	  position: absolute;
@@ -265,7 +266,6 @@
 	  text-align: right;
 	  filter: alpha(opacity=0);
 	  opacity: 0;
-	  background: red;
 	  cursor: inherit;
 	  display: block;
 	}

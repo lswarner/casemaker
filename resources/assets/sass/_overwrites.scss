@@ -1,0 +1,492 @@
+body{
+  color: $black;
+  font-size: 16px;
+}
+
+html, body, h3, h4, h5, p, label
+{
+		font-family: $font-family-sans-serif;
+}
+
+
+
+h1{
+  font-family: $font-family-header;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+h2,
+.btn{
+  font-family: $font-family-casestudy;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+h4{
+  font-size: 20px;
+}
+
+/** bar dividing header from content */
+.navbar-urc1{
+  border-bottom: 30px solid $navbar-border;
+}
+
+
+/*** nav bar colors */
+.navbar-default .navbar-nav > li > a {
+  color: $navbar-default-text;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: darken($navbar-default-text, 25%);
+  background-color: transparent;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: darken($navbar-default-text, 10%);
+  background-color: darken($navbar-default-bg, 7%);
+}
+
+
+
+
+#progress-bar{
+  background: $secondary-bg;
+  border: none;
+}
+
+#progress-bar > .navbar-collapse > ul > li > a {
+  font-size: 16pt;
+  padding: 24px;
+  color: $accent2-text;
+  text-transform: uppercase;
+}
+
+#progress-bar > .navbar-collapse > ul > li > a.active {
+  color: $accent2-text;
+  background: $accent2-bg;
+}
+
+#progress-bar > .navbar-collapse > ul > li > a:hover,
+#progress-bar > .navbar-collapse > ul > li > a:focus {
+  border-bottom: 3px solid $accent2-bg;
+  padding-bottom: 27px;
+}
+
+
+
+@media (min-width: 1400px) {
+  #progress-bar > .navbar-collapse > ul > li > a {
+    font-size: 20pt;
+    padding: 30px;
+  }
+}
+
+
+
+
+.footer-main{
+  background-color: $footer-bg;
+}
+
+.footer-text{
+  color: $footer-text;
+}
+
+
+
+/****  Flash Styles ****/
+.row-flash{
+  margin-bottom: 35px;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.flash-urc,
+.flash-danger,
+.flash-success{
+  color: white;
+  padding-bottom: 10px;
+  padding-top: 0px;
+}
+
+.flash-urc{
+  background: $accent3-bg;
+}
+
+.flash-danger{
+  background: $danger-bg;
+}
+
+.flash-success {
+  background: $green;
+}
+
+
+/* overwrite status colors */
+$created-bg: $info-bg;
+$created-text:$info-text;
+$created-hover-bg: $info-hover-bg;
+$created-hover-text: $info-hover-text;
+
+$submitted-bg: $secondary-bg;
+$submitted-text: $secondary-text;
+$submitted-hover-bg: $secondary-hover-bg;
+$submitted-hover-text: $secondary-hover-text;
+
+$published-bg: $accent3-bg;
+$published-text: $accent3-text;
+$published-hover-bg: $accent3-hover-bg;
+$published-hover-text: $accent3-hover-text;
+
+
+/***
+    Forms
+***/
+
+label{
+  color: $gray-dark4;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+
+/*****    Account Management styles *****/
+
+.panel-attention{
+  border: solid 4px $accent3-bg;
+  padding: 8px;
+}
+
+.panel-account{
+  padding: 8px;
+  margin-bottom: 4px;
+  background: $gray-hover;
+}
+
+a> .panel-account,
+a> .panel-account:hover
+a> .panel-account:active{
+  text-decoration: none;
+}
+
+
+
+
+/*****
+  define buttons
+*****/
+.btn-urc-primary,
+.btn-urc,
+.btn-urc-secondary,
+.btn-urc-info,
+.btn-urc-danger,
+.btn-urc-gray,
+.btn-urc-account, /* text-align, line-height are over-ridden in urc-styles */
+.btn-urc-accent1,
+.btn-urc-accent2,
+.btn-urc-accent3,
+.btn-casestudy,
+.status-created,
+.status-submitted,
+.status-published {
+  @extend %button;
+}
+
+
+.btn-demo{
+  margin-top: 25px;
+}
+
+
+/* === Primary === */
+.btn-urc-primary,
+.btn-urc,
+.btn-urc-account,
+.btn-casestudy,
+.primary{
+  background: $primary-bg;
+  border-color: $primary-bg;
+  color: $primary-text;
+}
+
+.btn-urc-primary,
+.btn-urc,
+.btn-urc-account,
+.btn-casestudy {
+  @include hover-state{
+    background: $primary-hover-bg !important;
+    border-color: $primary-hover-bg !important;
+    color: $primary-hover-text !important;
+  }
+}
+
+.btn-casestudy{
+  text-align: left;
+  line-height: 1;
+  font-size: 18pt;
+
+  padding-bottom: 8px; /* overflow: hidden resolves the padding issue (this was 28px to cover dates) */
+
+  /*
+  background: #ffffff;  /* white
+  color: #ffffff !important;
+  border: 2px solid #135693; /* navy
+  */
+}
+
+
+
+/* === Secondary === */
+.btn-urc-secondary,
+.secondary{
+  background: $secondary-bg;
+  border-color: $secondary-bg;
+  color: $secondary-text;
+}
+
+.btn-urc-secondary {
+  @include hover-state{
+    background: $secondary-hover-bg !important;
+    border-color: $secondary-hover-bg !important;
+    color: $secondary-hover-text !important;
+  }
+}
+
+
+
+/* === Info === */
+
+/*   toggle button styles */
+.btn-info{
+  background: $info-bg; /* sky */
+  border-color: darken($info-bg, 5%); /* sky dark */
+  color: $info-text;
+}
+
+.btn-info:hover{
+  background: $info-hover-bg; /* lighten sky */
+  border-color: darken($info-hover-bg, 5); /* sky darker2 */
+  color: $info-hover-text;
+}
+
+.btn-urc-info{
+  background: $info-bg;
+  border-color: $info-bg;
+  color: $info-text;
+  @include hover-state{
+    background: $info-hover-bg !important;
+    border-color: $info-hover-bg !important;
+    color: $info-hover-text !important;
+  }
+}
+
+
+
+/* === Danger === */
+.btn-urc-danger{
+  background: $danger-bg;
+  border-color: $danger-bg;
+  color: $danger-text;
+
+  @include hover-state{
+    background: $danger-hover-bg !important;
+    border-color: $danger-hover-bg !important;
+    color: $danger-hover-text !important;
+  }
+}
+
+
+/* === Accent 1 === */
+.btn-urc-accent1,
+.accent1,
+.add-method{
+  background: $accent1-bg;
+  border-color: $accent1-bg;
+  color: $accent1-text;
+}
+
+.btn-urc-accent1,
+.add-method {
+  @include hover-state{
+    background: $accent1-hover-bg !important;
+    border-color: $accent1-hover-bg !important;
+    color: $accent1-hover-text !important;
+  }
+}
+
+
+/* === Accent 2 === */
+.btn-urc-accent2,
+.accent2{
+  background: $accent2-bg;
+  border-color: $accent2-bg;
+  color: $accent2-text;
+}
+.btn-urc-accent2{
+  @include hover-state{
+    background: $accent2-hover-bg !important;
+    border-color: $accent2-hover-bg !important;
+    color: $accent2-hover-text !important;
+  }
+}
+
+
+/* === Accent 3 === */
+.btn-urc-accent3,
+.accent3,
+.add-keyword {
+  background: $accent3-bg;
+  border-color: $accent3-bg;
+  color: $accent3-text;
+}
+
+.btn-urc-accent3,
+.add-keyword {
+  @include hover-state{
+    background: $accent3-hover-bg !important;
+    border-color: $accent3-hover-bg !important;
+    color: $accent3-hover-text !important;
+  }
+}
+
+
+
+
+/* === Hover styles === */
+.hover-secondary{
+  @include hover-state{
+    background: transparent !important;
+    border: 0px transparent !important;
+    color: $secondary-bg !important;
+  }
+}
+
+.hover-accent1{
+  @include hover-state{
+    background: transparent !important;
+    border: 0px transparent !important;
+    color: $accent1-bg !important;
+  }
+}
+.hover-accent2{
+  @include hover-state{
+    background: transparent !important;
+    border: 0px transparent !important;
+    color: $accent2-bg !important;
+  }
+}
+.hover-accent3{
+  @include hover-state{
+    background: transparent !important;
+    border: 0px transparent !important;
+    color: $accent3-bg !important;
+  }
+}
+
+
+/* === Gray === */
+.btn-urc-gray {
+  background: $gray;
+  border-color: $gray;
+  color: $white;
+
+  @include hover-state{
+    background: $gray-hover !important;
+    border-color: $gray-hover !important;
+    color: $white !important;
+  }
+}
+
+
+
+
+
+
+
+/* === Case Study Status badges === */
+.created,
+.status-created {
+  background: $created-bg;
+  border-color: $created-bg;
+  color: $created-text;
+}
+
+.status-created {
+  @include hover-state{
+    background: $created-hover-bg !important;
+    border-color: $created-hover-bg !important;
+    color: $created-hover-text !important;
+  }
+}
+
+/* === Submitted === */
+.submitted,
+.status-submitted {
+  background: $submitted-bg;
+  border-color: $submitted-bg;
+  color: $submitted-text;
+}
+
+.status-submitted {
+  @include hover-state{
+    background: $submitted-hover-bg !important;
+    border-color: $submitted-hover-bg !important;
+    color: $submitted-hover-text !important;
+  }
+}
+
+/* === Published === */
+.published,
+.status-published {
+  background: $published-bg;
+  border-color: $published-bg;
+  color: $published-text;
+}
+
+.status-published {
+  @include hover-state{
+    background: $published-hover-bg !important;
+    border-color: $published-hover-bg !important;
+    color: $published-hover-text !important;
+  }
+}
+
+
+
+/** odd buttons */
+
+.btn-icon{
+  background: transparent;
+  border: 0px transparent;
+
+  @include hover-state{
+    background: transparent !important;
+    border: 0px transparent !important;
+    transition: color 0.25s;
+    outline: none;
+  }
+}
+
+
+.btn-link.btn-back{
+  color: $primary-bg;
+	text-decoration: none;
+  font-size: 18pt;
+
+  padding: 0; /* prevent hover underline from reaching into padding empty space */
+  margin-top: 10px;
+  margin-left: 0px;
+
+  @include hover-state{
+    text-decoration: none;
+    background: transparent !important;
+    color: $info-bg;
+    border-bottom: solid  2px $info-bg;
+    transition: color 0.25s, border 0.25s;
+  }
+}
