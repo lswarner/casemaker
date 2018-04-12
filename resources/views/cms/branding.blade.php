@@ -32,7 +32,7 @@
 
 <?php /*
       <div class="col-md-4">
-
+<!-- removed until library portion is completed -->
         <div class="form-group">
 
           <label for="library_title" class="col-sm-2 control-label">Title</label>
