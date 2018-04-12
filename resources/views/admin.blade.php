@@ -1,8 +1,9 @@
 @extends('app')
 
+@section('content')
+
 @include('casestudy.modals.delete')
 
-@section('content')
 <div class="container-fluid container-wide">
   <div class="main">
 
@@ -56,7 +57,7 @@
           <h3>Content Management</h3>
           <a class="btn btn-urc-accent1" href="{{ route('instructions') }}">Instructions</a>
           <a class="btn btn-urc-accent2" href="{{ route('style') }}">Colors & Style</a>
-          <a class="btn btn-urc-accent3" href="{{ route('logo') }}">Logo</a>
+          <a class="btn btn-urc-accent3" href="{{ route('branding') }}">Branding</a>
       </div>
     </div>
 

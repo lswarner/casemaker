@@ -77,7 +77,8 @@ Route::group(['middleware' => 'admin'], function() {
   Route::get('cms/style', 'CMSController@style')->name('style');
   Route::patch('cms/style', 'CMSController@style_update')->name('style_update');
 
+  Route::get('cms/image/{field}', 'CMSController@edit_image')->name('image');
+  Route::post('cms/image/{field}', 'CMSController@update_image')->name('update_image');
 
-    Route::get('cms/logo', 'CMSController@logo')->name('logo');
-    Route::patch('cms/logo', 'CMSController@logo_update')->name('logo_update');
+  Route::get('cms/branding', 'CMSController@branding')->name('branding');
 });

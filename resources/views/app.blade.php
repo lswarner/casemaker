@@ -35,7 +35,8 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-left" href="{{ url('/') }}">
-                        <img src="{{ asset('img/isc-logo-web344.jpg')}}" />
+                        <!-- <img src="{{ asset('img/isc-logo-web344.jpg')}}" /> -->
+                        <img class="casemaker-logo" src="{{ \App\CMS::first()->casemaker_logo }}" /> 
                     </a>
                 </div>
 
