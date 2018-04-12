@@ -9,7 +9,7 @@ class CMS extends Model
 {
     protected $table= "cms";
     protected $guarded= [];
-    private $excluded= ['logo', 'background', 'id', 'created_at', 'updated_at']; // attributes which shouldn't be included in SCSS file
+    private $excluded= ['casemaker_logo', 'library_logo', 'splash_image', 'casemaker_title', 'library_title', 'id', 'created_at', 'updated_at']; // attributes which shouldn't be included in SCSS file
 
 
     public function getStylesheetUrlAttribute(){
@@ -28,13 +28,83 @@ class CMS extends Model
       $success=true;
       $stylesheet_attributes->each(function($item, $key) use ($file){
         if( fwrite($file, "\$".$key.": ".$item.";\n") ===false){
-          throw new Exception("Error writing 'assets/sass/_custom_variables.scss' stylesheer", 1);
+          throw new Exception("Error writing 'assets/sass/_custom_variables.scss' stylesheet", 1);
         }
         //echo '$'.$key.': '.$item.'\n';
       });
 
       fclose($file);
 
+      return true;
+    }
+
+
+    /**
+  	 * Set the logo atribute - and delete the old logo (if neccessary) from the filesystem
+  	 *
+  	 * @param string $value - URI of the new logo
+  	 */
+  	public function setCasemakerLogoAttribute($value){
+
+  		  //$this->deleteImage($this->attributes['casemaker_logo']);
+
+  		  $this->attributes['casemaker_logo']= $value;
+  	}
+
+    /**
+  	 * Retrieve the URL to the casemaker logo.
+     *   - wrap the string as a URL before returning.
+  	 *
+  	 * @param string $value - URI of the logo
+  	 */
+  	public function getCasemakerLogoAttribute($value){
+  		return $this->wrapURL($value);
+  	}
+
+
+
+    /**
+  	 * Set the logo atribute - and delete the old logo (if neccessary) from the filesystem
+  	 *
+  	 * @param string $value - URI of the new logo
+  	 */
+  	public function setLibraryLogoAttribute($value){
+
+  		  //$this->deleteImage($this->attributes['library_logo']);
+
+  		  $this->attributes['library_logo']= $value;
+  	}
+
+
+    /**
+  	 * Retrieve the URL to the library logo.
+  	 *
+  	 * @param string $value - URI of the logo
+  	 */
+  	public function getLibraryLogoAttribute($value){
+  		return $this->wrapURL($value);
+  	}
+
+
+    /**
+     * Wrap a string as a URL before returning
+     */
+    private function wrapURL($value){
+      if( $value ){
+  			return url($value);
+  		}
+
+  		return "";
+    }
+
+
+    /**
+     * Delete the old image before saving the URL to the new image
+     */
+    public function deleteImage($image){
+      if( !empty( $image ) ){
+  			\File::delete( public_path( $image ) );
+  		}
       return true;
     }
 
