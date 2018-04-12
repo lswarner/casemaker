@@ -17,8 +17,11 @@ class AddLogosTitlesToCms extends Migration
             $table->renameColumn('logo', 'casemaker_logo');
             $table->renameColumn('background', 'splash_image');
 
+            $table->string('casemaker_logo')->default('img/isc-logo-web344.jpg')->change();
+            $table->string('splash_image')->default('img/register_bg.jpg')->change();
+
             $table->string('casemaker_title')->default('CaseMaker')->after('casemaker_logo');
-            $table->string('library_logo')->default('')->after('casemaker_title');
+            $table->string('library_logo')->default('img/isc-logo-web344.jpg')->after('casemaker_title');
             $table->string('library_title')->default('Case Study Library')->after('library_logo');
         });
     }
