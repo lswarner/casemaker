@@ -180,6 +180,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
 
         Sentry\SentryLaravel\SentryLaravelServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,  // Image editing service
 
     ],
 
@@ -234,6 +235,7 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
 
         'Sentry' => Sentry\SentryLaravel\SentryFacade::class,
+        'Image' => Intervention\Image\Facades\Image::class,
 
     ],
 

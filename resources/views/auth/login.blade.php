@@ -10,7 +10,7 @@
 
 @section('content')
 <div class="container-fluid container-wide">
-  <div class="register-bg">
+  <div class="register-bg" style="background-image: url('{{ \App\CMS::first()->splash_image }}')">
     <div class="row">
         <div class="col-md-6" style="border-right:solid 2px white">
           <div class="col-md-10">
