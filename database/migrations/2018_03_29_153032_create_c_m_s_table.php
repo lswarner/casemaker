@@ -15,8 +15,6 @@ class CreateCMSTable extends Migration
     {
         Schema::create('cms', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('logo')->default('');
-            $table->string('background')->default('');
 
             $table->char('primary-bg', 7)->default('#135693');
             $table->char('primary-text', 7)->default('#ffffff');
