@@ -14,15 +14,19 @@ class AddLogosTitlesToCms extends Migration
     public function up()
     {
         Schema::table('cms', function (Blueprint $table) {
-            $table->renameColumn('logo', 'casemaker_logo');
-            $table->renameColumn('background', 'splash_image');
-
-            $table->string('casemaker_logo')->default('img/isc-logo-web344.jpg')->change();
-            $table->string('splash_image')->default('img/register_bg.jpg')->change();
-
+            $table->string('casemaker_logo')->default('img/isc-logo-web344.jpg')->after('id');
             $table->string('casemaker_title')->default('CaseMaker')->after('casemaker_logo');
+
             $table->string('library_logo')->default('img/isc-logo-web344.jpg')->after('casemaker_title');
             $table->string('library_title')->default('Case Study Library')->after('library_logo');
+
+            $table->string('splash_image')->default('img/register_bg.jpg')->after('library_title');
+        });
+
+        Schema::table('cms', function (Blueprint $table){
+
+          $table->string('casemaker_logo')->default('img/isc-logo-web344.jpg')->change();
+          $table->string('splash_image')->default('img/register_bg.jpg')->change();
         });
     }
 
@@ -34,10 +38,7 @@ class AddLogosTitlesToCms extends Migration
     public function down()
     {
         Schema::table('cms', function (Blueprint $table) {
-            $table->dropColumn(['library_logo', 'casemaker_title', 'casemaker_logo']);
-
-            $table->renameColumn('casemaker_logo', 'logo');
-            $table->renameColumn('splash_image', 'background');
+            $table->dropColumn(['library_logo', 'library_title', 'casemaker_title', 'casemaker_logo', 'splash_image']);
         });
     }
 }
