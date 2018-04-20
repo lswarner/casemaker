@@ -23,11 +23,6 @@ class AddLogosTitlesToCms extends Migration
             $table->string('splash_image')->default('img/register_bg.jpg')->after('library_title');
         });
 
-        Schema::table('cms', function (Blueprint $table){
-
-          $table->string('casemaker_logo')->default('img/isc-logo-web344.jpg')->change();
-          $table->string('splash_image')->default('img/register_bg.jpg')->change();
-        });
     }
 
     /**

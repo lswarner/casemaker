@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\CMS;
 use Artisan;
 use Image;
+use Storage;
 
 class CMSController extends Controller
 {
@@ -86,33 +87,49 @@ class CMSController extends Controller
       $cms= CMS::first();
 
 
+      if( $field == 'favicon') {
+
+        $file=  $request->file('attachment');
+
+        $path= Storage::disk('public_uploads')->put('img/', $file);
+
+        $cms->$field= $path;
+        $cms->save();
 
 
+        return redirect()->route('branding');
+        exit;
+
+      }
+
+
+
+/*
       $messages = [
         'attachment.max' => 'Please choose an image that is less than 5 MB.',
       ];
 
       $this->validate($request, [
-          'attachment' => 'image|max:5000|required'		/* 5 MB */
-          ]);
+          'attachment' => 'image|max:5000|required'		/* 5 MB
+      ]);
+
+*/
 
 
+      //if ($request->hasFile('attachment') && $request->file('attachment')->isValid()) {
 
-      if ($request->hasFile('attachment') && $request->file('attachment')->isValid()) {
+      if ($request->hasFile('attachment') ) {
 
-      //if ($request->hasFile('attachment') ) {
 
         $uploaded_file= $request->file('attachment');
 
+        //dd($uploaded_file);
+        $image= Image::make($uploaded_file);
+        dd($image);
 
         $upload_folder= "img/";
-        $destinationPath= public_path($upload_folder);
 
         $file_name= $uploaded_file->getClientOriginalName();
-        $file_path= $upload_folder.$file_name;
-
-
-        $image= Image::make($uploaded_file);
 
         switch($field){
           case 'casemaker_logo':
@@ -132,6 +149,7 @@ class CMSController extends Controller
           });
         }
 
+        $file_path= $upload_folder.$file_name;
 
         \Log::info('upload photo: saving photo to fileserver');
         $image->save(public_path($file_path), 100);

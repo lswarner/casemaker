@@ -10,8 +10,8 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}" type="image/x-icon">
-    <link rel="icon" href="{{ asset('img/favicon.ico') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ \App\CMS::first()->favicon }}" type="image/x-icon">
+    <link rel="icon" href="{{ \App\CMS::first()->favicon }}" type="image/x-icon">
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
@@ -36,7 +36,7 @@
                     <!-- Branding Image -->
                     <a class="navbar-left" href="{{ url('/') }}">
                         <!-- <img src="{{ asset('img/isc-logo-web344.jpg')}}" /> -->
-                        <img class="casemaker-logo" src="{{ \App\CMS::first()->casemaker_logo }}" /> 
+                        <img class="casemaker-logo" src="{{ \App\CMS::first()->casemaker_logo }}" />
                     </a>
                 </div>
 

@@ -30,6 +30,15 @@
         <a href="{{route('image', 'casemaker_logo')}}" class="btn btn-urc-secondary">Change Logo</a>
       </div>
 
+      <div class="col-md-4">
+
+        <h3>Favicon</h3>
+        <p class=""><a href="http://www.favicomatic.com/">Create Favicon</a> size: 32px x 32px</p>
+        <img src="{{url( $cms->favicon) }}" class="img-responsive space-below" />
+
+        <a href="{{route('image', 'favicon')}}" class="btn btn-urc-secondary">Change Favicon</a>
+      </div>
+
 <?php /*
       <div class="col-md-4">
 <!-- removed until library portion is completed -->
