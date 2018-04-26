@@ -63,6 +63,21 @@
                   {!! Form::textarea( 'introh1' , null, ['class'=>'form-control', 'id'=>'introh1']) !!}
                   {!! Form::textarea( 'intro2' , null, ['class'=>'form-control', 'id'=>'intro2']) !!}
                   {!! Form::textarea( 'introh2' , null, ['class'=>'form-control', 'id'=>'introh2']) !!}
+                </div>
+
+                <div class="form-group">
+                  <h3>Tooltips</h3>
+                  {!! Form::text( 'tooltip11h' , null, ['class'=>'form-control', 'id'=>'tooltip11h']) !!}
+                  {!! Form::textarea( 'tooltip11' , null, ['class'=>'form-control', 'id'=>'tooltip11', 'rows' => '2']) !!}
+                  <br />
+                  {!! Form::text( 'tooltip12h' , null, ['class'=>'form-control', 'id'=>'tooltip12h']) !!}
+                  {!! Form::textarea( 'tooltip12' , null, ['class'=>'form-control', 'id'=>'tooltip12', 'rows' => '2']) !!}
+                  <br />
+                  {!! Form::text( 'tooltip13h' , null, ['class'=>'form-control', 'id'=>'tooltip13h']) !!}
+                  {!! Form::textarea( 'tooltip13' , null, ['class'=>'form-control', 'id'=>'tooltip13', 'rows' => '2']) !!}
+                  <br />
+                  {!! Form::text( 'tooltip14h' , null, ['class'=>'form-control', 'id'=>'tooltip14h']) !!}
+                  {!! Form::textarea( 'tooltip14' , null, ['class'=>'form-control', 'id'=>'tooltip14', 'rows' => '2']) !!}
 
                 </div>
               </div>
@@ -90,6 +105,18 @@
                   {!! Form::textarea( 'methodh1' , null, ['class'=>'form-control', 'id'=>'methodh1']) !!}
                   {!! Form::textarea( 'method2' , null, ['class'=>'form-control', 'id'=>'method2']) !!}
                   {!! Form::textarea( 'methodh2' , null, ['class'=>'form-control', 'id'=>'methodh2']) !!}
+                </div>
+
+                <div class="form-group">
+                  <h3>Tooltips</h3>
+                  {!! Form::text( 'tooltip21h' , null, ['class'=>'form-control', 'id'=>'tooltip21h']) !!}
+                  {!! Form::textarea( 'tooltip21' , null, ['class'=>'form-control', 'id'=>'tooltip21', 'rows' => '2']) !!}
+                  <br />
+                  {!! Form::text( 'tooltip22h' , null, ['class'=>'form-control', 'id'=>'tooltip22h']) !!}
+                  {!! Form::textarea( 'tooltip22' , null, ['class'=>'form-control', 'id'=>'tooltip22', 'rows' => '2']) !!}
+                  <br />
+                  {!! Form::text( 'tooltip23h' , null, ['class'=>'form-control', 'id'=>'tooltip23h']) !!}
+                  {!! Form::textarea( 'tooltip23' , null, ['class'=>'form-control', 'id'=>'tooltip23', 'rows' => '2']) !!}
 
                 </div>
               </div>
@@ -115,7 +142,15 @@
                   {!! Form::textarea( 'results0' , null, ['class'=>'form-control', 'id'=>'results0']) !!}
                   {!! Form::textarea( 'results1' , null, ['class'=>'form-control', 'id'=>'results1']) !!}
                   {!! Form::textarea( 'resultsh1' , null, ['class'=>'form-control', 'id'=>'resultsh1']) !!}
+                </div>
 
+                <div class="form-group">
+                  <h3>Tooltips</h3>
+                  {!! Form::text( 'tooltip31h' , null, ['class'=>'form-control', 'id'=>'tooltip31h']) !!}
+                  {!! Form::textarea( 'tooltip31' , null, ['class'=>'form-control', 'id'=>'tooltip31', 'rows' => '2']) !!}
+                  <br />
+                  {!! Form::text( 'tooltip32h' , null, ['class'=>'form-control', 'id'=>'tooltip32h']) !!}
+                  {!! Form::textarea( 'tooltip32' , null, ['class'=>'form-control', 'id'=>'tooltip32', 'rows' => '2']) !!}
                 </div>
               </div>
             </div>
@@ -141,7 +176,15 @@
                   {!! Form::textarea( 'implicationsh1' , null, ['class'=>'form-control', 'id'=>'implicationsh1']) !!}
                   {!! Form::textarea( 'implications2' , null, ['class'=>'form-control', 'id'=>'implications2']) !!}
                   {!! Form::textarea( 'implicationsh2' , null, ['class'=>'form-control', 'id'=>'implicationsh2']) !!}
+                </div>
 
+                <div class="form-group">
+                  <h3>Tooltips</h3>
+                  {!! Form::text( 'tooltip41h' , null, ['class'=>'form-control', 'id'=>'tooltip41h']) !!}
+                  {!! Form::textarea( 'tooltip41' , null, ['class'=>'form-control', 'id'=>'tooltip41', 'rows' => '2']) !!}
+                  <br />
+                  {!! Form::text( 'tooltip42h' , null, ['class'=>'form-control', 'id'=>'tooltip42h']) !!}
+                  {!! Form::textarea( 'tooltip42' , null, ['class'=>'form-control', 'id'=>'tooltip42', 'rows' => '2']) !!}
                 </div>
               </div>
             </div>
