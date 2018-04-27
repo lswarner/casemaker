@@ -116,16 +116,16 @@ class CMSController extends Controller
 */
 
 
-      //if ($request->hasFile('attachment') && $request->file('attachment')->isValid()) {
+      if ($request->hasFile('attachment') && $request->file('attachment')->isValid()) {
 
-      if ($request->hasFile('attachment') ) {
+      //if ($request->hasFile('attachment') ) {
 
 
         $uploaded_file= $request->file('attachment');
 
-        //dd($uploaded_file);
+
         $image= Image::make($uploaded_file);
-        dd($image);
+
 
         $upload_folder= "img/";
 
