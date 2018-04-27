@@ -9,7 +9,7 @@ class CMS extends Model
 {
     protected $table= "cms";
     protected $guarded= [];
-    private $excluded= ['casemaker_logo', 'library_logo', 'splash_image', 'casemaker_title', 'library_title', 'id', 'created_at', 'updated_at']; // attributes which shouldn't be included in SCSS file
+    private $excluded= ['casemaker_logo', 'library_logo', 'splash_image', 'favicon', 'casemaker_title', 'library_title', 'id', 'created_at', 'updated_at']; // attributes which shouldn't be included in SCSS file
 
 
     public function getStylesheetUrlAttribute(){
@@ -60,6 +60,32 @@ class CMS extends Model
   	public function getCasemakerLogoAttribute($value){
   		return $this->wrapURL($value);
   	}
+
+
+
+
+
+    /**
+  	 * Set the logo atribute - and delete the old logo (if neccessary) from the filesystem
+  	 *
+  	 * @param string $value - URI of the new logo
+  	 */
+  	public function setFaviconAttribute($value){
+
+  		  $this->attributes['favicon']= $value;
+  	}
+
+    /**
+  	 * Retrieve the URL to the casemaker logo.
+     *   - wrap the string as a URL before returning.
+  	 *
+  	 * @param string $value - URI of the logo
+  	 */
+  	public function getFaviconAttribute($value){
+  		return $this->wrapURL($value);
+  	}
+
+
 
 
 
