@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'CaseMaker') }}</title>
 
     <link rel="shortcut icon" href="{{ \App\CMS::first()->favicon }}" type="image/x-icon">
     <link rel="icon" href="{{ \App\CMS::first()->favicon }}" type="image/x-icon">
@@ -36,20 +36,22 @@
                     <!-- Branding Image -->
                     <a class="navbar-left" href="{{ url('/') }}">
                         <!-- <img src="{{ asset('img/isc-logo-web344.jpg')}}" /> -->
-                        <img class="casemaker-logo" src="{{ \App\CMS::first()->casemaker_logo }}" />
+                        <img class="library-logo" src="{{ \App\CMS::first()->casemaker_logo }}" />
                     </a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">
-                        &nbsp;
+                    <ul class="nav navbar-nav library-navbar library-navbar-mid ">
+                      <li><a class="nav-big" href="#">About</a></li>
+                      <li><a class="nav-big" href="#">View</a></li>
+                      <li><a class="nav-big" href="#">Create</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
 
-                        @include('nav-user')
+                      @include('nav-user')
 
                     </ul>
                 </div>
@@ -75,7 +77,7 @@
     <footer class="footer">
       <div class="container-fluid container-wide">
         <div class="footer-main">
-          <p class="footer-text text-center">&copy; {{ date('Y') }} CaseMaker</p>
+          <p class="footer-text text-center">&copy; {{ date('Y') }} {{ config('app.name', 'CaseMaker') }}</p>
         </div>
       </div>
     </footer>

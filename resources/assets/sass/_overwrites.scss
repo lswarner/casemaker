@@ -51,6 +51,50 @@ h4{
   background-color: darken($navbar-default-bg, 7%);
 }
 
+.library-navbar{
+  position: absolute;
+  bottom: 2px;
+  right: 10px;
+}
+
+.library-navbar-mid {
+  right: 5px;
+}
+
+ul.library-navbar > li {
+  margin-right: 8px;
+  margin-left: 8px;
+}
+ul.library-navbar > li > a.nav-big {
+  font-family: $font-family-casestudy;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 16pt;
+}
+
+@media (min-width: 1200px) {
+  .library-navbar-mid {
+    //left: 480px;
+  }
+
+  ul.library-navbar > li > a.nav-big {
+    font-size: 18pt;
+    margin-bottom: 2px;
+  }
+}
+
+@media (min-width: 1400px) {
+
+  ul.library-navbar > li {
+    margin-right: 12px;
+    margin-left: 12px;
+  }
+  ul.library-navbar > li > a.nav-big {
+    font-size: 22pt;
+    margin-bottom: 4px;
+  }
+}
+
 
 .casemaker-logo{
   max-width: 420px;
@@ -99,6 +143,37 @@ h4{
 
 .footer-text{
   color: $footer-text;
+}
+
+
+/****  Grid Styles ****/
+.grid-item {
+  float: left;
+  height: 200px;
+  background: $primary-bg;
+  border: 2px solid $primary-text;
+  margin-bottom: 10px;
+  /* margin between grid-items is set in masonry script's gutter value */
+}
+
+.grid-sizer,
+.grid-item {
+  width: 32%;
+}
+
+.grid-item--width2 {
+  width: 64%;
+}
+
+@media (min-width: 978px) {
+  .grid-sizer,
+  .grid-item {
+    width: 32.5%;
+  }
+
+  .grid-item--width2 {
+    width: 65%;
+  }
 }
 
 
@@ -179,7 +254,18 @@ a> .panel-account:active{
 }
 
 
-
+.welcome{
+  background: $gray-light;
+  padding: 2%;
+}
+.lead-text{
+  font-size: 55px;
+  font-family: $font-family-casestudy;
+  text-transform: uppercase;
+  float: left;
+  line-height: 1.3;
+  padding-right: 8px;
+}
 
 /*****
   define buttons
