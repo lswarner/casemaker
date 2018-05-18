@@ -8,19 +8,7 @@ class Thematic extends Model
 {
     protected $fillable=['name', 'description'];
 
-    /**
-     *  return an array of filters using style: tNN
-     *    this is used to create the select boxes to filter
-     *    the casestudies on the library view
-     */
-    public static function filters(){
-      $filters= Thematic::all()->map( function ($a){
-        return 't'.$a->id;
-      });
-
-      return $filters;
-    }
-
+    
 
     /**
      * Relationsships

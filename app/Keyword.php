@@ -13,7 +13,9 @@ class Keyword extends Model
      *  return an array of filters using style: kNN
      *    this is used to create the select boxes to filter
      *    the casestudies on the library view
-     */
+
+     THIS IS NO LONGER BEING USED - Similar functions have been removed from Method, Thematic, and Audience
+
     public static function filters(){
       $filters= Keyword::all()->map( function ($a){
         return 'k'.$a->id;
@@ -21,6 +23,7 @@ class Keyword extends Model
 
       return $filters;
     }
+    */
 
     /*******************************************************
          Relationships

@@ -8,18 +8,7 @@ class Method extends Model
 {
     protected $fillable= ['name', 'description'];
 
-    /**
-     *  return an array of filters using style: mNN
-     *    this is used to create the select boxes to filter
-     *    the casestudies on the library view
-     */
-    public static function filters(){
-      $filters= Method::all()->map( function ($a){
-        return 'm'.$a->id;
-      });
-
-      return $filters;
-    }
+    
 
     /*******************************************************
          Relationships
