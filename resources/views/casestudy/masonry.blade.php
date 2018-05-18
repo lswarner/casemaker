@@ -113,17 +113,29 @@
           <?php
           $countries = array('bangladesh', 'paraguay', 'tanzania', 'bangladesh paraguay', ' bangladesh tanzania', 'paraguay tanzania', 'bangladesh paraguay tanzania');
           $methods= array('method1', 'method2', 'method3');
+
           ?>
         <?php for($q=0; $q <3; $q++){ ?>
         @foreach($casestudies as $c)
           <?php
             $class= $c->filters();
+            usleep(200);
+            $image= "img/stock/".mt_rand(1,10).'.jpeg';
           ?>
 
+
           <div class="grid-item <?= $class; ?>" >
-            {{ $c->title }}
-            {{ $c-> countries }}
+            <a href="#">
+              <div class="">
+                <img src="{{$image}}" class="img-responsive"/>
+              </div>
+              <div class="cs-item-details">
+                <h3>{{ $c->title }}</h3>
+                {!! $c->countries !!}
+              </div>
+            </a>
           </div>
+
 
 
         @endforeach

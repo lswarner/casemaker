@@ -107,36 +107,6 @@ h4{
 }
 
 
-/****  Grid Styles ****/
-.grid-item {
-  float: left;
-  height: 200px;
-  background: $primary-bg;
-  border: 2px solid $primary-text;
-  margin-bottom: 10px;
-  /* margin between grid-items is set in masonry script's gutter value */
-}
-
-.grid-sizer,
-.grid-item {
-  width: 32%;
-}
-
-.grid-item--width2 {
-  width: 64%;
-}
-
-@media (min-width: 992px) {
-  .grid-sizer,
-  .grid-item {
-    width: 32.5%;
-  }
-
-  .grid-item--width2 {
-    width: 65%;
-  }
-}
-
 
 
 /****  Flash Styles ****/
