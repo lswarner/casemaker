@@ -9,6 +9,19 @@ class Keyword extends Model
     protected $fillable= ['keywords'];
 
 
+    /**
+     *  return an array of filters using style: kNN
+     *    this is used to create the select boxes to filter
+     *    the casestudies on the library view
+     */
+    public static function filters(){
+      $filters= Keyword::all()->map( function ($a){
+        return 'k'.$a->id;
+      });
+
+      return $filters;
+    }
+
     /*******************************************************
          Relationships
      ******************************************************/

@@ -28,6 +28,42 @@ i vols fer servir un passatge de Lorem Ipsum, has d'estar segur que no hi haurà
       <ul class="nav navbar-nav">
       <div class="btn-group">
 
+        <select class="filters-select">
+          <option value="">Countries</option>
+          @foreach($countries as $country)
+          <option value=".{{ strtolower($country) }}">{{$country}}</option>
+          @endforeach
+        </select>
+
+        <select class="filters-select">
+          <option value="">Keywords</option>
+          @foreach($keywords as $a)
+          <option value=".k{{ $a->id }}">{{$a->keyword}}</option>
+          @endforeach
+        </select>
+
+        <select class="filters-select">
+          <option value="">Methods</option>
+          @foreach($methods as $a)
+          <option value=".m{{ $a->id }}">{{$a->name}}</option>
+          @endforeach
+        </select>
+
+        <select class="filters-select">
+          <option value="">Thematic Areas</option>
+          @foreach($thematics as $a)
+          <option value=".t{{ $a->id }}">{{$a->name}}</option>
+          @endforeach
+        </select>
+
+
+        <select class="filters-select">
+          <option value="">Audiences</option>
+          @foreach($audiences as $a)
+          <option value=".a{{ $a->id }}">{{$a->name}}</option>
+          @endforeach
+        </select>
+
         <button type="button" class="btn btn-urc-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Countries <span class="caret"></span>
         </button>
@@ -44,7 +80,7 @@ i vols fer servir un passatge de Lorem Ipsum, has d'estar segur que no hi haurà
           Methods <span class="caret"></span>
         </button>
         <ul class="dropdown-menu">
-          @foreach($method_suggestions as $m)
+          @foreach($methods as $m)
             <li><a href="#">{{$m->name}}</a></li>
           @endforeach
         </ul>
@@ -58,14 +94,24 @@ i vols fer servir un passatge de Lorem Ipsum, has d'estar segur que no hi haurà
     <div class="row">
         <div class="grid">
           <div class="grid-sizer"></div>
+          <?php
+          $countries = array('bangladesh', 'paraguay', 'tanzania', 'bangladesh paraguay', ' bangladesh tanzania', 'paraguay tanzania', 'bangladesh paraguay tanzania');
+          $methods= array('method1', 'method2', 'method3');
+          ?>
+        <?php for($q=0; $q <3; $q++){ ?>
         @foreach($casestudies as $c)
-          <div class="grid-item ">
+          <?php
+            $class= $c->filters();
+          ?>
+
+          <div class="grid-item <?= $class; ?>" >
             {{ $c->title }}
             {{ $c-> countries }}
           </div>
 
 
         @endforeach
+        <?php } ?>
 
       </div> <!-- end grid -->
     </div> <!-- end row -->
