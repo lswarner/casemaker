@@ -110,21 +110,16 @@
     <div class="row">
         <div class="grid">
           <div class="grid-sizer"></div>
-          <?php
-          $countries = array('bangladesh', 'paraguay', 'tanzania', 'bangladesh paraguay', ' bangladesh tanzania', 'paraguay tanzania', 'bangladesh paraguay tanzania');
-          $methods= array('method1', 'method2', 'method3');
 
-          ?>
         <?php for($q=0; $q <3; $q++){ ?>
         @foreach($casestudies as $c)
           <?php
-            $class= $c->filters();
             usleep(200);
             $image= "img/stock/".mt_rand(1,10).'.jpeg';
           ?>
 
 
-          <div class="grid-item <?= $class; ?>" >
+          <div class="grid-item <?= $c->filters(); ?>" >
             <a href="#">
               <div class="">
                 <img src="{{$image}}" class="img-responsive"/>
