@@ -52,25 +52,29 @@ h4{
 }
 
 
+
 .casemaker-logo{
   max-width: 420px;
   max-height: 100px;
 }
 
 
-#progress-bar{
+#progress-bar,
+#filter-bar{
   background: $secondary-bg;
   border: none;
 }
 
-#progress-bar > .navbar-collapse > ul > li > a {
+#progress-bar > .navbar-collapse > ul > li > a,
+#filter-bar > .navbar-collapse > ul > li > a{
   font-size: 16pt;
   padding: 24px;
   color: $accent2-text;
   text-transform: uppercase;
 }
 
-#progress-bar > .navbar-collapse > ul > li > a.active {
+#progress-bar > .navbar-collapse > ul > li > a.active,
+#filter-bar > .navbar-collapse > ul > li > a.active {
   color: $accent2-text;
   background: $accent2-bg;
 }
@@ -84,7 +88,8 @@ h4{
 
 
 @media (min-width: 1400px) {
-  #progress-bar > .navbar-collapse > ul > li > a {
+  #progress-bar > .navbar-collapse > ul > li > a,
+  #filter-bar > .navbar-collapse > ul > li > a {
     font-size: 20pt;
     padding: 30px;
   }
@@ -100,6 +105,7 @@ h4{
 .footer-text{
   color: $footer-text;
 }
+
 
 
 
@@ -405,9 +411,6 @@ a> .panel-account:active{
     color: $white !important;
   }
 }
-
-
-
 
 
 

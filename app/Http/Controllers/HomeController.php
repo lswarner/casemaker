@@ -29,10 +29,6 @@ class HomeController extends Controller
     {
       $user= Auth::user();
 
-      if($user->is_approved == false){
-        return view('not-approved');
-      }
-
       $casestudies= $user->casestudies;
 
       return view('home', compact('casestudies'));

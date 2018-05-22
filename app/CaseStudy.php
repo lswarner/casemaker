@@ -34,6 +34,7 @@ public function setStatusAttribute($new_status){
     case "created":
     case "submitted":
     case "published":
+    case "demo":
       $this->attributes['status']= strtolower($new_status);
       break;
 
@@ -80,6 +81,23 @@ public function invitations(){
     return \App\Instructions::first();
   }
 
+
+  public function filters(){
+    $filters= '';
+
+    $countries= explode(', ', strip_tags($this->countries));
+    foreach($countries as $a){
+      $filters.= ' '.strtolower(preg_replace('/\s+/', '_',$a));
+    }
+
+    foreach($this->keywords as $a){
+      $filters.= ' k'.$a->id;
+    }
+    foreach($this->methods as $a){
+      $filters.= ' m'.$a->id;
+    }
+    return $filters;
+  }
 
   /*****************************************************
        scopes

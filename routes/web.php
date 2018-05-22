@@ -11,9 +11,12 @@
 |
 */
 
+/* no longer redirect from / to /home */
 Route::get('/', function () {
     return redirect('home');
 });
+
+Route::get('/library', 'LibraryController@index')->name('library');
 
 Auth::routes();
 

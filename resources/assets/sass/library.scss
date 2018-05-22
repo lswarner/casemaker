@@ -1,0 +1,178 @@
+
+
+.library-navbar{
+  position: absolute;
+  bottom: 2px;
+  right: 10px;
+}
+
+.library-navbar-mid {
+  right: 5px;
+}
+
+ul.library-navbar > li {
+  margin-right: 8px;
+  margin-left: 8px;
+}
+
+ul.library-navbar > li > a {
+  padding: 10px 6px;
+}
+ul.library-navbar > li > a.nav-big {
+  font-family: $font-family-casestudy;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 16pt;
+}
+
+
+@media (min-width: 992px) {
+  ul.library-navbar > li > a {
+    padding: 10px 12px;
+  }
+}
+
+@media (min-width: 1200px) {
+
+
+  ul.library-navbar > li > a.nav-big {
+    font-size: 18pt;
+    margin-bottom: 2px;
+  }
+}
+
+@media (min-width: 1400px) {
+
+  ul.library-navbar > li {
+    margin-right: 12px;
+    margin-left: 12px;
+  }
+
+  ul.library-navbar > li > a {
+    padding: 10px 15px;
+  }
+
+  ul.library-navbar > li > a.nav-big {
+    font-size: 22pt;
+    margin-bottom: 4px;
+  }
+}
+
+
+#filter-bar{
+  text-align: center;
+}
+
+.welcome-bar{
+  background: $gray-light;
+  color: $commonbar-text;
+  padding: 20px 50px;
+}
+
+.lead-text{
+  font-size: 36px;
+  font-family: $font-family-casestudy;
+  text-transform: uppercase;
+  float: left;
+  line-height: 1.3;
+  padding-right: 16px;
+}
+
+.filters-dropdown{
+  font-size: 12px;
+  text-transform: none;
+  margin-bottom: 0px;
+  margin-top: 8px;
+}
+
+@media (min-width: 992px) {
+  .filters-dropdown{
+    font-size: 13px;
+    text-transform: uppercase;
+  }
+
+  .welcome-bar{
+    padding: 30px 60px;
+  }
+
+}
+
+@media (min-width: 1200px) {
+  .filters-dropdown{
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+
+  .welcome-bar{
+    padding: 40px 66px;
+  }
+
+  .lead-text{
+    font-size: 40px;
+    padding-right: 20px;
+  }
+}
+
+
+/****  Grid Styles ****/
+.grid-item {
+  float: left;
+  height: auto;
+  background: $primary-bg;
+  border: 3px solid $primary-text;
+  margin-bottom: 10px;
+
+  transition: background 0.25s, color 0.25s, border 0.25s;
+  /* margin between grid-items is set in masonry script's gutter value */
+}
+
+.grid-sizer,
+.grid-item {
+  width: 32%;
+}
+
+.grid-item--width2 {
+  width: 64%;
+}
+
+.grid-item > a {
+  text-decoration: none;
+  color: $primary-text;
+}
+
+div.grid-item:hover {
+  background: $primary-hover-bg;
+  color: $primary-hover-text;
+  border: 3px solid $primary-hover-bg;
+  transition: background 0.25s, color 0.25s, border 0.25s;
+}
+
+.cs-item-details{
+  padding: 0px 8px;
+}
+
+.cs-item-details > h3 {
+  font-size: 20px;
+  margin-top: 14px;
+  margin-bottom: 4px;
+}
+
+.cs-item-details > p {
+  font-size: 12px;
+  color: $gray-light;
+}
+
+@media (min-width: 992px) {
+  .grid-sizer,
+  .grid-item {
+    width: 32.5%;
+  }
+
+  .grid-item--width2 {
+    width: 65%;
+  }
+
+  .cs-item-details{
+    padding: 0px 14px;
+  }
+}

@@ -8,6 +8,8 @@ class Thematic extends Model
 {
     protected $fillable=['name', 'description'];
 
+    
+
     /**
      * Relationsships
      */

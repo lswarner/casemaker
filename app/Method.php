@@ -8,6 +8,7 @@ class Method extends Model
 {
     protected $fillable= ['name', 'description'];
 
+    
 
     /*******************************************************
          Relationships

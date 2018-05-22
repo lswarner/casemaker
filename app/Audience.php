@@ -8,6 +8,9 @@ class Audience extends Model
 {
     protected $fillable=['name', 'description'];
 
+
+    
+
     /**
      * Relationsships
      */

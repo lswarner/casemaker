@@ -26,7 +26,7 @@
             @elseif($cs->status == "published")
               <span class="subtext">LIVE: </span> {{ $cs->published_at->format('F d, Y')  }}
             @else
-                <span class="subtext">CREATED: </span> {{ $cs->created_at->format('F d, Y')  }}
+              <?php //  <span class="subtext">CREATED: </span> {{ $cs->created_at->format('F d, Y')  }} ?>
             @endif
           </span>
 
