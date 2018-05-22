@@ -34,6 +34,7 @@ public function setStatusAttribute($new_status){
     case "created":
     case "submitted":
     case "published":
+    case "demo":
       $this->attributes['status']= strtolower($new_status);
       break;
 

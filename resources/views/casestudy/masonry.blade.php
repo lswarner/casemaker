@@ -19,9 +19,12 @@
         <span class="lead-text">Welcome</span>
       </div>
       <div class="col-xs-12 col-lg-9">
-        Contràriament a la creença popular, Lorem Ipsum no és només text aleatori. Té les seves arrels en una peça clàssica de la literatura llatina del 45 aC, és a dir, de fa 2000 anys. Richard McClintock, un professor de llatí al Hampden-Sydney College a Virgínia, va buscar una de les paraules més estranyes del llatí, "consectetur", procedent d'un dels paràgrafs de Lorem Ipsum, i anant de citació en citació d'aquesta paraula a la literatura clàssica, en va descobrir l'orígen veritable. Lorem ipsum procedeix de les seccions 1.10.32 i 1.10.33 de "De Finibus Bonorum et Malorum" (Sobre el Bé i el Mal) de Ciceró, escrit l'any 45 aC. Aquest llibre és un tractat sobre la teoria de l'ètica, molt popular durant el Renaixement. La primera línia de Lorem Ipsum, "Lorem ipsum dolor sit amet..", prové d'una línia a la secció 1.10.32.
-
-        i vols fer servir un passatge de Lorem Ipsum, has d'estar segur que no hi haurà res comprometedor amagat en el text. Tots els generadors de Lorem ipsum a Internet tendeixen a repetir un tros determinat tantes vegades com calgui, i això fa que aquest sigui el primer generador real a Internet.
+        <p>
+        Contràriament a la creença popular, Lorem Ipsum no és només text aleatori. Té les seves arrels en una peça clàssica de la literatura llatina del 45 aC, és a dir, de fa 2000 anys. Richard McClintock, un professor de llatí al Hampden-Sydney College a Virgínia, va buscar una de les paraules més estranyes del llatí, "consectetur", procedent d'un dels paràgrafs de Lorem Ipsum, i anant de citació en citació d'aquesta paraula a la literatura clàssica, en va descobrir l'orígen veritabll.
+        </p>
+        <p>
+          i vols fer servir un passatge de Lorem Ipsum, has d'estar segur que no hi haurà res comprometedor amagat en el text. Tots els generadors de Lorem ipsum a Internet tendeixen a repetir un tros determinat tantes vegades com calgui, i això fa que aquest sigui el primer generador real a Internet.
+        </p>
       </div>
     </div>
   </div> <!-- end common bar -->
@@ -40,10 +43,12 @@
             </button>
             <ul class="dropdown-menu">
               <li><a class="do_filter" data-filter="country" data-name="All Countries" data-value="" href="#">All Countries</a></li>
-              <li><a class="do_filter" data-filter="country" data-name="Bangladesh" data-value=".bangladesh"  href="#">Bangladesh</a></li>
-              <li><a class="do_filter" data-filter="country" data-name="Paraguay" data-value=".paraguay" href="#">Paraguay</a></li>
-              <li><a class="do_filter" data-filter="country" data-name="Tanzania" data-value=".tanzania" href="#">Tanzania</a></li>
-              <li><a class="do_filter" data-filter="country" data-name="Burundi" data-value=".burundi" href="#">Burundi</a></li>
+
+              @foreach($countries as $a)
+                <li><a class="do_filter" data-filter="country" data-name="{{$a}}" data-value=".{{ strtolower($a) }}" href="#">{{$a}}</a></li>
+              @endforeach
+
+
             </ul>
           </div>
         </div>
