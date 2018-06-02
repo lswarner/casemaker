@@ -313,15 +313,13 @@ a> .panel-account:active{
 
 /* === Accent 1 === */
 .btn-urc-accent1,
-.accent1,
-.add-method{
+.accent1,{
   background: $accent1-bg;
   border-color: $accent1-bg;
   color: $accent1-text;
 }
 
-.btn-urc-accent1,
-.add-method {
+.btn-urc-accent1, {
   @include hover-state{
     background: $accent1-hover-bg !important;
     border-color: $accent1-hover-bg !important;
@@ -349,14 +347,20 @@ a> .panel-account:active{
 /* === Accent 3 === */
 .btn-urc-accent3,
 .accent3,
-.add-keyword {
+.add-keyword,
+.add-method,
+.add-thematic,
+.add-audience {
   background: $accent3-bg;
   border-color: $accent3-bg;
   color: $accent3-text;
 }
 
 .btn-urc-accent3,
-.add-keyword {
+.add-keyword,
+.add-method,
+.add-thematic,
+.add-audience {
   @include hover-state{
     background: $accent3-hover-bg !important;
     border-color: $accent3-hover-bg !important;

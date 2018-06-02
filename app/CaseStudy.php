@@ -71,6 +71,23 @@ public function invitations(){
     return $this->belongsToMany('App\Keyword', 'case_study_keyword', 'case_study_id', 'keyword_id')->withTimestamps();
   }
 
+
+  /**
+   * get the audiences this case study uses
+   */
+   public function audiences(){
+     return $this->belongsToMany('App\Audience', 'case_study_audience', 'case_study_id', 'audience_id')->withTimestamps();
+   }
+
+   /**
+    * get the thematics this case study uses
+    */
+    public function thematics(){
+      return $this->belongsToMany('App\Thematic', 'case_study_thematics', 'case_study_id', 'thematics_id')->withTimestamps();
+    }
+
+
+
   public function attachments(){
     return $this->hasMany('App\Attachment');
   }

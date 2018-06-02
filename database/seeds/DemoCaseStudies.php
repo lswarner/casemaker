@@ -64,6 +64,9 @@ class DemoCaseStudies extends Seeder
          $cs->methods()->attach($m3);
          $cs->keywords()->attach($k1);
          $cs->keywords()->attach($k2);
+
+         $cs->audiences()->attach($a2);
+         $cs->thematics()->attach($t2);
          $cs->status="demo";
          $cs->save();
 
@@ -81,6 +84,9 @@ class DemoCaseStudies extends Seeder
          $cs->methods()->attach($m2);
          $cs->keywords()->attach($k3);
          $cs->keywords()->attach($k6);
+
+          $cs->audiences()->attach($a1);
+          $cs->thematics()->attach($t2);
          $cs->status="demo";
          $cs->save();
 
@@ -97,6 +103,10 @@ class DemoCaseStudies extends Seeder
          $cs->keywords()->attach($k2);
          $cs->keywords()->attach($k4);
          $cs->keywords()->attach($k5);
+
+         $cs->audiences()->attach($a2);
+         $cs->audiences()->attach($a1);
+         $cs->thematics()->attach($t1);
          $cs->status="demo";
          $cs->save();
 
@@ -113,6 +123,11 @@ class DemoCaseStudies extends Seeder
          $cs->methods()->attach($m3);
          $cs->keywords()->attach($k1);
          $cs->keywords()->attach($k5);
+
+         $cs->audiences()->attach($a1);
+         $cs->audiences()->attach($a4);
+         $cs->thematics()->attach($t2);
+
          $cs->status="demo";
          $cs->save();
 
@@ -129,6 +144,10 @@ class DemoCaseStudies extends Seeder
         $cs->methods()->attach($m4);
         $cs->keywords()->attach($k2);
         $cs->keywords()->attach($k3);
+        $cs->audiences()->attach($a1);
+        $cs->audiences()->attach($a3);
+        $cs->thematics()->attach($t1);
+        $cs->thematics()->attach($t2);
         $cs->status="demo";
         $cs->save();
 

@@ -10,6 +10,10 @@
 	  padding: 10px 60px;
 	}
 
+	.text-muted{
+		color: lighten($commonbar-text, 20%);
+	}
+
 	.note-editor.note-frame .note-editing-area .note-editable,
 	.form-control {
 		color: $commonbar-text;
@@ -32,7 +36,9 @@
 
 	.team-member-list > li,
 	#method-bar > li,
-	#keyword-bar > li{
+	#keyword-bar > li,
+	#thematic-bar > li,
+	#audience-bar > li{
 		font-size: 18px;
 		cursor:default;
 		line-height: 1.3;
@@ -40,7 +46,9 @@
 
 	.team-member-list > li > i,
 	#method-bar > li > i,
-	#keyword-bar > li > i{
+	#keyword-bar > li > i,
+	#thematic-bar > li > i,
+	#audience-bar > li > i{
 		cursor: pointer;
 	}
 
@@ -161,13 +169,17 @@
 ****************************/
 .add-user,
 .add-method,
-.add-keyword{
+.add-keyword,
+.add-audience,
+.add-thematic{
 	overflow: auto;
 }
 
 #team-list,
 #method-list,
-#keyword-list{
+#keyword-list,
+#thematic-list,
+#audience-list{
 	/* Remove default list styling */
 	list-style-type: none;
 	padding: 0;

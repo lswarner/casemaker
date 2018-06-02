@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\CaseStudy;
 use App\Keyword;
 use App\Method;
+use App\Audience;
+use App\Thematic;
 use App\User;
 use App\Invitation;
 use App\Attachment;
@@ -129,6 +131,8 @@ class CaseStudyController extends Controller
         $team_suggestions= User::all_sorted()->diff($caseStudy->team);
         $method_suggestions= Method::all_sorted()->diff($caseStudy->methods);
         $keyword_suggestions= Keyword::all_sorted()->diff($caseStudy->keywords);
+        $audience_suggestions= Audience::all_sorted()->diff($caseStudy->audiences);
+        $thematic_suggestions= Thematic::all_sorted()->diff($caseStudy->thematics);
         $attachments= $caseStudy->attachments()->section('introduction')->get();
 
         return view('casestudy.introduction', [ 'casestudy'=>$caseStudy,
@@ -137,6 +141,8 @@ class CaseStudyController extends Controller
                                                 'team_suggestions' => $team_suggestions,
                                                 'method_suggestions' => $method_suggestions,
                                                 'keyword_suggestions' => $keyword_suggestions,
+                                                'audience_suggestions' => $audience_suggestions,
+                                                'thematic_suggestions' => $thematic_suggestions,
                                                 'attachments' => $attachments
                                             ] );
     }
@@ -165,6 +171,8 @@ class CaseStudyController extends Controller
         $team_suggestions= User::all_sorted()->diff($caseStudy->team);
         $method_suggestions= Method::all_sorted()->diff($caseStudy->methods);
         $keyword_suggestions= Keyword::all_sorted()->diff($caseStudy->keywords);
+        $audience_suggestions= Audience::all_sorted()->diff($caseStudy->audiences);
+        $thematic_suggestions= Thematic::all_sorted()->diff($caseStudy->thematics);
         $attachments= $caseStudy->attachments()->section('methodology')->get();
 
         return view('casestudy.methodology', [ 'casestudy'=>$caseStudy,
@@ -173,6 +181,8 @@ class CaseStudyController extends Controller
                                                 'team_suggestions' => $team_suggestions,
                                                 'method_suggestions' => $method_suggestions,
                                                 'keyword_suggestions' => $keyword_suggestions,
+                                                'audience_suggestions' => $audience_suggestions,
+                                                'thematic_suggestions' => $thematic_suggestions,
                                                 'attachments' => $attachments
                                             ] );
     }
@@ -201,6 +211,8 @@ class CaseStudyController extends Controller
         $team_suggestions= User::all_sorted()->diff($caseStudy->team);
         $method_suggestions= Method::all_sorted()->diff($caseStudy->methods);
         $keyword_suggestions= Keyword::all_sorted()->diff($caseStudy->keywords);
+        $audience_suggestions= Audience::all_sorted()->diff($caseStudy->audiences);
+        $thematic_suggestions= Thematic::all_sorted()->diff($caseStudy->thematics);
         $attachments= $caseStudy->attachments()->section('results')->get();
 
         return view('casestudy.results', [ 'casestudy'=>$caseStudy,
@@ -209,6 +221,8 @@ class CaseStudyController extends Controller
                                                 'team_suggestions' => $team_suggestions,
                                                 'method_suggestions' => $method_suggestions,
                                                 'keyword_suggestions' => $keyword_suggestions,
+                                                'audience_suggestions' => $audience_suggestions,
+                                                'thematic_suggestions' => $thematic_suggestions,
                                                 'attachments' => $attachments
                                             ] );
     }
@@ -236,6 +250,8 @@ class CaseStudyController extends Controller
         $team_suggestions= User::all_sorted()->diff($caseStudy->team);
         $method_suggestions= Method::all_sorted()->diff($caseStudy->methods);
         $keyword_suggestions= Keyword::all_sorted()->diff($caseStudy->keywords);
+        $audience_suggestions= Audience::all_sorted()->diff($caseStudy->audiences);
+        $thematic_suggestions= Thematic::all_sorted()->diff($caseStudy->thematics);
         $attachments= $caseStudy->attachments()->section('implications')->get();
 
         return view('casestudy.implications', [ 'casestudy'=>$caseStudy,
@@ -244,6 +260,8 @@ class CaseStudyController extends Controller
                                                 'team_suggestions' => $team_suggestions,
                                                 'method_suggestions' => $method_suggestions,
                                                 'keyword_suggestions' => $keyword_suggestions,
+                                                'audience_suggestions' => $audience_suggestions,
+                                                'thematic_suggestions' => $thematic_suggestions,
                                                 'attachments' => $attachments
                                             ] );
     }
@@ -271,6 +289,8 @@ class CaseStudyController extends Controller
         $team_suggestions= User::all_sorted()->diff($caseStudy->team);
         $method_suggestions= Method::all_sorted()->diff($caseStudy->methods);
         $keyword_suggestions= Keyword::all_sorted()->diff($caseStudy->keywords);
+        $audience_suggestions= Audience::all_sorted()->diff($caseStudy->audiences);
+        $thematic_suggestions= Thematic::all_sorted()->diff($caseStudy->thematics);
 
         $attachments["introduction"]= $caseStudy->attachments()->section('introduction')->get();
         $attachments["methodology"]= $caseStudy->attachments()->section('methodology')->get();
@@ -283,6 +303,8 @@ class CaseStudyController extends Controller
                                           'team_suggestions' => $team_suggestions,
                                           'method_suggestions' => $method_suggestions,
                                           'keyword_suggestions' => $keyword_suggestions,
+                                          'audience_suggestions' => $audience_suggestions,
+                                          'thematic_suggestions' => $thematic_suggestions,
                                           'attachments' => $attachments
                                        ] );
     }
@@ -605,6 +627,112 @@ class CaseStudyController extends Controller
         return response()->json(['error' => 'Invalid permission to remove keyword from case study'], $status);
       }
     }
+
+
+
+
+
+
+
+
+    /**
+     * Add an intended audience to this casestudy
+     *
+     * @param  \App\CaseStudy  $caseStudy
+     * @return \Illuminate\Http\Response
+     */
+    public function audience_add(Request $request, CaseStudy $caseStudy){
+
+        $audience= $request->input('audience_id');
+        $user= $request->input('user_id');
+
+        if($caseStudy->team->contains($user) == TRUE){
+          $caseStudy->audiences()->attach($audience);
+
+          return response()->json(['response' => 'Audience #'.$audience.' was add from the case study.']);
+        }
+        else {
+          $status= '401'; //unauthorized
+          return response()->json(['error' => 'Invalid permission to add audience from case study'], $status);
+        }
+    }
+
+    /**
+     * Remove an intended audience from this casestudy
+     *
+     * @param  \App\CaseStudy  $caseStudy
+     * @return \Illuminate\Http\Response
+     */
+    public function audience_remove(Request $request, CaseStudy $caseStudy){
+
+      $audience= $request->input('audience_id');
+      $user= $request->input('user_id');
+
+      if($caseStudy->team->contains($user) == TRUE){
+        $caseStudy->audiences()->detach($audience);
+
+        return response()->json(['response' => 'Audience #'.$audience.' was removed from the case study.']);
+      }
+      else {
+        $status= '401'; //unauthorized
+        return response()->json(['error' => 'Invalid permission to remove audience from case study'], $status);
+      }
+    }
+
+
+
+
+
+
+    /**
+     * Add a thematic area to this casestudy
+     *
+     * @param  \App\CaseStudy  $caseStudy
+     * @return \Illuminate\Http\Response
+     */
+    public function thematic_add(Request $request, CaseStudy $caseStudy){
+
+        $thematic= $request->input('thematic_id');
+        $user= $request->input('user_id');
+
+        if($caseStudy->team->contains($user) == TRUE){
+          $caseStudy->thematics()->attach($thematic);
+
+          return response()->json(['response' => 'thematic #'.$thematic.' was add from the case study.']);
+        }
+        else {
+          $status= '401'; //unauthorized
+          return response()->json(['error' => 'Invalid permission to add thematic from case study'], $status);
+        }
+    }
+
+    /**
+     * Remove a thematic area from this casestudy
+     *
+     * @param  \App\CaseStudy  $caseStudy
+     * @return \Illuminate\Http\Response
+     */
+    public function thematic_remove(Request $request, CaseStudy $caseStudy){
+
+      $thematic= $request->input('thematic_id');
+      $user= $request->input('user_id');
+
+      if($caseStudy->team->contains($user) == TRUE){
+        $caseStudy->thematics()->detach($thematic);
+
+        return response()->json(['response' => 'thematic #'.$thematic.' was removed from the case study.']);
+      }
+      else {
+        $status= '401'; //unauthorized
+        return response()->json(['error' => 'Invalid permission to remove thematic from case study'], $status);
+      }
+    }
+
+
+
+
+
+
 
 
     /**
