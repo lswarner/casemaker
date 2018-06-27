@@ -22,39 +22,71 @@
 <body>
     <div id="app">
         <div class="container-fluid container-wide">
+
+
+
+
             <nav class="navbar navbar-default navbar-static-top navbar-urc1">
+
                 <div class="navbar-header">
 
                     <!-- Collapsed Hamburger -->
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
                         <span class="sr-only">Toggle Navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-
-                    <!-- Branding Image -->
-                    <a class="navbar-left" href="{{ url('/') }}">
-                        <!-- <img src="{{ asset('img/isc-logo-web344.jpg')}}" /> -->
-                        <img class="library-logo" src="{{ \App\CMS::first()->casemaker_logo }}" />
-                    </a>
+                    <a href="{{ url('/') }}"><img class="library-logo" src="{{ \App\CMS::first()->casemaker_logo }}" /></a>
                 </div>
-
-                <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav library-navbar library-navbar-mid ">
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav library-navbar">
                       <li><a class="nav-big" href="#">About</a></li>
-                      <li><a class="nav-big" href="#">View</a></li>
-                      <li><a class="nav-big" href="#">Create</a></li>
+                      <li><a class="nav-big" href="#">View Case Studies</a></li>
                     </ul>
-
-                    <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
+                      <div class="collapse navbar-collapse" id="app-navbar-collapse">
+                          <!-- Right Side Of Navbar -->
+                          <ul class="nav navbar-nav navbar-right">
 
-                      @include('nav-user')
+                            @include('nav-user')
 
+                          </ul>
+                      </div>
+                      <li class="pull-right"><a class="btn btn-urc-accent3" href="#">Create Case Studies</a></li>
                     </ul>
                 </div>
+
+
+
+                <?php /*
+
+
+
+
+                    <ul class="nav navbar-nav navbar-left library-navbar">
+                      <li></li>
+                      <li><a class="nav-big" href="#">About</a></li>
+                      <li><a class="nav-big" href="#">View Case Studies</a></li>
+                      <li class="pull-right"><a class="nav-big" href="#">Create Case Study</a></li>
+                    </ul>
+
+
+                  <?php /*
+                    <a class="navbar-left" href="{{ url('/') }}">
+                        <img class="library-logo" src="{{ \App\CMS::first()->casemaker_logo }}" />
+                        <ul class="nav navbar-nav library-navbar library-navbar-mid ">
+                          <li><a class="nav-big" href="#">About</a></li>
+                          <li><a class="nav-big" href="#">View</a></li>
+                          <li><a class="nav-big" href="#">Create</a></li>
+                        </ul>
+                    </a>
+                  ?>
+
+                </div>
+
+                */
+                ?>
 
               </nav>
 
