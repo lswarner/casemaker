@@ -42,6 +42,8 @@
 
 
 
+
+
 .library-logo{
   max-width: 100%;
   max-height: 100px;
@@ -149,14 +151,59 @@ ul.library-navbar > li > a.nav-big {
 
 
 
-#filter-bar{
-  text-align: center;
+
+.library-main{
+  padding-left: 30px;
+  padding-right: 15px;
+  background: #ffffff;
 }
+
+
+
+
+#filter-bar{
+  background: $white;
+  border:none;
+  border-top: solid 4px $gray-dark;
+  margin-bottom: 10px;
+  margin-top: 40px;
+  margin-left: -15px; /* this gets the top-border to be even with casestudy images */
+
+}
+
+#filter-bar > .navbar-collapse > ul > li > a{
+  font-size: 16pt;
+  padding: 24px;
+  color: $text-color;
+  text-transform: uppercase;
+}
+
+#filter-bar > .navbar-collapse > ul > li > a.active {
+  color: $text-color;
+  background: $white;
+}
+
+#filter-bar > .navbar-collapse > ul > li > a:focus {
+  border-bottom: 3px solid $white;
+  padding-bottom: 27px;
+}
+
+
+@media (min-width: 1400px) {
+  #filter-bar > .navbar-collapse > ul > li > a {
+    font-size: 20pt;
+    padding: 30px;
+  }
+}
+
+
 
 .welcome-bar{
   background: $gray-light;
-  color: $commonbar-text;
-  padding: 20px 50px;
+  color: $white;
+  padding: 160px 80px;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .lead-text{
@@ -168,6 +215,16 @@ ul.library-navbar > li > a.nav-big {
   padding-right: 16px;
 }
 
+.filter-header{
+  color: $info-hover-bg;
+  font-weight: 800;
+  font-size: 12pt;
+  float: left;
+  padding-top: 12px;
+  padding-right: 8px;
+
+}
+
 .filters-dropdown{
   font-size: 12px;
   text-transform: none;
@@ -176,26 +233,34 @@ ul.library-navbar > li > a.nav-big {
 }
 
 @media (min-width: 992px) {
+  .filter-header{
+    font-size: 12pt;
+    padding-top: 17px;
+    padding-right: 8px;
+  }
+
   .filters-dropdown{
     font-size: 13px;
     text-transform: uppercase;
   }
 
-  .welcome-bar{
-    padding: 30px 60px;
-  }
+  
 
 }
 
 @media (min-width: 1200px) {
+  .filter-header{
+    font-size: 15pt;
+    padding-top: 16px;
+    padding-right: 8px;
+
+  }
+
   .filters-dropdown{
-    font-size: 14px;
+    font-size: 19px;
     text-transform: uppercase;
   }
 
-  .welcome-bar{
-    padding: 40px 66px;
-  }
 
   .lead-text{
     font-size: 40px;

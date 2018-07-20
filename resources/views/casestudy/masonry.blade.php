@@ -13,12 +13,13 @@
 <div class="container-fluid container-wide">
 
 
-  <div class="welcome-bar">
+  <!-- <div class="welcome-bar" style="background-image: url('{{ \App\CMS::first()->library_splash }}')"> -->
+  <div class="welcome-bar" style="background-image: url('img/library-bg.png')">
     <div class="row">
-      <div class="col-xs-12 col-lg-3">
-        <span class="lead-text">Welcome</span>
+      <div class="col-xs-12 col-lg-12">
+        <span class="lead-text">Case Maker</span>
       </div>
-      <div class="col-xs-12 col-lg-9">
+      <div class="col-xs-12 col-lg-12">
         <p>
         Contràriament a la creença popular, Lorem Ipsum no és només text aleatori. Té les seves arrels en una peça clàssica de la literatura llatina del 45 aC, és a dir, de fa 2000 anys. Richard McClintock, un professor de llatí al Hampden-Sydney College a Virgínia, va buscar una de les paraules més estranyes del llatí, "consectetur", procedent d'un dels paràgrafs de Lorem Ipsum, i anant de citació en citació d'aquesta paraula a la literatura clàssica, en va descobrir l'orígen veritabll.
         </p>
@@ -29,89 +30,93 @@
     </div>
   </div> <!-- end common bar -->
 
-  <nav class="navbar navbar-default navbar-centered" id="filter-bar">
 
 
-    <div class="" id="app-filterbar-collapse">
 
-      <ul class="nav navbar-nav">
+  <div class= "library-main">
+    <nav class="navbar navbar-default" id="filter-bar">
 
-        <div class="btn-group">
-          <div class="dropdown">
-            <button id="dropdown-country" type="button" class="btn btn-urc-secondary dropdown-toggle filters-dropdown" data-value="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              All Countries <span class="caret"></span>
+
+      <div class="" id="app-filterbar-collapse">
+
+        <ul class="nav navbar-nav">
+          <div class="filter-header">FILTER BY:</div>
+
+
+          <div class="btn-group">
+            <div class="dropdown">
+              <button id="dropdown-country" type="button" class="btn btn-urc-info dropdown-toggle filters-dropdown" data-value="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                All Countries <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="do_filter" data-filter="country" data-name="All Countries" data-value="" href="#">All Countries</a></li>
+
+                @foreach($countries as $a)
+                  <li><a class="do_filter" data-filter="country" data-name="{{$a}}" data-value=".{{ strtolower($a) }}" href="#">{{$a}}</a></li>
+                @endforeach
+
+
+              </ul>
+            </div>
+          </div>
+
+          <div class="btn-group">
+            <button id="dropdown-keyword" type="button" class="btn btn-urc-info dropdown-toggle filters-dropdown" data-value="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              All Keywords <span class="caret"></span>
             </button>
             <ul class="dropdown-menu">
-              <li><a class="do_filter" data-filter="country" data-name="All Countries" data-value="" href="#">All Countries</a></li>
-
-              @foreach($countries as $a)
-                <li><a class="do_filter" data-filter="country" data-name="{{$a}}" data-value=".{{ strtolower($a) }}" href="#">{{$a}}</a></li>
+              <li><a class="do_filter" data-filter="keyword" data-name="All Keywords" data-value=""  href="#">All Keywords</a></li>
+              @foreach($keywords as $a)
+                <li><a class="do_filter" data-filter="keyword" data-name="{{$a->keyword}}" data-value=".k{{$a->id}}" href="#">{{$a->keyword}}</a></li>
               @endforeach
-
-
             </ul>
           </div>
-        </div>
 
-        <div class="btn-group">
-          <button id="dropdown-keyword" type="button" class="btn btn-urc-secondary dropdown-toggle filters-dropdown" data-value="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            All Keywords <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu">
-            <li><a class="do_filter" data-filter="keyword" data-name="All Keywords" data-value=""  href="#">All Keywords</a></li>
-            @foreach($keywords as $a)
-              <li><a class="do_filter" data-filter="keyword" data-name="{{$a->keyword}}" data-value=".k{{$a->id}}" href="#">{{$a->keyword}}</a></li>
-            @endforeach
-          </ul>
-        </div>
-
-        <div class="btn-group">
-          <button id="dropdown-method" type="button" class="btn btn-urc-secondary dropdown-toggle filters-dropdown" data-value="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            All Methods <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu">
-            <li><a class="do_filter" data-filter="method" data-name="All Methods" data-value=""  href="#">All Methods</a></li>
-            @foreach($methods as $a)
-              <li><a class="do_filter" data-filter="method" data-name="{{$a->name}}" data-value=".m{{$a->id}}" href="#">{{$a->name}}</a></li>
-            @endforeach
-          </ul>
-        </div>
+          <div class="btn-group">
+            <button id="dropdown-method" type="button" class="btn btn-urc-info dropdown-toggle filters-dropdown" data-value="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              All Methods <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="do_filter" data-filter="method" data-name="All Methods" data-value=""  href="#">All Methods</a></li>
+              @foreach($methods as $a)
+                <li><a class="do_filter" data-filter="method" data-name="{{$a->name}}" data-value=".m{{$a->id}}" href="#">{{$a->name}}</a></li>
+              @endforeach
+            </ul>
+          </div>
 
 
-        <div class="btn-group">
-          <button id="dropdown-thematic" type="button" class="btn btn-urc-secondary dropdown-toggle filters-dropdown" data-value="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            All Thematic Areas <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu">
-            <li><a class="do_filter" data-filter="thematic" data-name="All Thematic Areas" data-value="" href="#">All Thematic Areas</a></li>
-            @foreach($thematics as $a)
-              <li><a class="do_filter" data-filter="thematic" data-name="{{$a->name}}" data-value=".t{{$a->id}}"  href="#">{{$a->name}}</a></li>
-            @endforeach
-          </ul>
-        </div>
+          <div class="btn-group">
+            <button id="dropdown-thematic" type="button" class="btn btn-urc-info dropdown-toggle filters-dropdown" data-value="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              All Thematic Areas <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="do_filter" data-filter="thematic" data-name="All Thematic Areas" data-value="" href="#">All Thematic Areas</a></li>
+              @foreach($thematics as $a)
+                <li><a class="do_filter" data-filter="thematic" data-name="{{$a->name}}" data-value=".t{{$a->id}}"  href="#">{{$a->name}}</a></li>
+              @endforeach
+            </ul>
+          </div>
 
 
-        <div class="btn-group">
-          <button id="dropdown-audience" type="button" class="btn btn-urc-secondary dropdown-toggle filters-dropdown" data-value="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            All Audiences <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu">
-            <li><a class="do_filter" data-filter="audience" data-name="All Audiences" data-value="" href="#">All Audiences</a></li>
-            @foreach($audiences as $a)
-              <li><a class="do_filter" data-filter="audience" data-name="{{$a->name}}" data-value=".a{{$a->id}}"  href="#">{{$a->name}}</a></li>
-            @endforeach
-          </ul>
-        </div>
+          <div class="btn-group">
+            <button id="dropdown-audience" type="button" class="btn btn-urc-info dropdown-toggle filters-dropdown" data-value="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              All Audiences <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="do_filter" data-filter="audience" data-name="All Audiences" data-value="" href="#">All Audiences</a></li>
+              @foreach($audiences as $a)
+                <li><a class="do_filter" data-filter="audience" data-name="{{$a->name}}" data-value=".a{{$a->id}}"  href="#">{{$a->name}}</a></li>
+              @endforeach
+            </ul>
+          </div>
 
 
 
 
-      </ul>
-    </div>
-  </nav>
+        </ul>
+      </div>
+    </nav>
 
-
-  <div class= "main">
     <div class="row">
         <div class="grid">
           <div class="grid-sizer"></div>

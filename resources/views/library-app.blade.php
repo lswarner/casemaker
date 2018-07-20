@@ -58,36 +58,6 @@
                 </div>
 
 
-
-                <?php /*
-
-
-
-
-                    <ul class="nav navbar-nav navbar-left library-navbar">
-                      <li></li>
-                      <li><a class="nav-big" href="#">About</a></li>
-                      <li><a class="nav-big" href="#">View Case Studies</a></li>
-                      <li class="pull-right"><a class="nav-big" href="#">Create Case Study</a></li>
-                    </ul>
-
-
-                  <?php /*
-                    <a class="navbar-left" href="{{ url('/') }}">
-                        <img class="library-logo" src="{{ \App\CMS::first()->casemaker_logo }}" />
-                        <ul class="nav navbar-nav library-navbar library-navbar-mid ">
-                          <li><a class="nav-big" href="#">About</a></li>
-                          <li><a class="nav-big" href="#">View</a></li>
-                          <li><a class="nav-big" href="#">Create</a></li>
-                        </ul>
-                    </a>
-                  ?>
-
-                </div>
-
-                */
-                ?>
-
               </nav>
 
         </div>

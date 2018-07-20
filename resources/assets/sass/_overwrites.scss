@@ -55,28 +55,24 @@ h4{
 
 
 
-#progress-bar,
-#filter-bar{
+#progress-bar{
   background: $secondary-bg;
   border: none;
 }
 
-#progress-bar > .navbar-collapse > ul > li > a,
-#filter-bar > .navbar-collapse > ul > li > a{
+#progress-bar > .navbar-collapse > ul > li > a {
   font-size: 16pt;
   padding: 24px;
   color: $accent2-text;
   text-transform: uppercase;
 }
 
-#progress-bar > .navbar-collapse > ul > li > a.active,
-#filter-bar > .navbar-collapse > ul > li > a.active {
+#progress-bar > .navbar-collapse > ul > li > a.active {
   color: $accent2-text;
   background: $accent2-bg;
 }
 
-#progress-bar > .navbar-collapse > ul > li > a:hover,
-#progress-bar > .navbar-collapse > ul > li > a:focus {
+#progress-bar > .navbar-collapse > ul > li > a:hover {
   border-bottom: 3px solid $accent2-bg;
   padding-bottom: 27px;
 }
@@ -84,8 +80,7 @@ h4{
 
 
 @media (min-width: 1400px) {
-  #progress-bar > .navbar-collapse > ul > li > a,
-  #filter-bar > .navbar-collapse > ul > li > a {
+  #progress-bar > .navbar-collapse > ul > li > a {
     font-size: 20pt;
     padding: 30px;
   }
@@ -188,6 +183,7 @@ a> .panel-account:active{
 *****/
 .btn-urc-primary,
 .btn-urc,
+.btn-urc-filter,
 .btn-urc-secondary,
 .btn-urc-info,
 .btn-urc-danger,
@@ -243,6 +239,18 @@ a> .panel-account:active{
   color: #ffffff !important;
   border: 2px solid #135693; /* navy
   */
+}
+
+.btn-urc-filter{
+  background: $white;
+  border-color: $white;
+  color: $commonbar-text;
+
+  @include hover-state{
+    background: $info-hover-bg !important;
+    border-color: $info-hover-bg !important;
+    color: $info-hover-text !important;
+  }
 }
 
 
