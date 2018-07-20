@@ -53,7 +53,7 @@
 
                           </ul>
                       </div>
-                      <li class="pull-right"><a class="btn btn-urc-accent3" href="#">Create Case Studies</a></li>
+                      <li class="pull-right"><a class="btn btn-urc-accent3 btn-create-casestudy" href="#">Create Case Studies</a></li>
                     </ul>
                 </div>
 

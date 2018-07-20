@@ -63,16 +63,26 @@
   background: none; /* clear styles */
 }
 
-  .navbar{
+  .navbar-toggle{
+    margin-right: 0px;
+  }
 
+  .navbar-urc1{
+    margin-bottom:0;
+    padding: 5px 10px;
+    /* border-bottom: 30px solid #014078 /*navy*/;  /* moved to overwrites.scss */
+  }
+
+@media (min-width: 768px) {
+  .navbar-toggle{
+    margin-right: 15px;
   }
 
 	.navbar-urc1{
-    margin-bottom:0;
-  	padding: 5px 10px;
     padding-right: 30px;
   	/* border-bottom: 30px solid #014078 /*navy*/;  /* moved to overwrites.scss */
 	}
+}
 
 
   .navbar-default .navbar-nav>li>a{
@@ -90,6 +100,19 @@
 
     .dropdown-menu>li>a {
       font-size: 16px;
+    }
+  }
+
+
+
+  .casemaker-logo{
+    max-width: 60%;
+    max-height: 100px;
+  }
+  @media (min-width: 768px) {
+    .casemaker-logo{
+      max-width: 420px;
+      max-height: 100px;
     }
   }
 

@@ -53,10 +53,6 @@ h4{
 
 
 
-.casemaker-logo{
-  max-width: 420px;
-  max-height: 100px;
-}
 
 
 #progress-bar,
@@ -316,7 +312,7 @@ a> .panel-account:active{
 .accent1,{
   background: $accent1-bg;
   border-color: $accent1-bg;
-  color: $accent1-text;
+  color: $accent1-text !important;
 }
 
 .btn-urc-accent1, {
@@ -333,7 +329,7 @@ a> .panel-account:active{
 .accent2{
   background: $accent2-bg;
   border-color: $accent2-bg;
-  color: $accent2-text;
+  color: $accent2-text !important;
 }
 .btn-urc-accent2{
   @include hover-state{
@@ -353,7 +349,7 @@ a> .panel-account:active{
 .add-audience {
   background: $accent3-bg;
   border-color: $accent3-bg;
-  color: $accent3-text;
+  color: $accent3-text !important;
 }
 
 .btn-urc-accent3,

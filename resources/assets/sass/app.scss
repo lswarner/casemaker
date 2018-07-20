@@ -26,22 +26,22 @@
 // see https://laracasts.com/discuss/channels/elixir/how-to-modify-things-inside-bootstrap-sass
 
 .primary-text{
-  color: $primary-bg;
+  color: $primary-bg !important;
 }
 .secondary-text{
-  color: $secondary-bg;
+  color: $secondary-bg !important;
 }
 .info-text{
-  color: $info-bg;
+  color: $info-bg !important;
 }
 .accent1-text{
-  color: $accent1-bg;
+  color: $accent1-bg !important;
 }
 .accent2-text{
-  color: $accent2-bg;
+  color: $accent2-bg !important;
 }
 .accent3-text{
-  color: $accent3-bg;
+  color: $accent3-bg !important;
 }
 
 .navbar-demo{
