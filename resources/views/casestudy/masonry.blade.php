@@ -65,10 +65,10 @@
 
           <div class="btn-group">
             <button id="dropdown-keyword" type="button" class="btn btn-urc-secondary dropdown-toggle filters-dropdown" data-value="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              All Keywords <span class="caret"></span>
+              All Topics <span class="caret"></span>
             </button>
             <ul class="dropdown-menu">
-              <li><a class="do_filter" data-filter="keyword" data-name="All Keywords" data-value=""  href="#">All Keywords</a></li>
+              <li><a class="do_filter" data-filter="keyword" data-name="All Topics" data-value=""  href="#">All Topics</a></li>    <?php   /* "keywords" changed to "topics" in L027 */ ?>
               @foreach($keywords as $a)
                 <li><a class="do_filter" data-filter="keyword" data-name="{{$a->keyword}}" data-value=".k{{$a->id}}" href="#">{{$a->keyword}}</a></li>
               @endforeach
@@ -88,6 +88,8 @@
           </div>
 
 
+          <?php
+          /*   removed in L027
           <div class="btn-group">
             <button id="dropdown-thematic" type="button" class="btn btn-urc-secondary dropdown-toggle filters-dropdown" data-value="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               All Thematic Areas <span class="caret"></span>
@@ -112,6 +114,7 @@
               @endforeach
             </ul>
           </div>
+          */ ?>
 
 
 

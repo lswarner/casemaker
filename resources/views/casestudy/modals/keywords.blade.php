@@ -4,13 +4,13 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h2 class="modal-title" id="gridSystemModalLabel">Add a keyword to your Case Study</h2>
+        <h2 class="modal-title" id="gridSystemModalLabel">Add a topic to your Case Study</h2>
       </div>
       <div class="modal-body">
         <div class="row">
 
           <div class="col-sm-12">
-            <h4>Choose the keyword(s) which apply to this Case Study.</h4>
+            <h4>Choose the topic(s) which apply to this Case Study.</h4>
           </div>
 
           <div class="col-sm-12">

@@ -99,7 +99,7 @@
     <!-- bottom row of common bar -->
     <div class="row">
       <div class="col-md-4 col-lg-4">
-        <h4>Keywords <button class="btn-icon hover-accent3" type="button" data-toggle="modal" data-target="#keywords-modal"><i class="fa fa-plus-circle fa-1x" aria-hidden="true"></i></button></h4>
+        <h4>Topics <button class="btn-icon hover-accent3" type="button" data-toggle="modal" data-target="#keywords-modal"><i class="fa fa-plus-circle fa-1x" aria-hidden="true"></i></button></h4>
         <ul id="keyword-bar">
         @foreach($casestudy->keywords as $k)
           <li>{{ $k->keyword }}
@@ -120,6 +120,9 @@
       </div>
 
       <div class="col-md-4 col-lg-4 col-lg-offset-1">
+
+        <?php
+        /*  removed in L027 
         <h4>Intended Audiences <button class="btn-icon hover-accent3" type="button" data-toggle="modal" data-target="#audience-modal"><i class="fa fa-plus-circle fa-1x" aria-hidden="true"></i></button></h4>
         <ul id="audience-bar">
         @foreach($casestudy->audiences as $x)
@@ -138,6 +141,8 @@
           </li>
         @endforeach
         </ul>
+        */ ?>
+
       </div>
 
       <div class="col-md-4 col-lg-3">

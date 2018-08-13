@@ -47,10 +47,14 @@
 
       <div class="col-lg-4 col-md-4 col-sm-6">
           <h3>CaseMaker Resources</h3>
-          <a class="btn btn-urc-info" href="{{ route('keyword.index') }}">Keywords</a>
+          <a class="btn btn-urc-info" href="{{ route('topic.index') }}">Topics</a>
           <a class="btn btn-urc-info" href="{{ route('method.index') }}">Methods</a>
+          <?php
+          /*  removed in L027 - revise filtering options
           <a class="btn btn-urc-info" href="{{ route('audience.index') }}">Intended Audiences</a>
           <a class="btn btn-urc-info" href="{{ route('thematic.index') }}">Thematic Area</a>
+          */
+          ?>
       </div>
 
       <div class="col-lg-4 col-md-4 col-sm-6">

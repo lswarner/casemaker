@@ -6,23 +6,23 @@
 
     <div class="row">
       <div class="col-md-6">
-        <h2>CaseStudies with keyword "{{ $keyword->keyword }}"</h2>
-        @forelse($casestudies as $cs)
-          <a href="{{ route('introduction', $cs) }}" class="btn btn-urc">{{ $cs->title or "Case Study Title"}}</a>
+        <h2>Topics</h2>
+        @forelse($keywords as $k)
+          <a href="{{ route('topic.edit', $k) }}" class="btn btn-urc">{{ $k->keyword or "topic name"}}</a>
         @empty
-          <p>No case studies use this keyword</p>
+          <p>There are no topics</p>
         @endforelse
 
       </div>
       <div class="col-md-6">
-        <h2>Edit Keyword</h2>
+        <h2>Create Topic</h2>
 
-        {!! Form::model($keyword, ['action'=>['KeywordController@update', $keyword], 'method' => 'patch', 'class'=>'form-horizontal']) !!}
+        {!! Form::open( ['action'=>['KeywordController@store'], 'method' => 'post', 'class'=>'form-horizontal']) !!}
 
           <div class="form-group{{ $errors->has('keyword') ? ' has-error' : '' }}">
 
             <div class="col-md-10">
-              {!! Form::text('keyword', null, ['class'=>'form-control', 'placeholder'=>'Keyword']) !!}
+              {!! Form::text('keyword', null, ['class'=>'form-control', 'placeholder'=>'Topic']) !!}
 
               @if ($errors->has('keyword'))
                 <span class="help-block">
@@ -36,7 +36,7 @@
 
           <div class="form-group">
             <div class="col-md-10">
-              {!! Form::submit('Update Keyword', ['class'=>'btn btn-urc']); !!}
+              {!! Form::submit('Save Topic', ['class'=>'btn btn-urc']); !!}
             </div>
           </div>
 

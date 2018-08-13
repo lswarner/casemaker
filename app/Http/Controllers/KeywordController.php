@@ -21,7 +21,7 @@ class KeywordController extends Controller
     {
         $keywords= Keyword::all_sorted();
 
-        return view('keyword.create', compact('keywords'));
+        return view('topic.create', compact('keywords'));
     }
 
     /**
@@ -31,7 +31,7 @@ class KeywordController extends Controller
      */
     public function create()
     {
-        return redirect()->route('keyword.index');
+        return redirect()->route('topic.index');
     }
 
     /**
@@ -61,7 +61,7 @@ class KeywordController extends Controller
         Session::flash('alert-class', 'flash-urc');
 
 
-        return redirect()->route('keyword.index');
+        return redirect()->route('topic.index');
     }
 
     /**
@@ -72,7 +72,7 @@ class KeywordController extends Controller
      */
     public function show(Keyword $keyword)
     {
-        return redirect()->route('keyword.edit', $keyword);
+        return redirect()->route('topic.edit', $keyword);
     }
 
     /**
@@ -85,7 +85,7 @@ class KeywordController extends Controller
     {
         $casestudies= collect([]);
 
-        return view('keyword.edit', compact('casestudies', 'keyword'));
+        return view('topic.edit', compact('casestudies', 'keyword'));
     }
 
     /**
@@ -114,7 +114,7 @@ class KeywordController extends Controller
         Session::flash('alert-class', 'flash-urc');
 
 
-        return redirect()->route('keyword.index');
+        return redirect()->route('topic.index');
     }
 
     /**

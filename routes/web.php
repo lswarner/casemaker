@@ -72,8 +72,8 @@ Route::group(['middleware' => 'admin'], function() {
   Route::model('method', '\App\Method');
   Route::resource('method', 'MethodController');
 
-  Route::model('keyword', '\App\Keyword');
-  Route::resource('keyword', 'KeywordController');
+  Route::model('topic', '\App\Keyword');
+  Route::resource('topic', 'KeywordController');
 
   Route::model('audience', '\App\Audience');
   Route::resource('audience', 'AudienceController');
