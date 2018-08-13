@@ -56,7 +56,7 @@ class CMSController extends Controller
         $cms= new CMS;
       }
 
-      return view('cms.branding', compact('cms'));
+      return view('cms.branding-new', compact('cms'));
     }
 
 
