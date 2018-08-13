@@ -51,6 +51,28 @@ h4{
   background-color: darken($navbar-default-bg, 7%);
 }
 
+.navbar-shade{
+  background-image: url('img/shade25.png');
+  background-color: transparent;
+  border: none;
+}
+
+.navbar-shade .navbar-nav > li > a{
+  color: $white;
+}
+.navbar-shade .navbar-nav > li > a:hover{
+  color: white;
+}
+
+.navbar-shade-shift{
+  position: relative;
+  top: -160px;
+}
+
+.navbar-shade .navbar-right{
+  margin-right: 15px;
+}
+
 
 
 

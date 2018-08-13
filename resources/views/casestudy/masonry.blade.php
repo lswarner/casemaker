@@ -10,22 +10,25 @@
 
 
 
-<div class="container-fluid container-wide">
+<div class="container-fluid container-wide navbar-shade-shift">
 
 
-  <!-- <div class="welcome-bar" style="background-image: url('{{ \App\CMS::first()->library_splash }}')"> -->
+<div class="welcome-bar" style="background-image: url('img/library-bg.png')">
+  <h1>Case Maker</h1>
+  <p class="lead">Some text stuff goes here so that there is content. Some text stuff goes here so that there is content. Some text stuff goes here so that there is content. </p>
+</div>
+
+  <!-- <div class="welcome-bar" style="background-image: url('{{ \App\CMS::first()->library_splash }}')">
   <div class="welcome-bar" style="background-image: url('img/library-bg.png')">
-    <div class="row">
+    <div class="row clearfix">
       <div class="col-xs-12 col-lg-12">
-        <span class="lead-text">Case Maker</span>
+        <div class="lead-text">Case Maker</div>
       </div>
       <div class="col-xs-12 col-lg-12">
         <p>
         Contràriament a la creença popular, Lorem Ipsum no és només text aleatori. Té les seves arrels en una peça clàssica de la literatura llatina del 45 aC, és a dir, de fa 2000 anys. Richard McClintock, un professor de llatí al Hampden-Sydney College a Virgínia, va buscar una de les paraules més estranyes del llatí, "consectetur", procedent d'un dels paràgrafs de Lorem Ipsum, i anant de citació en citació d'aquesta paraula a la literatura clàssica, en va descobrir l'orígen veritabll.
         </p>
-        <p>
-          i vols fer servir un passatge de Lorem Ipsum, has d'estar segur que no hi haurà res comprometedor amagat en el text. Tots els generadors de Lorem ipsum a Internet tendeixen a repetir un tros determinat tantes vegades com calgui, i això fa que aquest sigui el primer generador real a Internet.
-        </p>
+
       </div>
     </div>
   </div> <!-- end common bar -->
@@ -45,7 +48,7 @@
 
           <div class="btn-group">
             <div class="dropdown">
-              <button id="dropdown-country" type="button" class="btn btn-urc-info dropdown-toggle filters-dropdown" data-value="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <button id="dropdown-country" type="button" class="btn btn-urc-secondary dropdown-toggle filters-dropdown" data-value="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 All Countries <span class="caret"></span>
               </button>
               <ul class="dropdown-menu">
@@ -61,7 +64,7 @@
           </div>
 
           <div class="btn-group">
-            <button id="dropdown-keyword" type="button" class="btn btn-urc-info dropdown-toggle filters-dropdown" data-value="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button id="dropdown-keyword" type="button" class="btn btn-urc-secondary dropdown-toggle filters-dropdown" data-value="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               All Keywords <span class="caret"></span>
             </button>
             <ul class="dropdown-menu">
@@ -73,7 +76,7 @@
           </div>
 
           <div class="btn-group">
-            <button id="dropdown-method" type="button" class="btn btn-urc-info dropdown-toggle filters-dropdown" data-value="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button id="dropdown-method" type="button" class="btn btn-urc-secondary dropdown-toggle filters-dropdown" data-value="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               All Methods <span class="caret"></span>
             </button>
             <ul class="dropdown-menu">
@@ -86,7 +89,7 @@
 
 
           <div class="btn-group">
-            <button id="dropdown-thematic" type="button" class="btn btn-urc-info dropdown-toggle filters-dropdown" data-value="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button id="dropdown-thematic" type="button" class="btn btn-urc-secondary dropdown-toggle filters-dropdown" data-value="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               All Thematic Areas <span class="caret"></span>
             </button>
             <ul class="dropdown-menu">
@@ -99,7 +102,7 @@
 
 
           <div class="btn-group">
-            <button id="dropdown-audience" type="button" class="btn btn-urc-info dropdown-toggle filters-dropdown" data-value="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button id="dropdown-audience" type="button" class="btn btn-urc-secondary dropdown-toggle filters-dropdown" data-value="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               All Audiences <span class="caret"></span>
             </button>
             <ul class="dropdown-menu">
@@ -131,8 +134,11 @@
 
           <div class="grid-item <?= $c->filters(); ?>" >
             <a href="#">
-              <div class="">
+              <div class="hovereffect">
                 <img src="{{$image}}" class="img-responsive"/>
+                <div class="overlay">
+                  &nbsp; <!-- -->
+                </div>
               </div>
               <div class="cs-item-details">
                 <h3>{{ $c->title }}</h3>
@@ -140,7 +146,6 @@
               </div>
             </a>
           </div>
-
 
 
         @endforeach

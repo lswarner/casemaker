@@ -37,10 +37,46 @@
   .collapse.in{
       display:block !important;
   }
+
+
+/** mobile navbar expands to overlay the content, rather than pushing content down */
+  .collapsing
+  {
+      position: absolute !important;
+      z-index: 20;
+      width: 100%;
+      top: 50px;
+  }
+  .collapse.in {
+      display: block;
+      position: absolute;
+      z-index: 20;
+      width: 100%;
+      top: 50px;
+  }
+  .navbar-collapse
+  {
+      max-height: none !important;
+  }
+ /*  end navbar overlay */
+
+.navbar-default .navbar-collapse {
+  border: none;
+}
+.navbar-collapse{
+  border-top: none;
+  box-shadow:none;
+}
+
 }
 /** end : change toggle breakpoint to 992 px  */
 
 
+
+.stuff{
+  padding: 40px 15px;
+  text-align: center;
+}
 
 
 
@@ -70,7 +106,6 @@ ul.library-navbar > li > a {
 ul.library-navbar > li > a.nav-big {
   font-family: $font-family-casestudy;
   font-weight: 700;
-  text-transform: uppercase;
   font-size: 14pt;
   margin-top: 0px;
 }
@@ -78,14 +113,14 @@ ul.library-navbar > li > a.nav-big {
 .btn-create-casestudy{
   position: relative;
   top: -60px;
-  padding-top: 10px !important;
-  padding-bottom: 10px !important;
+  padding: 5px 8px !important;
 }
 
 
 @media (min-width: 992px) {
   .navbar-header{
-    width:40%;
+  //  width:40%;
+    width: auto;
   }
 
   .library-logo{
@@ -100,7 +135,7 @@ ul.library-navbar > li > a.nav-big {
 
 
   ul.library-navbar > li > a.nav-big {
-    margin-top: 36px;
+    margin-top: 56px;
   }
 
   .btn-create-casestudy{
@@ -121,9 +156,9 @@ ul.library-navbar > li > a.nav-big {
   }
 
   ul.library-navbar > li > a.nav-big {
-    font-size: 18pt;
+    font-size: 16pt;
     margin-bottom: 2px;
-    margin-top: 42px;
+    margin-top: 56px;
   }
 }
 
@@ -143,7 +178,7 @@ ul.library-navbar > li > a.nav-big {
   }
 
   ul.library-navbar > li > a.nav-big {
-    font-size: 22pt;
+    font-size: 18pt;
     margin-bottom: 4px;
   }
 }
@@ -153,9 +188,12 @@ ul.library-navbar > li > a.nav-big {
 
 
 .library-main{
+  background: #ffffff;
+  border:none;
+  border-top: solid 4px $gray-dark;
+  margin-top: 40px;
   padding-left: 30px;
   padding-right: 15px;
-  background: #ffffff;
 }
 
 
@@ -164,9 +202,7 @@ ul.library-navbar > li > a.nav-big {
 #filter-bar{
   background: $white;
   border:none;
-  border-top: solid 4px $gray-dark;
   margin-bottom: 10px;
-  margin-top: 40px;
   margin-left: -15px; /* this gets the top-border to be even with casestudy images */
 
 }
@@ -196,27 +232,37 @@ ul.library-navbar > li > a.nav-big {
   }
 }
 
-
-
 .welcome-bar{
   background: $gray-light;
   color: $white;
-  padding: 160px 80px;
+  padding-top: 140px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
   background-repeat: no-repeat;
   background-size: cover;
+  text-align: center;
 }
 
-.lead-text{
-  font-size: 36px;
+.lead{
   font-family: $font-family-casestudy;
-  text-transform: uppercase;
-  float: left;
+  text-align: center;
   line-height: 1.3;
-  padding-right: 16px;
+  font-weight: 400;
+}
+
+@media (min-width: 992px) {
+  .welcome-bar{
+    padding-top: 160px;
+    padding-bottom: 80px;
+    padding-left: 180px;
+    padding-right: 180px;
+  }
+
 }
 
 .filter-header{
-  color: $info-hover-bg;
+  color: $secondary-bg;
   font-weight: 800;
   font-size: 12pt;
   float: left;
@@ -244,7 +290,7 @@ ul.library-navbar > li > a.nav-big {
     text-transform: uppercase;
   }
 
-  
+
 
 }
 
@@ -257,7 +303,7 @@ ul.library-navbar > li > a.nav-big {
   }
 
   .filters-dropdown{
-    font-size: 19px;
+    font-size: 16px;
     text-transform: uppercase;
   }
 
@@ -296,24 +342,119 @@ ul.library-navbar > li > a.nav-big {
 }
 
 div.grid-item:hover {
-  background: $primary-hover-bg;
-  color: $primary-hover-text;
-  border: 3px solid $primary-hover-bg;
+  background: $secondary-bg;
+  color: $secondary-text;
+  border: 3px solid $secondary-bg;
   transition: background 0.25s, color 0.25s, border 0.25s;
 }
+
+
+
+.hovereffect {
+  width:100%;
+  height:100%;
+  //float:left;
+  overflow:hidden;
+  position:relative;
+  text-align:center;
+  cursor:default;
+}
+
+.hovereffect .overlay {
+  width:100%;
+  height:100%;
+  position:absolute;
+  overflow:hidden;
+  top:0;
+  left:0;
+  opacity:0;
+  background-color:rgba(0,0,0,0.5);
+  -webkit-transition:all .4s ease-in-out;
+  transition:all .4s ease-in-out
+}
+
+.hovereffect img {
+  display:block;
+  position:relative;
+  -webkit-transition:all .4s linear;
+  transition:all .4s linear;
+}
+
+.hovereffect h2 {
+  text-transform:uppercase;
+  color:#fff;
+  text-align:center;
+  position:relative;
+  font-size:17px;
+  background:rgba(0,0,0,0.6);
+  -webkit-transform:translatey(-100px);
+  -ms-transform:translatey(-100px);
+  transform:translatey(-100px);
+  -webkit-transition:all .2s ease-in-out;
+  transition:all .2s ease-in-out;
+  padding:10px;
+}
+
+.hovereffect a.info {
+  text-decoration:none;
+  display:inline-block;
+  text-transform:uppercase;
+  color:#fff;
+  border:1px solid #fff;
+  background-color:transparent;
+  opacity:0;
+  filter:alpha(opacity=0);
+  -webkit-transition:all .2s ease-in-out;
+  transition:all .2s ease-in-out;
+  margin:50px 0 0;
+  padding:7px 14px;
+}
+
+.hovereffect a.info:hover {
+  box-shadow:0 0 5px #fff;
+}
+
+.hovereffect:hover img {
+  -ms-transform:scale(1.2);
+  -webkit-transform:scale(1.2);
+  transform:scale(1.2);
+}
+
+.hovereffect:hover .overlay {
+  opacity:1;
+  filter:alpha(opacity=100);
+}
+
+.hovereffect:hover h2,.hovereffect:hover a.info {
+  opacity:1;
+  filter:alpha(opacity=100);
+  -ms-transform:translatey(0);
+  -webkit-transform:translatey(0);
+  transform:translatey(0);
+}
+
+.hovereffect:hover a.info {
+  -webkit-transition-delay:.2s;
+  transition-delay:.2s;
+}
+
+
+
+
+
 
 .cs-item-details{
   padding: 0px 8px;
 }
 
 .cs-item-details > h3 {
-  font-size: 20px;
+  font-size: 18px;
   margin-top: 14px;
   margin-bottom: 4px;
 }
 
 .cs-item-details > p {
-  font-size: 12px;
+  font-size: 13px;
   color: $gray-light;
 }
 
@@ -329,5 +470,13 @@ div.grid-item:hover {
 
   .cs-item-details{
     padding: 0px 14px;
+  }
+
+  cs-item-details > h3 {
+    font-size: 18px;
+  }
+
+  .cs-item-details > p {
+    font-size: 15px;
   }
 }

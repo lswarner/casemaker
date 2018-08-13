@@ -23,10 +23,12 @@
     <div id="app">
         <div class="container-fluid container-wide">
 
+          <?php
+            $current_name= \Route::currentRouteName() or "";
+          ?>
 
 
-
-            <nav class="navbar navbar-default navbar-static-top navbar-urc1">
+            <nav class="navbar navbar-default navbar-static-top navbar-shade">
 
                 <div class="navbar-header">
 
@@ -41,8 +43,12 @@
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav library-navbar">
+                      @if($current_name == "library")
+                      <li><a class="nav-big" href="#filter-bar">Case Studies</a></li>
+                      @else
+                      <li><a class="nav-big" href="{{ route('library') }}">Case Studies</a></li>
+                      @endif
                       <li><a class="nav-big" href="#">About</a></li>
-                      <li><a class="nav-big" href="#">View Case Studies</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                       <div class="collapse navbar-collapse" id="app-navbar-collapse">
@@ -53,7 +59,7 @@
 
                           </ul>
                       </div>
-                      <li class="pull-right"><a class="btn btn-urc-accent3 btn-create-casestudy" href="#">Create Case Studies</a></li>
+                      <li class="pull-right"><a class="btn btn-urc-accent2 btn-create-casestudy" href="#">Create Case Studies</a></li>
                     </ul>
                 </div>
 
