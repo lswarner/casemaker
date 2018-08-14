@@ -60,6 +60,16 @@ class CMSController extends Controller
     }
 
 
+    public function branding_update(Request $request){
+      $cms= CMS::first();
+
+      $cms->update($request->all());
+      $cms->save();
+
+
+      return redirect()->route('branding');
+    }
+
 
     //function edit image resource
     /**
@@ -136,6 +146,7 @@ class CMSController extends Controller
             $max_width= 420;
             break;
           case 'splash_image':
+          case 'library_splash':
             $max_width= 2000;
             break;
           case 'library_logo':

@@ -88,4 +88,5 @@ Route::group(['middleware' => 'admin'], function() {
   Route::post('cms/image/{field}', 'CMSController@update_image')->name('update_image');
 
   Route::get('cms/branding', 'CMSController@branding')->name('branding');
+  Route::patch('cms/branding', 'CMSController@branding_update')->name('branding_update');
 });

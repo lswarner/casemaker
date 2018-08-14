@@ -8,6 +8,7 @@ use App\Keyword;
 use App\Method;
 use App\Thematic;
 use App\Audience;
+use App\CMS;
 
 class LibraryController extends Controller
 {
@@ -30,6 +31,11 @@ class LibraryController extends Controller
     //$country_suggestions= json_encode($this->country_suggestions);
     $countries= ['Bangladesh', 'Burundi', 'Honduras', 'Rwanda', 'Senegal', 'Tanzania'];
 
-    return view('casestudy.masonry', compact('casestudies', 'countries', 'methods', 'keywords', 'thematics', 'audiences') );
+    $cms= CMS::firstOrCreate([]);
+    if(empty($cms)){
+      $cms= new CMS;
+    }
+
+    return view('casestudy.masonry', compact('casestudies', 'countries', 'methods', 'keywords', 'thematics', 'audiences', 'cms') );
   }
 }

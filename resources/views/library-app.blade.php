@@ -39,7 +39,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a href="{{ url('/') }}"><img class="library-logo" src="{{ \App\CMS::first()->casemaker_logo }}" /></a>
+                    <a href="{{ url('/') }}"><img class="library-logo" src="{{ \App\CMS::first()->library_logo }}" /></a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav library-navbar">
@@ -53,7 +53,7 @@
                     <ul class="nav navbar-nav navbar-right">
                       <div class="collapse navbar-collapse" id="app-navbar-collapse">
                           <!-- Right Side Of Navbar -->
-                          <ul class="nav navbar-nav navbar-right">
+                          <ul class="nav navbar-nav nav-pull-right ">
 
                             @include('nav-user')
 

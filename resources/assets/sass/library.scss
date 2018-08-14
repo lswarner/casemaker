@@ -60,29 +60,24 @@
   }
  /*  end navbar overlay */
 
-.navbar-default .navbar-collapse {
-  border: none;
-}
-.navbar-collapse{
-  border-top: none;
-  box-shadow:none;
-}
+  .navbar-default .navbar-collapse {
+    border: none;
+  }
+  .navbar-collapse{
+    border-top: none;
+    box-shadow:none;
+  }
 
 }
 /** end : change toggle breakpoint to 992 px  */
 
 
 
-.stuff{
-  padding: 40px 15px;
-  text-align: center;
-}
-
-
 
 .library-logo{
   max-width: 100%;
   max-height: 100px;
+  margin: 8px 16px;
 }
 
 .library-casestudy-button{
@@ -109,6 +104,12 @@ ul.library-navbar > li > a.nav-big {
   font-size: 14pt;
   margin-top: 0px;
 }
+
+.nav-pull-right{
+  float: right !important;
+  margin-right: -10px;
+}
+
 
 .btn-create-casestudy{
   position: relative;
@@ -184,7 +185,9 @@ ul.library-navbar > li > a.nav-big {
 }
 
 
-
+.branding-label{
+  font-size: 14pt;
+}
 
 
 .library-main{
@@ -244,6 +247,10 @@ ul.library-navbar > li > a.nav-big {
   text-align: center;
 }
 
+.library-title{
+  margin-top: 20px;
+}
+
 .lead{
   font-family: $font-family-casestudy;
   text-align: center;
@@ -255,10 +262,14 @@ ul.library-navbar > li > a.nav-big {
   .welcome-bar{
     padding-top: 160px;
     padding-bottom: 80px;
-    padding-left: 180px;
-    padding-right: 180px;
+    padding-left: 18%;
+    padding-right: 18%;
   }
 
+}
+
+.library-title{
+  margin-top: 40px;
 }
 
 .filter-header{
@@ -266,35 +277,31 @@ ul.library-navbar > li > a.nav-big {
   font-weight: 800;
   font-size: 12pt;
   float: left;
-  padding-top: 12px;
+  padding-top: 17px;
   padding-right: 8px;
 
 }
 
 .filters-dropdown{
-  font-size: 12px;
-  text-transform: none;
+  font-size: 13px;
+  text-transform: uppercase;
   margin-bottom: 0px;
   margin-top: 8px;
 }
 
-@media (min-width: 992px) {
-  .filter-header{
-    font-size: 12pt;
-    padding-top: 17px;
-    padding-right: 8px;
-  }
-
-  .filters-dropdown{
-    font-size: 13px;
-    text-transform: uppercase;
-  }
-
-
-
-}
 
 @media (min-width: 1200px) {
+  .welcome-bar{
+    padding-left: 24%;
+    padding-right: 24%;
+  }
+
+
+  .library-title{
+    margin-top: 80px;
+  }
+
+
   .filter-header{
     font-size: 15pt;
     padding-top: 16px;

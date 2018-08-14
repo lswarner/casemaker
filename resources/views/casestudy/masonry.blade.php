@@ -13,9 +13,9 @@
 <div class="container-fluid container-wide navbar-shade-shift">
 
 
-<div class="welcome-bar" style="background-image: url('img/library-bg.png')">
-  <h1>Case Maker</h1>
-  <p class="lead">Some text stuff goes here so that there is content. Some text stuff goes here so that there is content. Some text stuff goes here so that there is content. </p>
+<div class="welcome-bar" style="background-image: url('{{ $cms->library_splash }}')">
+  <h1 class="library-title">{{ $cms->library_title }}</h1>
+  <p class="lead">{{ $cms->welcome_text }}</p>
 </div>
 
   <!-- <div class="welcome-bar" style="background-image: url('{{ \App\CMS::first()->library_splash }}')">
