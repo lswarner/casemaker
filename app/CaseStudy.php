@@ -13,7 +13,7 @@ class CaseStudy extends Model
    * @var array
    */
     protected $fillable=  [
-                'title', 'countries',
+                'title', 'countries', 'description', 'author',  //'references',   /* not fillable: 'featured_image', */
                 'intro_context', 'intro_nuances', 'intro_tips', 'intro_acronyms', 'intro_objectives', 'intro_questions',
                 'method_used', 'method_challenges', 'method_tips', 'method_partners', 'method_questions', 'method_files',
                 'results_discuss', 'results_challenges', 'results_tips', 'results_questions', 'results_files',

@@ -1,3 +1,4 @@
+
 <!-- Introduction Section -->
 <div class="review-section well shadow-depth-3">
     <div class="row">
@@ -256,3 +257,46 @@
     </div>
 
 </div>
+
+
+
+
+
+<?php /*
+<!-- References Section -->
+<div class="review-section well shadow-depth-3">
+    <div class="row">
+
+      <div class="col-md-4">
+        <a class="section-header" data-toggle="collapse" href="#references" aria-expanded="false" aria-controls="references"><h2 class="section-header">References</h2></a>
+      </div>
+      <div class="col-md-8">
+        <a class="pull-right" data-toggle="collapse" href="#references" aria-expanded="false" aria-controls="references"><i class="fa fa-caret-down fa-2x"></i></a>
+      </div>
+
+
+      <div class="col-xs-12 collapse" id="references">
+        <div class="row">
+
+          <div class="col-md-5">
+            <h3>Featured Image</h3>
+            <img class="img-responsive" src="{{ url('img/stock/9.jpeg') }}" />
+            <a href="{{route('image', 'casemaker_logo')}}" class="btn btn-urc-secondary">Change Featured Image</a>
+          </div>
+
+          <div class="col-md-7">
+            <h3>Additional Images</h3>
+
+          </div>
+        </div>
+
+        <div class="row">
+          <h3>Video</h3>
+
+        </div>
+
+      </div>
+  </div>
+
+</div>
+*/ ?>

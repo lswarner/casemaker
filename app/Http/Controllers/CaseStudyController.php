@@ -12,6 +12,7 @@ use App\Invitation;
 use App\Attachment;
 use Auth;
 use Session;
+use Image;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\CaseStudyRequest;
@@ -325,6 +326,7 @@ class CaseStudyController extends Controller
         if( empty($data['title'])){
           $data['title']= "";
         }
+
 
         $caseStudy->update($data);
 
@@ -767,5 +769,54 @@ class CaseStudyController extends Controller
     public function attachment(CaseStudy $caseStudy, Attachment $attachment){
       $attachment->path;
       return response()->file(storage_path( 'app/'. $attachment->path) );
+    }
+
+
+
+
+
+    public function edit_featured(CaseStudy $caseStudy){
+
+      return view('casestudy.featured', [ 'casestudy'=>$caseStudy ]);
+    }
+
+    public function update_featured(CaseStudy $caseStudy, Request $request){
+      if ($request->hasFile('attachment') && $request->file('attachment')->isValid()) {
+
+      //if ($request->hasFile('attachment') ) {
+
+
+        $uploaded_file= $request->file('attachment');
+
+
+        $image= Image::make($uploaded_file);
+
+
+        $upload_folder= "img/cs/";
+
+        //$file_name= $uploaded_file->getClientOriginalName();
+        $file_name= 'casestudy'.$caseStudy->id.'.'.$uploaded_file->getClientOriginalExtension();
+
+        $max_width= 1400;
+
+
+        if($image->width() > $max_width){
+          $image->resize($max_width, null, function ($constraint) {
+              $constraint->aspectRatio();
+          });
+        }
+
+        $file_path= $upload_folder.$file_name;
+
+        \Log::info('upload featured image: saving photo to fileserver');
+        $image->save(public_path($file_path), 100);
+
+        $caseStudy->featured_image= $file_path;
+        $caseStudy->save();
+
+      }
+
+
+      return redirect()->route('introduction', $caseStudy);
     }
 }

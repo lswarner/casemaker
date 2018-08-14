@@ -65,6 +65,9 @@ Route::group(['middleware' => ['team']], function () {
   Route::patch('casestudy/{casestudy}/audience/remove', 'CaseStudyController@audience_remove')->name('audience_remove');
   Route::patch('casestudy/{casestudy}/thematic/add', 'CaseStudyController@thematic_add')->name('thematic_add');
   Route::patch('casestudy/{casestudy}/thematic/remove', 'CaseStudyController@thematic_remove')->name('thematic_remove');
+
+  Route::get('casestudy/{casestudy}/featured', 'CaseStudyController@edit_featured')->name('edit-featured');
+  Route::post('casestudy/{casestudy}/featured', 'CaseStudyController@update_featured')->name('update-featured');
 });
 
 
