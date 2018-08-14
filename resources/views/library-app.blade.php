@@ -85,7 +85,7 @@
     <footer class="footer">
       <div class="container-fluid container-wide">
         <div class="footer-main">
-          <p class="footer-text text-center">&copy; {{ date('Y') }} {{ config('app.name', 'CaseMaker') }}</p>
+          <p class="footer-text text-center">&copy; {{ date('Y') }}  {{ \App\CMS::first()->casemaker_title }}</p>
         </div>
       </div>
     </footer>
