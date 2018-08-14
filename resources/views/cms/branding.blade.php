@@ -61,7 +61,7 @@
 
 
           <h3>CaseMaker logo</h3>
-          <p class="">recommended size: 420px x 90px</p>
+          <p class="">max size: 420px x 90px</p>
           <img src="{{url( $cms->casemaker_logo) }}" class="img-responsive space-below" />
 
           <a href="{{route('image', 'casemaker_logo')}}" class="btn btn-urc-secondary">Change Logo</a>
@@ -104,7 +104,7 @@
         <div class="col-md-4">
 
           <h3>Library logo</h3>
-          <p class="">recommended size: ??? </p>
+          <p class="">max size: 420px x 90px</p>
           <img src="{{url( $cms->library_logo) }}" class="img-responsive space-below" />
 
           <a href="{{route('image', 'library_logo')}}" class="btn btn-urc-info">Change Logo</a>
@@ -117,13 +117,13 @@
           </div>
           */ ?>
           <h3>Library splash image</h3>
-          <p class="">recommended size: 2000px x 1330px</p>
+          <p class="">recommended size: 1400px x 720px</p>
           <img src="{{url( $cms->library_splash) }}" class="img-responsive space-below" />
 
           <a href="{{route('image', 'library_splash')}}" class="btn btn-urc-info">Change Splash Image</a>
         </div>
 
-      <div>
+      </div>
 
     </div>
 

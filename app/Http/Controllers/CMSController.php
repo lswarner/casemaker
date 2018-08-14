@@ -143,13 +143,15 @@ class CMSController extends Controller
 
         switch($field){
           case 'casemaker_logo':
+          case 'library_logo':
             $max_width= 420;
             break;
           case 'splash_image':
-          case 'library_splash':
             $max_width= 2000;
             break;
-          case 'library_logo':
+          case 'library_splash':
+            $max_width= 1400;
+            break;
           default:
             $max_width= 420;
         }
