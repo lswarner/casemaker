@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'CaseMaker') }}</title>
+    <title>{{ \App\CMS::first()->casemaker_title }}</title>
 
     <link rel="shortcut icon" href="{{ \App\CMS::first()->favicon }}" type="image/x-icon">
     <link rel="icon" href="{{ \App\CMS::first()->favicon }}" type="image/x-icon">
@@ -28,6 +28,7 @@
           ?>
 
 <?php /*
+
           <!-- Static navbar -->
                 <div class="navbar navbar-default navbar-shade">
                   <a class="pull-left"><img class="library-logo" src="{{ \App\CMS::first()->library_logo }}"></a>
@@ -108,7 +109,7 @@
               </div>
             </nav>
 
-        
+
 
         </div>
 
