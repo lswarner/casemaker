@@ -83,7 +83,31 @@ $accent3-hover-text: $white;
 
 /* end of user-changeable styles */
 
+.primary{
+  background: $primary-bg !important;
+  color: $primary-text !important;
+}
 
+.secondary{
+  background: $secondary-bg !important;
+  color: $secondary-text !important;
+}
+.info{
+  background: $info-bg !important;
+  color: $info-text !important;
+}
+.accent1{
+  background: $accent1-bg !important;
+  color: $accent1-text !important;
+}
+.accent2{
+  background: $accent2-bg !important;
+  color: $accent2-text !important;
+}
+.accent3{
+  background: $accent3-bg !important;
+  color: $accent3-text !important;
+}
 
 // Body
 $body-bg: #f5f8fa;

@@ -48,6 +48,269 @@
       </div>
     </nav>
 
+    <?php /****** Background ******************************/ ?>
+
+    <div id="background" class="section">
+      <div class="sub-section">
+        <div class="row">
+          <h2>Background</h2>
+        </div>
+      </div>
+
+      <div class="sub-section">
+        <div class="row">
+          <div class="col-sm-5">
+            <div class="callout">
+              <h3>Case Study Details</h3>
+              <p>
+                Dates: <br />
+                Setting: <br />
+                Topic: <br />
+                Challenge <br />
+              </p>
+            </div>
+          </div>
+
+          <div class="col-sm-5 col-sm-offset-1">
+            <div class="callout">
+              <h3>Key Acronyms</h3>
+              <ul>
+                <li>ABCD</li>
+                <li>NFL</li>
+                <li>PEBKAC</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="sub-section accent3">
+        <div class="row">
+          <h3>Learning Objectives</h3>
+          <ol>
+            <li>First question</li>
+            <li>Second question</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="sub-section">
+        <div class="row">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor sit amet ipsum vel
+            posuere. Curabitur arcu justo, pellentesque ut finibus in, faucibus sit amet libero. Vestibulum
+            scelerisque consequat nisi, nec feugiat neque fermentum non. In congue ligula vel tempor
+            tempor. Pellentesque egestas imperdiet mi in iaculis. Donec faucibus sagittis felis, ut venenatis
+            est bibendum eget. Sed egestas facilisis sodales. Curabitur id sem nulla. Aenean vitae
+            maximus massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id blandit dolor.
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+
+    <?php /****** Intervention ******************************/ ?>
+
+    <div id="intervention" class="section">
+      <div class="sub-section">
+        <div class="row">
+          <h2>Intervention</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor sit amet ipsum vel
+            posuere. Curabitur arcu justo, pellentesque ut finibus in, faucibus sit amet libero. Vestibulum
+            scelerisque consequat nisi, nec feugiat neque fermentum non. In congue ligula vel tempor
+            tempor. Pellentesque egestas imperdiet mi in iaculis. Donec faucibus sagittis felis, ut venenatis
+            est bibendum eget. Sed egestas facilisis sodales. Curabitur id sem nulla. Aenean vitae
+            maximus massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id blandit dolor.
+          </p>
+        </div>
+      </div>
+
+      <div class="sub-section primary">
+        <div class="row">
+          <h3>Discussion Questions</h3>
+          <ol>
+            <li>First question</li>
+            <li>Second question</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <?php /****** Approach ******************************/ ?>
+
+    <div id="approach" class="section">
+      <div class="sub-section">
+        <div class="row">
+          <h2>Implementation Science (IS) Approach</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor sit amet ipsum vel
+            posuere. Curabitur arcu justo, pellentesque ut finibus in, faucibus sit amet libero. Vestibulum
+            scelerisque consequat nisi, nec feugiat neque fermentum non. In congue ligula vel tempor
+            tempor. Pellentesque egestas imperdiet mi in iaculis. Donec faucibus sagittis felis, ut venenatis
+            est bibendum eget. Sed egestas facilisis sodales. Curabitur id sem nulla. Aenean vitae
+            maximus massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id blandit dolor.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor sit amet ipsum vel
+            posuere. Curabitur arcu justo, pellentesque ut finibus in, faucibus sit amet libero. Vestibulum
+            scelerisque consequat nisi, nec feugiat neque fermentum non. In congue ligula vel tempor
+            tempor. Pellentesque egestas imperdiet mi in iaculis. Donec faucibus sagittis felis, ut venenatis
+            est bibendum eget. Sed egestas facilisis sodales. Curabitur id sem nulla. Aenean vitae
+            maximus massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id blandit dolor.
+          </p>
+        </div>
+      </div>
+
+
+      <div class="sub-section">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="callout">
+              <h3>Key Partners and Roles</h3>
+              <ol>
+                <li>Partner</li>
+                <li>Organization</li>
+                <li>Associations</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sub-section primary">
+        <div class="row">
+          <h3>Discussion Questions</h3>
+          <ol>
+            <li>First question</li>
+            <li>Second question</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+    <?php /****** Findings ******************************/ ?>
+
+    <div id="findings" class="section">
+      <div class="sub-section">
+        <div class="row">
+          <h2>Findings</h2>
+        </div>
+      </div>
+
+      <div class="sub-section accent3">
+        <div class="row">
+          <h3>Key Results</h3>
+          <ol>
+            <li>Result</li>
+            <li>Second result</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="sub-section">
+        <div class="row">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor sit amet ipsum vel
+            posuere. Curabitur arcu justo, pellentesque ut finibus in, faucibus sit amet libero. Vestibulum
+            scelerisque consequat nisi, nec feugiat neque fermentum non. In congue ligula vel tempor
+            tempor. Pellentesque egestas imperdiet mi in iaculis. Donec faucibus sagittis felis, ut venenatis
+            est bibendum eget. Sed egestas facilisis sodales. Curabitur id sem nulla. Aenean vitae
+            maximus massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id blandit dolor.
+          </p>
+        </div>
+      </div>
+
+      <div class="sub-section primary">
+        <div class="row">
+          <h3>Discussion Questions</h3>
+          <ol>
+            <li>First question</li>
+            <li>Second question</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+
+    <?php /****** Implications ******************************/ ?>
+
+    <div id="implications" class="section">
+      <div class="sub-section">
+        <div class="row">
+          <h2>Implications</h2>
+        </div>
+      </div>
+
+      <div class="sub-section accent3">
+        <div class="row">
+          <h3>Program and Policy Implications</h3>
+          <ol>
+            <li>Implications</li>
+            <li>Another implication.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="sub-section">
+        <div class="row">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor sit amet ipsum vel
+            posuere. Curabitur arcu justo, pellentesque ut finibus in, faucibus sit amet libero. Vestibulum
+            scelerisque consequat nisi, nec feugiat neque fermentum non. In congue ligula vel tempor
+            tempor. Pellentesque egestas imperdiet mi in iaculis. Donec faucibus sagittis felis, ut venenatis
+            est bibendum eget. Sed egestas facilisis sodales. Curabitur id sem nulla. Aenean vitae
+            maximus massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id blandit dolor.
+          </p>
+        </div>
+      </div>
+
+      <div class="sub-section primary">
+        <div class="row">
+          <h3>Discussion Questions</h3>
+          <ol>
+            <li>First question</li>
+            <li>Second question</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+
+
+    <?php /****** Relevant Documents ******************************/ ?>
+
+    <div class="section">
+      <div class="sub-section">
+        <div class="row">
+          <h2>Relevant Documents</h2>
+        </div>
+      </div>
+    </div>
+
+    <?php /****** Referencess ******************************/ ?>
+
+    <div id="references" class="section">
+      <div class="sub-section">
+        <div class="row">
+          <h2>References</h2>
+          <ol>
+            <li>"Curabitur arcu justo, pellentesque ut finibus in" LaDainian Tomlinson. Curabitur arcu justo, pellentesque ut finibus in, faucibus sit amet libero. Vestibulum scelerisque consequat nisi, nec feugiat neque fermentum non. In congue ligula vel tempor tempor. faucibus sit amet libero. faucibus sit amet libero. 1997.</li>
+            <li>"Name of text." LaDainian Tomlinson. Source. 1997.</li>
+          </ol>
+        </div>
+      </div>
+
+
 
 
   </div> <!-- end main -->

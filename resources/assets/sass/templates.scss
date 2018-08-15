@@ -1,4 +1,8 @@
 
+h1, h2, h3, h4{
+  text-transform: none;
+}
+
 .template-bar{
   background: $gray-light;
   background-repeat: no-repeat;
@@ -86,4 +90,49 @@
 #section-bar .navbar-nav > li > a:hover {
   border-bottom: 3px solid $accent2-bg;
   padding-bottom: 9px;
+}
+
+
+.section{
+  margin-top: 40px;
+  background: $white;
+  color: $black;
+  padding: 0px 0px; /* do padding in the sub-sections instead! */
+  border-top: 2px solid $gray;
+  border-bottom: 2px solid $gray;
+}
+
+.sub-section{
+  padding: 0px 60px;
+  padding-bottom: 10px;
+  margin-top: 20px;
+}
+
+.sub-section h2{
+  margin-top: 0px;
+}
+
+.callout{
+  border: solid 3px black;
+  padding: 6px 12px;
+  margin: 10px -15px;
+}
+
+  .callout h3{
+    text-align: center;
+    font-weight: 600;
+    margin-top: 0px;
+  }
+
+  .callout ul{
+    padding-left: 30px;
+  }
+
+  .callout p{
+    padding: 0 15px;
+  }
+
+#references ol{
+  padding-left: 18px;
+  color: gray;
 }
