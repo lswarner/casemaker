@@ -20,6 +20,23 @@ class CaseStudy extends Model
                 'implications_discuss', 'implications_challenges', 'implications_tips', 'implications_questions', 'implications_files',
               ];
 
+public function listCountries(){
+  $a= strip_tags($this->countries);
+  return $a;
+}
+
+public function listTopics(){
+  $a= $this->topics->implode('keyword', ', ');
+  return $a;
+}
+
+public function listMethods(){
+  $a= $this->methods->implode('name', ', ');
+  return $a;
+}
+
+
+
 /*******************************************************
      Set Dates for Carbon Mutators
  ******************************************************/
@@ -70,6 +87,13 @@ public function invitations(){
   public function keywords(){
     return $this->belongsToMany('App\Keyword', 'case_study_keyword', 'case_study_id', 'keyword_id')->withTimestamps();
   }
+
+  /**
+   * get the keywords this case study uses
+   */
+   public function topics(){
+     return $this->belongsToMany('App\Keyword', 'case_study_keyword', 'case_study_id', 'keyword_id')->withTimestamps();
+   }
 
 
   /**

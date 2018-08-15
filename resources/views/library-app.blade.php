@@ -30,6 +30,8 @@
 
             <nav class="navbar navbar-default navbar-static-top navbar-shade">
 
+              <div class="container-fluid">
+
                 <div class="navbar-header">
 
                     <!-- Collapsed Hamburger -->
@@ -41,7 +43,7 @@
                     </button>
                     <a href="{{ url('/') }}"><img class="library-logo" src="{{ \App\CMS::first()->library_logo }}" /></a>
                 </div>
-                <div id="navbar" class="navbar-collapse collapse">
+                <div id="navbar" class="navbar-library navbar-collapse collapse">
                     <ul class="nav navbar-nav library-navbar">
                       @if($current_name == "library")
                       <li><a class="nav-big" href="#filter-bar">Case Studies</a></li>
@@ -59,12 +61,12 @@
 
                           </ul>
                       </div>
-                      <li class="pull-right"><a class="btn btn-urc-accent2 btn-create-casestudy" href="#">Create Case Studies</a></li>
+                      <li class="pull-right"><a class="btn btn-urc-accent2 btn-create-casestudy" href="{{ route('home') }}">Create Case Studies</a></li>
                     </ul>
                 </div>
 
-
-              </nav>
+              </div>
+            </nav>
 
         </div>
 

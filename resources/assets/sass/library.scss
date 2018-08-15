@@ -11,7 +11,22 @@
   }
   .navbar-toggle {
       display: block;
+      margin-right: 10px !important;
+      color: $white;
+      border: solid 2px $white !important;
+      z-index: 1001;
   }
+
+  .navbar-toggle:hover,
+  .navbar-toggle:active,
+  .navbar-toggle:focus {
+      background-color: rgba(255, 255, 255, 0.4) !important;
+  }
+
+  .navbar-default .navbar-toggle .icon-bar {
+    background-color: $white;
+  }
+
   .navbar-collapse {
       border-top: 1px solid transparent;
       box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
@@ -68,6 +83,16 @@
     box-shadow:none;
   }
 
+
+  #navbar.navbar-library{
+    //position: absolute;
+    //top: 0px;
+    //padding-top: 140px;
+    //padding-bottom: 20px;
+    background: $primary-bg;
+    color: $primary-text;
+  }
+
 }
 /** end : change toggle breakpoint to 992 px  */
 
@@ -78,6 +103,7 @@
   max-width: 100%;
   max-height: 100px;
   margin: 8px 16px;
+  z-index: 1001;
 }
 
 .library-casestudy-button{
@@ -194,9 +220,15 @@ ul.library-navbar > li > a.nav-big {
   background: #ffffff;
   border:none;
   border-top: solid 4px $gray-dark;
-  margin-top: 40px;
-  padding-left: 30px;
+  margin-top: 20px;
+  padding-left: 15px;
   padding-right: 15px;
+}
+@media (min-width: 992px) {
+  .library-main{
+    margin-top: 40px;
+    padding-left: 30px;
+  }
 }
 
 
@@ -206,8 +238,13 @@ ul.library-navbar > li > a.nav-big {
   background: $white;
   border:none;
   margin-bottom: 10px;
-  margin-left: -15px; /* this gets the top-border to be even with casestudy images */
-
+  margin-left: 0px; /* this gets the top-border to be even with casestudy images */
+}
+@media (min-width: 992px){
+  #filter-bar{
+    margin-left: -15px; /* this gets the top-border to be even with casestudy images */
+    padding-top: 6px;
+  }
 }
 
 #filter-bar > .navbar-collapse > ul > li > a{
@@ -226,6 +263,7 @@ ul.library-navbar > li > a.nav-big {
   border-bottom: 3px solid $white;
   padding-bottom: 27px;
 }
+
 
 
 @media (min-width: 1400px) {
@@ -273,20 +311,44 @@ ul.library-navbar > li > a.nav-big {
 }
 
 .filter-header{
-  color: $secondary-bg;
-  font-weight: 800;
-  font-size: 12pt;
-  float: left;
-  padding-top: 17px;
-  padding-right: 8px;
-
+  display: none;
 }
 
 .filters-dropdown{
-  font-size: 13px;
+  font-size: 12px;
   text-transform: uppercase;
   margin-bottom: 0px;
   margin-top: 8px;
+  width: 100%;
+  display: block;
+}
+
+#filter-bar .btn-group{
+  display: block;
+}
+
+
+@media (min-width: 767px) {
+  .filter-header{
+    color: $secondary-bg;
+    font-weight: 800;
+    font-size: 12pt;
+    float: left;
+    padding-top: 17px;
+    padding-right: 8px;
+    display: inline;
+  }
+
+  .filters-dropdown{
+    width: auto;
+    display: block;
+    font-size: 12pt;
+    padding: 2px 8px;
+  }
+
+  #filter-bar .btn-group{
+    display: inline-block;
+  }
 }
 
 
@@ -304,9 +366,9 @@ ul.library-navbar > li > a.nav-big {
 
   .filter-header{
     font-size: 15pt;
-    padding-top: 16px;
-    padding-right: 8px;
-
+    padding-top: 12px;
+    padding-right: 10px;
+    padding-left: 1px;
   }
 
   .filters-dropdown{
@@ -336,11 +398,11 @@ ul.library-navbar > li > a.nav-big {
 
 .grid-sizer,
 .grid-item {
-  width: 32%;
+  width: 100%;
 }
 
 .grid-item--width2 {
-  width: 64%;
+  width: 100%;
 }
 
 .grid-item > a {
@@ -349,10 +411,55 @@ ul.library-navbar > li > a.nav-big {
 }
 
 div.grid-item:hover {
-  background: $secondary-bg;
-  color: $secondary-text;
-  border: 3px solid $secondary-bg;
+  background: darken($primary-bg, 10%);
+  color: $primary-text;
+  border: 3px solid darken($primary-bg, 10%);
   transition: background 0.25s, color 0.25s, border 0.25s;
+}
+
+@media (min-width: 664px) {
+
+  .grid-item {
+    margin-bottom: 10px;
+    /* margin between grid-items is set in masonry script's gutter value */
+  }
+
+  .grid-sizer,
+  .grid-item {
+    width: 49.25%;
+  }
+
+  .grid-item--width2 {
+    width: 10%;
+  }
+}
+
+@media (min-width: 768px) {
+
+  .grid-item {
+    margin-bottom: 10px;
+    /* margin between grid-items is set in masonry script's gutter value */
+  }
+
+  .grid-sizer,
+  .grid-item {
+    width: 32%;
+  }
+
+  .grid-item--width2 {
+    width: 64%;
+  }
+}
+
+@media (min-width: 992px) {
+  .grid-sizer,
+  .grid-item {
+    width: 32.5%;
+  }
+
+  .grid-item--width2 {
+    width: 65%;
+  }
 }
 
 
@@ -450,40 +557,80 @@ div.grid-item:hover {
 
 
 
-.cs-item-details{
+.cs-item-information{
   padding: 0px 8px;
+  padding-bottom: 8px;
+  position: relative;
+  bottom: 0px;
 }
 
-.cs-item-details > h3 {
-  font-size: 18px;
+.cs-item-information > h3 {
+  font-size: 18pt;
+
+  border-bottom: solid 1px $gray;
+  padding-bottom: 10px;
+
   margin-top: 14px;
-  margin-bottom: 4px;
+  margin-bottom: 10px;
+
 }
 
-.cs-item-details > p {
-  font-size: 13px;
+.cs-item-title{
+  text-align: right;
   color: $gray-light;
+  font-size: 12pt;
+  position: relative;
+  top: -2px;
 }
+.cs-item-details{
+  font-size: 14pt;
+  color: white;
+  line-height: 1.1em;
+  padding-bottom: 10px;
+  padding-left: 0px; /* for xs & sm, move the title and details closer together */
+  margin-left: -5px; /* same */
+}
+
+@media (min-width: 768px) {
+
+  /* no style changes necessary ... */
+
+}
+
 
 @media (min-width: 992px) {
-  .grid-sizer,
-  .grid-item {
-    width: 32.5%;
-  }
 
-  .grid-item--width2 {
-    width: 65%;
+  .cs-item-information > h3 {
+    font-size: 18pt;
   }
 
   .cs-item-details{
-    padding: 0px 14px;
+    font-size: 14pt;
+  }
+}
+
+
+@media (min-width: 1200px){
+
+  .cs-item-information{
+    padding: 4px 14px;
+    padding-bottom: 8px;
   }
 
-  cs-item-details > h3 {
-    font-size: 18px;
+  .cs-item-information > h3 {
+    font-size: 20pt;
   }
 
-  .cs-item-details > p {
-    font-size: 15px;
+  .cs-item-title{
+    text-align: right;
+    color: $gray-light;
+    font-size: 13pt;
+    top: -4px;
+  }
+
+
+  .cs-item-details{
+    font-size: 15pt;
+    margin-left: 0px; /* for lg return to normal margin */
   }
 }

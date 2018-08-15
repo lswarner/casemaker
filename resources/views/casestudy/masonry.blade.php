@@ -51,7 +51,7 @@
               <button id="dropdown-country" type="button" class="btn btn-urc-secondary dropdown-toggle filters-dropdown" data-value="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 All Countries <span class="caret"></span>
               </button>
-              <ul class="dropdown-menu">
+              <ul class="dropdown-menu filter-menu">
                 <li><a class="do_filter" data-filter="country" data-name="All Countries" data-value="" href="#">All Countries</a></li>
 
                 @foreach($countries as $a)
@@ -143,9 +143,17 @@
                   &nbsp; <!-- -->
                 </div>
               </div>
-              <div class="cs-item-details">
+              <div class="cs-item-information">
                 <h3>{{ $c->title }}</h3>
-                {!! $c->countries !!}
+                <div class="row">
+                  <div class="col-xs-4 col-sm-5 col-md-4 cs-item-title">Countries:</div><div class="col-xs-8 col-sm-7 col-md-8 cs-item-details">{{ $c->listCountries() }}</div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-4 col-sm-5 col-md-4 cs-item-title">Topics:</div><div class="col-xs-8 col-sm-7 col-md-8 cs-item-details">{{ $c->listTopics() }}</div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-4 col-sm-5 col-md-4 cs-item-title">Methods:</div><div class="col-xs-8 col-sm-7 col-md-8 cs-item-details">{{ $c->listMethods() }}</div>
+                </div>
               </div>
             </a>
           </div>
