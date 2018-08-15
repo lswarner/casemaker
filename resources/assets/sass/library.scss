@@ -84,13 +84,11 @@
   }
 
 
-  #navbar.navbar-library{
-    //position: absolute;
-    //top: 0px;
-    //padding-top: 140px;
-    //padding-bottom: 20px;
-    background: $primary-bg;
-    color: $primary-text;
+
+  .navbar-library{
+    width: 100%;
+    background: gray none repeat scroll 0% 0%;
+    margin-top: 64px;
   }
 
 }

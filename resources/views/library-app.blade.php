@@ -27,6 +27,46 @@
             $current_name= \Route::currentRouteName() or "";
           ?>
 
+<?php /*
+          <!-- Static navbar -->
+                <div class="navbar navbar-default navbar-shade">
+                  <a class="pull-left"><img class="library-logo" src="{{ \App\CMS::first()->library_logo }}"></a>
+                  <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </button>
+                  </div>
+                  <div class="navbar-collapse collapse navbar-library">
+                    <ul class="nav navbar-nav">
+                      <li><a class="nav-big" href="#filter-bar">Case Studies</a></li>
+                      <li><a class="nav-big" href="#">About</a></li>
+
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Luke Warner <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">Action</a></li>
+                          <li><a href="#">Another action</a></li>
+                          <li><a href="#">Something else here</a></li>
+                          <li class="divider"></li>
+                          <li class="dropdown-header">Nav header</li>
+                          <li><a href="#">Separated link</a></li>
+                          <li><a href="#">One more separated link</a></li>
+                        </ul>
+                      </li>
+                      <li><a href="../navbar-static-top/">Create Case Study</a></li>
+                    </ul>
+                  </div><!--/.nav-collapse -->
+                </div>
+
+
+*/ ?>
+
+
+
 
             <nav class="navbar navbar-default navbar-static-top navbar-shade">
 
@@ -67,6 +107,8 @@
 
               </div>
             </nav>
+
+        
 
         </div>
 
