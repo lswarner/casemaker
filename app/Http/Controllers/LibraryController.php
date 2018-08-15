@@ -38,4 +38,12 @@ class LibraryController extends Controller
 
     return view('casestudy.masonry', compact('casestudies', 'countries', 'methods', 'keywords', 'thematics', 'audiences', 'cms') );
   }
+
+
+
+
+  public function display(CaseStudy $caseStudy){
+
+    return view('casestudy.templates.basic', ['casestudy'=>$caseStudy]);
+  }
 }

@@ -1,0 +1,88 @@
+
+.template-bar{
+  background: $gray-light;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  font-family: $font-family-sans-serif;
+  font-weight: 400;
+  font-size: 18pt;
+  color: $white;
+  text-align: left;
+
+  padding-top: 140px;
+  padding-bottom: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+
+}
+
+  .template-bar h1.title{
+
+    font-family: $font-family-sans-serif;
+    font-weight: 600;
+    text-align: left;
+    font-size: 26pt;
+    text-transform: none;
+
+    padding-top: 40px;
+    padding-bottom: 10px;
+  }
+
+  .template-bar h2 {
+    font-family: $font-family-sans-serif;
+    font-weight: 600;
+    font-size: 21pt;
+    text-transform: none;
+  }
+
+  .template-icon{
+    font-size: 30pt;
+    margin-top: -8px;
+  }
+
+
+  .template-bar .description {
+    padding-bottom: 40px;
+    line-height: 1.3em;
+  }
+
+  .template-bar ul.quick-facts{
+    padding-left: 0px;
+  }
+
+  .template-bar ul.quick-facts>li {
+    list-style: none;
+    line-height: 1.3em;
+  }
+
+  .quick-details{
+    font-size: 18pt;
+    font-weight: 600;
+  }
+
+#template-basic{
+
+}
+
+#section-bar{
+  background: $secondary-bg;
+  color: $secondary-text;
+  padding: 10px 30px;
+}
+
+#section-bar .navbar-nav > li > a {
+  color: $secondary-text;
+  font-size: 16pt;
+  padding: 12px;
+}
+
+#section-bar .navbar-nav > li > a.active {
+  color: $accent2-text;
+  background: $accent2-bg;
+}
+
+#section-bar .navbar-nav > li > a:hover {
+  border-bottom: 3px solid $accent2-bg;
+  padding-bottom: 9px;
+}
