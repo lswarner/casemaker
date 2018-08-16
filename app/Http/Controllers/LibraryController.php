@@ -43,7 +43,7 @@ class LibraryController extends Controller
 
 
   public function display(CaseStudy $caseStudy){
-
-    return view('casestudy.templates.basic', ['casestudy'=>$caseStudy]);
+    $instructions= App\Instructions::first();
+    return view('casestudy.templates.basic', ['casestudy'=>$caseStudy, 'instructions'=>$instructions]);
   }
 }
