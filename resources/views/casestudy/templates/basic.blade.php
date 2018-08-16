@@ -2,6 +2,10 @@
 
 @section('scripts')
   <script>
+    $( document ).ready(function(){
+      setAffixContainerSize();
+    });
+
     $('#section-bar').affix({
         offset: {
             top: $('#section-bar').offset().top
@@ -10,7 +14,7 @@
         setAffixContainerSize();
     });
 
-    /*Setting the width of the sidebar (I took 10px of its value which is the margin between cols in my Bootstrap CSS*/
+    /*Setting the width of the section-bar minus the padding built into the section-bar */
     function setAffixContainerSize(){
         parentWidth= $('#section-bar').parent().innerWidth();
         navPadding= 60;
@@ -20,7 +24,8 @@
     $(window).resize(function(){
         setAffixContainerSize();
     });
-    console.log($('#section-bar').offset().top);
+
+
   </script>
 @endsection
 
@@ -40,7 +45,7 @@
         <button type="button" class="btn-icon template-icon"><i class="fa fa-print" aria-hidden="true"></i></button></i>
       </div>
       <div class="col-sm-7">
-        <p class="description">{{ $casestudy->description }} {{ $casestudy->description }} {{ $casestudy->description }} {{ $casestudy->description }} </p>
+        <p class="description">{{ $casestudy->description }}</p>
 
         <h2>Quick Facts</h2>
         <ul class="quick-facts">
@@ -85,7 +90,18 @@
 
       <div class="sub-section">
         <div class="row">
-          <div class="col-sm-5">
+
+          <?php
+            if( empty($casestudy->intro_acronyms) ){
+              $css_details= "col-sm-12";
+              $css_acronym= "hidden";
+            }
+            else{
+                $css_details= "col-sm-5";
+                $css_acronym= "col-sm-5 col-sm-offset-1";
+            }
+          ?>
+          <div class="{{ $css_details }}">
             <div class="callout">
               <h3>Case Study Details</h3>
 
@@ -94,7 +110,7 @@
             </div>
           </div>
 
-          <div class="col-sm-5 col-sm-offset-1">
+          <div class="{{ $css_acronym }}">
             <div class="callout">
               <h3>Key Acronyms</h3>
               {!! $casestudy->intro_acronyms !!}
@@ -106,8 +122,12 @@
 
       <div class="sub-section accent3">
         <div class="row">
+        @empty($casestudy->intro_objectives)
+              <p>&nbsp;</p>
+        @else
           <h3>Learning Objectives</h3>
           {!! $casestudy->intro_objectives !!}
+        @endempty
         </div>
       </div>
 
@@ -132,8 +152,12 @@
 
       <div class="sub-section primary">
         <div class="row">
-          <h3>Discussion Questions</h3>
-          {!! $casestudy->intro_questions !!}
+          @empty($casestudy->intro_questions)
+                <p>&nbsp;</p>
+          @else
+                <h3>Discussion Questions</h3>
+                {!! $casestudy->intro_questions !!}
+          @endempty
         </div>
       </div>
     </div>
@@ -152,22 +176,32 @@
         </div>
       </div>
 
+      @empty($casestudy->method_partners)
+        <!-- -->
+      @else
+          <div class="sub-section">
+            <div class="row">
 
-      <div class="sub-section">
-        <div class="row">
-          <div class="col-xs-12">
-            <div class="callout">
-              <h3>Key Partners and Roles</h3>
-              {!! $casestudy->method_partners !!}
+                <div class="col-xs-12">
+                  <div class="callout">
+
+                    <h3>Key Partners and Roles</h3>
+                    {!! $casestudy->method_partners !!}
+
+                  </div>
+                </div>
             </div>
           </div>
-        </div>
-      </div>
+      @endempty
 
       <div class="sub-section primary">
         <div class="row">
-          <h3>Discussion Questions</h3>
-          {!! $casestudy->method_questions !!}
+          @empty($casestudy->method_questions)
+                <p>&nbsp;</p>
+          @else
+              <h3>Discussion Questions</h3>
+              {!! $casestudy->method_questions !!}
+          @endempty
         </div>
       </div>
     </div>
@@ -187,21 +221,33 @@
 
       <div class="sub-section accent3">
         <div class="row">
-          <h3>Key Results</h3>
-          {!! $casestudy->results_tips !!}
+          @empty($casestudy->results_tips)
+                <p>&nbsp;</p>
+          @else
+              <h3>Key Results</h3>
+              {!! $casestudy->results_tips !!}
+          @endempty
         </div>
       </div>
 
-      <div class="sub-section">
-        <div class="row">
-          {!! $casestudy->results_discuss !!}
-        </div>
-      </div>
+      @empty($casestudy->results_discuss)
+            <!-- -->
+      @else
+          <div class="sub-section">
+            <div class="row">
+              {!! $casestudy->results_discuss !!}
+            </div>
+          </div>
+        @endempty
 
       <div class="sub-section primary">
         <div class="row">
-          <h3>Discussion Questions</h3>
-          {!! $casestudy->results_questions !!}
+          @empty($casestudy->results_questions)
+                <p>&nbsp;</p>
+          @else
+                <h3>Discussion Questions</h3>
+                {!! $casestudy->results_questions !!}
+          @endempty
         </div>
       </div>
     </div>
@@ -218,21 +264,33 @@
 
       <div class="sub-section accent3">
         <div class="row">
-          <h3>Program and Policy Implications</h3>
-          {!! $casestudy->implications_tips !!}
+          @empty($casestudy->implications_tips)
+                <p>&nbsp;</p>
+          @else
+                <h3>Program and Policy Implications</h3>
+                {!! $casestudy->implications_tips !!}
+          @endempty
         </div>
       </div>
 
-      <div class="sub-section">
-        <div class="row">
-          {!! $casestudy->implications_discuss !!}
-        </div>
-      </div>
+      @empty($casestudy->implications_discuss)
+            <!-- -->
+      @else
+            <div class="sub-section">
+              <div class="row">
+                {!! $casestudy->implications_discuss !!}
+              </div>
+            </div>
+      @endempty
 
       <div class="sub-section primary">
         <div class="row">
-          <h3>Discussion Questions</h3>
-          {!! $casestudy->implications_questions !!}
+          @empty($casestudy->implications_questions)
+                <p>&nbsp;</p>
+          @else
+                <h3>Discussion Questions</h3>
+                {!! $casestudy->implications_questions !!}
+        @endempty
         </div>
       </div>
     </div>
@@ -251,14 +309,18 @@
 
     <?php /****** Referencess ******************************/ ?>
 
-    <div id="references" class="section">
-      <div class="sub-section">
-        <div class="row">
-          <h2>References</h2>
-          {!! $casestudy->implications_challenges !!}
-        </div>
-      </div>
-    </div>
+    @empty($casestudy->implications_challenges)
+          <p>&nbsp;</p>
+    @else
+          <div id="references" class="section">
+            <div class="sub-section">
+              <div class="row">
+                <h2>References</h2>
+                {!! $casestudy->implications_challenges !!}
+              </div>
+            </div>
+          </div>
+    @endempty
 
   </div> <!-- end main -->
 </div>
