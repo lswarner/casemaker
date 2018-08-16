@@ -10,7 +10,6 @@ use Storage;
 
 class CMSController extends Controller
 {
-    //
     public function style(){
       $cms= CMS::firstOrCreate([]);
       if(empty($cms)){

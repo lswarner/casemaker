@@ -4,12 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
+use App\CaseStudy;
 
 class CMS extends Model
 {
     protected $table= "cms";
     protected $guarded= [];
-    private $excluded= ['casemaker_logo', 'library_logo', 'splash_image', 'favicon', 'casemaker_title', 'library_title', 'library_splash', 'welcome_text', 'id', 'created_at', 'updated_at']; // attributes which shouldn't be included in SCSS file
+    private $excluded= ['casemaker_logo', 'library_logo', 'splash_image', 'favicon', 'casemaker_title', 'library_title', 'library_splash', 'welcome_text', 'id', 'created_at', 'updated_at', 'active_countries']; // attributes which shouldn't be included in SCSS file
 
 
     public function getStylesheetUrlAttribute(){
@@ -37,6 +38,34 @@ class CMS extends Model
 
       return true;
     }
+
+
+
+    public function generateActiveCountries(){
+      //generate list of countries used by Live casestudies
+      $published= CaseStudy::published()->get();
+
+      $a= collect([]);
+      foreach($published as $cs){
+        $a= $a->merge($cs->collectCountries());
+      }
+      $a= $a->unique()->sort();
+      $this->active_countries= implode(', ', $a->toArray());  //store the countries as a comma-seperated string
+      $this->save();
+
+      return $this->active_countries->count();
+    }
+
+    //
+    public function getActiveCountriesAttribute($value){
+
+      if( empty($value) ){
+        $this->generateActiveCountries();
+      }
+      //countries are stored as comma-seperated string- so explode them to an array, then return colleciton
+      return collect( explode(', ', $this->attributes['active_countries']) );
+    }
+
 
 
     /**

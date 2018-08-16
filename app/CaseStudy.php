@@ -25,6 +25,11 @@ public function listCountries(){
   return $a;
 }
 
+public function collectCountries(){
+  return collect( explode(', ', $this->listCountries() ) );
+}
+
+
 public function listTopics(){
   $a= $this->topics->implode('keyword', ', ');
   return $a;

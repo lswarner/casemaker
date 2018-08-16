@@ -29,13 +29,16 @@ class LibraryController extends Controller
     $thematics= Thematic::all_sorted();
     $audiences= Audience::all_sorted();
 
-    //$country_suggestions= json_encode($this->country_suggestions);
-    $countries= ['Bangladesh', 'Burundi', 'Honduras', 'Rwanda', 'Senegal', 'Tanzania'];
 
     $cms= CMS::firstOrCreate([]);
     if(empty($cms)){
       $cms= new CMS;
     }
+
+
+    $countries= $cms->active_countries;
+
+
 
     return view('casestudy.masonry', compact('casestudies', 'countries', 'methods', 'keywords', 'thematics', 'audiences', 'cms') );
   }

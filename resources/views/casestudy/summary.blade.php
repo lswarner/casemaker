@@ -1,3 +1,6 @@
+<?php $instructions= $casestudy->instructions(); ?>
+
+
 
 <!-- Introduction Section -->
 <div class="review-section well shadow-depth-3">
@@ -16,12 +19,12 @@
           <div id="narrative" class="col-md-7 col-md-push-5   col-lg-8 col-lg-push-4">
 
               @component('casestudy.partials.review-text', ['content'=>$casestudy->intro_context])
-                Relevant contextual information.
+                <?= $instructions->introh1; ?>
               @endcomponent
 
 
               @component('casestudy.partials.review-text', ['content'=>$casestudy->intro_nuances])
-                References
+                <?= $instructions->introh2; ?>
               @endcomponent
 
               @component('casestudy.partials.uploaded-files', ['attachments'=>$attachments["introduction"]])
@@ -34,37 +37,37 @@
 
               @component('casestudy.partials.review-tooltip', ['content'=> $casestudy->intro_tips])
                 @slot('tooltip')
-                  This tooltip gives you a little more information about this section.
+                  <?= $instructions->tooltip11; ?>
                 @endslot
 
-                Tips
+                <?= $instructions->tooltip11h; ?>
               @endcomponent
 
 
               @component('casestudy.partials.review-tooltip', ['content'=> $casestudy->intro_acronyms])
                 @slot('tooltip')
-                  This tooltip gives you a little more information about this section.
+                  <?= $instructions->tooltip12; ?>
                 @endslot
 
-                Key Acronyms
+                <?= $instructions->tooltip12h; ?>
               @endcomponent
 
 
               @component('casestudy.partials.review-tooltip', ['content'=> $casestudy->intro_objectives])
                 @slot('tooltip')
-                  This tooltip gives you a little more information about this section.
+                  <?= $instructions->tooltip13; ?>
                 @endslot
 
-                Learning Objectives
+                <?= $instructions->tooltip13h; ?>
               @endcomponent
 
 
               @component('casestudy.partials.review-tooltip', ['content'=> $casestudy->implications_questions])
                 @slot('tooltip')
-                  This tooltip gives you a little more information about this section.
+                  <?= $instructions->tooltip14; ?>
                 @endslot
 
-                Discussion Questions
+                <?= $instructions->tooltip14h; ?>
               @endcomponent
 
 
@@ -92,12 +95,12 @@
           <div id="narrative" class="col-md-7 col-md-push-5   col-lg-8 col-lg-push-4">
 
               @component('casestudy.partials.review-text', ['content'=>$casestudy->method_used])
-                Discussion
+                <?= $instructions->methodh1; ?>
               @endcomponent
 
 
               @component('casestudy.partials.review-text', ['content'=>$casestudy->method_challenges])
-                References
+                <?= $instructions->methodh2; ?>
               @endcomponent
 
               @component('casestudy.partials.uploaded-files', ['attachments'=>$attachments["methodology"]])
@@ -110,27 +113,27 @@
 
               @component('casestudy.partials.review-tooltip', ['content'=> $casestudy->method_tips])
                 @slot('tooltip')
-                  This tooltip gives you a little more information about this section.
+                  <?= $instructions->tooltip21; ?>
                 @endslot
 
-                Tips
+                <?= $instructions->tooltip21h; ?>
               @endcomponent
 
 
               @component('casestudy.partials.review-tooltip', ['content'=> $casestudy->method_partners])
                 @slot('tooltip')
-                  This tooltip gives you a little more information about this section.
+                  <?= $instructions->tooltip22; ?>
                 @endslot
 
-                Key Partners and their Roles
+                <?= $instructions->tooltip22h; ?>
               @endcomponent
 
               @component('casestudy.partials.review-tooltip', ['content'=> $casestudy->method_questions])
                 @slot('tooltip')
-                  This tooltip gives you a little more information about this section.
+                  <?= $instructions->tooltip23; ?>
                 @endslot
 
-                Discussion Questions
+                <?= $instructions->tooltip23h; ?>
               @endcomponent
 
 
@@ -159,14 +162,8 @@
           <div id="narrative" class="col-md-7 col-md-push-5   col-lg-8 col-lg-push-4">
 
             @component('casestudy.partials.review-text', ['content'=>$casestudy->results_discuss])
-              Discussion
+              <?= $instructions->resultsh1; ?>
             @endcomponent
-
-
-            @component('casestudy.partials.review-text', ['content'=>$casestudy->results_challenges])
-              References
-            @endcomponent
-
 
             @component('casestudy.partials.uploaded-files', ['attachments'=>$attachments["results"]])
             @endcomponent
@@ -178,18 +175,18 @@
 
               @component('casestudy.partials.review-tooltip', ['content'=> $casestudy->results_tips])
                 @slot('tooltip')
-                  This tooltip gives you a little more information about this section.
+                  <?= $instructions->tooltip31; ?>
                 @endslot
 
-                Tips
+                <?= $instructions->tooltip31h; ?>
               @endcomponent
 
               @component('casestudy.partials.review-tooltip', ['content'=> $casestudy->results_questions])
                 @slot('tooltip')
-                  This tooltip gives you a little more information about this section.
+                  <?= $instructions->tooltip32; ?>
                 @endslot
 
-                Discussion Questions
+                <?= $instructions->tooltip32h; ?>
               @endcomponent
 
 
@@ -218,12 +215,12 @@
           <div id="narrative" class="col-md-7 col-md-push-5   col-lg-8 col-lg-push-4">
 
               @component('casestudy.partials.review-text', ['content'=>$casestudy->implications_discuss])
-                Discussion
+                <?= $instructions->implicationsh1; ?>
               @endcomponent
 
 
               @component('casestudy.partials.review-text', ['content'=>$casestudy->implications_challenges])
-                References
+                <?= $instructions->implicationsh2; ?>
               @endcomponent
 
 
@@ -237,18 +234,18 @@
 
               @component('casestudy.partials.review-tooltip', ['content'=> $casestudy->implications_tips])
                 @slot('tooltip')
-                  This tooltip gives you a little more information about this section.
+                  <?= $instructions->tooltip41; ?>
                 @endslot
 
-                Tips
+                <?= $instructions->tooltip41h; ?>
               @endcomponent
 
               @component('casestudy.partials.review-tooltip', ['content'=> $casestudy->implications_questions])
                 @slot('tooltip')
-                  This tooltip gives you a little more information about this section.
+                  <?= $instructions->tooltip42; ?>
                 @endslot
 
-                Discussion Questions
+                <?= $instructions->tooltip42h; ?>
               @endcomponent
 
 
@@ -257,46 +254,3 @@
     </div>
 
 </div>
-
-
-
-
-
-<?php /*
-<!-- References Section -->
-<div class="review-section well shadow-depth-3">
-    <div class="row">
-
-      <div class="col-md-4">
-        <a class="section-header" data-toggle="collapse" href="#references" aria-expanded="false" aria-controls="references"><h2 class="section-header">References</h2></a>
-      </div>
-      <div class="col-md-8">
-        <a class="pull-right" data-toggle="collapse" href="#references" aria-expanded="false" aria-controls="references"><i class="fa fa-caret-down fa-2x"></i></a>
-      </div>
-
-
-      <div class="col-xs-12 collapse" id="references">
-        <div class="row">
-
-          <div class="col-md-5">
-            <h3>Featured Image</h3>
-            <img class="img-responsive" src="{{ url('img/stock/9.jpeg') }}" />
-            <a href="{{route('image', 'casemaker_logo')}}" class="btn btn-urc-secondary">Change Featured Image</a>
-          </div>
-
-          <div class="col-md-7">
-            <h3>Additional Images</h3>
-
-          </div>
-        </div>
-
-        <div class="row">
-          <h3>Video</h3>
-
-        </div>
-
-      </div>
-  </div>
-
-</div>
-*/ ?>

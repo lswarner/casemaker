@@ -53,8 +53,8 @@
               </button>
               <ul class="dropdown-menu filter-menu">
                 <li><a class="do_filter" data-filter="country" data-name="All Countries" data-value="" href="#">All Countries</a></li>
-
-                @foreach($countries as $a)
+                
+                @foreach($countries as $k => $a )
                   <li><a class="do_filter" data-filter="country" data-name="{{$a}}" data-value=".{{ strtolower($a) }}" href="#">{{$a}}</a></li>
                 @endforeach
 

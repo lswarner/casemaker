@@ -10,6 +10,7 @@ use App\Thematic;
 use App\User;
 use App\Invitation;
 use App\Attachment;
+use App\CMS;
 use Auth;
 use Session;
 use Image;
@@ -115,12 +116,12 @@ class CaseStudyController extends Controller
      */
     public function edit_introduction(CaseStudy $caseStudy)
     {
-      /*
+
         //if the case study has been submitted or published, send to the show page
         if( $caseStudy->status == "submitted" || $caseStudy->status == "published"){
           return redirect()->route('casestudy.show', $caseStudy);
         }
-
+/*
         //send admins to the show page
         if( (Auth::user()->is_admin == TRUE) && ($caseStudy->team->contains(Auth::user()) == FALSE) ){
           return redirect()->route('casestudy.show', $caseStudy);
@@ -157,12 +158,12 @@ class CaseStudyController extends Controller
      */
     public function edit_methodology(CaseStudy $caseStudy)
     {
-/*
+
       //if the case study has been submitted or published, send to the show page
       if( $caseStudy->status == "submitted" || $caseStudy->status == "published"){
         return redirect()->route('casestudy.show', $caseStudy);
       }
-
+/*
       //send admins to the show page
       if( (Auth::user()->is_admin == TRUE) && ($caseStudy->team->contains(Auth::user()) == FALSE) ){
         return redirect()->route('casestudy.show', $caseStudy);
@@ -197,12 +198,12 @@ class CaseStudyController extends Controller
      */
     public function edit_results(CaseStudy $caseStudy)
     {
-/*
+
       //if the case study has been submitted or published, send to the show page
       if( $caseStudy->status == "submitted" || $caseStudy->status == "published"){
         return redirect()->route('casestudy.show', $caseStudy);
       }
-
+/*
       //send admins to the show page
       if( (Auth::user()->is_admin == TRUE) && ($caseStudy->team->contains(Auth::user()) == FALSE) ){
         return redirect()->route('casestudy.show', $caseStudy);
@@ -237,12 +238,12 @@ class CaseStudyController extends Controller
      */
     public function edit_implications(CaseStudy $caseStudy)
     {
-/*
+
       //if the case study has been submitted or published, send to the show page
       if( $caseStudy->status == "submitted" || $caseStudy->status == "published"){
         return redirect()->route('casestudy.show', $caseStudy);
       }
-
+/*
       //send admins to the show page
       if( (Auth::user()->is_admin == TRUE) && ($caseStudy->team->contains(Auth::user()) == FALSE) ){
         return redirect()->route('casestudy.show', $caseStudy);
@@ -277,12 +278,12 @@ class CaseStudyController extends Controller
      */
     public function review(CaseStudy $caseStudy)
     {
-/*
+
       //if the case study has been submitted or published, send to the show page
       if( $caseStudy->status == "submitted" || $caseStudy->status == "published"){
         return redirect()->route('casestudy.show', $caseStudy);
       }
-
+/*
       //send admins to the show page
       if( (Auth::user()->is_admin == TRUE) && ($caseStudy->team->contains(Auth::user()) == FALSE) ){
         return redirect()->route('casestudy.show', $caseStudy);
@@ -327,6 +328,11 @@ class CaseStudyController extends Controller
         //make sure title is never null, cause that makes the db angry
         if( empty($data['title'])){
           $data['title']= "";
+        }
+
+        //make sure title is never null, cause that makes the db angry
+        if( empty($data['author'])){
+          $data['author']= "";
         }
 
 
@@ -414,6 +420,16 @@ class CaseStudyController extends Controller
       $caseStudy->status= "published";
       $caseStudy->published_at= \Carbon\Carbon::now();
       $caseStudy->save();
+
+
+      //generate an updated list of new countries, including from the newly published casestudy
+      CMS::first()->generateActiveCountries();
+
+
+      //create a slug
+
+
+
 
       Session::flash('message', "This case study is Live.");
       Session::flash('alert-class', 'flash-success');

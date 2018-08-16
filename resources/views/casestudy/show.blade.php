@@ -25,38 +25,26 @@
 
 
   <div class="common-bar">
+
+    <h2>{{ $casestudy->title }}</h2>
+
+
     <div class="row">
 
       <div class="col-md-4 col-lg-4">
-        <h2>Project Info</h2>
+        <h4>{{ $casestudy->description }}</h4>
 
-
-        <h3>{{ $casestudy->title }}</h3>
-
-        <p>{{ strip_tags($casestudy->countries) }}</p>
-
-        <h4>Keywords</h4>
-        <ul id="keyword-bar">
-        @foreach($casestudy->keywords as $k)
-          <li>{{ $k->keyword }}</li>
-        @endforeach
-        </ul>
-
-        <h4>Methods</h4>
-        <ul id="method-bar">
-        @foreach($casestudy->methods as $m)
-          <li>{{ $m->name }}</li>
-        @endforeach
-        </ul>
-
+        <p><b>Countries:</b> {{ strip_tags($casestudy->countries) }}</p>
+        <p><b>Author(s):</b> {{ $casestudy->author }}</p>
       </div>
 
 
 
-      <div class="col-md-4 col-lg-4 col-lg-offset-1">
-        <h2>Team Members</h2>
 
-        <ul class="team-member-list">
+      <div class="col-md-4 col-lg-4 col-lg-offset-1">
+        <h3>Team Members</h3>
+
+        <ul class="">
         @foreach($casestudy->team as $t)
           <li>{{ $t->name }}</li>
         @endforeach
@@ -64,11 +52,30 @@
         @foreach($casestudy->invitations as $i)
           <li class="text-muted">{{ $i->email }} (invited)</li>
         @endforeach
-      </ul>
+        </ul>
 
+
+        <h3>Topics</h3>
+        <ul id="keyword-bar">
+        @foreach($casestudy->keywords as $k)
+          <li>{{ $k->keyword }}</li>
+        @endforeach
+        </ul>
+
+        <h3s>Methods</h3>
+        <ul id="method-bar">
+        @foreach($casestudy->methods as $m)
+          <li>{{ $m->name }}</li>
+        @endforeach
+      </ul>
       </div>
 
+
       <div class="col-md-4 col-lg-3">
+          @if($casestudy->featured_image != "")
+            <img class="img-responsive" src="{{ url($casestudy->featured_image) }}" />
+          @endif
+
           <h4>&nbsp;</h4>
 
           <?php
