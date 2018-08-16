@@ -45,6 +45,9 @@ class LibraryController extends Controller
 
   public function display(CaseStudy $caseStudy){
     $instructions= Instructions::first();
+
+
+
     return view('casestudy.templates.basic', ['casestudy'=>$caseStudy, 'instructions'=>$instructions]);
   }
 }

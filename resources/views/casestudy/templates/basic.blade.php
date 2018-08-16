@@ -299,28 +299,34 @@
 
     <?php /****** Relevant Documents ******************************/ ?>
 
+    @if($casestudy->allAttachments()->count() == 0)
+          <p>&nbsp;</p>
+    @else
     <div class="section">
       <div class="sub-section">
         <div class="row">
           <h2>Relevant Documents</h2>
+          <ul>
+          @foreach( $casestudy->allAttachments() as $a )
+            <li><a href="{{ $a->url() }}" target="_blank" >{{ $a->original_name }}</a></li>
+          @endforeach
+        </ul>
         </div>
       </div>
     </div>
+    @endif
 
     <?php /****** Referencess ******************************/ ?>
 
-    @empty($casestudy->implications_challenges)
-          <p>&nbsp;</p>
-    @else
-          <div id="references" class="section">
-            <div class="sub-section">
-              <div class="row">
-                <h2>References</h2>
-                {!! $casestudy->implications_challenges !!}
-              </div>
-            </div>
-          </div>
-    @endempty
+
+    <div id="references" class="section">
+      <div class="sub-section">
+        <div class="row">
+          <h2>References</h2>
+          {!! $casestudy->implications_challenges !!}
+        </div>
+      </div>
+    </div>
 
   </div> <!-- end main -->
 </div>

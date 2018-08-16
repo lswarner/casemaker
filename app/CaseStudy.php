@@ -36,6 +36,17 @@ public function listMethods(){
 }
 
 
+public function allAttachments(){
+
+  $a= $attachments["introduction"]= $this->attachments()->section('introduction')->get();
+  $a= $a->concat($attachments["methodology"]= $this->attachments()->section('methodology')->get());
+  $a= $a->concat($attachments["results"]= $this->attachments()->section('results')->get());
+  $a= $a->concat($attachments["implications"]= $this->attachments()->section('implications')->get());
+
+  return $a;
+}
+
+
 
 /*******************************************************
      Set Dates for Carbon Mutators
