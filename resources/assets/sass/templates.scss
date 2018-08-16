@@ -93,6 +93,13 @@ h1, h2, h3, h4{
 }
 
 
+  #section-bar.affix {
+    position: fixed;
+    top: 0px;
+    z-index: 10;
+  }
+
+
 .section{
   margin-top: 40px;
   background: $white;
