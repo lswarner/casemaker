@@ -9,6 +9,7 @@ use App\Method;
 use App\Thematic;
 use App\Audience;
 use App\CMS;
+use App\Instructions;
 
 class LibraryController extends Controller
 {
@@ -43,7 +44,7 @@ class LibraryController extends Controller
 
 
   public function display(CaseStudy $caseStudy){
-    $instructions= App\Instructions::first();
+    $instructions= Instructions::first();
     return view('casestudy.templates.basic', ['casestudy'=>$caseStudy, 'instructions'=>$instructions]);
   }
 }
