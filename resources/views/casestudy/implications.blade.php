@@ -76,18 +76,18 @@
 
           @component('casestudy.partials.tooltip-textarea', ['name'=>'implications_tips'])
             @slot('tooltip')
-              Create a list of the 1-3 key implications of your case study that ought to inform decisions related to implementation for implementing partners and policy makers.
+              <?= $instructions->tooltip41; ?>
             @endslot
 
-            Program and Policy Implications
+            <?= $instructions->tooltip41h; ?>
           @endcomponent
 
           @component('casestudy.partials.tooltip-textarea', ['name'=>'implications_questions'])
             @slot('tooltip')
-              Create a list of 1-3 discussion questions relevant to this section. These questions should help the reader achieve the learning objectives you have identified.
+              <?= $instructions->tooltip42; ?>
             @endslot
 
-            Discussion Questions
+            <?= $instructions->tooltip42h; ?>
           @endcomponent
 
 

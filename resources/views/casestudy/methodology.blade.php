@@ -77,28 +77,28 @@
 
           @component('casestudy.partials.tooltip-textarea', ['name'=>'method_tips'])
             @slot('tooltip')
-              List the main research methods used in either the development of this case study, or in the study that is featured in this case study (e.g. survey, focus group discussions, etc.).
+              <?= $instructions->tooltip21; ?>
             @endslot
 
-            Methods Summary
+            <?= $instructions->tooltip21h; ?>
           @endcomponent
 
 
           @component('casestudy.partials.tooltip-textarea', ['name'=>'method_partners'])
             @slot('tooltip')
-              List the 3-5 key actors/groups of actors in your case study along with a brief description of their roles.
+              <?= $instructions->tooltip22; ?>
             @endslot
 
-            Key Partners and their Roles
+            <?= $instructions->tooltip22h; ?>
           @endcomponent
 
 
           @component('casestudy.partials.tooltip-textarea', ['name'=>'method_questions'])
             @slot('tooltip')
-              Create a list of 1-3 discussion questions relevant to this section. These questions should help the reader achieve the learning objectives you have identified.
+              <?= $instructions->tooltip23; ?>
             @endslot
 
-            Discussion Questions
+            <?= $instructions->tooltip23h; ?>
           @endcomponent
 
 

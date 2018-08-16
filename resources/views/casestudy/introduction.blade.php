@@ -80,35 +80,35 @@
 
           @component('casestudy.partials.tooltip-textarea', ['name'=>'intro_tips'])
             @slot('tooltip')
-              Use this box to input the information asked for in the instructions to the right.
+              <?= $instructions->tooltip11; ?>
             @endslot
 
-            Case Study Details
+            <?= $instructions->tooltip11h; ?>
           @endcomponent
 
 
           @component('casestudy.partials.tooltip-textarea', ['name'=>'intro_acronyms'])
             @slot('tooltip')
-              List for the reader what new knowledge or skills they will have after finishing the case study (include 2-4 learning objectives).
+              <?= $instructions->tooltip12; ?>
             @endslot
 
-            Learning Objectives
+            <?= $instructions->tooltip12h; ?>
           @endcomponent
 
           @component('casestudy.partials.tooltip-textarea', ['name'=>'intro_objectives'])
             @slot('tooltip')
-              List any acronyms used in your case study in alphabetical order, as well as what they stand for. If you only use a term once the full text, do not include it as an acronym either in the text or in this box.
+              <?= $instructions->tooltip13; ?>
             @endslot
 
-            Key Acronyms
+            <?= $instructions->tooltip13h; ?>
           @endcomponent
 
           @component('casestudy.partials.tooltip-textarea', ['name'=>'intro_questions'])
             @slot('tooltip')
-              Create a list of 1-3 discussion questions relevant to this section. These questions should help the reader achieve the learning objectives you have identified.
+              <?= $instructions->tooltip14; ?>
             @endslot
 
-            Discussion Questions
+            <?= $instructions->tooltip14h; ?>
           @endcomponent
 
 

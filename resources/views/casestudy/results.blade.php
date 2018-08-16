@@ -70,19 +70,19 @@
 
           @component('casestudy.partials.tooltip-textarea', ['name'=>'results_tips'])
             @slot('tooltip')
-              Create a list of 1-3 key results the reader should take away from this case study.
+              <?= $instructions->tooltip31; ?>
             @endslot
 
-            Key Results
+            <?= $instructions->tooltip31h; ?>
           @endcomponent
 
 
           @component('casestudy.partials.tooltip-textarea', ['name'=>'results_questions'])
             @slot('tooltip')
-              Create a list of 1-3 discussion questions relevant to this section. These questions should help the reader achieve the learning objectives you have identified.
+              <?= $instructions->tooltip32; ?>
             @endslot
 
-            Discussion Questions
+            <?= $instructions->tooltip32h; ?>
           @endcomponent
 
 
