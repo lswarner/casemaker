@@ -20,10 +20,10 @@
 
         <h2>Quick Facts</h2>
         <ul class="quick-facts">
-          <li>Author(s):  <span class="quick-details">Luke Warner</span></li>
-          <li>Country:  <span class="quick-details">Bangladesh, Burundi, Kenya, Guatemala</span></li>
-          <li>Topics:  <span class="quick-details">Food Security, Water Sanitation Hygiene</span></li>
-          <li>Methods:  <span class="quick-details">Design, Implementation, Evaluation</span></li>
+          <li>Author(s):  <span class="quick-details">{{ $casestudy->author }}</span></li>
+          <li>Country:  <span class="quick-details">{{ $casestudy->listCountries() }}</span></li>
+          <li>Topics:  <span class="quick-details">{{ $casestudy->listTopics() }}</span></li>
+          <li>Methods:  <span class="quick-details">{{ $casestudy->listMethods() }}</span></li>
         </ul>
       </div>
 
@@ -62,23 +62,16 @@
           <div class="col-sm-5">
             <div class="callout">
               <h3>Case Study Details</h3>
-              <p>
-                Dates: <br />
-                Setting: <br />
-                Topic: <br />
-                Challenge <br />
-              </p>
+
+                {!! $casestudy->intro_tips !!}
+
             </div>
           </div>
 
           <div class="col-sm-5 col-sm-offset-1">
             <div class="callout">
               <h3>Key Acronyms</h3>
-              <ul>
-                <li>ABCD</li>
-                <li>NFL</li>
-                <li>PEBKAC</li>
-              </ul>
+              {!! $casestudy->intro_objectives !!}
             </div>
           </div>
 
@@ -88,23 +81,13 @@
       <div class="sub-section accent3">
         <div class="row">
           <h3>Learning Objectives</h3>
-          <ol>
-            <li>First question</li>
-            <li>Second question</li>
-          </ol>
+          {!! $casestudy->intro_acronyms !!}
         </div>
       </div>
 
       <div class="sub-section">
         <div class="row">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor sit amet ipsum vel
-            posuere. Curabitur arcu justo, pellentesque ut finibus in, faucibus sit amet libero. Vestibulum
-            scelerisque consequat nisi, nec feugiat neque fermentum non. In congue ligula vel tempor
-            tempor. Pellentesque egestas imperdiet mi in iaculis. Donec faucibus sagittis felis, ut venenatis
-            est bibendum eget. Sed egestas facilisis sodales. Curabitur id sem nulla. Aenean vitae
-            maximus massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id blandit dolor.
-          </p>
+          {!! $casestudy->intro_context !!}
         </div>
       </div>
     </div>
@@ -117,24 +100,14 @@
       <div class="sub-section">
         <div class="row">
           <h2>Intervention</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor sit amet ipsum vel
-            posuere. Curabitur arcu justo, pellentesque ut finibus in, faucibus sit amet libero. Vestibulum
-            scelerisque consequat nisi, nec feugiat neque fermentum non. In congue ligula vel tempor
-            tempor. Pellentesque egestas imperdiet mi in iaculis. Donec faucibus sagittis felis, ut venenatis
-            est bibendum eget. Sed egestas facilisis sodales. Curabitur id sem nulla. Aenean vitae
-            maximus massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id blandit dolor.
-          </p>
+          {!! $casestudy->intro_nuances !!}
         </div>
       </div>
 
       <div class="sub-section primary">
         <div class="row">
           <h3>Discussion Questions</h3>
-          <ol>
-            <li>First question</li>
-            <li>Second question</li>
-          </ol>
+          {!! $casestudy->intro_questions !!}
         </div>
       </div>
     </div>
@@ -148,22 +121,8 @@
       <div class="sub-section">
         <div class="row">
           <h2>Implementation Science (IS) Approach</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor sit amet ipsum vel
-            posuere. Curabitur arcu justo, pellentesque ut finibus in, faucibus sit amet libero. Vestibulum
-            scelerisque consequat nisi, nec feugiat neque fermentum non. In congue ligula vel tempor
-            tempor. Pellentesque egestas imperdiet mi in iaculis. Donec faucibus sagittis felis, ut venenatis
-            est bibendum eget. Sed egestas facilisis sodales. Curabitur id sem nulla. Aenean vitae
-            maximus massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id blandit dolor.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor sit amet ipsum vel
-            posuere. Curabitur arcu justo, pellentesque ut finibus in, faucibus sit amet libero. Vestibulum
-            scelerisque consequat nisi, nec feugiat neque fermentum non. In congue ligula vel tempor
-            tempor. Pellentesque egestas imperdiet mi in iaculis. Donec faucibus sagittis felis, ut venenatis
-            est bibendum eget. Sed egestas facilisis sodales. Curabitur id sem nulla. Aenean vitae
-            maximus massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id blandit dolor.
-          </p>
+          {!! $casestudy->method_used !!}
+          {!! $casestudy->method_challenges !!}
         </div>
       </div>
 
@@ -173,11 +132,7 @@
           <div class="col-xs-12">
             <div class="callout">
               <h3>Key Partners and Roles</h3>
-              <ol>
-                <li>Partner</li>
-                <li>Organization</li>
-                <li>Associations</li>
-              </ol>
+              {!! $casestudy->method_partners !!}
             </div>
           </div>
         </div>
@@ -186,10 +141,7 @@
       <div class="sub-section primary">
         <div class="row">
           <h3>Discussion Questions</h3>
-          <ol>
-            <li>First question</li>
-            <li>Second question</li>
-          </ol>
+          {!! $casestudy->method_questions !!}
         </div>
       </div>
     </div>
