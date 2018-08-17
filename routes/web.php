@@ -44,9 +44,9 @@ Route::group(['middleware' => ['auth']], function () {
 Route::patch('casestudy/{casestudy}/publish', 'CaseStudyController@publish')->name('publish')->middleware('admin');
 
 Route::group(['middleware' => ['team']], function () {
-  Route::get('casestudy/{casestudy}/introduction', 'CaseStudyController@edit_introduction')->name('introduction');
-  Route::get('casestudy/{casestudy}/methodology', 'CaseStudyController@edit_methodology')->name('methodology');
-  Route::get('casestudy/{casestudy}/results', 'CaseStudyController@edit_results')->name('results');
+  Route::get('casestudy/{casestudy}/background', 'CaseStudyController@edit_background')->name('background');
+  Route::get('casestudy/{casestudy}/approach', 'CaseStudyController@edit_approach')->name('approach');
+  Route::get('casestudy/{casestudy}/findings', 'CaseStudyController@edit_findgins')->name('findings');
   Route::get('casestudy/{casestudy}/implications', 'CaseStudyController@edit_implications')->name('implications');
   Route::get('casestudy/{casestudy}/review', 'CaseStudyController@review')->name('review');
   Route::patch('casestudy/{casestudy}', 'CaseStudyController@update');

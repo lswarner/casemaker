@@ -21,6 +21,7 @@ class LibraryController extends Controller
   public function index()
   {
 
+    //$casestudies= CaseStudy::where('status', 'demo')->get();
     $casestudies= CaseStudy::where('status', 'demo')->get();
     //$casestudies= CaseStudy::published()->get();
 

@@ -2,9 +2,9 @@
   $current_name= \Route::currentRouteName();
 
   $pages= [
-    "introduction"=>"Introduction",
-    "methodology" => "Methodology",
-    "results" => "Results",
+    "background"=>"Background",
+    "approach" => "Implementation Science Approach",
+    "findings" => "Findings",
     "implications" => "Implications",
     "review" => "Review"
   ];

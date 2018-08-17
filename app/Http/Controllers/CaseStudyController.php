@@ -73,7 +73,7 @@ class CaseStudyController extends Controller
 
         $cs->team()->attach( Auth::user() );
 
-        return redirect()->route('introduction', $cs);
+        return redirect()->route('background', $cs);
     }
 
     /**
@@ -104,8 +104,8 @@ class CaseStudyController extends Controller
     public function edit(CaseStudy $caseStudy)
     {
         //we don't actually use the general edit route-
-        //the introduction page is the front page.
-        return redirect()->route('introduction', $caseStudy);
+        //the background page is the front page.
+        return redirect()->route('background', $caseStudy);
     }
 
     /**
@@ -114,7 +114,7 @@ class CaseStudyController extends Controller
      * @param  \App\CaseStudy  $caseStudy
      * @return \Illuminate\Http\Response
      */
-    public function edit_introduction(CaseStudy $caseStudy)
+    public function edit_background(CaseStudy $caseStudy)
     {
 
         //if the case study has been submitted or published, send to the show page
@@ -138,7 +138,7 @@ class CaseStudyController extends Controller
         $thematic_suggestions= Thematic::all_sorted()->diff($caseStudy->thematics);
         $attachments= $caseStudy->attachments()->section('introduction')->get();
 
-        return view('casestudy.introduction', [ 'casestudy'=>$caseStudy,
+        return view('casestudy.background', [ 'casestudy'=>$caseStudy,
                                                 'keywords'=>$keywords,
                                                 'country_suggestions' => json_encode($this->country_suggestions),
                                                 'team_suggestions' => $team_suggestions,
@@ -156,7 +156,7 @@ class CaseStudyController extends Controller
      * @param  \App\CaseStudy  $caseStudy
      * @return \Illuminate\Http\Response
      */
-    public function edit_methodology(CaseStudy $caseStudy)
+    public function edit_approach(CaseStudy $caseStudy)
     {
 
       //if the case study has been submitted or published, send to the show page
@@ -178,7 +178,7 @@ class CaseStudyController extends Controller
         $thematic_suggestions= Thematic::all_sorted()->diff($caseStudy->thematics);
         $attachments= $caseStudy->attachments()->section('methodology')->get();
 
-        return view('casestudy.methodology', [ 'casestudy'=>$caseStudy,
+        return view('casestudy.approach', [ 'casestudy'=>$caseStudy,
                                                 'keywords'=>$keywords,
                                                 'country_suggestions' => json_encode($this->country_suggestions),
                                                 'team_suggestions' => $team_suggestions,
@@ -196,7 +196,7 @@ class CaseStudyController extends Controller
      * @param  \App\CaseStudy  $caseStudy
      * @return \Illuminate\Http\Response
      */
-    public function edit_results(CaseStudy $caseStudy)
+    public function edit_findings(CaseStudy $caseStudy)
     {
 
       //if the case study has been submitted or published, send to the show page
@@ -218,7 +218,7 @@ class CaseStudyController extends Controller
         $thematic_suggestions= Thematic::all_sorted()->diff($caseStudy->thematics);
         $attachments= $caseStudy->attachments()->section('results')->get();
 
-        return view('casestudy.results', [ 'casestudy'=>$caseStudy,
+        return view('casestudy.findings', [ 'casestudy'=>$caseStudy,
                                                 'keywords'=>$keywords,
                                                 'country_suggestions' => json_encode($this->country_suggestions),
                                                 'team_suggestions' => $team_suggestions,
@@ -456,7 +456,7 @@ class CaseStudyController extends Controller
       Session::flash('message', "This case study has been re-opened for further updates.");
       Session::flash('alert-class', 'flash-success');
 
-      return redirect()->route('introduction', $caseStudy);
+      return redirect()->route('background', $caseStudy);
     }
 
 
@@ -780,7 +780,7 @@ class CaseStudyController extends Controller
           Session::flash('message', 'You don\'t have permission to delete this case study.');
       		Session::flash('alert-class', 'flash-danger');
 
-          return response()->redirect('introduction', $caseStudy);
+          return response()->redirect('background', $caseStudy);
         }
     }
 
@@ -838,6 +838,6 @@ class CaseStudyController extends Controller
       }
 
 
-      return redirect()->route('introduction', $caseStudy);
+      return redirect()->route('background', $caseStudy);
     }
 }

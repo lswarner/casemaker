@@ -64,8 +64,8 @@
           @endcomponent
 
 
-          @component('casestudy.partials.continue-buttons', ['back'=>route('introduction', $casestudy), 'next'=>route('results', $casestudy)])
-            Continue to Results
+          @component('casestudy.partials.continue-buttons', ['back'=>route('background', $casestudy), 'next'=>route('findings', $casestudy)])
+            Continue to Findings
           @endcomponent
 
       </div> <!-- end narative collumn -->
@@ -73,7 +73,7 @@
       <!-- start of sidebar section -->
       <div id="sidebar" class="col-md-5 col-md-pull-7  col-lg-4 col-lg-pull-8">
 
-        <h1 class="page-header">Methodology</h1>
+        <h1 class="page-header">Implementation Science Approach</h1>
 
           @component('casestudy.partials.tooltip-textarea', ['name'=>'method_tips'])
             @slot('tooltip')

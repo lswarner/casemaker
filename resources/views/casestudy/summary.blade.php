@@ -7,7 +7,7 @@
     <div class="row">
 
       <div class="col-md-4">
-        <a class="section-header" data-toggle="collapse" href="#introduction" aria-expanded="false" aria-controls="introduction"><h2 class="section-header">Introduction</h2></a>
+        <a class="section-header" data-toggle="collapse" href="#introduction" aria-expanded="false" aria-controls="introduction"><h2 class="section-header">Background</h2></a>
       </div>
       <div class="col-md-8">
         <a class="pull-right" data-toggle="collapse" href="#introduction" aria-expanded="false" aria-controls="introduction"><i class="fa fa-caret-down fa-2x"></i></a>
@@ -83,7 +83,7 @@
     <div class="row">
 
       <div class="col-md-4">
-          <a class="section-header" data-toggle="collapse" href="#methodology" aria-expanded="false" aria-controls="methodology"><h2 class="section-header">Methodology</h2></a>
+          <a class="section-header" data-toggle="collapse" href="#methodology" aria-expanded="false" aria-controls="methodology"><h2 class="section-header">Implementation Science Approach</h2></a>
       </div>
       <div class="col-md-8">
         <a class="pull-right" data-toggle="collapse" href="#methodology" aria-expanded="false" aria-controls="methodology"><i class="fa fa-caret-down fa-2x"></i></a>
@@ -150,7 +150,7 @@
     <div class="row">
 
       <div class="col-md-4">
-          <a class="section-header" data-toggle="collapse" href="#results" aria-expanded="false" aria-controls="results"><h2 class="section-header">Results</h2></a>
+          <a class="section-header" data-toggle="collapse" href="#results" aria-expanded="false" aria-controls="results"><h2 class="section-header">Findings</h2></a>
       </div>
       <div class="col-md-8">
         <a class="pull-right" data-toggle="collapse" href="#results" aria-expanded="false" aria-controls="results"><i class="fa fa-caret-down fa-2x"></i></a>

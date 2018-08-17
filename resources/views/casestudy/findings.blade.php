@@ -57,7 +57,7 @@
 
 
 
-          @component('casestudy.partials.continue-buttons', ['back'=>route('methodology', $casestudy), 'next'=>route('implications', $casestudy)])
+          @component('casestudy.partials.continue-buttons', ['back'=>route('approach', $casestudy), 'next'=>route('implications', $casestudy)])
             Continue to Implications
           @endcomponent
 
@@ -66,7 +66,7 @@
       <!-- start of sidebar section -->
       <div id="sidebar" class="col-md-5 col-md-pull-7  col-lg-4 col-lg-pull-8">
 
-        <h1 class="page-header">Results</h1>
+        <h1 class="page-header">Findings</h1>
 
           @component('casestudy.partials.tooltip-textarea', ['name'=>'results_tips'])
             @slot('tooltip')

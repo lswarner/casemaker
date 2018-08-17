@@ -63,7 +63,7 @@
 
 
 
-          @component('casestudy.partials.continue-buttons', ['back'=>route('results', $casestudy), 'next'=>route('review', $casestudy)])
+          @component('casestudy.partials.continue-buttons', ['back'=>route('findings', $casestudy), 'next'=>route('review', $casestudy)])
             Continue to Review
           @endcomponent
 
