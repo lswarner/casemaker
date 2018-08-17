@@ -1,5 +1,5 @@
 
-  <a class="btn btn-casestudy status-{{ $cs->status }}" href="{{ route('introduction', $cs) }}">
+  <a class="btn btn-casestudy status-{{ $cs->status }}" href="{{ route('background', $cs) }}">
 
       <div class="casestudy-title">{{ $cs->title ?: "My New Case Study" }}</div>
       <button type="button" class="btn-icon hover-accent1 btn-top-right" data-toggle="modal" data-title="{{ $cs->title }}" data-action="{{ route('casestudy.destroy', $cs)}}"><i class="casestudy-delete fa fa-trash-o" aria-hidden="true"></i></button>

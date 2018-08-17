@@ -3,7 +3,7 @@
 
   $pages= [
     "background"=>"Background",
-    "approach" => "Implementation Science Approach",
+    "approach" => "IS Approach",
     "findings" => "Findings",
     "implications" => "Implications",
     "review" => "Review"

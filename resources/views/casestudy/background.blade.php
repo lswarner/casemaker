@@ -69,7 +69,7 @@
 
 
           @component('casestudy.partials.continue-buttons', [ 'next'=>route('approach', $casestudy)])
-            Continue to Implementation Science Approach
+            Continue to IS Approach
           @endcomponent
 
       </div> <!-- end narative collumn -->

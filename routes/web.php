@@ -17,7 +17,7 @@ Route::get('/', function () {
 });
 
 Route::get('/library', 'LibraryController@index')->name('library');
-Route::get('{casestudy}','LibraryController@display')->name('display_casestudy');
+Route::get('/library/{casestudy}','LibraryController@display')->name('display_casestudy');
 
 Auth::routes();
 
@@ -46,7 +46,7 @@ Route::patch('casestudy/{casestudy}/publish', 'CaseStudyController@publish')->na
 Route::group(['middleware' => ['team']], function () {
   Route::get('casestudy/{casestudy}/background', 'CaseStudyController@edit_background')->name('background');
   Route::get('casestudy/{casestudy}/approach', 'CaseStudyController@edit_approach')->name('approach');
-  Route::get('casestudy/{casestudy}/findings', 'CaseStudyController@edit_findgins')->name('findings');
+  Route::get('casestudy/{casestudy}/findings', 'CaseStudyController@edit_findings')->name('findings');
   Route::get('casestudy/{casestudy}/implications', 'CaseStudyController@edit_implications')->name('implications');
   Route::get('casestudy/{casestudy}/review', 'CaseStudyController@review')->name('review');
   Route::patch('casestudy/{casestudy}', 'CaseStudyController@update');

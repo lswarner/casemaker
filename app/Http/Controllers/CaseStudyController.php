@@ -350,7 +350,7 @@ class CaseStudyController extends Controller
 
 
         //get the next destination, or intro if empty
-        $destination= $request->input('destination', 'introduction');
+        $destination= $request->input('destination', 'background');
 
         return redirect()->route($destination, $caseStudy);
         */

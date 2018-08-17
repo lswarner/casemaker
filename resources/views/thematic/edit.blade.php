@@ -8,7 +8,7 @@
       <div class="col-md-6">
         <h2>CaseStudies with Thematic Area "{{ $thematic->name }}"</h2>
         @forelse($casestudies as $cs)
-          <a href="{{ route('introduction', $cs) }}" class="btn btn-urc">{{ $cs->title or "Case Study Title"}}</a>
+          <a href="{{ route('background', $cs) }}" class="btn btn-urc">{{ $cs->title or "Case Study Title"}}</a>
         @empty
           <p>No case studies use this thematic area</p>
         @endforelse

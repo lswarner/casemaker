@@ -73,7 +73,7 @@
       <!-- start of sidebar section -->
       <div id="sidebar" class="col-md-5 col-md-pull-7  col-lg-4 col-lg-pull-8">
 
-        <h1 class="page-header">Implementation Science Approach</h1>
+        <h1 class="page-header">Implementation Science (IS) Approach</h1>
 
           @component('casestudy.partials.tooltip-textarea', ['name'=>'method_tips'])
             @slot('tooltip')
