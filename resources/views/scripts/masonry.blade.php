@@ -49,17 +49,27 @@
   // update the filters when a selection is changed
   $('.filters-select').on( 'change', function( event ) {
 
-    var filterValue= this.value;  //get the value this single filte was just set to
+    var filterValue= this.value;  //get the value this single filter was just set to
 
     // recreate the whole filter string  ex: '.country.method.audience'
     // this will match casestudies that have ANY of these filters
     filters='';
     $('.filters-select').each(function(index) {
-      filters += this.value;
+      filters += slugify(this.value);
     });
 
     $grid.isotope({ filter: filters });  //apply the new filter to the grid
     console.log('filters: '+filters);
   });
+
+
+  function slugify(str) {
+    var $slug = '';
+    var trimmed = $.trim(str);
+    $slug = trimmed.replace(/[^a-z0-9-]/gi, '-').
+    replace(/-+/g, '-').
+    replace(/^-|-$/g, '');
+    return $slug.toLowerCase();
+  }
 
 </script>

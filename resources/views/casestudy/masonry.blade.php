@@ -53,9 +53,9 @@
               </button>
               <ul class="dropdown-menu filter-menu">
                 <li><a class="do_filter" data-filter="country" data-name="All Countries" data-value="" href="#">All Countries</a></li>
-                
+
                 @foreach($countries as $k => $a )
-                  <li><a class="do_filter" data-filter="country" data-name="{{$a}}" data-value=".{{ strtolower($a) }}" href="#">{{$a}}</a></li>
+                  <li><a class="do_filter" data-filter="country" data-name="{{$a}}" data-value=".{{ str_slug($a) }}" href="#">{{$a}}</a></li>
                 @endforeach
 
 
@@ -129,16 +129,13 @@
 
         <?php for($q=0; $q <3; $q++){ ?>
         @foreach($casestudies as $c)
-          <?php
-            usleep(200);
-            $image= "img/stock/".mt_rand(1,10).'.jpeg';
-          ?>
+
 
 
           <div class="grid-item <?= $c->filters(); ?>" >
-            <a href="#">
+            <a href="{{route('display_casestudy',$c)}}">
               <div class="hovereffect">
-                <img src="{{$image}}" class="img-responsive"/>
+                <img src="{{$c->featured_image}}" class="img-responsive"/>
                 <div class="overlay">
                   &nbsp; <!-- -->
                 </div>

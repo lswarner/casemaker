@@ -17,6 +17,7 @@ Route::get('/', function () {
 });
 
 Route::get('/library', 'LibraryController@index')->name('library');
+Route::get('{casestudy}','LibraryController@display')->name('display_casestudy');
 
 Auth::routes();
 
@@ -93,5 +94,3 @@ Route::group(['middleware' => 'admin'], function() {
   Route::get('cms/branding', 'CMSController@branding')->name('branding');
   Route::patch('cms/branding', 'CMSController@branding_update')->name('branding_update');
 });
-
-Route::get('{casestudy}','LibraryController@display')->name('display_casestudy');

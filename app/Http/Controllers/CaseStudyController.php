@@ -427,8 +427,8 @@ class CaseStudyController extends Controller
 
 
       //create a slug
-
-
+      /*  NOT FUNCTIONING - gave up on route model binding with slug for now. */
+      //$slug= str_slug($caseStudy->title);
 
 
       Session::flash('message', "This case study is Live.");
@@ -439,7 +439,7 @@ class CaseStudyController extends Controller
 
 
     /**
-     * Publish the specified resource
+     * Re-open the case study
      *
      * @param  \App\CaseStudy  $caseStudy
      * @return \Illuminate\Http\Response
@@ -449,6 +449,9 @@ class CaseStudyController extends Controller
       $caseStudy->status= "created";
       $caseStudy->submitted_at= null;
       $caseStudy->save();
+
+      //generate an updated list of new countries sice we may have un-published a case study
+      CMS::first()->generateActiveCountries();
 
       Session::flash('message', "This case study has been re-opened for further updates.");
       Session::flash('alert-class', 'flash-success');
