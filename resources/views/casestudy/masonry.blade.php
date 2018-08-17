@@ -129,13 +129,16 @@
 
         <?php for($q=0; $q <3; $q++){ ?>
         @foreach($casestudies as $c)
-
+        <?php
+          usleep(200);
+          $image= "img/stock/".mt_rand(1,10).'.jpeg';
+        ?>
 
 
           <div class="grid-item <?= $c->filters(); ?>" >
             <a href="{{route('display_casestudy',$c)}}">
               <div class="hovereffect">
-                <img src="{{$c->featured_image}}" class="img-responsive"/>
+                <img src="{{$image}}" class="img-responsive"/>
                 <div class="overlay">
                   &nbsp; <!-- -->
                 </div>
