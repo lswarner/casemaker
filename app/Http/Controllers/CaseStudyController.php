@@ -11,6 +11,7 @@ use App\User;
 use App\Invitation;
 use App\Attachment;
 use App\CMS;
+use App\Template;
 use Auth;
 use Session;
 use Image;
@@ -92,7 +93,10 @@ class CaseStudyController extends Controller
         $attachments["results"]= $caseStudy->attachments()->section('results')->get();
         $attachments["implications"]= $caseStudy->attachments()->section('implications')->get();
 
-        return view('casestudy.show', ['casestudy'=>$caseStudy, 'keywords'=>$keywords, 'attachments'=>$attachments] );
+        $templates= Template::all_sorted();
+        //dd($templates);
+
+        return view('casestudy.show', ['casestudy'=>$caseStudy, 'keywords'=>$keywords, 'attachments'=>$attachments, 'templates'=>$templates] );
     }
 
     /**
@@ -416,6 +420,7 @@ class CaseStudyController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function publish(Request $request, CaseStudy $caseStudy){
+
 
       $caseStudy->status= "published";
       $caseStudy->published_at= \Carbon\Carbon::now();

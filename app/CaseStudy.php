@@ -127,11 +127,15 @@ public function setStatusAttribute($new_status){
     return $this->belongsToMany('App\Thematic', 'case_study_thematics', 'case_study_id', 'thematics_id')->withTimestamps();
   }
 
+  public function templates(){
+    return $this->belongsTo('App\Template');
+  }
 
 
   public function attachments(){
     return $this->hasMany('App\Attachment');
   }
+
 
 
 

@@ -135,13 +135,41 @@
       @if(Auth::user()->is_admin == true)
 
         {!! Form::model( $casestudy, ['action'=>['CaseStudyController@publish', $casestudy->id], 'method' => 'patch', 'class'=>'form-horizontal']) !!}
+        <div class="form-horiontal">
+          <div class="form-group">
+            <div class="col-sm-10 col-sm-offset-1">
+              <h2>Choose a template for this case study</h2>
+              <p>
+                Before publishing a case study to the library, you need to choose which template will be used to display the case study to viewers.
+              </p>
+            </div>
+          </div>
 
-        <div class="form-group">
-          <div class="col-md-8 col-md-offset-4 col-lg-6 col-lg-offset-6">
-            <input type="submit" class="btn btn-urc-accent1" value="Publish Case Study" />
+          <div class="form-group">
+            <label for="template" class="col-sm-2 col-md-1 col-sm-offset-1 control-label">Template:</label>
+            <div class="col-sm-8 col-md-9 col-lg-4 ">
+              <select id="template" class="form-control">
+                @foreach ($templates as $t)
+                  <option class="form-control" id="{{ $t->id }}" name="{{ strtolower($t->name) }}" value="basic">{{ $t->name }}</option>
+                @endforeach
+              </select>
+              @if ($errors->has('template'))
+                <span class="help-block">
+                  <strong>{{ $errors->first('template') }}</strong>
+                </span>
+              @endif
+            </div>
+          </div>
+
+          <h2>&nbsp;</h2>
+
+
+          <div class="form-group">
+            <div class="col-sm-10 col-md-10 col-lg-5 col-sm-offset-1">
+              <input type="submit" class="btn btn-urc-accent1" value="Publish Case Study" />
+            </div>
           </div>
         </div>
-
         {!! Form::close() !!}
       @else
 

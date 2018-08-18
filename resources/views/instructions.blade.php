@@ -42,19 +42,19 @@
         <h2>Update CaseMaker Instructions</h2>
 
         {!! Form::model($instructions, ['action'=>['InstructionsController@update'], 'method' => 'patch', 'class'=>'form-horizontal']) !!}
-        <!-- start Introduction section -->
+        <!-- start Background section -->
           <div class="review-section well shadow-depth-3">
             <div class="row">
               <div class="col-md-4">
-                  <a class="section-header" data-toggle="collapse" href="#introduction" aria-expanded="false" aria-controls="introduction"><h2 class="section-header">Introduction</h2></a>
+                  <a class="section-header" data-toggle="collapse" href="#background" aria-expanded="false" aria-controls="background"><h2 class="section-header">Background</h2></a>
               </div>
               <div class="col-md-8">
-                <a class="pull-right" data-toggle="collapse" href="#introduction" aria-expanded="false" aria-controls="introduction"><i class="fa fa-caret-down fa-2x"></i></a>
+                <a class="pull-right" data-toggle="collapse" href="#background" aria-expanded="false" aria-controls="background"><i class="fa fa-caret-down fa-2x"></i></a>
               </div>
 
               <div>&nbsp;</div>
 
-              <div class="col-md-10 col-md-offset-1 collapse" id="introduction">
+              <div class="col-md-10 col-md-offset-1 collapse" id="background">
 
                 <div class="form-group">
 
@@ -82,7 +82,7 @@
                 </div>
               </div>
             </div>
-          </div> <!-- end Introduction section -->
+          </div> <!-- end Background section -->
 
 
 
@@ -90,13 +90,13 @@
           <div class="review-section well shadow-depth-3">
             <div class="row">
               <div class="col-md-4">
-                  <a class="section-header" data-toggle="collapse" href="#method" aria-expanded="false" aria-controls="method"><h2 class="section-header">Method</h2></a>
+                  <a class="section-header" data-toggle="collapse" href="#approach" aria-expanded="false" aria-controls="approach"><h2 class="section-header">IS Approach</h2></a>
               </div>
               <div class="col-md-8">
-                <a class="pull-right" data-toggle="collapse" href="#method" aria-expanded="false" aria-controls="method"><i class="fa fa-caret-down fa-2x"></i></a>
+                <a class="pull-right" data-toggle="collapse" href="#approach" aria-expanded="false" aria-controls="approach"><i class="fa fa-caret-down fa-2x"></i></a>
               </div>
 
-              <div class="col-md-10 col-md-offset-1 collapse" id="method">
+              <div class="col-md-10 col-md-offset-1 collapse" id="approach">
 
                 <div class="form-group">
 
@@ -129,13 +129,13 @@
           <div class="review-section well shadow-depth-3">
             <div class="row">
               <div class="col-md-4">
-                  <a class="section-header" data-toggle="collapse" href="#results" aria-expanded="false" aria-controls="results"><h2 class="section-header">Results</h2></a>
+                  <a class="section-header" data-toggle="collapse" href="#findings" aria-expanded="false" aria-controls="findings"><h2 class="section-header">Findings</h2></a>
               </div>
               <div class="col-md-8">
-                <a class="pull-right" data-toggle="collapse" href="#results" aria-expanded="false" aria-controls="results"><i class="fa fa-caret-down fa-2x"></i></a>
+                <a class="pull-right" data-toggle="collapse" href="#findings" aria-expanded="false" aria-controls="findings"><i class="fa fa-caret-down fa-2x"></i></a>
               </div>
 
-              <div class="col-md-10 col-md-offset-1 collapse" id="results">
+              <div class="col-md-10 col-md-offset-1 collapse" id="findings">
 
                 <div class="form-group">
 
