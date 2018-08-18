@@ -127,12 +127,24 @@
         <div class="grid">
           <div class="grid-sizer"></div>
 
-        <?php for($q=0; $q <3; $q++){ ?>
-        @foreach($casestudies as $c)
         <?php
-          usleep(200);
-          $image= "img/stock/".mt_rand(1,10).'.jpeg';
-        ?>
+        $loops=1;
+        if($status == 'demo'){   /********************** DEMO ***************/
+          $loops= 3;
+        }
+
+        for($q=0; $q <$loops; $q++){ ?>
+        @foreach($casestudies as $c)
+
+          <?php
+          if($status == 'demo'){  /********************** DEMO ***************/
+            usleep(200);
+            $image= "img/stock/".mt_rand(1,10).'.jpeg';
+          }
+          else {
+            $image= $c->featured_image;
+          }
+          ?>
 
 
           <div class="grid-item <?= $c->filters(); ?>" >

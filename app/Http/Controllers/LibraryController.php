@@ -21,9 +21,35 @@ class LibraryController extends Controller
   public function index()
   {
 
-    //$casestudies= CaseStudy::where('status', 'demo')->get();
+    $casestudies= CaseStudy::published()->get();
+
+    //$keywords= Keyword::all_sorted()->pluck('keyword', 'id');
+    $methods= Method::all_sorted();
+    $keywords= Keyword::all_sorted();
+    $thematics= Thematic::all_sorted();
+    $audiences= Audience::all_sorted();
+
+
+    $cms= CMS::firstOrCreate([]);
+    if(empty($cms)){
+      $cms= new CMS;
+    }
+
+
+    $countries= $cms->active_countries;
+
+    $status= 'production';
+
+    return view('casestudy.masonry', compact('casestudies', 'countries', 'methods', 'keywords', 'thematics', 'audiences', 'cms', 'status') );
+  }
+
+
+
+
+public function demo()
+{
+
     $casestudies= CaseStudy::where('status', 'demo')->get();
-    //$casestudies= CaseStudy::published()->get();
 
     //$keywords= Keyword::all_sorted()->pluck('keyword', 'id');
     $methods= Method::all_sorted();
@@ -41,8 +67,9 @@ class LibraryController extends Controller
     $countries= $cms->active_countries;
 
 
+    $status ='demo';
 
-    return view('casestudy.masonry', compact('casestudies', 'countries', 'methods', 'keywords', 'thematics', 'audiences', 'cms') );
+    return view('casestudy.masonry', compact('casestudies', 'countries', 'methods', 'keywords', 'thematics', 'audiences', 'cms', 'status') );
   }
 
 

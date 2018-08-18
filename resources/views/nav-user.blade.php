@@ -30,7 +30,10 @@
             </li>
 
             <li>
-                <a href="{{ route('library') }}"><b>Library Demo</b></a>
+                <a href="{{ route('library') }}"><b>Library</b></a>
+            </li>
+            <li>
+                <a href="{{ route('library_demo') }}"><b>Library Demo</b></a>
             </li>
 
             <li>
