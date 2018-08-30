@@ -57,6 +57,8 @@
       </div>
 
     </div>
+
+    <div id="background-anchor">&nbsp;</div>
   </div>
 
 
@@ -67,12 +69,12 @@
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
 
             <ul class="nav navbar-nav">
-              <li><a class="" href="#background">Background</a></li>
-              <li><a class="" href="#intervention">Intervention</a></li>
-              <li><a class="" href="#approach">IS Approach</a></li>
-              <li><a class="" href="#findings">Findings</a></li>
-              <li><a class="" href="#implications">Implications</a></li>
-              <li><a class="" href="#references">References</a></li>
+              <li><a class="" href="#background-anchor">Background</a></li>
+              <li><a class="" href="#intervention-anchor">Intervention</a></li>
+              <li><a class="" href="#approach-anchor">IS Approach</a></li>
+              <li><a class="" href="#findings-anchor">Findings</a></li>
+              <li><a class="" href="#implications-anchor">Implications</a></li>
+              <li><a class="" href="#references-anchor">References</a></li>
             </ul>
 
         </div>
@@ -136,6 +138,8 @@
           {!! $casestudy->intro_context !!}
         </div>
       </div>
+
+      <div id="intervention-anchor">&nbsp;</div>
     </div>
 
 
@@ -160,6 +164,8 @@
           @endempty
         </div>
       </div>
+
+      <div id="approach-anchor">&nbsp;</div>
     </div>
 
 
@@ -204,6 +210,8 @@
           @endempty
         </div>
       </div>
+
+      <div id="findings-anchor">&nbsp;</div>
     </div>
 
 
@@ -250,6 +258,8 @@
           @endempty
         </div>
       </div>
+
+      <div id="implications-anchor">&nbsp;</div>
     </div>
 
 
@@ -316,6 +326,7 @@
     </div>
     @endif
 
+    <div id="references-anchor">&nbsp;</div>
     <?php /****** Referencess ******************************/ ?>
 
 
