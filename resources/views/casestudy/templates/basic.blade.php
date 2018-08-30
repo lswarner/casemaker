@@ -40,9 +40,11 @@
     <div class="row">
       <div class="col-xs-12"><h1 class="title">{{ $casestudy->title }}</h1></div>
       <div class="col-sm-2">
+        <?php /*
         <button type="button" class="btn-icon template-icon"><i class="fa fa-twitter" aria-hidden="true"></i></button>
         <button type="button" class="btn-icon template-icon"><i class="fa fa-envelope" aria-hidden="true"></i></button></i>
         <button type="button" class="btn-icon template-icon"><i class="fa fa-print" aria-hidden="true"></i></button></i>
+        */ ?> &nbsp;
       </div>
       <div class="col-sm-7">
         <p class="description">{{ $casestudy->description }}</p>
