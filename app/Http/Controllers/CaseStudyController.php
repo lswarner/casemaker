@@ -84,6 +84,7 @@ class CaseStudyController extends Controller
      */
     public function show(CaseStudy $caseStudy)
     {
+
         $keywords= Keyword::all_sorted()->pluck('keyword', 'id');
 
 
@@ -116,20 +117,6 @@ class CaseStudyController extends Controller
      */
     public function edit_background(CaseStudy $caseStudy)
     {
-
-        //if the case study has been submitted or published, send to the show page
-        if( $caseStudy->status == "submitted" || $caseStudy->status == "published"){
-          return redirect()->route('casestudy.show', $caseStudy);
-        }
-/*
-        //send admins to the show page
-        if( (Auth::user()->is_admin == TRUE) && ($caseStudy->team->contains(Auth::user()) == FALSE) ){
-          return redirect()->route('casestudy.show', $caseStudy);
-        }
-        */
-
-
-
         $keywords= Keyword::all_sorted()->pluck('keyword', 'id');
         $team_suggestions= User::all_sorted()->diff($caseStudy->team);
         $method_suggestions= Method::all_sorted()->diff($caseStudy->methods);
@@ -158,17 +145,6 @@ class CaseStudyController extends Controller
      */
     public function edit_approach(CaseStudy $caseStudy)
     {
-
-      //if the case study has been submitted or published, send to the show page
-      if( $caseStudy->status == "submitted" || $caseStudy->status == "published"){
-        return redirect()->route('casestudy.show', $caseStudy);
-      }
-/*
-      //send admins to the show page
-      if( (Auth::user()->is_admin == TRUE) && ($caseStudy->team->contains(Auth::user()) == FALSE) ){
-        return redirect()->route('casestudy.show', $caseStudy);
-      }
-*/
 
         $keywords= Keyword::all_sorted()->pluck('keyword', 'id');
         $team_suggestions= User::all_sorted()->diff($caseStudy->team);
@@ -199,17 +175,6 @@ class CaseStudyController extends Controller
     public function edit_findings(CaseStudy $caseStudy)
     {
 
-      //if the case study has been submitted or published, send to the show page
-      if( $caseStudy->status == "submitted" || $caseStudy->status == "published"){
-        return redirect()->route('casestudy.show', $caseStudy);
-      }
-/*
-      //send admins to the show page
-      if( (Auth::user()->is_admin == TRUE) && ($caseStudy->team->contains(Auth::user()) == FALSE) ){
-        return redirect()->route('casestudy.show', $caseStudy);
-      }
-*/
-
         $keywords= Keyword::all_sorted()->pluck('keyword', 'id');
         $team_suggestions= User::all_sorted()->diff($caseStudy->team);
         $method_suggestions= Method::all_sorted()->diff($caseStudy->methods);
@@ -238,17 +203,6 @@ class CaseStudyController extends Controller
      */
     public function edit_implications(CaseStudy $caseStudy)
     {
-
-      //if the case study has been submitted or published, send to the show page
-      if( $caseStudy->status == "submitted" || $caseStudy->status == "published"){
-        return redirect()->route('casestudy.show', $caseStudy);
-      }
-/*
-      //send admins to the show page
-      if( (Auth::user()->is_admin == TRUE) && ($caseStudy->team->contains(Auth::user()) == FALSE) ){
-        return redirect()->route('casestudy.show', $caseStudy);
-      }
-*/
 
         $keywords= Keyword::all_sorted()->pluck('keyword', 'id');
         $team_suggestions= User::all_sorted()->diff($caseStudy->team);
@@ -279,16 +233,6 @@ class CaseStudyController extends Controller
     public function review(CaseStudy $caseStudy)
     {
 
-      //if the case study has been submitted or published, send to the show page
-      if( $caseStudy->status == "submitted" || $caseStudy->status == "published"){
-        return redirect()->route('casestudy.show', $caseStudy);
-      }
-/*
-      //send admins to the show page
-      if( (Auth::user()->is_admin == TRUE) && ($caseStudy->team->contains(Auth::user()) == FALSE) ){
-        return redirect()->route('casestudy.show', $caseStudy);
-      }
-*/
         $keywords= Keyword::all_sorted()->pluck('keyword', 'id');
         $team_suggestions= User::all_sorted()->diff($caseStudy->team);
         $method_suggestions= Method::all_sorted()->diff($caseStudy->methods);

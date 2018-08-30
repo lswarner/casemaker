@@ -37,7 +37,19 @@
     <div class="row">
     @if( $casestudy->status == "submitted")
 
-      <?php /* this case is no longer reached. If casestudy->status is submitted, the controller routes to show view */ ?>
+      <?php // thanks to route filtering in Team middleware, only admins will get here to edit and publish a case study ?>
+      @if(Auth::user()->is_admin == true)
+
+        {!! Form::model( $casestudy, ['action'=>['CaseStudyController@publish', $casestudy->id], 'method' => 'patch', 'class'=>'form-horizontal']) !!}
+
+        <div class="form-group">
+          <div class="col-md-8 col-md-offset-4 col-lg-6 col-lg-offset-6">
+            <input type="submit" class="btn btn-urc-accent1" value="Publish Case Study" />
+          </div>
+        </div>
+
+        {!! Form::close() !!}
+      @endif
 
     @elseif( ($casestudy->status == "created")  )
 
