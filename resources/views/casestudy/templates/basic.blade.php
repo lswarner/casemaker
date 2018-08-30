@@ -151,7 +151,7 @@
     <div id="intervention" class="section">
       <div class="sub-section">
         <div class="row">
-          <h2>Intervention</h2>
+          <h2>Implementation of the Intervention</h2>
           {!! $casestudy->intro_nuances !!}
         </div>
       </div>
