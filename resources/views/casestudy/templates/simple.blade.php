@@ -64,8 +64,9 @@
   </div>
 
 
-  <div id="template-basic" class= "template-main">
+  <div id="template-simple" class= "template-main">
 
+    <div class="nav-wrapper">
       <nav class="navbar navbar-default navbar-centered" id="section-bar" data-spy="affix" data-offset-top="197">
 
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
@@ -79,7 +80,7 @@
 
         </div>
       </nav>
-
+    </div>
 
     <?php /****** Background ******************************/ ?>
 
