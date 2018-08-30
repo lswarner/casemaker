@@ -36,7 +36,7 @@
 <div class="container-fluid container-wide navbar-shade-shift">
 
 
-  <div class="template-bar" style="background-image: url('{{ $casestudy->featured_image }}')">
+  <div class="template-bar" style="background-image: url('{{ url($casestudy->featured_image) }}');">
     <div class="row">
       <div class="col-xs-12"><h1 class="title">{{ $casestudy->title }}</h1></div>
       <div class="col-sm-2">
