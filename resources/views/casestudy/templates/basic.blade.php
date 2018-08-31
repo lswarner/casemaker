@@ -36,13 +36,15 @@
 <div class="container-fluid container-wide navbar-shade-shift">
 
 
-  <div class="template-bar" style="background-image: url('{{ $casestudy->featured_image }}')">
+  <div class="template-bar" style="background-image: url('{{ url($casestudy->featured_image) }}');">
     <div class="row">
       <div class="col-xs-12"><h1 class="title">{{ $casestudy->title }}</h1></div>
       <div class="col-sm-2">
+        <?php /*
         <button type="button" class="btn-icon template-icon"><i class="fa fa-twitter" aria-hidden="true"></i></button>
         <button type="button" class="btn-icon template-icon"><i class="fa fa-envelope" aria-hidden="true"></i></button></i>
         <button type="button" class="btn-icon template-icon"><i class="fa fa-print" aria-hidden="true"></i></button></i>
+        */ ?> &nbsp;
       </div>
       <div class="col-sm-7">
         <p class="description">{{ $casestudy->description }}</p>
@@ -57,27 +59,29 @@
       </div>
 
     </div>
+
+    <div id="background-anchor">&nbsp;</div>
   </div>
 
 
   <div id="template-basic" class= "template-main">
-
-      <nav class="navbar navbar-default navbar-centered" id="section-bar" data-spy="affix" data-offset-top="197">
+    <div class="nav-wrapper">
+      <nav class="navbar navbar-default navbar-centered" id="section-bar" data-spy="affix" data-offset-top="600">
 
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
 
             <ul class="nav navbar-nav">
-              <li><a class="" href="#background">Background</a></li>
-              <li><a class="" href="#intervention">Intervention</a></li>
-              <li><a class="" href="#approach">IS Approach</a></li>
-              <li><a class="" href="#findings">Findings</a></li>
-              <li><a class="" href="#implications">Implications</a></li>
-              <li><a class="" href="#references">References</a></li>
+              <li><a class="" href="#background-anchor">Background</a></li>
+              <li><a class="" href="#intervention-anchor">Intervention</a></li>
+              <li><a class="" href="#approach-anchor">IS Approach</a></li>
+              <li><a class="" href="#findings-anchor">Findings</a></li>
+              <li><a class="" href="#implications-anchor">Implications</a></li>
+              <li><a class="" href="#references-anchor">References</a></li>
             </ul>
 
         </div>
       </nav>
-
+    </div>
 
     <?php /****** Background ******************************/ ?>
 
@@ -136,6 +140,8 @@
           {!! $casestudy->intro_context !!}
         </div>
       </div>
+
+      <div id="intervention-anchor">&nbsp;</div>
     </div>
 
 
@@ -145,7 +151,7 @@
     <div id="intervention" class="section">
       <div class="sub-section">
         <div class="row">
-          <h2>Intervention</h2>
+          <h2>Implementation of the Intervention</h2>
           {!! $casestudy->intro_nuances !!}
         </div>
       </div>
@@ -160,6 +166,8 @@
           @endempty
         </div>
       </div>
+
+      <div id="approach-anchor">&nbsp;</div>
     </div>
 
 
@@ -204,6 +212,8 @@
           @endempty
         </div>
       </div>
+
+      <div id="findings-anchor">&nbsp;</div>
     </div>
 
 
@@ -250,6 +260,8 @@
           @endempty
         </div>
       </div>
+
+      <div id="implications-anchor">&nbsp;</div>
     </div>
 
 
@@ -316,6 +328,7 @@
     </div>
     @endif
 
+    <div id="references-anchor">&nbsp;</div>
     <?php /****** Referencess ******************************/ ?>
 
 

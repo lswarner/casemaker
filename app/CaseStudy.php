@@ -78,6 +78,19 @@ public function setStatusAttribute($new_status){
 
 }
 
+/**
+ * Retrieve the URL to the casemaker logo.
+ *   - wrap the string as a URL before returning.
+ *
+ * @param string $value - URI of the logo
+ */
+public function getFeaturedImageAttribute($value){
+  if(empty($value)){
+    return 'img/cs/casestudydefault.jpg';
+  }
+  return $value;
+}
+
 
 /*******************************************************
      Relationships

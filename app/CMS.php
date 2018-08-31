@@ -53,7 +53,7 @@ class CMS extends Model
       $this->active_countries= implode(', ', $a->toArray());  //store the countries as a comma-seperated string
       $this->save();
 
-      return $this->active_countries->count();
+      return true;
     }
 
     //

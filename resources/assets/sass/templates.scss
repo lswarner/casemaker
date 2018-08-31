@@ -19,6 +19,7 @@ h1, h2, h3, h4{
   padding-left: 40px;
   padding-right: 40px;
 
+  min-height: 600px;
 }
 
   .template-bar h1.title{
@@ -67,6 +68,11 @@ h1, h2, h3, h4{
 
 #template-basic{
 
+}
+
+
+.nav-wrapper{
+  min-height: 80px;
 }
 
 #section-bar{

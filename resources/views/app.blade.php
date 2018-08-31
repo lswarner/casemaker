@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ \App\CMS::first()->casemaker_title }}</title>
 
     <link rel="shortcut icon" href="{{ \App\CMS::first()->favicon }}" type="image/x-icon">
     <link rel="icon" href="{{ \App\CMS::first()->favicon }}" type="image/x-icon">
