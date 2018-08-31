@@ -131,6 +131,10 @@ public function setStatusAttribute($new_status){
     return $this->belongsTo('App\Template');
   }
 
+  public function template(){
+    return \App\Template::find($this->template_id);
+  }
+
 
   public function attachments(){
     return $this->hasMany('App\Attachment');

@@ -20,7 +20,6 @@ class CreateTemplatesTable extends Migration
           $table->string('name');
           $table->string('blade');
           $table->string('description');
-          $table->string('image')->nullable();
           $table->timestamps();
         });
 
@@ -33,9 +32,6 @@ class CreateTemplatesTable extends Migration
      */
     public function down()
     {
-        Schema::table('case_studies', function (Blueprint $table) {
-          $table->dropForeign(['template_id']);
-        });
         Schema::dropIfExists('templates');
     }
 }

@@ -55,11 +55,10 @@ class TemplateController extends Controller
     $template= new Template;
     $template->name= $request->name;
     $template->blade= $request->blade;
-    $template->image= "";
     $template->description= $request->description;
     $template->save();
 
-    Session::flash('message', 'The new Template area \''.$template->name.'\' was added.');
+    Session::flash('message', 'The new Template \''.$template->name.'\' was added.');
     Session::flash('alert-class', 'flash-urc');
 
 
@@ -113,10 +112,9 @@ class TemplateController extends Controller
     $template->name= $request->name;
     $template->blade= $request->blade;
     $template->description= $request->description;
-    $template->image= "";
     $template->save();
 
-    Session::flash('message', 'The Template area \''.$template->name.'\' was changed.');
+    Session::flash('message', 'The Template \''.$template->name.'\' was changed.');
     Session::flash('alert-class', 'flash-urc');
 
 

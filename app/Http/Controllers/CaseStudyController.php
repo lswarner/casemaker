@@ -94,7 +94,6 @@ class CaseStudyController extends Controller
         $attachments["implications"]= $caseStudy->attachments()->section('implications')->get();
 
         $templates= Template::all_sorted();
-        //dd($templates);
 
         return view('casestudy.show', ['casestudy'=>$caseStudy, 'keywords'=>$keywords, 'attachments'=>$attachments, 'templates'=>$templates] );
     }
