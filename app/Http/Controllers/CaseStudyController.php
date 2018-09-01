@@ -248,6 +248,8 @@ class CaseStudyController extends Controller
         $attachments["results"]= $caseStudy->attachments()->section('results')->get();
         $attachments["implications"]= $caseStudy->attachments()->section('implications')->get();
 
+        $templates= Template::all_sorted();
+
         return view('casestudy.review', [ 'casestudy'=>$caseStudy,
                                           'keywords'=>$keywords,
                                           'country_suggestions' => json_encode($this->country_suggestions),
@@ -256,7 +258,8 @@ class CaseStudyController extends Controller
                                           'keyword_suggestions' => $keyword_suggestions,
                                           'audience_suggestions' => $audience_suggestions,
                                           'thematic_suggestions' => $thematic_suggestions,
-                                          'attachments' => $attachments
+                                          'attachments' => $attachments,
+                                          'templates' => $templates,
                                        ] );
     }
 
@@ -367,6 +370,12 @@ class CaseStudyController extends Controller
 
       $caseStudy->status= "published";
       $caseStudy->published_at= \Carbon\Carbon::now();
+
+      $template_id= $request->input('template');
+      $template= Template::find($template_id);
+      if(is_null($template) == FALSE){
+        $template->casestudies()->save($caseStudy);
+      }
       $caseStudy->save();
 
 

@@ -10,6 +10,7 @@ use App\Thematic;
 use App\Audience;
 use App\CMS;
 use App\Instructions;
+use App\Template;
 
 class LibraryController extends Controller
 {
@@ -78,8 +79,12 @@ public function demo()
   public function display(CaseStudy $caseStudy){
     $instructions= Instructions::first();
 
+    $template= Template::first();
+    if(is_null($caseStudy->template()) == FALSE){
+      $template= $caseStudy->template(); 
+    }
+    $template_blade= 'casestudy.templates.'.$template->blade;
 
-
-    return view('casestudy.templates.basic', ['casestudy'=>$caseStudy, 'instructions'=>$instructions]);
+    return view($template_blade, ['casestudy'=>$caseStudy, 'instructions'=>$instructions]);
   }
 }
