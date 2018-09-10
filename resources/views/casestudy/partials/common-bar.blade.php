@@ -72,6 +72,7 @@
           </div>
         </div>
 
+
       @else
         <!-- Display the review tab -->
         <h3>{{ $casestudy->title }}</h3>

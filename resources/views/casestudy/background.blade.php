@@ -67,6 +67,9 @@
             introduction
           @endcomponent
 
+          @component('casestudy.partials.resources', ['casestudy'=>$casestudy])
+          @endcomponent
+
 
           @component('casestudy.partials.continue-buttons', [ 'next'=>route('approach', $casestudy)])
             Continue to IS Approach

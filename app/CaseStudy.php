@@ -13,12 +13,16 @@ class CaseStudy extends Model
    * @var array
    */
     protected $fillable=  [
-                'title', 'countries', 'description', 'author', 'slug',   /* not fillable: 'featured_image', */
+                'title', 'countries', 'description', 'author', 'slug', 'references', 'video', 'audio', 'gallery',  /* not fillable: 'featured_image', */
                 'intro_context', 'intro_nuances', 'intro_tips', 'intro_acronyms', 'intro_objectives', 'intro_questions',
                 'method_used', 'method_challenges', 'method_tips', 'method_partners', 'method_questions', 'method_files',
                 'results_discuss', 'results_challenges', 'results_tips', 'results_questions', 'results_files',
                 'implications_discuss', 'implications_challenges', 'implications_tips', 'implications_questions', 'implications_files',
               ];
+
+    protected $casts = [
+        'resources' => 'array',
+    ];
 
 
   public function listCountries(){
@@ -50,6 +54,34 @@ class CaseStudy extends Model
     $a= $a->concat($attachments["implications"]= $this->attachments()->section('implications')->get());
 
     return $a;
+  }
+
+
+
+
+  /**
+   * Set the logo atribute - and delete the old logo (if neccessary) from the filesystem
+   *
+   * @param string $value - URI of the new logo
+   */
+  public function setResourcesAttribute($value){
+
+    if( empty($value)){
+      $this->attributes['resources']= collect([]);
+    }
+
+  }
+
+  /**
+   * Retrieve the URL to the casemaker logo.
+   *   - wrap the string as a URL before returning.
+   *
+   * @param string $value - URI of the logo
+   */
+  public function getResourcesAttribute($value){
+    if( empty($value)){
+      return collect([]);
+    }
   }
 
 

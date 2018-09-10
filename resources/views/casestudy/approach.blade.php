@@ -63,6 +63,9 @@
             methodology
           @endcomponent
 
+          @component('casestudy.partials.resources', ['casestudy'=>$casestudy])
+          @endcomponent
+
 
           @component('casestudy.partials.continue-buttons', ['back'=>route('background', $casestudy), 'next'=>route('findings', $casestudy)])
             Continue to Findings

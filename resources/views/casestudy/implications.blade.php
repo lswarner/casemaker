@@ -61,6 +61,9 @@
             implications
           @endcomponent
 
+          @component('casestudy.partials.resources', ['casestudy'=>$casestudy])
+          @endcomponent
+
 
 
           @component('casestudy.partials.continue-buttons', ['back'=>route('findings', $casestudy), 'next'=>route('review', $casestudy)])

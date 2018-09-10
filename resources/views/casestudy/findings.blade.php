@@ -55,6 +55,9 @@
             results
           @endcomponent
 
+          @component('casestudy.partials.resources', ['casestudy'=>$casestudy])
+          @endcomponent
+
 
 
           @component('casestudy.partials.continue-buttons', ['back'=>route('approach', $casestudy), 'next'=>route('implications', $casestudy)])

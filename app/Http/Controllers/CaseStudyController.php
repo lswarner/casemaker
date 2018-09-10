@@ -280,7 +280,7 @@ class CaseStudyController extends Controller
           $data['title']= "";
         }
 
-        //make sure title is never null, cause that makes the db angry
+        //make sure author is never null, cause that makes the db angry
         if( empty($data['author'])){
           $data['author']= "";
         }
