@@ -51,7 +51,7 @@
 
           <div class="row">
             <div class=" col-md-offset-8 col-md-4">
-                {!! Form::submit('Save Titles', ['class'=>'btn btn-urc']); !!}
+                {!! Form::submit('Save Text', ['class'=>'btn btn-urc']); !!}
 
             </div>
           </div>

@@ -91,7 +91,7 @@
                       @else
                       <li><a class="nav-big" href="{{ route('library') }}">Case Studies</a></li>
                       @endif
-                      <li><a class="nav-big" href="library/about">About</a></li>
+                      <li><a class="nav-big" href="{{ route('library_about') }}">About</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                       <div class="collapse navbar-collapse" id="app-navbar-collapse">
