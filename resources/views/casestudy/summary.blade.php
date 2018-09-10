@@ -194,12 +194,12 @@
       </div>
     </div>
 
-    </div>
+  </div>
 
 
 
-    <!-- Implications Section -->
-    <div class="review-section well shadow-depth-3">
+<!-- Implications Section -->
+  <div class="review-section well shadow-depth-3">
     <div class="row">
 
       <div class="col-md-4">
@@ -250,6 +250,50 @@
 
 
           </div> <!-- end of sidebar -->
+      </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+<!-- Resources Section -->
+  <div class="review-section well shadow-depth-3">
+    <div class="row">
+
+      <div class="col-md-4">
+          <a class="section-header" data-toggle="collapse" href="#resources" aria-expanded="false" aria-controls="resources"><h2 class="section-header">Resources</h2></a>
+      </div>
+      <div class="col-md-8">
+        <a class="pull-right" data-toggle="collapse" href="#resources" aria-expanded="false" aria-controls="resources"><i class="fa fa-caret-down fa-2x"></i></a>
+      </div>
+
+
+      <div class="col-xs-12 collapse" id="resources">
+          <!-- start of narrative section -->
+          <div id="narrative" class="col-md-12">
+
+            <div class="row">
+
+              <h3>Video</h3>
+              <div class="col-sm-2">Video url</div>
+              <div class="col-md-10">{{ $casestudy->video }}</div>
+            </div>
+
+            <div class="row">
+
+              <h3>Audio</h3>
+              <div class="col-sm-2">Audio url</div>
+              <div class="col-md-10">{{ $casestudy->audio }}</div>
+            </div>
+
+
+        </div> <!-- end narative collumn -->
+
+
       </div>
     </div>
 
