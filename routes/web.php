@@ -17,6 +17,7 @@ Route::get('/', function () {
 });
 
 Route::get('/library', 'LibraryController@index')->name('library');
+Route::get('/library/about', 'LibraryController@about')->name('library_about');
 Route::get('/library-demo', 'LibraryController@demo')->name('library_demo');
 Route::get('/library/{casestudy}','LibraryController@display')->name('display_casestudy');
 

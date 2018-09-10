@@ -41,7 +41,7 @@ class LibraryController extends Controller
 
     $status= 'production';
 
-    return view('casestudy.masonry', compact('casestudies', 'countries', 'methods', 'keywords', 'thematics', 'audiences', 'cms', 'status') );
+    return view('library.masonry', compact('casestudies', 'countries', 'methods', 'keywords', 'thematics', 'audiences', 'cms', 'status') );
   }
 
 
@@ -70,7 +70,7 @@ public function demo()
 
     $status ='demo';
 
-    return view('casestudy.masonry', compact('casestudies', 'countries', 'methods', 'keywords', 'thematics', 'audiences', 'cms', 'status') );
+    return view('library.masonry', compact('casestudies', 'countries', 'methods', 'keywords', 'thematics', 'audiences', 'cms', 'status') );
   }
 
 
@@ -81,10 +81,20 @@ public function demo()
 
     $template= Template::first();
     if(is_null($caseStudy->template()) == FALSE){
-      $template= $caseStudy->template(); 
+      $template= $caseStudy->template();
     }
-    $template_blade= 'casestudy.templates.'.$template->blade;
+    $template_blade= 'library.templates.'.$template->blade;
 
     return view($template_blade, ['casestudy'=>$caseStudy, 'instructions'=>$instructions]);
+  }
+
+
+  public function about(){
+    $cms= CMS::firstOrCreate([]);
+    if(empty($cms)){
+      $cms= new CMS;
+    }
+
+    return view('library.about', ['cms'=>$cms]);
   }
 }

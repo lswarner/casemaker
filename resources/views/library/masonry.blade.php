@@ -13,7 +13,7 @@
 <div class="container-fluid container-wide navbar-shade-shift">
 
 
-<div class="welcome-bar" style="background-image: url('{{ $cms->library_splash }}')">
+<div class="welcome-bar" style="background-image: url('{{ asset($cms->library_splash) }}')">
   <h1 class="library-title">{{ $cms->library_title }}</h1>
   <p class="lead">{{ $cms->welcome_text }}</p>
 </div>

@@ -10,7 +10,9 @@ class CMS extends Model
 {
     protected $table= "cms";
     protected $guarded= [];
-    private $excluded= ['casemaker_logo', 'library_logo', 'splash_image', 'favicon', 'casemaker_title', 'library_title', 'library_splash', 'welcome_text', 'id', 'created_at', 'updated_at', 'active_countries']; // attributes which shouldn't be included in SCSS file
+    private $excluded= ['casemaker_logo', 'library_logo', 'splash_image', 'favicon', // attributes which shouldn't be included in SCSS file
+                        'casemaker_title', 'library_title', 'library_splash', 'welcome_text', 'about_text',
+                        'id', 'created_at', 'updated_at', 'active_countries'];
 
 
     public function getStylesheetUrlAttribute(){

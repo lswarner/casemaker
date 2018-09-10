@@ -40,6 +40,14 @@
             </div>
           </div>
 
+          <div class="form-group">
+
+            <label for="about_text" class="col-cs-12 col-sm-4 control-label branding-label">About page</label>
+            <div class="col-cs-12 col-sm-8">
+               <textarea id="about_text" class="form-control" name="about_text" required autofocus placeholder="Text for the About page">{{ $cms->about_text }}</textarea>
+            </div>
+          </div>
+
 
           <div class="row">
             <div class=" col-md-offset-8 col-md-4">
