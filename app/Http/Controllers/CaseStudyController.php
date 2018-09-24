@@ -319,7 +319,7 @@ class CaseStudyController extends Controller
 
         if( $request->hasFile('attachment') && $request->file('attachment')->isValid() ) {
           $file=  $request->file('attachment') ;
-          $section = $request->input('section', 'introduction');
+          $section = $request->input('section', 'background');
 
           $path= $file->store('uploads', 'local');
 
