@@ -316,7 +316,7 @@ class CaseStudyController extends Controller
      */
     public function upload(Request $request, CaseStudy $caseStudy)
     {
-
+        $section ="";
         if( $request->hasFile('attachment') && $request->file('attachment')->isValid() ) {
           $file=  $request->file('attachment') ;
           $section = $request->input('section', 'background');
@@ -331,8 +331,25 @@ class CaseStudyController extends Controller
           $caseStudy->attachments()->save($attachment);
         }
 
+        switch($section){
+          case "introduction":
+            $page= "background";
+            break;
+          case "methodology":
+            $page= "approach";
+            break;
+          case "results":
+            $page= "findings";
+            break;
+          case "implications":
+            $page= "implications";
+            break;
+          default:
+            $page= "introduction";
+        }
 
-        return redirect()->route($section, $caseStudy);
+
+        return redirect()->route($page, $caseStudy);
 
     }
 
