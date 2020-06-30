@@ -1,5 +1,5 @@
 {
-    "name": "casemaker",
+    "name": "lukeswarner/casemaker",
     "description": "CaseMaker",
     "keywords": ["casemaker", "laravel"],
     "license": "MIT",
@@ -14,7 +14,8 @@
         "laravelcollective/html": "^5.4.0",
         "sentry/sentry-laravel": "^0.7.0",
         "symfony/css-selector": "<=4.4.7",
-        "phpdocumentor/reflection-docblock": "<=4.3.4"
+        "phpdocumentor/reflection-docblock": "<=4.3.4",
+        "phpdocumentor/type-resolver": "<=1.0.1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
