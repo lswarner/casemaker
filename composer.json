@@ -1,7 +1,7 @@
 {
-    "name": "laravel/laravel",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "name": "casemaker",
+    "description": "CaseMaker",
+    "keywords": ["casemaker", "laravel"],
     "license": "MIT",
     "type": "project",
     "require": {
@@ -14,7 +14,7 @@
         "laravelcollective/html": "^5.4.0",
         "sentry/sentry-laravel": "^0.7.0",
         "symfony/css-selector": "<=4.4.7",
-        "phpdocumentor/reflection-docblock": "<5"
+        "phpdocumentor/reflection-docblock": "<=4.3.4"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
